@@ -1,0 +1,3 @@
+/mnt/d/project-crystallis/build/CMakeFiles/Project_Crystallis.dir
+/mnt/d/project-crystallis/build/CMakeFiles/edit_cache.dir
+/mnt/d/project-crystallis/build/CMakeFiles/rebuild_cache.dir
