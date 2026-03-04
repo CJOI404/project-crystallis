@@ -15,7 +15,7 @@
 ########################
 
 //Build a PRX for use with PSPLink
-BUILD_PRX:BOOL=OFF
+BUILD_PRX:BOOL=1
 
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/home/calvi/pspdev/bin/psp-addr2line
@@ -226,6 +226,9 @@ Project_Crystallis_BINARY_DIR:STATIC=/mnt/d/project-crystallis/build
 
 //Value Computed by CMake
 Project_Crystallis_IS_TOP_LEVEL:STATIC=ON
+
+//Dependencies for the target
+Project_Crystallis_LIB_DEPENDS:STATIC=general;pspgu;general;pspge;general;pspdisplay;general;pspdebug;general;pspctrl;
 
 //Value Computed by CMake
 Project_Crystallis_SOURCE_DIR:STATIC=/mnt/d/project-crystallis

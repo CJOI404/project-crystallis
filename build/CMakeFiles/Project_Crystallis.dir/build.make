@@ -255,14 +255,16 @@ Project_Crystallis: CMakeFiles/Project_Crystallis.dir/build.make
 Project_Crystallis: CMakeFiles/Project_Crystallis.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable Project_Crystallis"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Project_Crystallis.dir/link.txt --verbose=$(VERBOSE)
-	/usr/bin/cmake -E cmake_echo_color --cyan Not\ stripping\ binary\ for\ target\ Project_Crystallis,\ build\ type\ is\ .
+	/usr/bin/cmake -E cmake_echo_color --cyan Not\ stripping\ binary\ for\ target\ Project_Crystallis\ because\ building\ PRX.
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Calling psp-fixup-imports for target Project_Crystallis"
 	/home/calvi/pspdev/bin/psp-fixup-imports /mnt/d/project-crystallis/build/Project_Crystallis
-	/usr/bin/cmake -E cmake_echo_color --cyan Not\ building\ PRX\ for\ target\ Project_Crystallis
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Calling prxgen for target Project_Crystallis"
+	/home/calvi/pspdev/bin/psp-prxgen /mnt/d/project-crystallis/build/Project_Crystallis /mnt/d/project-crystallis/build/Project_Crystallis.prx
+	/usr/bin/cmake -E cmake_echo_color --cyan Not\ encrypting\ PRX\ for\ target\ Project_Crystallis,\ use\ ENC_PRX\ flag\ if\ you\ need\ to.
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Calling mksfoex for target Project_Crystallis"
 	/home/calvi/pspdev/bin/mksfoex -d MEMSIZE=1 -s APP_VER=01.00 Project_Crystallis /mnt/d/project-crystallis/build/PARAM.SFO
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Calling pack-pbp with ELF file for target Project_Crystallis"
-	/home/calvi/pspdev/bin/pack-pbp /mnt/d/project-crystallis/build/EBOOT.PBP /mnt/d/project-crystallis/build/PARAM.SFO NULL NULL NULL NULL NULL /mnt/d/project-crystallis/build/Project_Crystallis NULL
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Calling pack-pbp with PRX file for target Project_Crystallis"
+	/home/calvi/pspdev/bin/pack-pbp /mnt/d/project-crystallis/build/EBOOT.PBP /mnt/d/project-crystallis/build/PARAM.SFO NULL NULL NULL NULL NULL /mnt/d/project-crystallis/build/Project_Crystallis.prx NULL
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Cleaning up PARAM.SFO for target Project_Crystallis"
 	/usr/bin/cmake -E remove /mnt/d/project-crystallis/build/PARAM.SFO
 	/usr/bin/cmake -E cmake_echo_color --cyan EBOOT.PBP\ file\ created\ for\ target\ Project_Crystallis.

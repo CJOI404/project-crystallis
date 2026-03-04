@@ -10,8 +10,8 @@ enum Element{
     EARTH,
     PHYSICAL,
     MAGICAL,
-    ELEMENTCOUNT,
-    NOELEMENT
+    NOELEMENT,
+    ELEMENTCOUNT
 };
 
 enum Debuff{
@@ -27,8 +27,8 @@ enum Debuff{
     CURSE,
     DAZE,
     PROVOKE,
-    DEBUFFCOUNT,
-    NODEBUFF
+    NODEBUFF,
+    DEBUFFCOUNT
 };
 
 enum Buff{
@@ -49,8 +49,8 @@ enum Buff{
     BARTHUNDER,
     BARWATER,
     VEIL,
-    BUFFCOUNT,
-    NOBUFF
+    NOBUFF,
+    BUFFCOUNT
 };
 
 enum Paradigm{

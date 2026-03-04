@@ -9,7 +9,7 @@ class BattleCommand{
         std::string name = "";
         int cost = 0;
         std::string type = "";
-        Paradigm paradigm;
+        Paradigm paradigm = Paradigm::COMMANDO;
         float atkDmgScale = 0;
         float ravDmgScale = 0;
         float chain = 0;

@@ -8,7 +8,7 @@ class AttackCommand : public BattleCommand {
     public:
 
         //this will likely have to be changed later
-        Element element;
+        Element element = Element::NOELEMENT;
 
         AttackCommand();
         AttackCommand(CommandData& cmdData);
