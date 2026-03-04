@@ -71,7 +71,8 @@ typedef struct
 
 
 namespace UI {
-    FontChar fontData[256];
+    FontChar fontData[128];
+    char textBuffer[64];
     uint32_t* fontTexture = nullptr;
     int textWidth = 256;
 

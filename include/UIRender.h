@@ -13,7 +13,12 @@ namespace UI {
         int xadvance, page, chnl;
     };
 
-    extern FontChar fontData[256];
+    // extern FontChar fontData[256];
+    //bitmap font doesn't go past id 128 so this should help save mem
+    extern FontChar fontData[128];
+
+    //fixed size textBuffer to save memory
+    extern char textBuffer[64];
 
     void loadFont(const char* fntPath, const char* texturePath);
     void drawString(int x, int y, uint32_t color, float scale, float yScale, std::string text);

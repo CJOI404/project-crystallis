@@ -25,7 +25,7 @@ class Character : public GameActor {
 
         CharacterState characterState;
 
-        std::string name = "";
+        const char* name;
 
         int health = 0;
         int maxHealth = 0;
@@ -34,9 +34,9 @@ class Character : public GameActor {
         float staggerPoint = 150;
         int chainResistance = 50;
 
-        float chainDuration = 0;
+        float chainDuration = 1;
         //use this for stagger bar rendering
-        float peakChainDuration = 0;
+        float peakChainDuration = 1;
 
 
         bool staggered = false;

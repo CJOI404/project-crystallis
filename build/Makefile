@@ -154,30 +154,6 @@ src/AttackCommand.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/AttackCommand.cpp.s
 .PHONY : src/AttackCommand.cpp.s
 
-src/Buttons.obj: src/Buttons.cpp.obj
-.PHONY : src/Buttons.obj
-
-# target to build an object file
-src/Buttons.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Buttons.cpp.obj
-.PHONY : src/Buttons.cpp.obj
-
-src/Buttons.i: src/Buttons.cpp.i
-.PHONY : src/Buttons.i
-
-# target to preprocess a source file
-src/Buttons.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Buttons.cpp.i
-.PHONY : src/Buttons.cpp.i
-
-src/Buttons.s: src/Buttons.cpp.s
-.PHONY : src/Buttons.s
-
-# target to generate assembly for a file
-src/Buttons.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Buttons.cpp.s
-.PHONY : src/Buttons.cpp.s
-
 src/Character.obj: src/Character.cpp.obj
 .PHONY : src/Character.obj
 
@@ -249,30 +225,6 @@ src/CommandRegistry.s: src/CommandRegistry.cpp.s
 src/CommandRegistry.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.s
 .PHONY : src/CommandRegistry.cpp.s
-
-src/DashCommand.obj: src/DashCommand.cpp.obj
-.PHONY : src/DashCommand.obj
-
-# target to build an object file
-src/DashCommand.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/DashCommand.cpp.obj
-.PHONY : src/DashCommand.cpp.obj
-
-src/DashCommand.i: src/DashCommand.cpp.i
-.PHONY : src/DashCommand.i
-
-# target to preprocess a source file
-src/DashCommand.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/DashCommand.cpp.i
-.PHONY : src/DashCommand.cpp.i
-
-src/DashCommand.s: src/DashCommand.cpp.s
-.PHONY : src/DashCommand.s
-
-# target to generate assembly for a file
-src/DashCommand.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/DashCommand.cpp.s
-.PHONY : src/DashCommand.cpp.s
 
 src/InputHandler.obj: src/InputHandler.cpp.obj
 .PHONY : src/InputHandler.obj
@@ -406,9 +358,6 @@ help:
 	@echo "... src/AttackCommand.obj"
 	@echo "... src/AttackCommand.i"
 	@echo "... src/AttackCommand.s"
-	@echo "... src/Buttons.obj"
-	@echo "... src/Buttons.i"
-	@echo "... src/Buttons.s"
 	@echo "... src/Character.obj"
 	@echo "... src/Character.i"
 	@echo "... src/Character.s"
@@ -418,9 +367,6 @@ help:
 	@echo "... src/CommandRegistry.obj"
 	@echo "... src/CommandRegistry.i"
 	@echo "... src/CommandRegistry.s"
-	@echo "... src/DashCommand.obj"
-	@echo "... src/DashCommand.i"
-	@echo "... src/DashCommand.s"
 	@echo "... src/InputHandler.obj"
 	@echo "... src/InputHandler.i"
 	@echo "... src/InputHandler.s"

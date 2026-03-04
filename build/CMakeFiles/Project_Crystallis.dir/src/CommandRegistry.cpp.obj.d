@@ -100,6 +100,11 @@ CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator_args.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
  /mnt/d/project-crystallis/include/GlobalDefs.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
+ /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h \
+ /home/calvi/pspdev/psp/include/stdint.h \
+ /home/calvi/pspdev/psp/include/sys/_intsup.h \
+ /home/calvi/pspdev/psp/include/sys/_stdint.h \
  /mnt/d/project-crystallis/include/Character.h \
  /mnt/d/project-crystallis/include/GameActor.h \
  /mnt/d/project-crystallis/include/Component.h \
@@ -147,7 +152,6 @@ CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj: \
  /home/calvi/pspdev/psp/include/pthread.h \
  /home/calvi/pspdev/psp/include/pte_types.h \
  /home/calvi/pspdev/psp/include/sys/types.h \
- /home/calvi/pspdev/psp/include/sys/_stdint.h \
  /home/calvi/pspdev/psp/include/machine/endian.h \
  /home/calvi/pspdev/psp/include/machine/_endian.h \
  /home/calvi/pspdev/psp/include/sys/select.h \
@@ -167,9 +171,6 @@ CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj: \
  /home/calvi/pspdev/psp/include/sched.h \
  /home/calvi/pspdev/psp/include/signal.h \
  /home/calvi/pspdev/psp/include/sys/signal.h \
- /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h \
- /home/calvi/pspdev/psp/include/stdint.h \
- /home/calvi/pspdev/psp/include/sys/_intsup.h \
  /home/calvi/pspdev/psp/include/bits/posix_opt.h \
  /home/calvi/pspdev/psp/include/sys/_pthreadtypes.h \
  /home/calvi/pspdev/psp/include/time.h \
@@ -200,4 +201,8 @@ CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/codecvt.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/basic_file.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++io.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/bits/fstream.tcc
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/fstream.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstring \
+ /home/calvi/pspdev/psp/include/string.h \
+ /home/calvi/pspdev/psp/include/strings.h \
+ /home/calvi/pspdev/psp/include/sys/string.h

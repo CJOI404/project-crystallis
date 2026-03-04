@@ -17,10 +17,10 @@ Menu::Menu(){
     menuState = CommandMenu;
 
     //these options will never change, can be initialized here
-    options[0] = Button("ABILITIES");
-    options[1] = Button("AUTO BATTLE");
-    options[2] = Button("TECHNIQUES");
-    options[3] = Button("ITEMS");
+    options[0] = "ABILITIES";
+    options[1] = "AUTO BATTLE";
+    options[2] = "TECHNIQUES";
+    options[3] = "ITEMS";
 
     //abilities array must be loaded from all of the character's ablities dynamically, once when the paradigm is shifted.
     //this is temporary for testing.
@@ -31,7 +31,6 @@ Menu::Menu(){
     //     abilities[i] = Commands::commandList.at(i);
     // }
 
-    options[0].highlighted = true;
 }
 
 void Menu::setActiveCharacter(Character* character){
@@ -40,35 +39,27 @@ void Menu::setActiveCharacter(Character* character){
 
 void Menu::cursorDown(){
     if (optionMax > selectedIndex){
-        options[selectedIndex].highlighted = false;
         selectedIndex++;
-        options[selectedIndex].highlighted = true;
     } 
 
 }
 
 void Menu::cursorUp(){
     if (0 < selectedIndex){
-        options[selectedIndex].highlighted = false;
         selectedIndex--;
-        options[selectedIndex].highlighted = true;
     } 
 }
 
 void Menu::cursorLeft(){
     if (selectedIndex >= 4){
-        options[selectedIndex].highlighted = false;
         selectedIndex -= 4;
-        options[selectedIndex].highlighted = true;
     } 
 
 }
 
 void Menu::cursorRight(){
     if (selectedIndex <= (optionMax - 4)){
-        options[selectedIndex].highlighted = false;
         selectedIndex += 4;
-        options[selectedIndex].highlighted = true;
     } 
 }
 
@@ -187,7 +178,7 @@ void Menu::drawMenu(){
                 Colours colour = Colours::LIGHTGREY;
                 if (selectedIndex == i) colour = Colours::RED;
                 UI::drawRect(currX, currY, buttonWidth, buttonHeight, colour);
-                UI::drawString(currX + 5, currY + 5, 0xFFFFFFFF, 0.4, 0.25, options[i].text);
+                UI::drawString(currX + 5, currY + 5, 0xFFFFFFFF, 0.4, 0.25, options[i]);
                 currY += buttonHeight + padding;
             }
             break;

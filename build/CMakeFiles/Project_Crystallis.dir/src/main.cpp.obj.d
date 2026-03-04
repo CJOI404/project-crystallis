@@ -127,8 +127,7 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /home/calvi/pspdev/psp/include/strings.h \
  /home/calvi/pspdev/psp/include/sys/string.h \
  /mnt/d/project-crystallis/include/InputHandler.h \
- /mnt/d/project-crystallis/include/Command.h \
- /mnt/d/project-crystallis/include/Character.h \
+ /home/calvi/pspdev/psp/sdk/include/pspctrl.h \
  /mnt/d/project-crystallis/include/GameActor.h \
  /mnt/d/project-crystallis/include/Component.h \
  /mnt/d/project-crystallis/include/MovementComponent.h \
@@ -180,7 +179,9 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator_args.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
+ /mnt/d/project-crystallis/include/Character.h \
  /mnt/d/project-crystallis/include/BattleCommand.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
  /home/calvi/pspdev/psp/include/c++/15.1.1/queue \
  /home/calvi/pspdev/psp/include/c++/15.1.1/deque \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_uninitialized.h \
@@ -192,8 +193,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/vector.tcc \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_heap.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_queue.h \
- /mnt/d/project-crystallis/include/DashCommand.h \
- /home/calvi/pspdev/psp/sdk/include/pspctrl.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/ctime \
  /mnt/d/project-crystallis/include/UIRender.h \
  /mnt/d/project-crystallis/include/CommandRegistry.h \
@@ -201,7 +200,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /home/calvi/pspdev/psp/include/stb_image.h \
  /home/calvi/pspdev/psp/include/assert.h \
  /mnt/d/project-crystallis/include/Menu.h \
- /mnt/d/project-crystallis/include/Button.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/iomanip \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/ios_base.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/ext/atomicity.h \

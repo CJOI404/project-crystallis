@@ -119,6 +119,11 @@ CMakeFiles/Project_Crystallis.dir/src/Character.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator_args.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
  /mnt/d/project-crystallis/include/BattleCommand.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
+ /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h \
+ /home/calvi/pspdev/psp/include/stdint.h \
+ /home/calvi/pspdev/psp/include/sys/_intsup.h \
+ /home/calvi/pspdev/psp/include/sys/_stdint.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/queue \
  /home/calvi/pspdev/psp/include/c++/15.1.1/deque \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_uninitialized.h \

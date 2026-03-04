@@ -270,6 +270,11 @@ int main() {
     commandMenu.setActiveCharacter(&playerCharacter);
 
     running = 1;
+
+    //writes to fixed text buffer
+    // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "Lightning Health: %d", playerCharacter.health);
+
+
     while(running){
 
 
@@ -290,13 +295,6 @@ int main() {
         if (state == GameState::BATTLE){
             //DO MOVEMENT
             playerCharacter.moveComp->setAnalogueMoveVals(playerInput.analogueX, playerInput.analogueY);
-
-            //EXECUTE COMMANDS (possibly change to array of commands for multi button inputs later)
-            //will probably get rid of this command system hence why commented rn
-            // Command* command = playerInput.handleInput();
-            // if (command){
-            //     command->execute(playerCharacter);
-            // }
 
             if (playerInput.getButtonDown(PSP_CTRL_SQUARE) && playerCharacter.currAtbVal >= 1){
                     playerCharacter.moveComp->dash();
@@ -326,13 +324,15 @@ int main() {
 
             commandMenu.drawMenu();
 
+            snprintf(UI::textBuffer, sizeof(UI::textBuffer), "Lightning Health: %d", playerCharacter.health);
+            UI::drawString(300, 200, 0xFFFFFFFF, 0.5, 0.5, UI::textBuffer);
 
-            UI::drawString(300, 200, 0xFFFFFFFF, 0.5, 0.5, "Lightning Health: " + std::to_string(playerCharacter.health) + "");
-            UI::drawString(50, 50, 0xFFFFFFFF, 0.5, 0.5, "Health: " + std::to_string(enemy.health) + "");
+            snprintf(UI::textBuffer, sizeof(UI::textBuffer), "Health: %d", enemy.health);
+            UI::drawString(50, 50, 0xFFFFFFFF, 0.5, 0.5, UI::textBuffer);
 
             //draw stagger
-            std::string eStagger = std::to_string(enemy.stagger);
-            std::string eStaggerPoint = std::to_string(enemy.staggerPoint);
+            // std::string eStagger = std::to_string(enemy.stagger);
+            // std::string eStaggerPoint = std::to_string(enemy.staggerPoint);
 
             UI::drawRect(230, 5, 200, 12, Colours::LIGHTGREY);
 
@@ -344,12 +344,20 @@ int main() {
                 UI::drawRect(230, 7, barPercent * 200, 8, Colours::STAGGERBAR);
             }
 
-            eStagger = eStagger.substr(0, eStagger.find('.') + 3);
-            eStaggerPoint = eStaggerPoint.substr(0, eStaggerPoint.find('.') + 3);
-            
+            // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "Health: %.2f", enemy.health);
 
-            if (!enemy.staggered) UI::drawString(230, 20, 0xFFFFFFFF, 0.5, 0.5, "" + eStagger + " / " + eStaggerPoint);
-            else UI::drawString(230, 20, 0xFFFFFFFF, 0.5, 0.5, "" + eStagger);
+            // eStagger = eStagger.substr(0, eStagger.find('.') + 3);
+            // eStaggerPoint = eStaggerPoint.substr(0, eStaggerPoint.find('.') + 3);
+            
+            
+            if (!enemy.staggered){
+                snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%.2f / %.2f", enemy.stagger, enemy.staggerPoint);
+                UI::drawString(230, 20, 0xFFFFFFFF, 0.5, 0.5, UI::textBuffer);
+            } 
+            else {
+                snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%.2f", enemy.stagger);
+                UI::drawString(230, 20, 0xFFFFFFFF, 0.5, 0.5, UI::textBuffer);
+            }
 
             //draw health bar
 
@@ -378,9 +386,9 @@ int main() {
             // std::string playerHealth = "HEALTH: " + std::to_string(playerCharacter.health);
             // std::string fireResistance = "HEALTH: " + std::to_string(playerCharacter.health);
 
-            UI::drawString(10, 5, 0xFFFFFFFF, 0.8, 0.8, "HEALTH: " + std::to_string(playerCharacter.health) + "");
-            UI::drawString(10, 25, 0xFFFFFFFF, 0.4, 0.4, "RESISTANCES:");
-            UI::drawString(10, 45, 0xFFFFFFFF, 0.3, 0.3, "FIRE: " + std::to_string(playerCharacter.resistances[Element::FIRE]));
+            // UI::drawString(10, 5, 0xFFFFFFFF, 0.8, 0.8, "HEALTH: " + std::to_string(playerCharacter.health) + "");
+            // UI::drawString(10, 25, 0xFFFFFFFF, 0.4, 0.4, "RESISTANCES:");
+            // UI::drawString(10, 45, 0xFFFFFFFF, 0.3, 0.3, "FIRE: " + std::to_string(playerCharacter.resistances[Element::FIRE]));
 
 
             if (playerInput.getButtonDown(PSP_CTRL_RTRIGGER) || playerInput.getButtonDown(PSP_CTRL_CIRCLE)){

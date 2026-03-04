@@ -1,13 +1,15 @@
 #include "AttackCommand.h"
+#include <cstring>
 
 AttackCommand::AttackCommand(){
 
 }
 
 AttackCommand::AttackCommand(CommandData& cmdData){
-    this->name = cmdData.name;
+    memcpy(name, cmdData.name, sizeof(name));
     this->cost = cmdData.cost;
-    this->type = cmdData.type;
+    // this->type = cmdData.type;
+    memcpy(type, cmdData.type, sizeof(type));
     this->paradigm = cmdData.paradigm;
     this->atkDmgScale = cmdData.atkDmgScale;
     this->ravDmgScale = cmdData.ravDmgScale;
@@ -26,33 +28,6 @@ AttackCommand::AttackCommand(CommandData& cmdData){
     this->element = cmdData.element;
 }
 
-AttackCommand::AttackCommand(std::string name, float atkDmgScale, float ravDmgScale, float chainValue, int atbCost){
-    this->name = name;
-    this->atkDmgScale = atkDmgScale;
-    this->ravDmgScale = ravDmgScale;
-    this->chain = chainValue;
-    this->cost = atbCost;
-}
-
-AttackCommand::AttackCommand(std::string name, float atkDmgScale, float ravDmgScale, float chainValue, int atbCost, float useTime){
-    this->name = name;
-    this->atkDmgScale = atkDmgScale;
-    this->ravDmgScale = ravDmgScale;
-    this->chain = chainValue;
-    this->cost = atbCost;
-    this->useTime = useTime;
-}
-
-AttackCommand::AttackCommand(std::string name, float atkDmgScale, float ravDmgScale, float chainValue, int atbCost, float duration, float useTime){
-    this->name = name;
-    this->atkDmgScale = atkDmgScale;
-    this->ravDmgScale = ravDmgScale;
-    this->chain = chainValue;
-    this->cost = atbCost;
-    this->duration = duration;
-    this->useTime = useTime;
-}
-
 void AttackCommand::execute(Character* sender, Character* receiver){
     if (receiver->currCommand == nullptr || receiver->currCommand->keep <= sender->currCommand->cut){
 
@@ -65,8 +40,8 @@ void AttackCommand::execute(Character* sender, Character* receiver){
             //full dmg calculation (work in progress)
 
         //Base damage:
-        float baseAtkDmg = (sender->atkDamage * atkDmgScale);
-        float baseRavDmg = (sender->ravDamage * ravDmgScale);
+        float atkDmg = (sender->atkDamage * atkDmgScale);
+        float ravDmg = (sender->ravDamage * ravDmgScale);
 
         //1. check the following passive abilities, multiply base dmg to get D1
         /*
@@ -81,8 +56,8 @@ void AttackCommand::execute(Character* sender, Character* receiver){
 
         float weaponAbilitiesMod = 1; //change to sum of weapon abilities when that is implemented
 
-        float d1Atk = baseAtkDmg * weaponAbilitiesMod;
-        float d1Rav = baseRavDmg * weaponAbilitiesMod;
+        atkDmg *= weaponAbilitiesMod;
+        ravDmg *= weaponAbilitiesMod;
        
         //2.Sum applicable status effects and multiply d1 to get d2
         //ONLY ONE VERSION OF EACH EFFECT CAN BE USED
@@ -97,16 +72,16 @@ void AttackCommand::execute(Character* sender, Character* receiver){
         */
         float statusEffectsMod = 1; //implement when status effects are fully implemented
 
-        float d2Atk = d1Atk * statusEffectsMod;
-        float d2Rav = d1Rav * statusEffectsMod;
+        atkDmg *= statusEffectsMod;
+        ravDmg *= statusEffectsMod;
 
         //3. Get lower limit for random damage factor
-        float d2lAtk = (1 - variation) * d2Atk;
-        float d2lRav = (1 - variation) * d2Rav;
+        float atkDmgL = (1 - variation) * atkDmg;
+        float ravDmgL = (1 - variation) * atkDmg;
 
         //4. Apply chain to d2 get d3
-        float d3Atk = d2Atk * (receiver->stagger/100);
-        float d3Rav = d2Rav * (receiver->stagger/100);
+        atkDmg *= (receiver->stagger/100);
+        ravDmg *= (receiver->stagger/100);
 
         //5.Calculate bonuses 
         // (will skip for now. DONT FORGET TO ALL COMMANDO BONUS HERE WHEN DOING ROLE BONUSES)
@@ -127,51 +102,44 @@ void AttackCommand::execute(Character* sender, Character* receiver){
 
         float comRoleBonus = 1; //Ignoring role bonuses for now
 
-        float d4Atk = d3Atk * comRoleBonus;
-        float d4Rav = d3Rav * comRoleBonus;
+        atkDmg *= comRoleBonus;
+        ravDmg *= comRoleBonus;
 
         //6. Calculate element bonus
         //This checks if the Enhance Element buff aligns with the attack element
-        float d5Atk;
-        float d5Rav;
+
         if ((sender->activeBuffs[Buff::ENFIRE] && element == Element::FIRE)
             || (sender->activeBuffs[Buff::ENFROST] && element == Element::ICE)
             || (sender->activeBuffs[Buff::ENTHUNDER] && element == Element::LIGHTNING)
             || (sender->activeBuffs[Buff::ENWATER] && element == Element::WATER)){
-                d5Atk = d4Atk * 1.3;
-                d5Rav = d4Rav * 1.3;
-         }else {
-            d5Atk = d4Atk;
-            d5Rav = d4Rav;
-        }
+                atkDmg *= 1.3;
+                ravDmg *= 1.3;
+         }
 
                             // if (sender->activeBuffs[element]){
 
                             // }
+
         //7. Check passive skill deathblow conditions
         /*
             If the target's HP is less than 1.2 times the damage that would be dealt 
             before defense and resistance, damage is increased by 50%
         */
         
-        float d6Atk = d5Atk; // implement later when passive abilities are implemented
-        float d6Rav = d5Rav;
+        //float d6Atk = d5Atk; // implement later when passive abilities are implemented
+        //float d6Rav = d5Rav;
 
         //8. Calculate elemental Resistances
-        float d7Atk;
-        float d7Rav;
+
         if (element != Element::NOELEMENT){
-            d7Atk = d6Atk * receiver->getResistance(element);
-            d7Rav = d6Rav * receiver->getResistance(element);
-        } else {
-            d7Atk = d6Atk;
-            d7Rav = d6Rav;
-        }
+            atkDmg *= receiver->getResistance(element);
+            ravDmg *= receiver->getResistance(element);
+        } 
 
         //"Deprotect and deshell are subtracted directly from physical and magical resistance"
 
-        d7Atk *= receiver->getResistance(Element::PHYSICAL);
-        d7Rav *= receiver->getResistance(Element::MAGICAL);
+        atkDmg *= receiver->getResistance(Element::PHYSICAL);
+        ravDmg *= receiver->getResistance(Element::MAGICAL);
 
         //9. Calculate enemy status effects (except deprotect and deshell)
         /*
@@ -210,8 +178,8 @@ void AttackCommand::execute(Character* sender, Character* receiver){
 
         //Im ignoring ward and shield for now.
 
-        float d8Atk = d7Atk * enemyStatusModAtk;
-        float d8Rav = d7Rav * enemyStatusModRav;
+        atkDmg *= enemyStatusModAtk;
+        ravDmg *= enemyStatusModRav;
 
         //10. calculate bonus defense (sentinel abilities/bonus)
         /*
@@ -229,8 +197,8 @@ void AttackCommand::execute(Character* sender, Character* receiver){
 
         float senRoleBonus = 1; //TODO: implement role bonuses and then update here
 
-        float d9Atk = d8Atk * senRoleBonus;
-        float d9Rav = d8Rav * senRoleBonus;
+        atkDmg *= senRoleBonus;
+        ravDmg *= senRoleBonus;
 
         //TODO: This wont work until currCommand and command timings are functioning as intended.
         //May be smarter to have a "steelguard" and "mediguard" buff on a timer.
@@ -240,22 +208,20 @@ void AttackCommand::execute(Character* sender, Character* receiver){
 
         //11. Apply auto ability Fringeward 
         // (i dont even know what this is, cant be fucked to implement until way later)
-        float d10Atk = d9Atk;
-        float d10Rav = d9Rav;
+        // float d10Atk = d9Atk;
+        // float d10Rav = d9Rav;
 
         //12. Apply damage limit (implement lifted damage limit later, not sure how that works)
-        float d11Atk = d10Atk;
-        float d11Rav = d10Rav;
 
-        if (d10Atk > 99999) d11Atk = 99999;
-        if (d10Rav > 99999) d11Rav = 99999;
+        if (atkDmg > 99999) atkDmg = 99999;
+        if (ravDmg > 99999) ravDmg = 99999;
 
         //13. Account for daze staus effect
         //"If the Daze status effect is present on the target, D12 equals D11 x 2."
 
         if (receiver->activeDebuffs[Debuff::DAZE]){
-            d11Atk *= 2;
-            d11Rav *= 2;
+            atkDmg *= 2;
+            ravDmg *= 2;
         }
 
         //14. “Damage Rarely Becomes 0” passive weapon ability
@@ -275,7 +241,7 @@ void AttackCommand::execute(Character* sender, Character* receiver){
        //Will do later because im getting lazy. Having non-randomness is good for testing rn anyway
        
         //apply damage FINALLY
-        receiver->health -= (int)(d11Atk + d11Rav);
+        receiver->health -= (int)(atkDmg + ravDmg);
 
 
 

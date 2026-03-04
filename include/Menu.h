@@ -1,7 +1,6 @@
 #pragma once
 #include "GlobalDefs.h"
 #include <string>
-#include "Button.h"
 #include "BattleCommand.h"
 
 
@@ -23,7 +22,7 @@ class Menu {
         int x, y, padding;
         int buttonWidth, buttonHeight;
 
-        Button options[10];
+        const char* options[4];
         // BattleCommand* abilities[10];
         BattleCommand* items[10];
         BattleCommand* techniques[10];

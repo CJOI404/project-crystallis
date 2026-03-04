@@ -63,9 +63,9 @@ enum Paradigm{
 };
 
 struct CommandData{
-    std::string name;
+    char name[16];
     int cost;
-    std::string type;
+    char type[8];
     Paradigm paradigm;
     float atkDmgScale;
     float ravDmgScale;

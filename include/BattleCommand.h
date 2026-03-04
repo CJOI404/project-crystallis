@@ -1,25 +1,26 @@
 #pragma once
 #include <string>
 #include "GlobalDefs.h"
+#include <cstdint>
 
 class Character;
 
 class BattleCommand{
     public:
-        std::string name = "";
-        int cost = 0;
-        std::string type = "";
+        char name[16];
+        uint8_t cost = 0;
+        char type[8];
         Paradigm paradigm = Paradigm::COMMANDO;
         float atkDmgScale = 0;
         float ravDmgScale = 0;
         float chain = 0;
 
         //targeting type, 0 = single enemy
-        int target = 0;
+        int8_t target = 0;
         float variation = 0;
         float duration = 0;
-        int cut = 0;
-        int keep = 0;
+        int8_t cut = 0;
+        int8_t keep = 0;
         float useTime = 0.5;
         bool ev = false;
         bool pain = false;

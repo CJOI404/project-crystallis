@@ -1,26 +1,9 @@
 #pragma once
 
-#include "Command.h"
-#include "DashCommand.h"
 #include <pspctrl.h>
 
 class InputHandler{
-
-    private:
-        Command* buttonCross;
-        Command* buttonSquare;
-        Command* buttonTriangle;
-        Command* buttonCircle;
-
-        Command* buttonL;
-        Command* buttonR;
-
-        Command* buttonLeft;
-        Command* buttonRight;
-        Command* buttonUp;
-        Command* buttonDown;
-
-                                
+                   
 
     public:
         SceCtrlData gamePad;
@@ -31,11 +14,6 @@ class InputHandler{
 
         InputHandler();
 
-        ~InputHandler(){
-            delete buttonSquare;
-        }
-
-        Command* handleInput();
         void readInput();
         bool getButtonDown(PspCtrlButtons button);
 

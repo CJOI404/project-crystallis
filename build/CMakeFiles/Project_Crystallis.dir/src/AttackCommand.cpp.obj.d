@@ -99,6 +99,11 @@ CMakeFiles/Project_Crystallis.dir/src/AttackCommand.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator_args.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
  /mnt/d/project-crystallis/include/GlobalDefs.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
+ /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h \
+ /home/calvi/pspdev/psp/include/stdint.h \
+ /home/calvi/pspdev/psp/include/sys/_intsup.h \
+ /home/calvi/pspdev/psp/include/sys/_stdint.h \
  /mnt/d/project-crystallis/include/Character.h \
  /mnt/d/project-crystallis/include/GameActor.h \
  /mnt/d/project-crystallis/include/Component.h \
@@ -130,4 +135,8 @@ CMakeFiles/Project_Crystallis.dir/src/AttackCommand.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_bvector.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/vector.tcc \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_heap.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_queue.h
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_queue.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstring \
+ /home/calvi/pspdev/psp/include/string.h \
+ /home/calvi/pspdev/psp/include/strings.h \
+ /home/calvi/pspdev/psp/include/sys/string.h

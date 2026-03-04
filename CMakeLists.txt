@@ -2,6 +2,18 @@ cmake_minimum_required(VERSION 3.11)
 
 project(Project_Crystallis)
 
+# Force the build type to Debug
+set(CMAKE_BUILD_TYPE Debug)
+
+# -g: Include debug symbols
+# -O0: Do not optimize (stops code from being "shuffled")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -O0")
+
+# CRITICAL: Prevent the toolchain from stripping the ELF
+set(STRIP_SELF FALSE)
+set(CMAKE_STRIP FALSE)
+
 file(GLOB_RECURSE PROJECT_SOURCES CONFIGURE_DEPENDS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/*.c
@@ -31,8 +43,6 @@ create_pbp_file(
     TITLE ${PROJECT_NAME}
     VERSION 01.00
 )
-
-
 
 # # Define where your assets are
 # set(ASSET_FILES

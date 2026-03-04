@@ -1,5 +1,6 @@
 #include "CommandRegistry.h"
 #include <fstream>
+#include <cstring>
 
 
 
@@ -43,7 +44,6 @@ void CommandRegistry::loadSkills(const char* skillSheetPath){
             start = end + 1;
         }
 
-        // Add the last value (after the final comma)
         if (start < line.length()) {
             data[count++] = line.substr(start);
         }
@@ -51,9 +51,14 @@ void CommandRegistry::loadSkills(const char* skillSheetPath){
         BattleCommand* com = nullptr;
         CommandData cData = {}; 
 
-            cData.name = data[0];
+            strncpy(cData.name, data[0].c_str(), sizeof(cData.name) - 1);
+            cData.name[sizeof(cData.name) - 1] = '\0';
+
             cData.cost = std::atoi(data[1].c_str());
-            cData.type = data[2];
+
+            strncpy(cData.type, data[2].c_str(), sizeof(cData.type) - 1);
+            cData.type[sizeof(cData.type) - 1] = '\0';
+            // cData.type = data[2];
 
             if (data[3] == "COMMANDO") cData.paradigm = Paradigm::COMMANDO;
             else if (data[3] == "RAVAGER") cData.paradigm = Paradigm::RAVAGER;
@@ -97,7 +102,7 @@ void CommandRegistry::loadSkills(const char* skillSheetPath){
 
 
         //data[2] determines type
-        if (cData.type == "ATTACK") {com = new AttackCommand(cData);}
+        if (strcmp(cData.type, "ATTACK") == 0) {com = new AttackCommand(cData);}
 
         
         if (com) commandList.push_back(com);

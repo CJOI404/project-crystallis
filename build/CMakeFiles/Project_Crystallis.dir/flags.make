@@ -6,5 +6,5 @@ CXX_DEFINES = -DPSP -D_PSP_FW_VERSION=600 -D__PSP__
 
 CXX_INCLUDES = -I/mnt/d/project-crystallis/include -I/mnt/d/project-crystallis/libraries
 
-CXX_FLAGS = -I/home/calvi/pspdev/psp/include -I/home/calvi/pspdev/psp/sdk/include -DPSP
+CXX_FLAGS = -I/home/calvi/pspdev/psp/include -I/home/calvi/pspdev/psp/sdk/include -DPSP -g -O0 -g
 
