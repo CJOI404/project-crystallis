@@ -1,6 +1,7 @@
 #include "Menu.h"
 #include "UIRender.h"
 #include "AttackCommand.h"
+#include "CommandRegistry.h"
 
 Menu::Menu(){
     x = 10;
@@ -8,7 +9,7 @@ Menu::Menu(){
     padding = 5;
     selectedIndex = 0;
     optionMax = 3;
-    abilitiesMax = 1;
+    abilitiesMax = 9;
 
     buttonWidth = 110;
     buttonHeight = 15;
@@ -23,8 +24,12 @@ Menu::Menu(){
 
     //abilities array must be loaded from all of the character's ablities dynamically, once when the paradigm is shifted.
     //this is temporary for testing.
-    abilities[0] = new AttackCommand("ATTACK", 1.0, 0, 0.5, 1, 3.3, 1);
-    abilities[1] = new AttackCommand("RUIN", 0, 1.0, 10, 1, 0.9, 1);
+    // abilities[0] = new AttackCommand("ATTACK", 1.0, 0, 0.5, 1, 3.3, 1);
+    // abilities[1] = new AttackCommand("RUIN", 0, 1.0, 10, 1, 0.9, 1);
+
+    for (int i = 0; i < 10; i++){
+        abilities[i] = Commands::commandList.at(i);
+    }
 
     options[0].highlighted = true;
 }
@@ -172,7 +177,7 @@ void Menu::earlyExecuteButton(){
 }
 
 void Menu::drawMenu(){
-    // UI::drawRect(50, 200, 200, 20, 0x000000);
+
     int currX = x;
     int currY = y;
 
@@ -209,7 +214,7 @@ void Menu::drawMenu(){
                 Colours colour = Colours::LIGHTGREY;
                 if (selectedIndex == i) colour = Colours::RED;
                 UI::drawRect(currX, currY, buttonWidth, buttonHeight, colour);
-                UI::drawString(currX + 5, currY + 5, 0xFFFFFFFF, 0.4, 0.25, activeCharacter->enemyList.at(i)->name);
+                UI::drawString(currX + 5, currY + 5, 0xFFFFFFFF, 0.4, 0.4, activeCharacter->enemyList.at(i)->name);
                 currY += buttonHeight + padding;
             }
 
@@ -219,7 +224,7 @@ void Menu::drawMenu(){
     //draw abilities in queue
     int atbSpacing = 0;
     for (int i = 0; i < activeCharacter->commandQueue.size(); i++){
-        UI::drawString(10 + atbSpacing, 150, 0xFFFFFFFF, 0.3, 0.1, activeCharacter->commandQueue.at(i)->name); 
+        UI::drawString(10 + atbSpacing, 150, 0xFFFFFFFF, 0.3, 0.3, activeCharacter->commandQueue.at(i)->name); 
         atbSpacing += 50;              
     }
 

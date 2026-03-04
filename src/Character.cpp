@@ -2,6 +2,7 @@
 
 Character::Character(){
 
+
     characterState = Waiting;
 
     //add components here 
@@ -34,6 +35,16 @@ Character::Character(){
 
 }
 
+Character::~Character(){
+    delete moveComp;
+    for (BattleCommand* p : commandQueue){
+        delete p;
+    }
+    for (Character* p : enemyList){
+        delete p;
+    }
+}
+
 void Character::setResistance(Element element, float val){
     resistances[element] = val;
 }
@@ -62,6 +73,7 @@ void Character::update(float dt){
         stagger += 100;
         staggered = true;
         chainDuration = (chainDuration * 2) + 7;
+        peakChainDuration = chainDuration;
     }
     //calculate chain fall, reset stagger/chain bonus is duration is over after stagger
     chainDuration -= dt;

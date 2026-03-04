@@ -226,6 +226,30 @@ src/Command.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Command.cpp.s
 .PHONY : src/Command.cpp.s
 
+src/CommandRegistry.obj: src/CommandRegistry.cpp.obj
+.PHONY : src/CommandRegistry.obj
+
+# target to build an object file
+src/CommandRegistry.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj
+.PHONY : src/CommandRegistry.cpp.obj
+
+src/CommandRegistry.i: src/CommandRegistry.cpp.i
+.PHONY : src/CommandRegistry.i
+
+# target to preprocess a source file
+src/CommandRegistry.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.i
+.PHONY : src/CommandRegistry.cpp.i
+
+src/CommandRegistry.s: src/CommandRegistry.cpp.s
+.PHONY : src/CommandRegistry.s
+
+# target to generate assembly for a file
+src/CommandRegistry.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.s
+.PHONY : src/CommandRegistry.cpp.s
+
 src/DashCommand.obj: src/DashCommand.cpp.obj
 .PHONY : src/DashCommand.obj
 
@@ -391,6 +415,9 @@ help:
 	@echo "... src/Command.obj"
 	@echo "... src/Command.i"
 	@echo "... src/Command.s"
+	@echo "... src/CommandRegistry.obj"
+	@echo "... src/CommandRegistry.i"
+	@echo "... src/CommandRegistry.s"
 	@echo "... src/DashCommand.obj"
 	@echo "... src/DashCommand.i"
 	@echo "... src/DashCommand.s"

@@ -98,6 +98,7 @@ CMakeFiles/Project_Crystallis.dir/src/AttackCommand.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator_args.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
+ /mnt/d/project-crystallis/include/GlobalDefs.h \
  /mnt/d/project-crystallis/include/Character.h \
  /mnt/d/project-crystallis/include/GameActor.h \
  /mnt/d/project-crystallis/include/Component.h \
@@ -119,7 +120,6 @@ CMakeFiles/Project_Crystallis.dir/src/AttackCommand.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_hermite.tcc \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_laguerre.tcc \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/riemann_zeta.tcc \
- /mnt/d/project-crystallis/include/GlobalDefs.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/queue \
  /home/calvi/pspdev/psp/include/c++/15.1.1/deque \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_uninitialized.h \

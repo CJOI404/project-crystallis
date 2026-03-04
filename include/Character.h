@@ -28,20 +28,21 @@ class Character : public GameActor {
         std::string name = "";
 
         int health = 0;
+        int maxHealth = 0;
 
         float stagger = 100;
         float staggerPoint = 150;
         int chainResistance = 50;
 
         float chainDuration = 0;
+        //use this for stagger bar rendering
+        float peakChainDuration = 0;
 
-        // int baseChainFallSpeed = 1;
-        // float currChainFallSpeed = 1;
 
         bool staggered = false;
 
-        int atkDamage = 10;
-        int ravDamage  = 8;
+        int atkDamage = 400;
+        int ravDamage  = 300;
 
         int atbSegments = 5;
         int atbRechargeSpeed = 1;
@@ -49,6 +50,12 @@ class Character : public GameActor {
         int atbChargeCooldown = 2;
         float currAtbCooldownVal = 0;
         float currCommandCooldownVal = 0;
+
+        //character cast time percentages; mods the skill useTime. off = offensive roles (com rav sab)
+        //sentinal is not included since cast time is generally not really important (guard takes longer on purpose for example)
+        float offCastSpeed = 1;
+        float medCastSpeed = 1;
+        float synCastSpeed = 1;
 
         int targetIndex = -1;
 
@@ -70,6 +77,7 @@ class Character : public GameActor {
         float getImmunity(Debuff debuff);
 
         Character();
+        ~Character();
 
         void update(float dt) override;
         

@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Project_Crystallis.dir/src/Character.cpp.obj.d"
   "CMakeFiles/Project_Crystallis.dir/src/Command.cpp.obj"
   "CMakeFiles/Project_Crystallis.dir/src/Command.cpp.obj.d"
+  "CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj"
+  "CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj.d"
   "CMakeFiles/Project_Crystallis.dir/src/DashCommand.cpp.obj"
   "CMakeFiles/Project_Crystallis.dir/src/DashCommand.cpp.obj.d"
   "CMakeFiles/Project_Crystallis.dir/src/InputHandler.cpp.obj"

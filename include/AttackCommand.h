@@ -6,12 +6,12 @@
 class AttackCommand : public BattleCommand {
 
     public:
-        float atkDmgScale = 0;
-        float ravDmgScale = 0;
-        float chainValue = 0;
-        float duration = 0;
+
+        //this will likely have to be changed later
+        Element element;
 
         AttackCommand();
+        AttackCommand(CommandData& cmdData);
         AttackCommand(std::string name, float atkDmgScale, float ravDmgScale, float chainValue, int atbCost);
         AttackCommand(std::string name, float atkDmgScale, float ravDmgScale, float chainValue, int atbCost, float useTime);
         AttackCommand(std::string name, float atkDmgScale, float ravDmgScale, float chainValue, int atbCost, float duration, float useTime);

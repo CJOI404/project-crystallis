@@ -12,11 +12,14 @@
 #include <ctime>
 #include <string>
 #include "UIRender.h"
+#include "CommandRegistry.h"
 #include "GlobalDefs.h"
+#include <sstream>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
 #include <Menu.h>
+#include <iomanip>
 
 PSP_MODULE_INFO("Project Crystallis", 0, 1, 0);
 PSP_MAIN_THREAD_ATTR(THREAD_ATTR_VFPU | THREAD_ATTR_USER);
@@ -224,28 +227,28 @@ int main() {
     // Setup the library used for rendering
     initGu();
 
+    std::stringstream sstream;
+
     InputHandler playerInput;
     Character playerCharacter;
-    playerCharacter.health = 100;
+    playerCharacter.health = 2000;
     Character enemy;
     enemy.moveComp->color = Colours::BLUE;
-    enemy.xPos = 400;
-    enemy.name = "enemy 1";
-    enemy.health = 400;
-    enemy.staggerPoint = 110;
+    enemy.xPos = 350;
+    enemy.yPos = 70;
+    enemy.name = "ENEMY 1";
+    enemy.health = 450000;
+    enemy.maxHealth = 450000;
+    enemy.staggerPoint = 600;
 
     Character enemy2;
     enemy2.moveComp->color = Colours::LIGHTBLUE;
     enemy2.xPos = 450;
-    enemy2.name = "enemy 2";
+    enemy2.name = "ENEMY 2";
 
     //assign enemies to characters
     playerCharacter.enemyList.push_back(&enemy);
     playerCharacter.enemyList.push_back(&enemy2);
-
-    Menu commandMenu;
-
-    commandMenu.setActiveCharacter(&playerCharacter);
 
     float xMoveDir = 0;
     int xPos = 50;
@@ -258,6 +261,14 @@ int main() {
 
     //Load font data
     UI::loadFont("PSPGameFont.fnt", "PSPGameFont.png");
+
+    //Load skills
+    Commands::loadSkills("project_crystallis_skill_sheet.csv");
+
+    //start menu
+    Menu commandMenu;
+
+    commandMenu.setActiveCharacter(&playerCharacter);
 
     running = 1;
     while(running){
@@ -317,21 +328,46 @@ int main() {
             commandMenu.drawMenu();
 
 
-            UI::drawString(300, 200, 0xFFFFFFFF, 0.4, 0.2, "Lightning Health: " + std::to_string(playerCharacter.health) + "");
-            UI::drawString(10, 5, 0xFFFFFFFF, 0.4, 0.3, "Enemy Health: " + std::to_string(enemy.health) + "");
-            UI::drawString(250, 5, 0xFFFFFFFF, 0.4, 0.3, "Stagger: " + std::to_string(enemy.stagger) + " / " + std::to_string(enemy.staggerPoint));
+            UI::drawString(300, 200, 0xFFFFFFFF, 0.5, 0.5, "Lightning Health: " + std::to_string(playerCharacter.health) + "");
+            UI::drawString(50, 50, 0xFFFFFFFF, 0.5, 0.5, "Health: " + std::to_string(enemy.health) + "");
+
+            //draw stagger
+            std::string eStagger = std::to_string(enemy.stagger);
+            std::string eStaggerPoint = std::to_string(enemy.staggerPoint);
+
+            UI::drawRect(230, 5, 200, 12, Colours::LIGHTGREY);
+
+            float barPercent;
+            if (!enemy.staggered) barPercent = ((enemy.stagger - 100) / (enemy.staggerPoint - 100)) * ((enemy.chainDuration / enemy.peakChainDuration));
+            else barPercent =  (enemy.chainDuration / enemy.peakChainDuration);
+
+            if (enemy.stagger > 100){
+                UI::drawRect(230, 7, barPercent * 200, 8, Colours::STAGGERBAR);
+            }
+
+            eStagger = eStagger.substr(0, eStagger.find('.') + 3);
+            eStaggerPoint = eStaggerPoint.substr(0, eStaggerPoint.find('.') + 3);
+            
+
+            if (!enemy.staggered) UI::drawString(230, 20, 0xFFFFFFFF, 0.5, 0.5, "" + eStagger + " / " + eStaggerPoint);
+            else UI::drawString(230, 20, 0xFFFFFFFF, 0.5, 0.5, "" + eStagger);
+
+            //draw health bar
+
+            UI::drawRect(enemy.xPos - 60, enemy.yPos - 10, 120, 6, Colours::LIGHTGREY);
+            UI::drawRect(enemy.xPos - 60, enemy.yPos - 9, ((float) enemy.health / enemy.maxHealth) * 120, 4, Colours::LIGHTGREEN);
 
             if ((playerInput.gamePad.Buttons & PSP_CTRL_RTRIGGER) && !(playerInput.oldGamePad.Buttons & PSP_CTRL_RTRIGGER)){
                 state = GameState::SCAN;
             }
 
             //temp draw atb bar
-            UI::drawRect(10, 160, playerCharacter.atbSegments * 50, 12, Colours::RED);
-            UI::drawRect(10, 162, playerCharacter.currAtbVal * 50, 8, Colours::BLUE);
+            UI::drawRect(10, 160, playerCharacter.atbSegments * 50, 12, Colours::LIGHTGREY);
+            UI::drawRect(10, 162, playerCharacter.currAtbVal * 50, 8, Colours::LIGHTBLUE);
 
-            //temp draw stagger bar
-            UI::drawString(250, 40, 0xFFFFFFFF, 0.4, 0.3, "Duration: " + std::to_string(enemy.chainDuration) + "");
-            if (enemy.staggered) UI::drawString(250, 80, 0xFFFFFFFF, 0.4, 0.3, "STAGGERED!!");
+            //temp draw stagger info
+            // UI::drawString(250, 40, 0xFFFFFFFF, 0.5, 0.5, "Duration: " + std::to_string(enemy.chainDuration) + "");
+            if (enemy.staggered) UI::drawString(320, 20, 0xFFFFFFFF, 0.5, 0.5, "STAGGERED!!");
 
 
             //UPDATE ACTORS
@@ -343,9 +379,9 @@ int main() {
             // std::string playerHealth = "HEALTH: " + std::to_string(playerCharacter.health);
             // std::string fireResistance = "HEALTH: " + std::to_string(playerCharacter.health);
 
-            UI::drawString(10, 5, 0xFFFFFFFF, 0.8, 0.3, "HEALTH: " + std::to_string(playerCharacter.health) + "");
-            UI::drawString(10, 25, 0xFFFFFFFF, 0.4, 0.3, "RESISTANCES:");
-            UI::drawString(10, 45, 0xFFFFFFFF, 0.3, 0.2, "FIRE: " + std::to_string(playerCharacter.resistances[Element::FIRE]));
+            UI::drawString(10, 5, 0xFFFFFFFF, 0.8, 0.8, "HEALTH: " + std::to_string(playerCharacter.health) + "");
+            UI::drawString(10, 25, 0xFFFFFFFF, 0.4, 0.4, "RESISTANCES:");
+            UI::drawString(10, 45, 0xFFFFFFFF, 0.3, 0.3, "FIRE: " + std::to_string(playerCharacter.resistances[Element::FIRE]));
 
 
             if (playerInput.getButtonDown(PSP_CTRL_RTRIGGER) || playerInput.getButtonDown(PSP_CTRL_CIRCLE)){

@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 enum Element{
     FIRE,
@@ -9,7 +10,8 @@ enum Element{
     EARTH,
     PHYSICAL,
     MAGICAL,
-    ELEMENTCOUNT
+    ELEMENTCOUNT,
+    NOELEMENT
 };
 
 enum Debuff{
@@ -25,7 +27,8 @@ enum Debuff{
     CURSE,
     DAZE,
     PROVOKE,
-    DEBUFFCOUNT
+    DEBUFFCOUNT,
+    NODEBUFF
 };
 
 enum Buff{
@@ -38,13 +41,46 @@ enum Buff{
     ENTHUNDER,
     ENWATER,
     PROTECT,
+    PROTECTRA,
     SHELL,
+    SHELLRA,
     BARFIRE,
-    BARFRONT,
+    BARFROST,
     BARTHUNDER,
     BARWATER,
     VEIL,
-    BUFFCOUNT
+    BUFFCOUNT,
+    NOBUFF
+};
+
+enum Paradigm{
+    COMMANDO,
+    RAVAGER,
+    SENTINEL,
+    MEDIC,
+    SABOTEUR,
+    SYNERGIST
+};
+
+struct CommandData{
+    std::string name;
+    int cost;
+    std::string type;
+    Paradigm paradigm;
+    float atkDmgScale;
+    float ravDmgScale;
+    float chain;
+    int target;
+    float variation;
+    float duration;
+    int cut;
+    int keep;
+    float useTime;
+    bool ev;
+    bool pain;
+    bool fog;
+    float rise;
+    Element element;
 };
 
 //Colours
@@ -53,5 +89,7 @@ enum Colours{
     RED = 0xFF0000FF,
     BLUE = 0xFFFF0000,
     LIGHTBLUE = 0xFFFFDD1C,
-    LIGHTGREY = 0xFFB0B0B0
+    LIGHTGREY = 0xFF8a928c,
+    STAGGERBAR = 0xFF67b4e6,
+    LIGHTGREEN = 0xFF63c47c
 };

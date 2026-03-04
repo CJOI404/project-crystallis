@@ -138,8 +138,8 @@ namespace UI {
             // Top-Left
             vertices[0].u = fontData[j].x; 
             vertices[0].v = fontData[j].y;
-            vertices[0].x = currentX; 
-            vertices[0].y = y; 
+            vertices[0].x = currentX + (fontData[j].xoffset * xScale); 
+            vertices[0].y = y + (fontData[j].yoffset * yScale); 
             vertices[0].z = 0;
 
             // Bottom-Right

@@ -3,20 +3,43 @@
 AttackCommand::AttackCommand(){
 
 }
+
+AttackCommand::AttackCommand(CommandData& cmdData){
+    this->name = cmdData.name;
+    this->cost = cmdData.cost;
+    this->type = cmdData.type;
+    this->paradigm = cmdData.paradigm;
+    this->atkDmgScale = cmdData.atkDmgScale;
+    this->ravDmgScale = cmdData.ravDmgScale;
+    this->chain = cmdData.chain;
+    this->target = cmdData.target;
+    this->variation = cmdData.variation;
+    this->duration = cmdData.duration;
+    this->cut = cmdData.cut;
+    this->keep = cmdData.keep;
+    this->useTime = cmdData.useTime;
+    this->ev = cmdData.ev;
+    this->pain = cmdData.pain;
+    this->fog = cmdData.fog;
+    this->rise = cmdData.rise;
+
+    this->element = cmdData.element;
+}
+
 AttackCommand::AttackCommand(std::string name, float atkDmgScale, float ravDmgScale, float chainValue, int atbCost){
     this->name = name;
     this->atkDmgScale = atkDmgScale;
     this->ravDmgScale = ravDmgScale;
-    this->chainValue = chainValue;
-    this->atbCost = atbCost;
+    this->chain = chainValue;
+    this->cost = atbCost;
 }
 
 AttackCommand::AttackCommand(std::string name, float atkDmgScale, float ravDmgScale, float chainValue, int atbCost, float useTime){
     this->name = name;
     this->atkDmgScale = atkDmgScale;
     this->ravDmgScale = ravDmgScale;
-    this->chainValue = chainValue;
-    this->atbCost = atbCost;
+    this->chain = chainValue;
+    this->cost = atbCost;
     this->useTime = useTime;
 }
 
@@ -24,8 +47,8 @@ AttackCommand::AttackCommand(std::string name, float atkDmgScale, float ravDmgSc
     this->name = name;
     this->atkDmgScale = atkDmgScale;
     this->ravDmgScale = ravDmgScale;
-    this->chainValue = chainValue;
-    this->atbCost = atbCost;
+    this->chain = chainValue;
+    this->cost = atbCost;
     this->duration = duration;
     this->useTime = useTime;
 }
@@ -33,15 +56,241 @@ AttackCommand::AttackCommand(std::string name, float atkDmgScale, float ravDmgSc
 void AttackCommand::execute(Character* sender, Character* receiver){
     if (receiver->currCommand == nullptr || receiver->currCommand->keep <= sender->currCommand->cut){
 
-        receiver->health -= sender->atkDamage * atkDmgScale * (receiver->stagger/100);
-        receiver->health -= sender->ravDamage * ravDmgScale * (receiver->stagger/100);
+        
+            //simple dmg calculation
+        // receiver->health -= sender->atkDamage * atkDmgScale * (receiver->stagger/100);
+        // receiver->health -= sender->ravDamage * ravDmgScale * (receiver->stagger/100);
 
+            
+            //full dmg calculation (work in progress)
+
+        //Base damage:
+        float baseAtkDmg = (sender->atkDamage * atkDmgScale);
+        float baseRavDmg = (sender->ravDamage * ravDmgScale);
+
+        //1. check the following passive abilities, multiply base dmg to get D1
+        /*
+            Adrenaline                  *1.2 (+20%)
+            Critical: Power Surge       *1.2 (+20%)
+            Critical: Power Surge II    *1.4 (+40%)
+            Ally KO: Power Surge        *1.1 - *2.2 (+110% - 220%)
+            Ally KO: Power Surge II     *1.3 - *2.6 (+130% - 260%)
+            High HP: Power Surge        *1.2 (+20%)
+            Low HP: Power Surge         *1.5 (+50%)
+        */
+
+        float weaponAbilitiesMod = 1; //change to sum of weapon abilities when that is implemented
+
+        float d1Atk = baseAtkDmg * weaponAbilitiesMod;
+        float d1Rav = baseRavDmg * weaponAbilitiesMod;
+       
+        //2.Sum applicable status effects and multiply d1 to get d2
+        //ONLY ONE VERSION OF EACH EFFECT CAN BE USED
+        /*
+            Bravery (atk only)          *1.4
+            Bravera (atk only)          *1.8
+            Debrave (atk only)          *0.1
+            Faith (rav only)            *1.4
+            Faithra (rav only)          *1.8
+            Defaith (rav only)          *0.1
+       
+        */
+        float statusEffectsMod = 1; //implement when status effects are fully implemented
+
+        float d2Atk = d1Atk * statusEffectsMod;
+        float d2Rav = d1Rav * statusEffectsMod;
+
+        //3. Get lower limit for random damage factor
+        float d2lAtk = (1 - variation) * d2Atk;
+        float d2lRav = (1 - variation) * d2Rav;
+
+        //4. Apply chain to d2 get d3
+        float d3Atk = d2Atk * (receiver->stagger/100);
+        float d3Rav = d2Rav * (receiver->stagger/100);
+
+        //5.Calculate bonuses 
+        // (will skip for now. DONT FORGET TO ALL COMMANDO BONUS HERE WHEN DOING ROLE BONUSES)
+        // The rest of these seem stupid and not worth implementing, except maybe vendetta and entrench
+        /*
+            | Type | Ability                                  Effect |
+            |========================================================|
+            | Both | Commando Role Bonus ................ +5% - 180% |
+            | Both | X Elemental Damage% Up ............  +20% - 50% |
+            | Phys | Enfeeblement ............................. -50% |
+            | Phys | Hindrance ................................ -30% |
+            | Mag  | Stiffed Magic ............................ -50% |
+            | Mag  | Fettered Magic ........................... -30% |
+            | Phys | Vendetta .......................... +10% - 300% |
+            | Phys | Entrench .......................... +30% - 150% |
+            *========================================================*
+        */
+
+        float comRoleBonus = 1; //Ignoring role bonuses for now
+
+        float d4Atk = d3Atk * comRoleBonus;
+        float d4Rav = d3Rav * comRoleBonus;
+
+        //6. Calculate element bonus
+        //This checks if the Enhance Element buff aligns with the attack element
+        float d5Atk;
+        float d5Rav;
+        if ((sender->activeBuffs[Buff::ENFIRE] && element == Element::FIRE)
+            || (sender->activeBuffs[Buff::ENFROST] && element == Element::ICE)
+            || (sender->activeBuffs[Buff::ENTHUNDER] && element == Element::LIGHTNING)
+            || (sender->activeBuffs[Buff::ENWATER] && element == Element::WATER)){
+                d5Atk = d4Atk * 1.3;
+                d5Rav = d4Rav * 1.3;
+         }else {
+            d5Atk = d4Atk;
+            d5Rav = d4Rav;
+        }
+
+                            // if (sender->activeBuffs[element]){
+
+                            // }
+        //7. Check passive skill deathblow conditions
+        /*
+            If the target's HP is less than 1.2 times the damage that would be dealt 
+            before defense and resistance, damage is increased by 50%
+        */
+        
+        float d6Atk = d5Atk; // implement later when passive abilities are implemented
+        float d6Rav = d5Rav;
+
+        //8. Calculate elemental Resistances
+        float d7Atk;
+        float d7Rav;
+        if (element != Element::NOELEMENT){
+            d7Atk = d6Atk * receiver->getResistance(element);
+            d7Rav = d6Rav * receiver->getResistance(element);
+        } else {
+            d7Atk = d6Atk;
+            d7Rav = d6Rav;
+        }
+
+        //"Deprotect and deshell are subtracted directly from physical and magical resistance"
+
+        d7Atk *= receiver->getResistance(Element::PHYSICAL);
+        d7Rav *= receiver->getResistance(Element::MAGICAL);
+
+        //9. Calculate enemy status effects (except deprotect and deshell)
+        /*
+                _____________________________________________
+                | Type | Status Effect                 Effect |
+                |=============================================|
+                | Phys | Deprotect ..................... -89% |
+                | Mag  | Deshell ....................... -89% |
+                | Phys | Protect ..................... x 0.67 |
+                | Phys | Protectra ................... x 0.50 |
+                | Mag  | Shell ....................... x 0.67 |
+                | Mag  | Shellra ..................... x 0.50 |
+                | Both | Bar-(Element) ............... x 0.50 |
+                | Both | Deathward ................... x 0.75 |
+                | Both | Critical: Shield ............ x 0.85 |
+                | Both | Critical: Shield II ......... x 0.70 |
+                *=============================================*
+        */
+
+        float enemyStatusModAtk = 1;
+        float enemyStatusModRav = 1;
+
+        if (receiver->activeBuffs[Buff::PROTECTRA]) {enemyStatusModAtk *= 0.50;}
+        else if (receiver->activeBuffs[Buff::PROTECT]) {enemyStatusModAtk *= 0.67;}
+
+        if (receiver->activeBuffs[Buff::SHELLRA]) {enemyStatusModRav *= 0.50;}
+        else if (receiver->activeBuffs[Buff::SHELL]) {enemyStatusModRav *= 0.67;}
+
+        if (sender->activeBuffs[Buff::BARFIRE] && element == Element::FIRE
+            || sender->activeBuffs[Buff::BARFROST] && element == Element::ICE
+            || sender->activeBuffs[Buff::BARTHUNDER] && element == Element::LIGHTNING
+            || sender->activeBuffs[Buff::BARWATER] && element == Element::WATER){
+                enemyStatusModAtk *= 0.5;
+                enemyStatusModRav *= 0.5;
+        }
+
+        //Im ignoring ward and shield for now.
+
+        float d8Atk = d7Atk * enemyStatusModAtk;
+        float d8Rav = d7Rav * enemyStatusModRav;
+
+        //10. calculate bonus defense (sentinel abilities/bonus)
+        /*
+                _____________________________________________
+                | Type | Status Effect                 Effect |
+                |=============================================|
+                | Both | Sentinel Role Bonus ...... -8% - 63% |
+                | Both | Steelguard ............. -20% - 100% |
+                | Both | Mediguard ..................... -20% |
+                | Both | Vendetta ...................... -10% |
+                | Both | Entrench ...................... -10% |
+                | Both | Elude ......................... -20% |
+                *=============================================*
+        */
+
+        float senRoleBonus = 1; //TODO: implement role bonuses and then update here
+
+        float d9Atk = d8Atk * senRoleBonus;
+        float d9Rav = d8Rav * senRoleBonus;
+
+        //TODO: This wont work until currCommand and command timings are functioning as intended.
+        //May be smarter to have a "steelguard" and "mediguard" buff on a timer.
+        if (receiver->currCommand->name == "STEELGUARD") {/*find out how steelguard defense is calculated*/}
+        if (receiver->currCommand->name == "MEDIGUARD") { /*d9Atk *= 0.8;*/}
+
+
+        //11. Apply auto ability Fringeward 
+        // (i dont even know what this is, cant be fucked to implement until way later)
+        float d10Atk = d9Atk;
+        float d10Rav = d9Rav;
+
+        //12. Apply damage limit (implement lifted damage limit later, not sure how that works)
+        float d11Atk = d10Atk;
+        float d11Rav = d10Rav;
+
+        if (d10Atk > 99999) d11Atk = 99999;
+        if (d10Rav > 99999) d11Rav = 99999;
+
+        //13. Account for daze staus effect
+        //"If the Daze status effect is present on the target, D12 equals D11 x 2."
+
+        if (receiver->activeDebuffs[Debuff::DAZE]){
+            d11Atk *= 2;
+            d11Rav *= 2;
+        }
+
+        //14. “Damage Rarely Becomes 0” passive weapon ability
+        /************************************************************
+        * If the effect succeeds, D13 becomes 0; else D13 equals  *
+        * D12.                                                    *
+        ***********************************************************
+        */
+       //I'll implement when weapons are in the game (or never, ts seems super niche)
+
+       //15. apply flat damage reduction abilities (mad simple but still, need to wait for equipment to be in the game)
+
+       //16. Lower limit:
+       //Rerun all this shit to d2l and the pick a random number between 
+       //that and the max for the final damage output.
+
+       //Will do later because im getting lazy. Having non-randomness is good for testing rn anyway
+       
+        //apply damage FINALLY
+        receiver->health -= (int)(d11Atk + d11Rav);
+
+
+
+
+
+        //simple chain calculation
         if (receiver->staggered == false){
             receiver->chainDuration += duration;
-            receiver->stagger += ((chainValue) * ((float)(100 - receiver->chainResistance)/100));
+            receiver->peakChainDuration = receiver->chainDuration;
+            receiver->stagger += ((chain) * ((float)(100 - receiver->chainResistance)/100));
         } else {
-            receiver->stagger += ((chainValue));
+            receiver->stagger += ((chain));
         }
+
+        
 
         //HEALTH DAMAGE FORMULA
         //MAX DAMAGE = BASE STAT X DMG MULTIPLIER X MODIFIERS X STAGGER CHAIN % - RANDOM %
@@ -61,7 +310,7 @@ void AttackCommand::execute(Character* sender, Character* receiver){
 
 
     } 
-    sender->currAtbVal -= atbCost;
+    sender->currAtbVal -= cost;
     sender->prevCommand = sender->currCommand;
     sender->currCommand = nullptr;
 

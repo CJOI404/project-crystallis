@@ -196,7 +196,60 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /home/calvi/pspdev/psp/sdk/include/pspctrl.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/ctime \
  /mnt/d/project-crystallis/include/UIRender.h \
+ /mnt/d/project-crystallis/include/CommandRegistry.h \
+ /mnt/d/project-crystallis/include/AttackCommand.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/sstream \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/istream \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/ios \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/exception \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/exception_ptr.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/cxxabi_init_exception.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/typeinfo \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/nested_exception.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/ios_base.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/ext/atomicity.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/gthr.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/gthr-default.h \
+ /home/calvi/pspdev/psp/include/pthread.h \
+ /home/calvi/pspdev/psp/include/pte_types.h \
+ /home/calvi/pspdev/psp/include/sys/timeb.h \
+ /home/calvi/pspdev/psp/include/sched.h \
+ /home/calvi/pspdev/psp/include/bits/posix_opt.h \
+ /home/calvi/pspdev/psp/include/sys/_pthreadtypes.h \
+ /home/calvi/pspdev/psp/include/setjmp.h \
+ /home/calvi/pspdev/psp/include/machine/setjmp.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/atomic_word.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/locale_classes.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/locale_classes.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/system_error \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/error_constants.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/stdexcept \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/streambuf \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/streambuf.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/basic_ios.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/locale_facets.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cwctype \
+ /home/calvi/pspdev/psp/include/wctype.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/ctype_base.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/streambuf_iterator.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/ctype_inline.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/locale_facets.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/basic_ios.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/ostream \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/ostream.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/ostream.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/istream.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/sstream.tcc \
  /home/calvi/pspdev/psp/include/stb_image.h \
  /home/calvi/pspdev/psp/include/assert.h \
  /mnt/d/project-crystallis/include/Menu.h \
- /mnt/d/project-crystallis/include/Button.h
+ /mnt/d/project-crystallis/include/Button.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/iomanip \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/locale \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/locale_facets_nonio.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/time_members.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/messages_members.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/codecvt.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/locale_facets_nonio.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/locale_conv.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/quoted_string.h
