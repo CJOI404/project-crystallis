@@ -59,6 +59,8 @@ class Character : public GameActor {
 
         int targetIndex = -1;
 
+        BattleCommand* abilities[10];
+
         //resistances to elements/attack types
         float resistances[Element::ELEMENTCOUNT]{};
         //immunity to debuffs (debuff chances)
@@ -75,6 +77,8 @@ class Character : public GameActor {
 
         void setImmunity(Debuff debuff, float val);
         float getImmunity(Debuff debuff);
+
+        void addBattleCommand(BattleCommand* command, int index);
 
         Character();
         ~Character();

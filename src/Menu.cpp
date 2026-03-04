@@ -27,9 +27,9 @@ Menu::Menu(){
     // abilities[0] = new AttackCommand("ATTACK", 1.0, 0, 0.5, 1, 3.3, 1);
     // abilities[1] = new AttackCommand("RUIN", 0, 1.0, 10, 1, 0.9, 1);
 
-    for (int i = 0; i < 10; i++){
-        abilities[i] = Commands::commandList.at(i);
-    }
+    // for (int i = 0; i < 10; i++){
+    //     abilities[i] = Commands::commandList.at(i);
+    // }
 
     options[0].highlighted = true;
 }
@@ -99,7 +99,7 @@ void Menu::selectButton(){
         case AbilitiesMenu:
             //add corresponding attackcommand in list to the character's queue. 
             if (activeCharacter->commandQueue.size() < activeCharacter->atbSegments){
-                activeCharacter->commandQueue.push_back(abilities[selectedIndex]);
+                activeCharacter->commandQueue.push_back(activeCharacter->abilities[selectedIndex]);
 
                 if (activeCharacter->commandQueue.size() == activeCharacter->atbSegments){
                     menuState = EnemyMenu;
@@ -200,7 +200,7 @@ void Menu::drawMenu(){
                 Colours colour = Colours::LIGHTGREY;
                 if (selectedIndex == i) colour = Colours::RED;
                 UI::drawRect(currX, currY, buttonWidth, buttonHeight, colour);
-                UI::drawString(currX + 5, currY + 5, 0xFFFFFFFF, 0.4, 0.25, abilities[i]->name);
+                UI::drawString(currX + 5, currY + 5, 0xFFFFFFFF, 0.4, 0.25, activeCharacter->abilities[i]->name);
                 currY += buttonHeight + padding;
             }
 

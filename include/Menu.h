@@ -24,7 +24,7 @@ class Menu {
         int buttonWidth, buttonHeight;
 
         Button options[10];
-        BattleCommand* abilities[10];
+        // BattleCommand* abilities[10];
         BattleCommand* items[10];
         BattleCommand* techniques[10];
 

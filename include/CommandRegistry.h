@@ -2,10 +2,16 @@
 
 #include "AttackCommand.h"
 
-namespace Commands{
+class CommandRegistry{
 
-    void loadSkills(const char* skillSheetPath);
+    public:
 
-    extern std::vector<BattleCommand*> commandList;
+        CommandRegistry();
+        ~CommandRegistry();
 
-}
+        void loadSkills(const char* skillSheetPath);
+
+        std::vector<BattleCommand*> commandList;
+
+
+};

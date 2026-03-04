@@ -14,7 +14,6 @@
 #include "UIRender.h"
 #include "CommandRegistry.h"
 #include "GlobalDefs.h"
-#include <sstream>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
@@ -227,7 +226,7 @@ int main() {
     // Setup the library used for rendering
     initGu();
 
-    std::stringstream sstream;
+    CommandRegistry commands;
 
     InputHandler playerInput;
     Character playerCharacter;
@@ -241,14 +240,9 @@ int main() {
     enemy.maxHealth = 450000;
     enemy.staggerPoint = 600;
 
-    Character enemy2;
-    enemy2.moveComp->color = Colours::LIGHTBLUE;
-    enemy2.xPos = 450;
-    enemy2.name = "ENEMY 2";
-
     //assign enemies to characters
     playerCharacter.enemyList.push_back(&enemy);
-    playerCharacter.enemyList.push_back(&enemy2);
+    // playerCharacter.enemyList.push_back(&enemy2);
 
     float xMoveDir = 0;
     int xPos = 50;
@@ -263,7 +257,12 @@ int main() {
     UI::loadFont("PSPGameFont.fnt", "PSPGameFont.png");
 
     //Load skills
-    Commands::loadSkills("project_crystallis_skill_sheet.csv");
+    commands.loadSkills("project_crystallis_skill_sheet.csv");
+
+    //Fill character ability lists
+    for (int i = 0; i < 10 && i < commands.commandList.size(); i++){
+        playerCharacter.addBattleCommand(commands.commandList.at(i), i);
+    }
 
     //start menu
     Menu commandMenu;
@@ -373,7 +372,7 @@ int main() {
             //UPDATE ACTORS
             playerCharacter.update(deltaTime);
             enemy.update(deltaTime);
-            enemy2.update(deltaTime);
+            // enemy2.update(deltaTime);
 
         } else if (state == GameState::SCAN){
             // std::string playerHealth = "HEALTH: " + std::to_string(playerCharacter.health);

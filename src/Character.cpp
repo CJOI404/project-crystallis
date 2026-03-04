@@ -40,9 +40,6 @@ Character::~Character(){
     for (BattleCommand* p : commandQueue){
         delete p;
     }
-    for (Character* p : enemyList){
-        delete p;
-    }
 }
 
 void Character::setResistance(Element element, float val){
@@ -64,6 +61,10 @@ float Character::getImmunity(Debuff debuff){
 void Character::startAttack(int targetIndex){
     this->targetIndex = targetIndex;
     characterState = AttackReady;
+}
+
+void Character::addBattleCommand(BattleCommand* command, int index){
+    abilities[index] = command;
 }
 
 void Character::update(float dt){
