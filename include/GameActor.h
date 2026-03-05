@@ -14,4 +14,5 @@ class GameActor{
         float xPos = 50, yPos = 50;
 
         virtual void update(float dt) = 0;
+        virtual void render(float dt) = 0;
 };

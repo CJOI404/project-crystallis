@@ -1,4 +1,6 @@
 #include "Character.h"
+#include <UIRender.h>
+#include <CommandRegistry.h>
 
 Character::Character(){
 
@@ -67,6 +69,20 @@ void Character::addBattleCommand(BattleCommand* command, int index){
     abilities[index] = command;
 }
 
+void Character::addViableBattleCommands(){
+    int abilitiesIndex = 0;
+    //clear abilities array
+    for (int i = 0; i < sizeof(abilities); i++){
+        abilities[i] = nullptr;
+    }
+    for (int i = 0; i < Commands::commandList.size() && abilitiesIndex < sizeof(abilities); i++){
+        if (Commands::commandList.at(i)->role == currentRole){
+            abilities[abilitiesIndex] = Commands::commandList.at(i);
+            abilitiesIndex++;
+        }
+    }
+}
+
 void Character::update(float dt){
 
     //check if they should be staggered
@@ -133,4 +149,10 @@ void Character::update(float dt){
     }
 
 
+}
+
+void Character::render(float dt){
+    UI::drawRect(xPos, yPos, 20, 20, moveComp->color);
+    snprintf(UI::textBuffer, sizeof(UI::textBuffer), name);
+    UI::drawString(xPos, yPos, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer); 
 }

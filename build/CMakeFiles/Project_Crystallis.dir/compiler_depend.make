@@ -271,12 +271,18 @@ CMakeFiles/Project_Crystallis.dir/src/Character.cpp.obj: /mnt/d/project-crystall
   /home/calvi/pspdev/psp/include/sys/reent.h \
   /home/calvi/pspdev/psp/include/sys/stdio.h \
   /home/calvi/pspdev/psp/include/wchar.h \
+  /home/calvi/pspdev/psp/sdk/include/pspge.h \
+  /home/calvi/pspdev/psp/sdk/include/pspgu.h \
+  /home/calvi/pspdev/psp/sdk/include/psptypes.h \
+  /mnt/d/project-crystallis/include/AttackCommand.h \
   /mnt/d/project-crystallis/include/BattleCommand.h \
   /mnt/d/project-crystallis/include/Character.h \
+  /mnt/d/project-crystallis/include/CommandRegistry.h \
   /mnt/d/project-crystallis/include/Component.h \
   /mnt/d/project-crystallis/include/GameActor.h \
   /mnt/d/project-crystallis/include/GlobalDefs.h \
-  /mnt/d/project-crystallis/include/MovementComponent.h
+  /mnt/d/project-crystallis/include/MovementComponent.h \
+  /mnt/d/project-crystallis/include/UIRender.h
 
 CMakeFiles/Project_Crystallis.dir/src/Command.cpp.obj: /mnt/d/project-crystallis/src/Command.cpp
 
@@ -484,6 +490,104 @@ CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj: /mnt/d/project-cr
   /mnt/d/project-crystallis/include/GameActor.h \
   /mnt/d/project-crystallis/include/GlobalDefs.h \
   /mnt/d/project-crystallis/include/MovementComponent.h
+
+CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj: /mnt/d/project-crystallis/src/GlobalDefs.cpp \
+  /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdarg.h \
+  /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stddef.h \
+  /home/calvi/pspdev/psp/include/_ansi.h \
+  /home/calvi/pspdev/psp/include/_newlib_version.h \
+  /home/calvi/pspdev/psp/include/alloca.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/backward/binders.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bit \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/alloc_traits.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/allocator.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/basic_string.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/basic_string.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/char_traits.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/charconv.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/concept_check.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/cpp_type_traits.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/cxxabi_forced.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/exception.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/exception_defines.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/functexcept.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/functional_hash.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/hash_bytes.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/invoke.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/localefwd.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/memory_resource.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/memoryfwd.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/move.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/new_allocator.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/ostream_insert.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/postypes.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/predefined_ops.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/ptr_traits.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/range_access.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/refwrap.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/requires_hosted.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/std_abs.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_algobase.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_construct.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_function.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_iterator.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_iterator_base_funcs.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_iterator_base_types.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_pair.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/string_view.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stringfwd.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator_args.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/utility.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/version.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/cctype \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/cerrno \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/clocale \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/concepts \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/cstddef \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/cstdio \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/cstdlib \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/cwchar \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/debug/assertions.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/debug/debug.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/ext/alloc_traits.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/ext/numeric_traits.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/ext/string_conversions.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/ext/type_traits.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/initializer_list \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/iosfwd \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/new \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++allocator.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++config.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++locale.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/cpu_defines.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/os_defines.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/pstl/pstl_config.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/string \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/string_view \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/type_traits \
+  /home/calvi/pspdev/psp/include/ctype.h \
+  /home/calvi/pspdev/psp/include/errno.h \
+  /home/calvi/pspdev/psp/include/locale.h \
+  /home/calvi/pspdev/psp/include/machine/_default_types.h \
+  /home/calvi/pspdev/psp/include/machine/_types.h \
+  /home/calvi/pspdev/psp/include/machine/ieeefp.h \
+  /home/calvi/pspdev/psp/include/machine/stdlib.h \
+  /home/calvi/pspdev/psp/include/newlib.h \
+  /home/calvi/pspdev/psp/include/stdio.h \
+  /home/calvi/pspdev/psp/include/stdlib.h \
+  /home/calvi/pspdev/psp/include/sys/_locale.h \
+  /home/calvi/pspdev/psp/include/sys/_types.h \
+  /home/calvi/pspdev/psp/include/sys/cdefs.h \
+  /home/calvi/pspdev/psp/include/sys/config.h \
+  /home/calvi/pspdev/psp/include/sys/errno.h \
+  /home/calvi/pspdev/psp/include/sys/features.h \
+  /home/calvi/pspdev/psp/include/sys/lock.h \
+  /home/calvi/pspdev/psp/include/sys/reent.h \
+  /home/calvi/pspdev/psp/include/sys/stdio.h \
+  /home/calvi/pspdev/psp/include/wchar.h \
+  /mnt/d/project-crystallis/include/GlobalDefs.h
 
 CMakeFiles/Project_Crystallis.dir/src/InputHandler.cpp.obj: /mnt/d/project-crystallis/src/InputHandler.cpp \
   /home/calvi/pspdev/psp/sdk/include/pspctrl.h \
@@ -1188,6 +1292,8 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/sdk/include/pspsysmem.h:
 
+/home/calvi/pspdev/psp/sdk/include/pspstdio.h:
+
 /home/calvi/pspdev/psp/include/string.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_laguerre.tcc:
@@ -1227,8 +1333,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/locale_facets.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/queue:
-
-/mnt/d/project-crystallis/src/Menu.cpp:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++config.h:
 
@@ -1313,6 +1417,10 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/postypes.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/invoke.h:
+
+/mnt/d/project-crystallis/src/Menu.cpp:
+
+/mnt/d/project-crystallis/src/GlobalDefs.cpp:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/riemann_zeta.tcc:
 
@@ -1514,11 +1622,25 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /mnt/d/project-crystallis/src/Character.cpp:
 
+/home/calvi/pspdev/psp/sdk/include/pspge.h:
+
+/home/calvi/pspdev/psp/sdk/include/psptypes.h:
+
+/mnt/d/project-crystallis/include/UIRender.h:
+
 /mnt/d/project-crystallis/src/Command.cpp:
 
 /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/limits.h:
 
 /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/syslimits.h:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/bits/concept_check.h:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/iosfwd:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/bits/ostream.tcc:
+
+/home/calvi/pspdev/psp/include/bits/posix_opt.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/streambuf:
 
@@ -1569,16 +1691,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/ostream.h:
 
 /home/calvi/pspdev/psp/include/machine/endian.h:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/bits/concept_check.h:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/iosfwd:
-
-/home/calvi/pspdev/psp/include/bits/posix_opt.h:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/bits/ostream.tcc:
-
-/home/calvi/pspdev/psp/sdk/include/psptypes.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/vector:
 
@@ -1652,10 +1764,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /mnt/d/project-crystallis/src/InputHandler.cpp:
 
-/home/calvi/pspdev/psp/sdk/include/pspge.h:
-
-/mnt/d/project-crystallis/include/UIRender.h:
-
 /mnt/d/project-crystallis/src/UIRender.cpp:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/stdlib.h:
@@ -1703,5 +1811,3 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/exp_integral.tcc:
 
 /home/calvi/pspdev/psp/sdk/include/pspmoduleinfo.h:
-
-/home/calvi/pspdev/psp/sdk/include/pspstdio.h:

@@ -134,4 +134,10 @@ CMakeFiles/Project_Crystallis.dir/src/Character.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_bvector.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/vector.tcc \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_heap.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_queue.h
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_queue.h \
+ /mnt/d/project-crystallis/include/UIRender.h \
+ /home/calvi/pspdev/psp/sdk/include/pspgu.h \
+ /home/calvi/pspdev/psp/sdk/include/psptypes.h \
+ /home/calvi/pspdev/psp/sdk/include/pspge.h \
+ /mnt/d/project-crystallis/include/CommandRegistry.h \
+ /mnt/d/project-crystallis/include/AttackCommand.h

@@ -22,8 +22,11 @@ class Character : public GameActor {
 
         std::vector<BattleCommand*> commandQueue;
         std::vector<Character*> enemyList;
+        std::vector<Character*> teamList;
 
         CharacterState characterState;
+
+        Role currentRole;
 
         const char* name;
 
@@ -47,7 +50,7 @@ class Character : public GameActor {
         int atbSegments = 5;
         int atbRechargeSpeed = 1;
         float currAtbVal = 0;
-        int atbChargeCooldown = 2;
+        int atbChargeCooldown = 1;
         float currAtbCooldownVal = 0;
         float currCommandCooldownVal = 0;
 
@@ -79,10 +82,12 @@ class Character : public GameActor {
         float getImmunity(Debuff debuff);
 
         void addBattleCommand(BattleCommand* command, int index);
+        void addViableBattleCommands();
 
         Character();
         ~Character();
 
         void update(float dt) override;
+        void render(float dt) override;
         
 };

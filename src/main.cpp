@@ -226,11 +226,33 @@ int main() {
     // Setup the library used for rendering
     initGu();
 
-    CommandRegistry commands;
-
     InputHandler playerInput;
+
     Character playerCharacter;
     playerCharacter.health = 2000;
+    playerCharacter.maxHealth = 2000;
+    playerCharacter.name = "LIGHTNING";
+    playerCharacter.currentRole = Role::COMMANDO;
+
+    Character character2;
+    character2.health = 2200;
+    character2.maxHealth = 2200;
+    character2.xPos = 100;
+    character2.yPos = 100;
+    character2.name = "SAZH";
+    character2.currentRole = Role::RAVAGER;
+
+    Character character3;
+    character3.health = 1700;
+    character3.maxHealth = 1700;
+    character3.xPos = 150;
+    character3.yPos = 150;
+    character3.name = "VANILLE";
+    character3.currentRole = Role::SABOTEUR;
+
+
+
+
     Character enemy;
     enemy.moveComp->color = Colours::BLUE;
     enemy.xPos = 350;
@@ -242,7 +264,13 @@ int main() {
 
     //assign enemies to characters
     playerCharacter.enemyList.push_back(&enemy);
-    // playerCharacter.enemyList.push_back(&enemy2);
+    character2.enemyList.push_back(&enemy);
+    character3.enemyList.push_back(&enemy);
+
+    //assign teammates to players
+    playerCharacter.teamList.push_back(&playerCharacter);
+    playerCharacter.teamList.push_back(&character2);
+    playerCharacter.teamList.push_back(&character3);
 
     float xMoveDir = 0;
     int xPos = 50;
@@ -257,12 +285,13 @@ int main() {
     UI::loadFont("PSPGameFont.fnt", "PSPGameFont.png");
 
     //Load skills
-    commands.loadSkills("project_crystallis_skill_sheet.csv");
+    Commands::loadSkills("project_crystallis_skill_sheet.csv");
 
     //Fill character ability lists
-    for (int i = 0; i < 10 && i < commands.commandList.size(); i++){
-        playerCharacter.addBattleCommand(commands.commandList.at(i), i);
-    }
+    // for (int i = 0; i < 10 && i < Commands::commandList.size(); i++){
+    //     playerCharacter.addBattleCommand(Commands::commandList.at(i), i);
+    // }
+    playerCharacter.addViableBattleCommands();
 
     //start menu
     Menu commandMenu;
@@ -288,9 +317,15 @@ int main() {
 
         startFrame();
 
-        UI::drawRect(playerCharacter.xPos, playerCharacter.yPos, 20, 20, playerCharacter.moveComp->color);
 
-        UI::drawRect(enemy.xPos, enemy.yPos, 20, 20, enemy.moveComp->color);
+        playerCharacter.render(deltaTime);
+        character2.render(deltaTime);
+        character3.render(deltaTime);
+        enemy.render(deltaTime);
+
+        // UI::drawRect(playerCharacter.xPos, playerCharacter.yPos, 20, 20, playerCharacter.moveComp->color);
+
+        // UI::drawRect(enemy.xPos, enemy.yPos, 20, 20, enemy.moveComp->color);
 
         if (state == GameState::BATTLE){
             //DO MOVEMENT
@@ -320,12 +355,15 @@ int main() {
                 commandMenu.backButton();
             } else if (playerInput.getButtonDown(PSP_CTRL_TRIANGLE)){
                 commandMenu.earlyExecuteButton();
+            } else if (playerInput.getButtonDown(PSP_CTRL_LTRIGGER)){
+                commandMenu.paradigmSwitchButton();
             }
+
 
             commandMenu.drawMenu();
 
-            snprintf(UI::textBuffer, sizeof(UI::textBuffer), "Lightning Health: %d", playerCharacter.health);
-            UI::drawString(300, 200, 0xFFFFFFFF, 0.5, 0.5, UI::textBuffer);
+            // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "Lightning Health: %d", playerCharacter.health);
+            // UI::drawString(300, 200, 0xFFFFFFFF, 0.5, 0.5, UI::textBuffer);
 
             snprintf(UI::textBuffer, sizeof(UI::textBuffer), "Health: %d", enemy.health);
             UI::drawString(50, 50, 0xFFFFFFFF, 0.5, 0.5, UI::textBuffer);
@@ -369,8 +407,8 @@ int main() {
             }
 
             //temp draw atb bar
-            UI::drawRect(10, 160, playerCharacter.atbSegments * 50, 12, Colours::LIGHTGREY);
-            UI::drawRect(10, 162, playerCharacter.currAtbVal * 50, 8, Colours::LIGHTBLUE);
+            // UI::drawRect(5, 170, playerCharacter.atbSegments * 50, 12, Colours::LIGHTGREY);
+            // UI::drawRect(5, 172, playerCharacter.currAtbVal * 50, 8, Colours::LIGHTBLUE);
 
             //temp draw stagger info
             // UI::drawString(250, 40, 0xFFFFFFFF, 0.5, 0.5, "Duration: " + std::to_string(enemy.chainDuration) + "");

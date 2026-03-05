@@ -10,7 +10,7 @@ class BattleCommand{
         char name[16];
         uint8_t cost = 0;
         char type[8];
-        Paradigm paradigm = Paradigm::COMMANDO;
+        Role role = Role::COMMANDO;
         float atkDmgScale = 0;
         float ravDmgScale = 0;
         float chain = 0;

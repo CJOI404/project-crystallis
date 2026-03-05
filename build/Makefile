@@ -226,6 +226,30 @@ src/CommandRegistry.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.s
 .PHONY : src/CommandRegistry.cpp.s
 
+src/GlobalDefs.obj: src/GlobalDefs.cpp.obj
+.PHONY : src/GlobalDefs.obj
+
+# target to build an object file
+src/GlobalDefs.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj
+.PHONY : src/GlobalDefs.cpp.obj
+
+src/GlobalDefs.i: src/GlobalDefs.cpp.i
+.PHONY : src/GlobalDefs.i
+
+# target to preprocess a source file
+src/GlobalDefs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.i
+.PHONY : src/GlobalDefs.cpp.i
+
+src/GlobalDefs.s: src/GlobalDefs.cpp.s
+.PHONY : src/GlobalDefs.s
+
+# target to generate assembly for a file
+src/GlobalDefs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.s
+.PHONY : src/GlobalDefs.cpp.s
+
 src/InputHandler.obj: src/InputHandler.cpp.obj
 .PHONY : src/InputHandler.obj
 
@@ -367,6 +391,9 @@ help:
 	@echo "... src/CommandRegistry.obj"
 	@echo "... src/CommandRegistry.i"
 	@echo "... src/CommandRegistry.s"
+	@echo "... src/GlobalDefs.obj"
+	@echo "... src/GlobalDefs.i"
+	@echo "... src/GlobalDefs.s"
 	@echo "... src/InputHandler.obj"
 	@echo "... src/InputHandler.i"
 	@echo "... src/InputHandler.s"

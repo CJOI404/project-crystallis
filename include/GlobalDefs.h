@@ -53,7 +53,7 @@ enum Buff{
     BUFFCOUNT
 };
 
-enum Paradigm{
+enum Role{
     COMMANDO,
     RAVAGER,
     SENTINEL,
@@ -62,11 +62,21 @@ enum Paradigm{
     SYNERGIST
 };
 
+struct Paradigm{
+    const char* name;
+    Role r1;
+    Role r2;
+    Role r3;
+};
+
+
+const char* roleToString(Role r);
+
 struct CommandData{
     char name[16];
     int cost;
     char type[8];
-    Paradigm paradigm;
+    Role role;
     float atkDmgScale;
     float ravDmgScale;
     float chain;

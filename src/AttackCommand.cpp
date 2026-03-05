@@ -10,7 +10,7 @@ AttackCommand::AttackCommand(CommandData& cmdData){
     this->cost = cmdData.cost;
     // this->type = cmdData.type;
     memcpy(type, cmdData.type, sizeof(type));
-    this->paradigm = cmdData.paradigm;
+    this->role = cmdData.role;
     this->atkDmgScale = cmdData.atkDmgScale;
     this->ravDmgScale = cmdData.ravDmgScale;
     this->chain = cmdData.chain;

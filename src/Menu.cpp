@@ -4,12 +4,16 @@
 #include "CommandRegistry.h"
 
 Menu::Menu(){
-    x = 10;
-    y = 180;
+    x = 5;
+    y = 190;
     padding = 5;
+    cascadeOffset = 10;
     selectedIndex = 0;
+    selectedParadigm = 0;
     optionMax = 3;
     abilitiesMax = 9;
+    paradigmMax = 5;
+    teamSize = 0;
 
     buttonWidth = 110;
     buttonHeight = 15;
@@ -22,14 +26,23 @@ Menu::Menu(){
     options[2] = "TECHNIQUES";
     options[3] = "ITEMS";
 
-    //abilities array must be loaded from all of the character's ablities dynamically, once when the paradigm is shifted.
-    //this is temporary for testing.
-    // abilities[0] = new AttackCommand("ATTACK", 1.0, 0, 0.5, 1, 3.3, 1);
-    // abilities[1] = new AttackCommand("RUIN", 0, 1.0, 10, 1, 0.9, 1);
+    //Set paradigms for testing (will have to abstract this later so they can be edited)
+    Paradigm* p1 = new Paradigm {"Ruthless", Role::COMMANDO, Role::RAVAGER, Role::SABOTEUR};
+    Paradigm* p2 = new Paradigm {"Cerberus", Role::RAVAGER, Role::COMMANDO, Role::COMMANDO};
+    Paradigm* p3 = new Paradigm {"Ruthless", Role::COMMANDO, Role::RAVAGER, Role::SABOTEUR};
+    Paradigm* p4 = new Paradigm {"Cerberus", Role::RAVAGER, Role::COMMANDO, Role::COMMANDO};
+    Paradigm* p5 = new Paradigm {"Ruthless", Role::COMMANDO, Role::RAVAGER, Role::SABOTEUR};
+    Paradigm* p6 = new Paradigm {"Cerberus", Role::RAVAGER, Role::COMMANDO, Role::COMMANDO};
 
-    // for (int i = 0; i < 10; i++){
-    //     abilities[i] = Commands::commandList.at(i);
-    // }
+    paradigms[0] = p1;
+    paradigms[1] = p2;
+    paradigms[2] = p3;
+    paradigms[3] = p4;
+    paradigms[4] = p5;
+    paradigms[5] = p6;
+
+
+
 
 }
 
@@ -113,6 +126,20 @@ void Menu::selectButton(){
             selectedIndex = 0;
 
             break;
+        case ParadigmMenu:
+            activeCharacter->currentRole = paradigms[selectedIndex]->r1;
+            activeCharacter->teamList.at(1)->currentRole = paradigms[selectedIndex]->r2;
+            activeCharacter->teamList.at(2)->currentRole = paradigms[selectedIndex]->r3;
+
+            for (int i = 0; i < activeCharacter->teamList.size(); i++){
+                activeCharacter->teamList.at(i)->addViableBattleCommands();
+            }
+
+            menuState = CommandMenu;
+            optionMax = 3;
+            selectedIndex = 0;
+
+
     }
 
 }
@@ -141,6 +168,12 @@ void Menu::backButton(){
             selectedIndex = 0;
             optionMax = abilitiesMax;
             break;
+
+
+        case ParadigmMenu:
+            menuState = CommandMenu;
+            selectedIndex = 0;
+            optionMax = 3;   
     }
 }
 
@@ -158,7 +191,7 @@ void Menu::earlyExecuteButton(){
             }
             break;
         case CommandMenu:
-            if (activeCharacter->characterState == CharacterState::AttackReady){
+            if (activeCharacter->characterState == CharacterState::AttackReady && activeCharacter->currAtbVal >= 1){
                 for (int i = activeCharacter->commandQueue.size() - 1; i >= (int)activeCharacter->currAtbVal; i--){
                     activeCharacter->commandQueue.pop_back();
                 }
@@ -167,46 +200,115 @@ void Menu::earlyExecuteButton(){
     }
 }
 
+void Menu::paradigmSwitchButton(){
+    if (menuState == ParadigmMenu){
+        menuState = CommandMenu;
+        selectedIndex = 0;
+        optionMax = 3;
+    } else {
+        selectedIndex = selectedParadigm;
+        optionMax = paradigmMax;
+        menuState = ParadigmMenu;
+    }
+}
+
+void Menu::drawPage(int buttonWidth, int buttonHeight, int yButtonAmt, int cascade){
+
+}
+
+void Menu::drawAtb(){
+    UI::drawRect(5, 170, activeCharacter->atbSegments * 50, 12, Colours::LIGHTGREY);
+    UI::drawRect(5, 172, activeCharacter->currAtbVal * 50, 8, Colours::LIGHTBLUE);
+}
+
+void Menu::drawTeamStats(){
+
+    int currX = x + 250;
+    int currY = y + 32;
+
+
+    for (int i = 0; i < activeCharacter->teamList.size(); i++){
+        UI::drawRect(currX + 80, currY + 2, 120, 6, Colours::LIGHTGREY);
+        UI::drawRect(currX + 80, currY + 3, ((float) activeCharacter->health / activeCharacter->maxHealth) * 120, 4, Colours::LIGHTGREEN);
+
+        UI::drawString(currX + 80, currY - 8, 0xFFFFFFFF, 0.3, 0.3, activeCharacter->teamList.at(i)->name);
+        UI::drawString(currX + 150, currY - 8, 0xFFFFFFFF, 0.3, 0.3, roleToString(activeCharacter->teamList.at(i)->currentRole));
+        currY += 15;
+        currX += cascadeOffset;
+
+    }
+}
+
 void Menu::drawMenu(){
 
     int currX = x;
     int currY = y;
+    // int currCascadeOffset = cascadeOffset;
+
+    drawTeamStats();
 
     switch (menuState){
         case CommandMenu:
+            drawAtb();
             for (int i = 0; i <= optionMax; i++){
                 Colours colour = Colours::LIGHTGREY;
                 if (selectedIndex == i) colour = Colours::RED;
                 UI::drawRect(currX, currY, buttonWidth, buttonHeight, colour);
-                UI::drawString(currX + 5, currY + 5, 0xFFFFFFFF, 0.4, 0.25, options[i]);
+                UI::drawString(currX + 5, currY + 2, 0xFFFFFFFF, 0.35, 0.35, options[i]);
                 currY += buttonHeight + padding;
+                currX += cascadeOffset;
             }
             break;
         case AbilitiesMenu:
+            drawAtb();
             for (int i = 0; i <= abilitiesMax; i++){
                 if (i != 0 && i % 4 == 0){
+                    currX -= cascadeOffset*4;
                     currX += buttonWidth + padding;
                     currY = y;
                 }
                 Colours colour = Colours::LIGHTGREY;
                 if (selectedIndex == i) colour = Colours::RED;
                 UI::drawRect(currX, currY, buttonWidth, buttonHeight, colour);
-                UI::drawString(currX + 5, currY + 5, 0xFFFFFFFF, 0.4, 0.25, activeCharacter->abilities[i]->name);
+
+                //IMPORTANT: CHECK FOR ENOUGH ABILITIES
+                if (activeCharacter->abilities[i] != nullptr) UI::drawString(currX + 5, currY + 2, 0xFFFFFFFF, 0.35, 0.35, activeCharacter->abilities[i]->name);
                 currY += buttonHeight + padding;
+                currX += cascadeOffset;
             }
 
             break;
         case EnemyMenu:
+            drawAtb();
             for (int i = 0; i <= optionMax; i++){
                 if (i != 0 && i % 4 == 0){
+                    currX -= cascadeOffset*4;
                     currX += buttonWidth + padding;
                     currY = y;
                 }
                 Colours colour = Colours::LIGHTGREY;
                 if (selectedIndex == i) colour = Colours::RED;
                 UI::drawRect(currX, currY, buttonWidth, buttonHeight, colour);
-                UI::drawString(currX + 5, currY + 5, 0xFFFFFFFF, 0.4, 0.4, activeCharacter->enemyList.at(i)->name);
+                UI::drawString(currX + 5, currY + 2, 0xFFFFFFFF, 0.35, 0.35, activeCharacter->enemyList.at(i)->name);
                 currY += buttonHeight + padding;
+                currX += cascadeOffset;
+            }
+
+            break;
+        case ParadigmMenu:
+            currY -= 30;
+            for (int i = 0; i <= optionMax; i++){
+                // if (i != 0 && i % 4 == 0){
+                //     currX += buttonWidth + padding;
+                //     currY = y - 30;;
+                // }
+                Colours colour = Colours::LIGHTGREY;
+                if (selectedIndex == i) colour = Colours::RED;
+                UI::drawRect(currX, currY, buttonWidth, buttonHeight * 0.9, colour);
+                
+                snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s %s %s %s", paradigms[i]->name, roleToString(paradigms[i]->r1), roleToString(paradigms[i]->r2), roleToString(paradigms[i]->r3));
+                UI::drawString(currX + 5, currY, 0xFFFFFFFF, 0.35, 0.35, UI::textBuffer);
+                currY += (buttonHeight * 0.9) + padding;
             }
 
             break;
@@ -215,7 +317,7 @@ void Menu::drawMenu(){
     //draw abilities in queue
     int atbSpacing = 0;
     for (int i = 0; i < activeCharacter->commandQueue.size(); i++){
-        UI::drawString(10 + atbSpacing, 150, 0xFFFFFFFF, 0.3, 0.3, activeCharacter->commandQueue.at(i)->name); 
+        UI::drawString(5 + atbSpacing, 160, 0xFFFFFFFF, 0.3, 0.3, activeCharacter->commandQueue.at(i)->name); 
         atbSpacing += 50;              
     }
 
