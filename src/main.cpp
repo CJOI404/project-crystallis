@@ -369,14 +369,16 @@ int main() {
             UI::drawString(50, 50, 0xFFFFFFFF, 0.5, 0.5, UI::textBuffer);
 
             //draw stagger
-            // std::string eStagger = std::to_string(enemy.stagger);
-            // std::string eStaggerPoint = std::to_string(enemy.staggerPoint);
-
             UI::drawRect(230, 5, 200, 12, Colours::LIGHTGREY);
 
             float barPercent;
-            if (!enemy.staggered) barPercent = ((enemy.stagger - 100) / (enemy.staggerPoint - 100)) * ((enemy.chainDuration / enemy.peakChainDuration));
-            else barPercent =  (enemy.chainDuration / enemy.peakChainDuration);
+
+            if (enemy.chainDuration != 0){  //protect against FPU exception (div by 0)
+                if (!enemy.staggered) barPercent = ((enemy.stagger - 100) / (enemy.staggerPoint - 100)) * ((enemy.chainDuration / enemy.peakChainDuration));
+                else barPercent =  (enemy.chainDuration / enemy.peakChainDuration);
+            } else {
+                barPercent = 0;
+            }
 
             if (enemy.stagger > 100){
                 UI::drawRect(230, 7, barPercent * 200, 8, Colours::STAGGERBAR);
