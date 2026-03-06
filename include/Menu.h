@@ -57,6 +57,7 @@ class Menu {
         void earlyExecuteButton();
         void paradigmSwitchButton();
         void changeMenuState(MenuState mState);
+        void setParadigm();
 
         void setActiveCharacter(Character* character);
 

@@ -9,7 +9,7 @@ Menu::Menu(){
     padding = 5;
     cascadeOffset = 10;
     selectedIndex = 0;
-    selectedParadigm = 0;
+    selectedParadigm = 2;
     optionMax = 3;
     abilitiesMax = 9;
     paradigmMax = 5;
@@ -74,6 +74,16 @@ void Menu::cursorRight(){
     if (menuState != ParadigmMenu && selectedIndex <= (optionMax - 4)){
         selectedIndex += 4;
     } 
+}
+
+void Menu::setParadigm(){
+    activeCharacter->currentRole = paradigms[selectedParadigm]->r1;
+    activeCharacter->teamList.at(1)->currentRole = paradigms[selectedParadigm]->r2;
+    activeCharacter->teamList.at(2)->currentRole = paradigms[selectedParadigm]->r3;
+
+    for (int i = 0; i < activeCharacter->teamList.size(); i++){
+        activeCharacter->teamList.at(i)->addViableBattleCommands();
+    }
 }
 
 // void Menu::setOptionMax(){
@@ -147,13 +157,15 @@ void Menu::selectButton(){
             changeMenuState(CommandMenu);
             break;
         case ParadigmMenu:
-            activeCharacter->currentRole = paradigms[selectedIndex]->r1;
-            activeCharacter->teamList.at(1)->currentRole = paradigms[selectedIndex]->r2;
-            activeCharacter->teamList.at(2)->currentRole = paradigms[selectedIndex]->r3;
+            selectedParadigm = selectedIndex;
+            setParadigm();
+            // activeCharacter->currentRole = paradigms[selectedIndex]->r1;
+            // activeCharacter->teamList.at(1)->currentRole = paradigms[selectedIndex]->r2;
+            // activeCharacter->teamList.at(2)->currentRole = paradigms[selectedIndex]->r3;
 
-            for (int i = 0; i < activeCharacter->teamList.size(); i++){
-                activeCharacter->teamList.at(i)->addViableBattleCommands();
-            }
+            // for (int i = 0; i < activeCharacter->teamList.size(); i++){
+            //     activeCharacter->teamList.at(i)->addViableBattleCommands();
+            // }
 
             changeMenuState(CommandMenu);
 

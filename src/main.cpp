@@ -298,6 +298,10 @@ int main() {
 
     commandMenu.setActiveCharacter(&playerCharacter);
 
+    //Currently the activecharacter needs to be known for setparadigm to work
+    //this is functional but not a particularly good design. Will probably (definitely) make a teammanager class of some sort to handle this but not rn lol
+    commandMenu.setParadigm();
+
     running = 1;
 
     //writes to fixed text buffer
