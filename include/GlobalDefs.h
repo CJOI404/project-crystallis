@@ -33,7 +33,9 @@ enum Debuff{
 
 enum Buff{
     BRAVERY,
+    BRAVERA,
     FAITH,
+    FAITHRA,
     HASTE,
     VIGILANCE,
     ENFIRE,
@@ -69,6 +71,10 @@ struct Paradigm{
     Role r3;
 };
 
+struct Effect{
+    Debuff debuff;
+    float length;
+};
 
 const char* roleToString(Role r);
 
@@ -91,6 +97,11 @@ struct CommandData{
     bool fog;
     float rise;
     Element element;
+    Debuff effect;
+    float chance;
+    int length;
+
+
 };
 
 //Colours

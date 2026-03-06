@@ -74,6 +74,7 @@ namespace UI {
     FontChar fontData[128];
     char textBuffer[64];
     uint32_t* fontTexture = nullptr;
+    uint32_t* uiSpriteTexture = nullptr;
     int textWidth = 256;
 
     int extract(const std::string& line, const std::string& key) {
@@ -159,6 +160,26 @@ namespace UI {
         currentX = 0;
         sceGuDisable(GU_TEXTURE_2D);
         
+    }
+
+    void loadSprite(const char* fntPath, const char* texturePath){
+        uiSpriteTexture = (uint32_t *) stbi_load(texturePath, &(textWidth), &(textWidth), NULL, STBI_rgb_alpha);
+    }
+
+    void drawSprite(int x, int y, int u, int v, uint32_t color, float xScale, float yScale, std::string text){
+        sceGuTexMode(GU_PSM_8888, 0, 0, GU_FALSE);
+        sceGuTexFunc(GU_TFX_REPLACE, GU_TCC_RGBA);
+        sceGuTexImage(0, 256, 256, 256, fontTexture);
+
+        //enable transparency
+        sceGuEnable(GU_BLEND);
+        sceGuBlendFunc(GU_ADD, GU_SRC_ALPHA, GU_ONE_MINUS_SRC_ALPHA, 0, 0);
+
+        sceGuEnable(GU_TEXTURE_2D); 
+
+        TextureVertex* vertices = (TextureVertex*)sceGuGetMemory(2 * sizeof(TextureVertex));
+
+
     }
 
     void drawRect(float x, float y, float w, float h, unsigned int colour) {

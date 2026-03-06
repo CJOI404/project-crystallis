@@ -70,10 +70,19 @@ void AttackCommand::execute(Character* sender, Character* receiver){
             Defaith (rav only)          *0.1
        
         */
-        float statusEffectsMod = 1; //implement when status effects are fully implemented
+        float statusEffectsModAtk = 1; 
+        float statusEffectsModRav = 1;
 
-        atkDmg *= statusEffectsMod;
-        ravDmg *= statusEffectsMod;
+        if (sender->activeDebuffs[DEBRAVE]) statusEffectsModAtk *= 0.1;
+        if (sender->activeBuffs[BRAVERY]) statusEffectsModAtk *= 1.4;
+        if (sender->activeBuffs[BRAVERA]) statusEffectsModAtk *= 1.8;
+
+        if (sender->activeDebuffs[DEFAITH]) statusEffectsModRav *= 0.1;
+        if (sender->activeBuffs[FAITH]) statusEffectsModRav *= 1.4;
+        if (sender->activeBuffs[FAITHRA]) statusEffectsModRav *= 1.8;
+
+        atkDmg *= statusEffectsModAtk;
+        ravDmg *= statusEffectsModRav;
 
         //3. Get lower limit for random damage factor
         float atkDmgL = (1 - variation) * atkDmg;
@@ -137,8 +146,17 @@ void AttackCommand::execute(Character* sender, Character* receiver){
         } 
 
         //"Deprotect and deshell are subtracted directly from physical and magical resistance"
+        if (receiver->activeDebuffs[Debuff::DEPROTECT]){
+            atkDmg *= (receiver->getResistance(Element::PHYSICAL) * 1.89);
+        } else {
+            atkDmg *= receiver->getResistance(Element::PHYSICAL);
+        }
+        if (receiver->activeDebuffs[Debuff::DESHELL]){
+            ravDmg *= (receiver->getResistance(Element::MAGICAL) * 1.89);
+        } else {
+            ravDmg *= receiver->getResistance(Element::MAGICAL);
+        }
 
-        atkDmg *= receiver->getResistance(Element::PHYSICAL);
         ravDmg *= receiver->getResistance(Element::MAGICAL);
 
         //9. Calculate enemy status effects (except deprotect and deshell)

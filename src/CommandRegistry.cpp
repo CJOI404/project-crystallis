@@ -99,6 +99,26 @@ namespace Commands{
                 else if (data[16] == "E") {cData.element = Element::EARTH;}
                 else cData.element = Element::NOELEMENT;
 
+                if (data[17] == "DEPRO") {cData.effect = Debuff::DEPROTECT;}
+                else if (data[17] == "DESHL") {cData.effect = Debuff::DESHELL;}
+                else if (data[17] == "WEAK") {cData.effect = Debuff::IMPERIL;}
+                else if (data[17] == "POISON") {cData.effect = Debuff::POISON;}
+                else if (data[17] == "SLOW") {cData.effect = Debuff::SLOW;}
+                else if (data[17] == "FOG") {cData.effect = Debuff::FOG;}
+                else if (data[17] == "PAIN") {cData.effect = Debuff::PAIN;}
+                else if (data[17] == "CURSE") {cData.effect = Debuff::CURSE;}
+                else if (data[17] == "DAZE") {cData.effect = Debuff::DAZE;}
+                else if (data[17] == "PROV") {cData.effect = Debuff::PROVOKE;}
+                //add dispel later
+
+
+                cData.chance = std::atof(data[18].c_str());
+
+                cData.length = std::atoi(data[19].c_str());
+
+
+
+
                 //17 = effect (debuff)
                 //18 = chance (debuff)
                 //19 = length (debuff)
@@ -106,6 +126,7 @@ namespace Commands{
 
             //data[2] determines type
             if (strcmp(cData.type, "ATTACK") == 0) {com = new AttackCommand(cData);}
+            if (strcmp(cData.type, "DEBUFF") == 0) {com = new DebuffCommand(cData);}
 
             
             if (com) commandList.push_back(com);

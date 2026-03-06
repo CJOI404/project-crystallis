@@ -62,7 +62,7 @@ class Character : public GameActor {
 
         int targetIndex = -1;
 
-        BattleCommand* abilities[10];
+        std::vector<BattleCommand*> abilities;
 
         //resistances to elements/attack types
         float resistances[Element::ELEMENTCOUNT]{};
@@ -72,6 +72,9 @@ class Character : public GameActor {
         //stores active buffs/debuffs
         bool activeBuffs[Buff::BUFFCOUNT]{};
         bool activeDebuffs[Debuff::DEBUFFCOUNT]{};
+        float debuffDurations[Debuff::DEBUFFCOUNT] = {};
+
+        std::vector<Effect*> activeEffects;
 
         void startAttack(int targetIndex);
 
@@ -89,5 +92,7 @@ class Character : public GameActor {
 
         void update(float dt) override;
         void render(float dt) override;
+
+        void updateEffects(float dt);
         
 };

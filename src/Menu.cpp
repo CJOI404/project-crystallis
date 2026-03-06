@@ -27,9 +27,9 @@ Menu::Menu(){
     options[3] = "ITEMS";
 
     //Set paradigms for testing (will have to abstract this later so they can be edited)
-    Paradigm* p1 = new Paradigm {"Ruthless", Role::COMMANDO, Role::RAVAGER, Role::SABOTEUR};
-    Paradigm* p2 = new Paradigm {"Cerberus", Role::RAVAGER, Role::COMMANDO, Role::COMMANDO};
-    Paradigm* p3 = new Paradigm {"Ruthless", Role::COMMANDO, Role::RAVAGER, Role::SABOTEUR};
+    Paradigm* p1 = new Paradigm {"RUTHLESS", Role::COMMANDO, Role::RAVAGER, Role::SABOTEUR};
+    Paradigm* p2 = new Paradigm {"CERBERUS", Role::RAVAGER, Role::COMMANDO, Role::COMMANDO};
+    Paradigm* p3 = new Paradigm {"Ruthless", Role::SABOTEUR, Role::RAVAGER, Role::SABOTEUR};
     Paradigm* p4 = new Paradigm {"Cerberus", Role::RAVAGER, Role::COMMANDO, Role::COMMANDO};
     Paradigm* p5 = new Paradigm {"Ruthless", Role::COMMANDO, Role::RAVAGER, Role::SABOTEUR};
     Paradigm* p6 = new Paradigm {"Cerberus", Role::RAVAGER, Role::COMMANDO, Role::COMMANDO};
@@ -71,7 +71,7 @@ void Menu::cursorLeft(){
 }
 
 void Menu::cursorRight(){
-    if (selectedIndex <= (optionMax - 4)){
+    if (menuState != ParadigmMenu && selectedIndex <= (optionMax - 4)){
         selectedIndex += 4;
     } 
 }
@@ -261,7 +261,7 @@ void Menu::drawMenu(){
             break;
         case AbilitiesMenu:
             drawAtb();
-            for (int i = 0; i <= abilitiesMax; i++){
+            for (int i = 0; i < activeCharacter->abilities.size(); i++){
                 if (i != 0 && i % 4 == 0){
                     currX -= cascadeOffset*4;
                     currX += buttonWidth + padding;
@@ -304,9 +304,9 @@ void Menu::drawMenu(){
                 // }
                 Colours colour = Colours::LIGHTGREY;
                 if (selectedIndex == i) colour = Colours::RED;
-                UI::drawRect(currX, currY, buttonWidth, buttonHeight * 0.9, colour);
+                UI::drawRect(currX, currY, buttonWidth * 1.5, buttonHeight * 0.9, colour);
                 
-                snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s %s %s %s", paradigms[i]->name, roleToString(paradigms[i]->r1), roleToString(paradigms[i]->r2), roleToString(paradigms[i]->r3));
+                snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s \t %s %s %s", paradigms[i]->name, roleToString(paradigms[i]->r1), roleToString(paradigms[i]->r2), roleToString(paradigms[i]->r3));
                 UI::drawString(currX + 5, currY, 0xFFFFFFFF, 0.35, 0.35, UI::textBuffer);
                 currY += (buttonHeight * 0.9) + padding;
             }

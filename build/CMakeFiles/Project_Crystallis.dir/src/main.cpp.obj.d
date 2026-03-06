@@ -197,6 +197,7 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /mnt/d/project-crystallis/include/UIRender.h \
  /mnt/d/project-crystallis/include/CommandRegistry.h \
  /mnt/d/project-crystallis/include/AttackCommand.h \
+ /mnt/d/project-crystallis/include/DebuffCommand.h \
  /home/calvi/pspdev/psp/include/stb_image.h \
  /home/calvi/pspdev/psp/include/assert.h \
  /mnt/d/project-crystallis/include/Menu.h \

@@ -70,26 +70,65 @@ void Character::addBattleCommand(BattleCommand* command, int index){
 }
 
 void Character::addViableBattleCommands(){
-    int abilitiesIndex = 0;
-    //clear abilities array
-    for (int i = 0; i < sizeof(abilities); i++){
-        abilities[i] = nullptr;
-    }
-    for (int i = 0; i < Commands::commandList.size() && abilitiesIndex < sizeof(abilities); i++){
+    // int abilitiesIndex = 0;
+    // //clear abilities array
+    // for (int i = 0; i < abilities.size(); i++){
+    //     abilities[i] = nullptr;
+    // }
+    abilities.clear();
+    for (int i = 0; i < Commands::commandList.size(); i++){
         if (Commands::commandList.at(i)->role == currentRole){
-            abilities[abilitiesIndex] = Commands::commandList.at(i);
-            abilitiesIndex++;
+            abilities.push_back(Commands::commandList.at(i));
         }
     }
 }
 
+void Character::updateEffects(float dt){
+    //countdown effect timer
+    for (int i = 0; i < sizeof(activeDebuffs); i++){
+        if (activeDebuffs[i]){
+            debuffDurations[i] -= dt;
+            if (debuffDurations[i] <= 0){
+                debuffDurations[i] = 0;
+                activeDebuffs[i] = false;
+                //revert debuff effects
+                // switch (i){
+                //     case Debuff::DEBRAVE:
+                //     case Debuff::DEPROTECT:
+                // }
+            }
+        } 
+
+    }
+}
+
 void Character::update(float dt){
+
+    // //Effect countdown (frees memory)
+    // for (int i = activeEffects.size() - 1; i >= 0; i--){
+    //     if (activeEffects[i]->length <= 0){
+    //         delete activeEffects[i];
+    //         activeEffects.erase(activeEffects.begin() + i);
+    //     } else {
+    //         //apply debuff
+    //         // activeEffects[i]->debuff
+    //     }
+    // }
+
+    updateEffects(dt);
+
+    /*Poison causes the target to continuously lose HP every second equal to 0.32% of their maximum*/
+    if (activeDebuffs[Debuff::POISON]){
+        health -= (maxHealth * 0.0032) * dt;
+    }
 
     //check if they should be staggered
     if (stagger >= staggerPoint && !staggered){
         stagger += 100;
         staggered = true;
         chainDuration = (chainDuration * 2) + 7;
+        if (chainDuration < 8) chainDuration = 8;
+        if (chainDuration > 45) chainDuration = 45;
         peakChainDuration = chainDuration;
     }
     //calculate chain fall, reset stagger/chain bonus is duration is over after stagger

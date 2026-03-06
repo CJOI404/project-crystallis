@@ -140,4 +140,5 @@ CMakeFiles/Project_Crystallis.dir/src/Character.cpp.obj: \
  /home/calvi/pspdev/psp/sdk/include/psptypes.h \
  /home/calvi/pspdev/psp/sdk/include/pspge.h \
  /mnt/d/project-crystallis/include/CommandRegistry.h \
- /mnt/d/project-crystallis/include/AttackCommand.h
+ /mnt/d/project-crystallis/include/AttackCommand.h \
+ /mnt/d/project-crystallis/include/DebuffCommand.h

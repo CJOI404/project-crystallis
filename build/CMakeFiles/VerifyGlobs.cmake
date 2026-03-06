@@ -18,6 +18,7 @@ set(OLD_GLOB
   "/mnt/d/project-crystallis/src/Character.cpp"
   "/mnt/d/project-crystallis/src/Command.cpp"
   "/mnt/d/project-crystallis/src/CommandRegistry.cpp"
+  "/mnt/d/project-crystallis/src/DebuffCommand.cpp"
   "/mnt/d/project-crystallis/src/GlobalDefs.cpp"
   "/mnt/d/project-crystallis/src/InputHandler.cpp"
   "/mnt/d/project-crystallis/src/Menu.cpp"

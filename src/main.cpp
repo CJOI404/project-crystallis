@@ -426,7 +426,14 @@ int main() {
             // std::string playerHealth = "HEALTH: " + std::to_string(playerCharacter.health);
             // std::string fireResistance = "HEALTH: " + std::to_string(playerCharacter.health);
 
-            // UI::drawString(10, 5, 0xFFFFFFFF, 0.8, 0.8, "HEALTH: " + std::to_string(playerCharacter.health) + "");
+            for (int i = 0; i < Debuff::DEBUFFCOUNT; i++){
+                if (enemy.activeDebuffs[i]){
+                    UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, "TEST DEBUFF IS ON");
+                    snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%.2f", enemy.debuffDurations[i]);
+                    UI::drawString(50, 30, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);                                   
+                }
+            }
+            // UI::drawString(10, 5, 0xFFFFFFFF, 0.8, 0.8, "DEBUFFS: " + std::to_string(playerCharacter.health) + "");
             // UI::drawString(10, 25, 0xFFFFFFFF, 0.4, 0.4, "RESISTANCES:");
             // UI::drawString(10, 45, 0xFFFFFFFF, 0.3, 0.3, "FIRE: " + std::to_string(playerCharacter.resistances[Element::FIRE]));
 
