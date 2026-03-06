@@ -263,10 +263,13 @@ void Menu::drawMenu(){
                 currX += cascadeOffset;
             }
             break;
-        case AbilitiesMenu:
+        case AbilitiesMenu:{
             drawAtb();
-            for (int i = 0; i < activeCharacter->abilities.size(); i++){
-                if (i != 0 && i % 4 == 0){
+            int idx = (selectedIndex / 8) * 8;
+            currX = x;
+            currY = y;
+            for (int i = idx; i < activeCharacter->abilities.size() && i < idx + 8; i++){
+                if (i != idx && i % 4 == 0){
                     currX -= cascadeOffset*4;
                     currX += buttonWidth + padding;
                     currY = y;
@@ -280,8 +283,9 @@ void Menu::drawMenu(){
                 currY += buttonHeight + padding;
                 currX += cascadeOffset;
             }
-
             break;
+        }
+
         case EnemyMenu:
             drawAtb();
             for (int i = 0; i <= optionMax; i++){
