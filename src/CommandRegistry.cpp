@@ -99,17 +99,41 @@ namespace Commands{
                 else if (data[16] == "E") {cData.element = Element::EARTH;}
                 else cData.element = Element::NOELEMENT;
 
-                if (data[17] == "DEPRO") {cData.effect = Debuff::DEPROTECT;}
-                else if (data[17] == "DESHL") {cData.effect = Debuff::DESHELL;}
-                else if (data[17] == "WEAK") {cData.effect = Debuff::IMPERIL;}
-                else if (data[17] == "POISON") {cData.effect = Debuff::POISON;}
-                else if (data[17] == "SLOW") {cData.effect = Debuff::SLOW;}
-                else if (data[17] == "FOG") {cData.effect = Debuff::FOG;}
-                else if (data[17] == "PAIN") {cData.effect = Debuff::PAIN;}
-                else if (data[17] == "CURSE") {cData.effect = Debuff::CURSE;}
-                else if (data[17] == "DAZE") {cData.effect = Debuff::DAZE;}
-                else if (data[17] == "PROV") {cData.effect = Debuff::PROVOKE;}
-                //add dispel later
+                if (data[17] == "DEPRO") {cData.debuff = Debuff::DEPROTECT;}
+                else if (data[17] == "DESHL") {cData.debuff = Debuff::DESHELL;}
+                else if (data[17] == "WEAK") {cData.debuff = Debuff::IMPERIL;}
+                else if (data[17] == "POISON") {cData.debuff = Debuff::POISON;}
+                else if (data[17] == "SLOW") {cData.debuff = Debuff::SLOW;}
+                else if (data[17] == "FOG") {cData.debuff = Debuff::FOG;}
+                else if (data[17] == "PAIN") {cData.debuff = Debuff::PAIN;}
+                else if (data[17] == "CURSE") {cData.debuff = Debuff::CURSE;}
+                else if (data[17] == "DAZE") {cData.debuff = Debuff::DAZE;}
+                else if (data[17] == "PROV") {cData.debuff = Debuff::PROVOKE;}
+                else if (data[17] == "DSPEL") {cData.debuff = Debuff::DISPEL;}
+                else {cData.debuff = Debuff::NODEBUFF;}
+
+                if (data[17] == "BRAVE") {cData.buff = Buff::BRAVERY;}
+                else if (data[17] == "BRVRA") {cData.buff = Buff::BRAVERA;}
+                else if (data[17] == "FAITH") {cData.buff = Buff::FAITH;}
+                else if (data[17] == "FAIDA") {cData.buff = Buff::FAITHRA;}
+                else if (data[17] == "HASTE") {cData.buff = Buff::HASTE;}
+                else if (data[17] == "VIGIL") {cData.buff = Buff::VIGILANCE;}
+                else if (data[17] == "ENFIR") {cData.buff = Buff::ENFIRE;}
+                else if (data[17] == "ENBLZ") {cData.buff = Buff::ENFROST;}
+                else if (data[17] == "ENTHN") {cData.buff = Buff::ENTHUNDER;}
+                else if (data[17] == "ENWTR") {cData.buff = Buff::ENWATER;}
+                else if (data[17] == "PROT") {cData.buff = Buff::PROTECT;}
+                else if (data[17] == "PRTRA") {cData.buff = Buff::PROTECTRA;}
+                else if (data[17] == "SHELL") {cData.buff = Buff::SHELL;}
+                else if (data[17] == "SHLDA") {cData.buff = Buff::SHELLRA;}
+                else if (data[17] == "HLFFR") {cData.buff = Buff::BARFIRE;}
+                else if (data[17] == "HLFBZ") {cData.buff = Buff::BARFROST;}
+                else if (data[17] == "HLFTH") {cData.buff = Buff::BARTHUNDER;}
+                else if (data[17] == "HLFWT") {cData.buff = Buff::BARWATER;}
+                else if (data[17] == "VEIL") {cData.buff = Buff::VEIL;}
+                else {cData.buff = Buff::NOBUFF;}
+
+
 
 
                 cData.chance = std::atof(data[18].c_str());
@@ -124,9 +148,7 @@ namespace Commands{
                 //19 = length (debuff)
 
 
-            //data[2] determines type
-            if (strcmp(cData.type, "ATTACK") == 0) {com = new AttackCommand(cData);}
-            if (strcmp(cData.type, "DEBUFF") == 0) {com = new DebuffCommand(cData);}
+            com = new AttackCommand(cData);
 
             
             if (com) commandList.push_back(com);

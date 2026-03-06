@@ -22,7 +22,7 @@ DebuffCommand::DebuffCommand(CommandData& cmdData){
     this->fog = cmdData.fog;
     this->rise = cmdData.rise;
 
-    this->effect = cmdData.effect;
+    this->debuff = cmdData.debuff;
     this->chance = cmdData.chance;
     this->length = cmdData.length;
 
@@ -32,8 +32,8 @@ DebuffCommand::DebuffCommand(CommandData& cmdData){
 void DebuffCommand::execute(Character* sender, Character* receiver){
     //surround this by if statement for chance
     if (getRandomFloat() <= chance){ 
-        receiver->activeDebuffs[effect] = true;
-        receiver->debuffDurations[effect] = length;
+        receiver->activeDebuffs[debuff] = true;
+        receiver->debuffDurations[debuff] = length;
 
         // xxx = accounted for in other algorithm (like damage calculation)
         /* _________________________________________________________________________
@@ -97,7 +97,7 @@ void DebuffCommand::execute(Character* sender, Character* receiver){
         *=========================================================================**/
 
         //Apply effect overwrites
-        switch (effect){
+        switch (debuff){
             case (DEBRAVE):
                 receiver->activeBuffs[Buff::BRAVERY] = false;
                 receiver->activeBuffs[Buff::BRAVERA] = false;
@@ -123,7 +123,7 @@ void DebuffCommand::execute(Character* sender, Character* receiver){
         }
 
 
-        receiver->activeEffects.push_back(new Effect {effect, length});
+        // receiver->activeEffects.push_back(new Effect {debuff, length});
     /*    DEBRAVE,
         DEFAITH,
         DEPROTECT,

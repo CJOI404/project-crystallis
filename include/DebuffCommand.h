@@ -7,7 +7,7 @@ class DebuffCommand : public BattleCommand {
     public:
         float chance;
         float length;
-        Debuff effect;
+        Debuff debuff;
 
         DebuffCommand(CommandData& cmdData);
 

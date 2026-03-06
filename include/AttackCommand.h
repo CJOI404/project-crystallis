@@ -7,8 +7,14 @@ class AttackCommand : public BattleCommand {
 
     public:
 
-        //this will likely have to be changed later
+        //Attack 
         Element element = Element::NOELEMENT;
+
+        //Status
+        float chance;
+        float length;
+        Debuff debuff;
+        Buff buff;
 
         AttackCommand();
         AttackCommand(CommandData& cmdData);
@@ -17,6 +23,9 @@ class AttackCommand : public BattleCommand {
         // AttackCommand(std::string name, float atkDmgScale, float ravDmgScale, float chainValue, int atbCost, float duration, float useTime);
 
         void execute(Character* sender, Character* receiver) override;
+
+        int calculateDmg(Character* sender, Character* receiver);
+        void handleStatus(Character* sender, Character* receiver);
    
 
 };

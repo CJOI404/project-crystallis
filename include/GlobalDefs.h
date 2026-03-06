@@ -27,6 +27,7 @@ enum Debuff{
     CURSE,
     DAZE,
     PROVOKE,
+    DISPEL,
     NODEBUFF,
     DEBUFFCOUNT
 };
@@ -99,7 +100,8 @@ struct CommandData{
     bool fog;
     float rise;
     Element element;
-    Debuff effect;
+    Debuff debuff;
+    Buff buff;
     float chance;
     int length;
 
