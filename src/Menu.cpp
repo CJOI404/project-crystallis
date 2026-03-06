@@ -76,6 +76,34 @@ void Menu::cursorRight(){
     } 
 }
 
+// void Menu::setOptionMax(){
+
+// }
+void Menu::changeMenuState(MenuState mState){
+    menuState = mState;
+    switch(mState){
+        case CommandMenu: 
+            selectedIndex = 0;
+            optionMax = std::size(options) - 1;
+            break;
+        case AbilitiesMenu:
+            selectedIndex = 0;
+            optionMax = activeCharacter->abilities.size() - 1;
+            break;
+        case EnemyMenu:
+            selectedIndex = 0;
+            optionMax = activeCharacter->enemyList.size() - 1;
+            break;
+        case ItemsMenu:
+        case ParadigmMenu:
+            selectedIndex = selectedParadigm;
+            optionMax = std::size(paradigms) - 1;
+            break;
+        case TechniquesMenu:
+            break;
+    }
+}
+
 void Menu::selectButton(){
     switch (menuState){
         case CommandMenu:
@@ -84,9 +112,7 @@ void Menu::selectButton(){
                     //go to abilities menu if the character is not attacking or about to attack
                     if (activeCharacter->characterState != CharacterState::Attacking
                         && activeCharacter->characterState != CharacterState::AttackReady){
-                        menuState = AbilitiesMenu;
-                        selectedIndex = 0;
-                        optionMax = abilitiesMax;
+                            changeMenuState(AbilitiesMenu);
                     }
                     break;
                 case 1:
@@ -104,11 +130,8 @@ void Menu::selectButton(){
             //add corresponding attackcommand in list to the character's queue. 
             if (activeCharacter->commandQueue.size() < activeCharacter->atbSegments){
                 activeCharacter->commandQueue.push_back(activeCharacter->abilities[selectedIndex]);
-
                 if (activeCharacter->commandQueue.size() == activeCharacter->atbSegments){
-                    menuState = EnemyMenu;
-                    selectedIndex = 0;
-                    optionMax = activeCharacter->enemyList.size() - 1;
+                    changeMenuState(EnemyMenu);
                 }
             }
 
@@ -121,10 +144,7 @@ void Menu::selectButton(){
         case EnemyMenu:
             //set the character's target and enter attack ready state, return to command menu
             activeCharacter->startAttack(selectedIndex);
-            menuState = CommandMenu;
-            optionMax = 3;
-            selectedIndex = 0;
-
+            changeMenuState(CommandMenu);
             break;
         case ParadigmMenu:
             activeCharacter->currentRole = paradigms[selectedIndex]->r1;
@@ -135,10 +155,7 @@ void Menu::selectButton(){
                 activeCharacter->teamList.at(i)->addViableBattleCommands();
             }
 
-            menuState = CommandMenu;
-            optionMax = 3;
-            selectedIndex = 0;
-
+            changeMenuState(CommandMenu);
 
     }
 
@@ -156,24 +173,19 @@ void Menu::backButton(){
             if (!(activeCharacter->commandQueue.empty())){
                 activeCharacter->commandQueue.pop_back();
             } else {
-                menuState = CommandMenu;
-                selectedIndex = 0;
-                optionMax = 3;
+                changeMenuState(CommandMenu);
             }
             break;
 
         case EnemyMenu:
             //return to ability select
-            menuState = AbilitiesMenu;
-            selectedIndex = 0;
-            optionMax = abilitiesMax;
+            
+            changeMenuState(AbilitiesMenu);
             break;
 
 
         case ParadigmMenu:
-            menuState = CommandMenu;
-            selectedIndex = 0;
-            optionMax = 3;   
+            changeMenuState(CommandMenu);
     }
 }
 
@@ -181,13 +193,9 @@ void Menu::earlyExecuteButton(){
     switch (menuState){
         case AbilitiesMenu:
             if (activeCharacter->commandQueue.empty()){
-                menuState = CommandMenu;
-                selectedIndex = 0;
-                optionMax = 3;                
+                changeMenuState(CommandMenu);         
             } else {
-                menuState = EnemyMenu;
-                selectedIndex = 0;
-                optionMax = activeCharacter->enemyList.size() - 1;
+                changeMenuState(EnemyMenu);
             }
             break;
         case CommandMenu:
@@ -202,13 +210,9 @@ void Menu::earlyExecuteButton(){
 
 void Menu::paradigmSwitchButton(){
     if (menuState == ParadigmMenu){
-        menuState = CommandMenu;
-        selectedIndex = 0;
-        optionMax = 3;
+        changeMenuState(CommandMenu);
     } else {
-        selectedIndex = selectedParadigm;
-        optionMax = paradigmMax;
-        menuState = ParadigmMenu;
+        changeMenuState(ParadigmMenu);
     }
 }
 

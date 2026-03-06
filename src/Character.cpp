@@ -81,6 +81,7 @@ void Character::addViableBattleCommands(){
             abilities.push_back(Commands::commandList.at(i));
         }
     }
+    
 }
 
 void Character::updateEffects(float dt){

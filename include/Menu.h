@@ -56,6 +56,7 @@ class Menu {
         void backButton();
         void earlyExecuteButton();
         void paradigmSwitchButton();
+        void changeMenuState(MenuState mState);
 
         void setActiveCharacter(Character* character);
 

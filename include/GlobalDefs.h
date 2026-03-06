@@ -78,6 +78,8 @@ struct Effect{
 
 const char* roleToString(Role r);
 
+float getRandomFloat();
+
 struct CommandData{
     char name[16];
     int cost;

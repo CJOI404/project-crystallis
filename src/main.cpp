@@ -365,9 +365,6 @@ int main() {
             // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "Lightning Health: %d", playerCharacter.health);
             // UI::drawString(300, 200, 0xFFFFFFFF, 0.5, 0.5, UI::textBuffer);
 
-            snprintf(UI::textBuffer, sizeof(UI::textBuffer), "Health: %d", enemy.health);
-            UI::drawString(50, 50, 0xFFFFFFFF, 0.5, 0.5, UI::textBuffer);
-
             //draw stagger
             UI::drawRect(230, 5, 200, 12, Colours::LIGHTGREY);
 
@@ -430,9 +427,12 @@ int main() {
                 if (enemy.activeDebuffs[i]){
                     UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, "TEST DEBUFF IS ON");
                     snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%.2f", enemy.debuffDurations[i]);
-                    UI::drawString(50, 30, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);                                   
+                    UI::drawString(50, 20, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);                                   
                 }
             }
+
+            snprintf(UI::textBuffer, sizeof(UI::textBuffer), "Health: %d", enemy.health);
+            UI::drawString(50, 50, 0xFFFFFFFF, 0.5, 0.5, UI::textBuffer);
             // UI::drawString(10, 5, 0xFFFFFFFF, 0.8, 0.8, "DEBUFFS: " + std::to_string(playerCharacter.health) + "");
             // UI::drawString(10, 25, 0xFFFFFFFF, 0.4, 0.4, "RESISTANCES:");
             // UI::drawString(10, 45, 0xFFFFFFFF, 0.3, 0.3, "FIRE: " + std::to_string(playerCharacter.resistances[Element::FIRE]));
