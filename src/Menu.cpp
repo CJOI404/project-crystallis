@@ -139,10 +139,17 @@ void Menu::selectButton(){
         case AbilitiesMenu:
             //add corresponding attackcommand in list to the character's queue. 
             if (activeCharacter->commandQueue.size() < activeCharacter->atbSegments){
-                activeCharacter->commandQueue.push_back(activeCharacter->abilities[selectedIndex]);
-                if (activeCharacter->commandQueue.size() == activeCharacter->atbSegments){
-                    changeMenuState(EnemyMenu);
-                }
+                //account for fog and pain 
+                if (!(activeCharacter->activeDebuffs[Debuff::FOG] && activeCharacter->abilities[selectedIndex]->fog)
+                    && !(activeCharacter->activeDebuffs[Debuff::PAIN] && activeCharacter->abilities[selectedIndex]->pain)){
+
+                        activeCharacter->commandQueue.push_back(activeCharacter->abilities[selectedIndex]);
+
+                        if (activeCharacter->commandQueue.size() == activeCharacter->atbSegments){
+                            changeMenuState(EnemyMenu);
+
+                        }
+                    }
             }
 
             break;
@@ -245,7 +252,7 @@ void Menu::drawTeamStats(){
 
     for (int i = 0; i < activeCharacter->teamList.size(); i++){
         UI::drawRect(currX + 80, currY + 2, 120, 6, Colours::LIGHTGREY);
-        UI::drawRect(currX + 80, currY + 3, ((float) activeCharacter->health / activeCharacter->maxHealth) * 120, 4, Colours::LIGHTGREEN);
+        UI::drawRect(currX + 80, currY + 3, ((float) activeCharacter->teamList.at(i)->health / activeCharacter->teamList.at(i)->maxHealth) * 120, 4, Colours::LIGHTGREEN);
 
         UI::drawString(currX + 80, currY - 8, 0xFFFFFFFF, 0.3, 0.3, activeCharacter->teamList.at(i)->name);
         UI::drawString(currX + 150, currY - 8, 0xFFFFFFFF, 0.3, 0.3, roleToString(activeCharacter->teamList.at(i)->currentRole));
@@ -287,7 +294,13 @@ void Menu::drawMenu(){
                     currY = y;
                 }
                 Colours colour = Colours::LIGHTGREY;
-                if (selectedIndex == i) colour = Colours::RED;
+                if ((activeCharacter->activeDebuffs[Debuff::FOG] && activeCharacter->abilities[i]->fog)
+                    || (activeCharacter->activeDebuffs[Debuff::PAIN] && activeCharacter->abilities[i]->pain)){
+                        if (selectedIndex == i) colour = Colours::MIDGREY;
+                        else colour = Colours::DARKGREY;
+                    } else {
+                        if (selectedIndex == i) colour = Colours::RED;
+                    }
                 UI::drawRect(currX, currY, buttonWidth, buttonHeight, colour);
 
                 //IMPORTANT: CHECK FOR ENOUGH ABILITIES

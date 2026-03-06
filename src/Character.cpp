@@ -11,14 +11,14 @@ Character::Character(){
     moveComp = new MovementComponent(&xPos, &yPos);
 
     //initialize resistances (0.5 = half damage taken, 2.0 = double, etc)
-    resistances[Element::FIRE] = 1.0;
-    resistances[Element::ICE] = 1.0;
-    resistances[Element::LIGHTNING] = 1.0;
-    resistances[Element::WATER] = 1.0;
-    resistances[Element::WIND] = 1.0;
-    resistances[Element::EARTH] = 1.0;
-    resistances[Element::PHYSICAL] = 1.0;
-    resistances[Element::MAGICAL] = 1.0;
+    resistances[Element::FIRE] = Resistance::NORMAL;
+    resistances[Element::ICE] = Resistance::NORMAL;
+    resistances[Element::LIGHTNING] = Resistance::NORMAL;
+    resistances[Element::WATER] = Resistance::NORMAL;
+    resistances[Element::WIND] = Resistance::NORMAL;
+    resistances[Element::EARTH] = Resistance::NORMAL;
+    resistances[Element::PHYSICAL] = Resistance::NORMAL;
+    resistances[Element::MAGICAL] = Resistance::NORMAL;
 
     //initialize immunities (1.0 = no effect on debuff chance, 0.5 = half chance, etc)
     immunities[Debuff::DEBRAVE] = 1.0;
@@ -35,6 +35,8 @@ Character::Character(){
     immunities[Debuff::PROVOKE] = 1.0;
 
 
+
+
 }
 
 Character::~Character(){
@@ -44,12 +46,25 @@ Character::~Character(){
     }
 }
 
-void Character::setResistance(Element element, float val){
+void Character::setResistance(Element element, Resistance val){
     resistances[element] = val;
 }
 
 float Character::getResistance(Element element){
-    return resistances[element];
+    switch (resistances[element]){
+        case Resistance::IMMUNE:
+            return 0;
+        case Resistance::RESISTANT:
+            return 0.1;
+        case Resistance::HALVED:
+            return 0.5;
+        case Resistance::NORMAL:
+            return 1;
+        case Resistance::WEAK:
+            return 2;
+        default:
+            return 1;
+    }
 }
 
 void Character::setImmunity(Debuff debuff, float val){
@@ -84,44 +99,49 @@ void Character::addViableBattleCommands(){
     
 }
 
+void Character::revertDebuff(int effectIdx){
+    switch (effectIdx){
+        case Debuff::IMPERIL:
+            //restore resistances
+            for (int i = 0; i < std::size(resistances); i++){
+                //Lower resistance by one (unless immune)
+                Resistance r = resistances[i];
+                if (r > 0) resistances[i] = (Resistance)((int)r - 1);
+            }
+            break;
+        case Debuff::SLOW:
+            atbRechargeSpeed *= 2;
+            break;
+        case Debuff::CURSE:
+            curseCutDiff = 0;
+            break;
+        
+    }
+}
+
 void Character::updateEffects(float dt){
     //countdown effect timer
-    for (int i = 0; i < sizeof(activeDebuffs); i++){
+    for (int i = 0; i < std::size(activeDebuffs); i++){
         if (activeDebuffs[i]){
             debuffDurations[i] -= dt;
             if (debuffDurations[i] <= 0){
                 debuffDurations[i] = 0;
                 activeDebuffs[i] = false;
-                //revert debuff effects
-                // switch (i){
-                //     case Debuff::DEBRAVE:
-                //     case Debuff::DEPROTECT:
-                // }
+                revertDebuff(i);
             }
         } 
 
+    }
+    
+    /*Poison causes the target to continuously lose HP every second equal to 0.32% of their maximum*/
+    if (activeDebuffs[Debuff::POISON]){
+        health -= (maxHealth * 0.0032) * dt;
     }
 }
 
 void Character::update(float dt){
 
-    // //Effect countdown (frees memory)
-    // for (int i = activeEffects.size() - 1; i >= 0; i--){
-    //     if (activeEffects[i]->length <= 0){
-    //         delete activeEffects[i];
-    //         activeEffects.erase(activeEffects.begin() + i);
-    //     } else {
-    //         //apply debuff
-    //         // activeEffects[i]->debuff
-    //     }
-    // }
-
     updateEffects(dt);
-
-    /*Poison causes the target to continuously lose HP every second equal to 0.32% of their maximum*/
-    if (activeDebuffs[Debuff::POISON]){
-        health -= (maxHealth * 0.0032) * dt;
-    }
 
     //check if they should be staggered
     if (stagger >= staggerPoint && !staggered){

@@ -62,8 +62,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-q5GCPP"
-      binary: "/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-q5GCPP"
+      source: "/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-FsiTQc"
+      binary: "/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-FsiTQc"
     cmakeVariables:
       CMAKE_C_FLAGS: "-I/home/calvi/pspdev/psp/include -I/home/calvi/pspdev/psp/sdk/include -DPSP"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -72,13 +72,13 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-q5GCPP'
+        Change Dir: '/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-FsiTQc'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_68e15/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_68e15.dir/build.make CMakeFiles/cmTC_68e15.dir/build
-        gmake[1]: Entering directory '/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-q5GCPP'
-        Building C object CMakeFiles/cmTC_68e15.dir/CMakeCCompilerABI.c.obj
-        /home/calvi/pspdev/bin/psp-gcc -DPSP -D_PSP_FW_VERSION=600 -D__PSP__  -I/home/calvi/pspdev/psp/include -I/home/calvi/pspdev/psp/sdk/include -DPSP    -v -o CMakeFiles/cmTC_68e15.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_697d6/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_697d6.dir/build.make CMakeFiles/cmTC_697d6.dir/build
+        gmake[1]: Entering directory '/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-FsiTQc'
+        Building C object CMakeFiles/cmTC_697d6.dir/CMakeCCompilerABI.c.obj
+        /home/calvi/pspdev/bin/psp-gcc -DPSP -D_PSP_FW_VERSION=600 -D__PSP__  -I/home/calvi/pspdev/psp/include -I/home/calvi/pspdev/psp/sdk/include -DPSP    -v -o CMakeFiles/cmTC_697d6.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/home/calvi/pspdev/bin/psp-gcc
         Target: psp
@@ -86,8 +86,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.1.1 20250425 (GCC) 
-        COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_68e15.dir/CMakeCCompilerABI.c.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_68e15.dir/'
-         /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/cc1 -quiet -v -I /home/calvi/pspdev/psp/include -I /home/calvi/pspdev/psp/sdk/include -iprefix /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/ -isysroot /home/calvi/pspdev/bin/../psp -DPSP=1 -D__PSP__=1 -D_PSP=1 -D__psp__=1 -D PSP -D _PSP_FW_VERSION=600 -D __PSP__ -D PSP /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_68e15.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mhard-float -msingle-float -version -o /tmp/cclxLY6d.s
+        COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_697d6.dir/CMakeCCompilerABI.c.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_697d6.dir/'
+         /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/cc1 -quiet -v -I /home/calvi/pspdev/psp/include -I /home/calvi/pspdev/psp/sdk/include -iprefix /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/ -isysroot /home/calvi/pspdev/bin/../psp -DPSP=1 -D__PSP__=1 -D_PSP=1 -D__psp__=1 -D PSP -D _PSP_FW_VERSION=600 -D __PSP__ -D PSP /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_697d6.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mhard-float -msingle-float -version -o /tmp/cc0YKRi9.s
         GNU C23 (GCC) version 15.1.1 20250425 (psp)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version none
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
@@ -106,14 +106,14 @@ events:
          /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/include
         End of search list.
         Compiler executable checksum: 145d923ef1b19c802491446a963daad3
-        COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_68e15.dir/CMakeCCompilerABI.c.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_68e15.dir/'
-         /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/as -EL -O1 -mabi=eabi -mhard-float -msingle-float -o CMakeFiles/cmTC_68e15.dir/CMakeCCompilerABI.c.obj /tmp/cclxLY6d.s
+        COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_697d6.dir/CMakeCCompilerABI.c.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_697d6.dir/'
+         /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/as -EL -O1 -mabi=eabi -mhard-float -msingle-float -o CMakeFiles/cmTC_697d6.dir/CMakeCCompilerABI.c.obj /tmp/cc0YKRi9.s
         COMPILER_PATH=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../libexec/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/
         LIBRARY_PATH=/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../lib/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/:/home/calvi/pspdev/bin/../psp/lib/
-        COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_68e15.dir/CMakeCCompilerABI.c.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_68e15.dir/CMakeCCompilerABI.c.'
-        Linking C executable cmTC_68e15
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_68e15.dir/link.txt --verbose=1
-        /home/calvi/pspdev/bin/psp-gcc -I/home/calvi/pspdev/psp/include -I/home/calvi/pspdev/psp/sdk/include -DPSP  -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -Wl,-zmax-page-size=128 -v CMakeFiles/cmTC_68e15.dir/CMakeCCompilerABI.c.obj -o cmTC_68e15   -L/home/calvi/pspdev/lib  -L/home/calvi/pspdev/psp/lib  -L/home/calvi/pspdev/psp/sdk/lib 
+        COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_697d6.dir/CMakeCCompilerABI.c.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_697d6.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_697d6
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_697d6.dir/link.txt --verbose=1
+        /home/calvi/pspdev/bin/psp-gcc -I/home/calvi/pspdev/psp/include -I/home/calvi/pspdev/psp/sdk/include -DPSP  -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -Wl,-zmax-page-size=128 -v CMakeFiles/cmTC_697d6.dir/CMakeCCompilerABI.c.obj -o cmTC_697d6   -L/home/calvi/pspdev/lib  -L/home/calvi/pspdev/psp/lib  -L/home/calvi/pspdev/psp/sdk/lib 
         Using built-in specs.
         COLLECT_GCC=/home/calvi/pspdev/bin/psp-gcc
         COLLECT_LTO_WRAPPER=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper
@@ -124,11 +124,11 @@ events:
         gcc version 15.1.1 20250425 (GCC) 
         COMPILER_PATH=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../libexec/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/
         LIBRARY_PATH=/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../lib/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/:/home/calvi/pspdev/bin/../psp/lib/
-        COLLECT_GCC_OPTIONS='-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-o' 'cmTC_68e15' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float' '-dumpdir' 'cmTC_68e15.'
-         /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/collect2 -plugin /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/liblto_plugin.so -plugin-opt=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccR3Ffff.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lpthreadglue -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lcglue -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lpsputility -plugin-opt=-pass-through=-lpsprtc -plugin-opt=-pass-through=-lpspnet_inet -plugin-opt=-pass-through=-lpspnet_resolver -plugin-opt=-pass-through=-lpspsdk -plugin-opt=-pass-through=-lpspmodinfo -plugin-opt=-pass-through=-lpspuser -plugin-opt=-pass-through=-lpspkernel -plugin-opt=-pass-through=-lgcc --sysroot=/home/calvi/pspdev/bin/../psp -EL -o cmTC_68e15 /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/crt0.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crti.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtbegin.o -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -L/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1 -L/home/calvi/pspdev/bin/../lib/gcc -L/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib -L/home/calvi/pspdev/bin/../psp/lib -zmax-page-size=128 CMakeFiles/cmTC_68e15.dir/CMakeCCompilerABI.c.obj -lgcc -lm --start-group -lpthreadglue -lpthread -lcglue -lc --end-group -lpsputility -lpsprtc -lpspnet_inet -lpspnet_resolver -lpspsdk -lpspmodinfo -lpspuser -lpspkernel -lgcc /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtend.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtn.o
-        /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper -fresolution=/tmp/ccR3Ffff.res -flinker-output=exec /home/calvi/pspdev/psp/lib/libpthread.a@0x61266 /home/calvi/pspdev/psp/lib/libpthread.a@0x63302 /home/calvi/pspdev/psp/lib/libpthread.a@0x65602 /home/calvi/pspdev/psp/lib/libpthread.a@0x670de /home/calvi/pspdev/psp/lib/libpthread.a@0x1aae /home/calvi/pspdev/psp/lib/libpthread.a@0x5122 /home/calvi/pspdev/psp/lib/libpthread.a@0x71d6 /home/calvi/pspdev/psp/lib/libpthread.a@0xb74e /home/calvi/pspdev/psp/lib/libpthread.a@0x1a5aa /home/calvi/pspdev/psp/lib/libpthread.a@0x1c49e /home/calvi/pspdev/psp/lib/libpthread.a@0x272ee /home/calvi/pspdev/psp/lib/libpthread.a@0x54f5a /home/calvi/pspdev/psp/lib/libpthread.a@0x59a32 /home/calvi/pspdev/psp/lib/libpthread.a@0x5d51e /home/calvi/pspdev/psp/lib/libpthread.a@0x5f06a /home/calvi/pspdev/psp/lib/libpthread.a@0x693fa /home/calvi/pspdev/psp/lib/libpthread.a@0x6a92e /home/calvi/pspdev/psp/lib/libpthread.a@0x6ceb2 /home/calvi/pspdev/psp/lib/libpthread.a@0x3672 
-        /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper -fresolution=/tmp/ccR3Ffff.res -flinker-output=exec /home/calvi/pspdev/psp/lib/libpthread.a@0x61266 /home/calvi/pspdev/psp/lib/libpthread.a@0x63302 /home/calvi/pspdev/psp/lib/libpthread.a@0x65602 /home/calvi/pspdev/psp/lib/libpthread.a@0x670de /home/calvi/pspdev/psp/lib/libpthread.a@0x1aae /home/calvi/pspdev/psp/lib/libpthread.a@0x5122 /home/calvi/pspdev/psp/lib/libpthread.a@0x71d6 /home/calvi/pspdev/psp/lib/libpthread.a@0xb74e /home/calvi/pspdev/psp/lib/libpthread.a@0x1a5aa /home/calvi/pspdev/psp/lib/libpthread.a@0x1c49e /home/calvi/pspdev/psp/lib/libpthread.a@0x272ee /home/calvi/pspdev/psp/lib/libpthread.a@0x54f5a /home/calvi/pspdev/psp/lib/libpthread.a@0x59a32 /home/calvi/pspdev/psp/lib/libpthread.a@0x5d51e /home/calvi/pspdev/psp/lib/libpthread.a@0x5f06a /home/calvi/pspdev/psp/lib/libpthread.a@0x693fa /home/calvi/pspdev/psp/lib/libpthread.a@0x6a92e /home/calvi/pspdev/psp/lib/libpthread.a@0x6ceb2 /home/calvi/pspdev/psp/lib/libpthread.a@0x3672 
-        /home/calvi/pspdev/bin/psp-gcc @/tmp/ccyMdf34
+        COLLECT_GCC_OPTIONS='-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-o' 'cmTC_697d6' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float' '-dumpdir' 'cmTC_697d6.'
+         /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/collect2 -plugin /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/liblto_plugin.so -plugin-opt=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccfKLtK1.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lpthreadglue -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lcglue -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lpsputility -plugin-opt=-pass-through=-lpsprtc -plugin-opt=-pass-through=-lpspnet_inet -plugin-opt=-pass-through=-lpspnet_resolver -plugin-opt=-pass-through=-lpspsdk -plugin-opt=-pass-through=-lpspmodinfo -plugin-opt=-pass-through=-lpspuser -plugin-opt=-pass-through=-lpspkernel -plugin-opt=-pass-through=-lgcc --sysroot=/home/calvi/pspdev/bin/../psp -EL -o cmTC_697d6 /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/crt0.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crti.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtbegin.o -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -L/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1 -L/home/calvi/pspdev/bin/../lib/gcc -L/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib -L/home/calvi/pspdev/bin/../psp/lib -zmax-page-size=128 CMakeFiles/cmTC_697d6.dir/CMakeCCompilerABI.c.obj -lgcc -lm --start-group -lpthreadglue -lpthread -lcglue -lc --end-group -lpsputility -lpsprtc -lpspnet_inet -lpspnet_resolver -lpspsdk -lpspmodinfo -lpspuser -lpspkernel -lgcc /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtend.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtn.o
+        /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper -fresolution=/tmp/ccfKLtK1.res -flinker-output=exec /home/calvi/pspdev/psp/lib/libpthread.a@0x61266 /home/calvi/pspdev/psp/lib/libpthread.a@0x63302 /home/calvi/pspdev/psp/lib/libpthread.a@0x65602 /home/calvi/pspdev/psp/lib/libpthread.a@0x670de /home/calvi/pspdev/psp/lib/libpthread.a@0x1aae /home/calvi/pspdev/psp/lib/libpthread.a@0x5122 /home/calvi/pspdev/psp/lib/libpthread.a@0x71d6 /home/calvi/pspdev/psp/lib/libpthread.a@0xb74e /home/calvi/pspdev/psp/lib/libpthread.a@0x1a5aa /home/calvi/pspdev/psp/lib/libpthread.a@0x1c49e /home/calvi/pspdev/psp/lib/libpthread.a@0x272ee /home/calvi/pspdev/psp/lib/libpthread.a@0x54f5a /home/calvi/pspdev/psp/lib/libpthread.a@0x59a32 /home/calvi/pspdev/psp/lib/libpthread.a@0x5d51e /home/calvi/pspdev/psp/lib/libpthread.a@0x5f06a /home/calvi/pspdev/psp/lib/libpthread.a@0x693fa /home/calvi/pspdev/psp/lib/libpthread.a@0x6a92e /home/calvi/pspdev/psp/lib/libpthread.a@0x6ceb2 /home/calvi/pspdev/psp/lib/libpthread.a@0x3672 
+        /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper -fresolution=/tmp/ccfKLtK1.res -flinker-output=exec /home/calvi/pspdev/psp/lib/libpthread.a@0x61266 /home/calvi/pspdev/psp/lib/libpthread.a@0x63302 /home/calvi/pspdev/psp/lib/libpthread.a@0x65602 /home/calvi/pspdev/psp/lib/libpthread.a@0x670de /home/calvi/pspdev/psp/lib/libpthread.a@0x1aae /home/calvi/pspdev/psp/lib/libpthread.a@0x5122 /home/calvi/pspdev/psp/lib/libpthread.a@0x71d6 /home/calvi/pspdev/psp/lib/libpthread.a@0xb74e /home/calvi/pspdev/psp/lib/libpthread.a@0x1a5aa /home/calvi/pspdev/psp/lib/libpthread.a@0x1c49e /home/calvi/pspdev/psp/lib/libpthread.a@0x272ee /home/calvi/pspdev/psp/lib/libpthread.a@0x54f5a /home/calvi/pspdev/psp/lib/libpthread.a@0x59a32 /home/calvi/pspdev/psp/lib/libpthread.a@0x5d51e /home/calvi/pspdev/psp/lib/libpthread.a@0x5f06a /home/calvi/pspdev/psp/lib/libpthread.a@0x693fa /home/calvi/pspdev/psp/lib/libpthread.a@0x6a92e /home/calvi/pspdev/psp/lib/libpthread.a@0x6ceb2 /home/calvi/pspdev/psp/lib/libpthread.a@0x3672 
+        /home/calvi/pspdev/bin/psp-gcc @/tmp/ccZqetKh
         Using built-in specs.
         COLLECT_GCC=/home/calvi/pspdev/bin/psp-gcc
         Target: psp
@@ -136,15 +136,15 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.1.1 20250425 (GCC) 
-        COLLECT_GCC_OPTIONS='-c' '-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-protection=none' '-mno-gpopt' '-mhard-float' '-msingle-float' '-O3' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float'   '-fltrans-output-list=/tmp/ccGLxkxt.ltrans.out' '-fwpa' '-fresolution=/tmp/ccR3Ffff.res' '-flinker-output=exec'
-         /home/calvi/pspdev/bin/../lib/gcc/../../libexec/gcc/psp/15.1.1/lto1 -quiet -dumpbase ./cmTC_68e15.wpa -mno-gpopt -mhard-float -msingle-float -mhard-float -msingle-float -O3 -version -fno-openmp -fno-openacc -fno-pie -fcf-protection=none -fltrans-output-list=/tmp/ccGLxkxt.ltrans.out -fwpa -fresolution=/tmp/ccR3Ffff.res -flinker-output=exec @/tmp/ccLun4go
+        COLLECT_GCC_OPTIONS='-c' '-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-protection=none' '-mno-gpopt' '-mhard-float' '-msingle-float' '-O3' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float'   '-fltrans-output-list=/tmp/ccGCRGTS.ltrans.out' '-fwpa' '-fresolution=/tmp/ccfKLtK1.res' '-flinker-output=exec'
+         /home/calvi/pspdev/bin/../lib/gcc/../../libexec/gcc/psp/15.1.1/lto1 -quiet -dumpbase ./cmTC_697d6.wpa -mno-gpopt -mhard-float -msingle-float -mhard-float -msingle-float -O3 -version -fno-openmp -fno-openacc -fno-pie -fcf-protection=none -fltrans-output-list=/tmp/ccGCRGTS.ltrans.out -fwpa -fresolution=/tmp/ccfKLtK1.res -flinker-output=exec @/tmp/ccMTieKJ
         GNU GIMPLE (GCC) version 15.1.1 20250425 (psp)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version none
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
         COMPILER_PATH=/home/calvi/pspdev/bin/../lib/gcc/../../libexec/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../lib/gcc/../../libexec/gcc/:/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../libexec/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/
         LIBRARY_PATH=/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../lib/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/:/home/calvi/pspdev/bin/../psp/lib/
-        COLLECT_GCC_OPTIONS='-c' '-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-protection=none' '-mno-gpopt' '-mhard-float' '-msingle-float' '-O3' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float'   '-fltrans-output-list=/tmp/ccGLxkxt.ltrans.out' '-fwpa' '-fresolution=/tmp/ccR3Ffff.res' '-flinker-output=exec' '-dumpdir' './cmTC_68e15.wpa.'
-        /home/calvi/pspdev/bin/psp-gcc @/tmp/ccqnMaV6
+        COLLECT_GCC_OPTIONS='-c' '-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-protection=none' '-mno-gpopt' '-mhard-float' '-msingle-float' '-O3' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float'   '-fltrans-output-list=/tmp/ccGCRGTS.ltrans.out' '-fwpa' '-fresolution=/tmp/ccfKLtK1.res' '-flinker-output=exec' '-dumpdir' './cmTC_697d6.wpa.'
+        /home/calvi/pspdev/bin/psp-gcc @/tmp/ccVgAsyV
         Using built-in specs.
         COLLECT_GCC=/home/calvi/pspdev/bin/psp-gcc
         Target: psp
@@ -152,18 +152,18 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.1.1 20250425 (GCC) 
-        COLLECT_GCC_OPTIONS='-c' '-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-protection=none' '-mno-gpopt' '-mhard-float' '-msingle-float' '-O3' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float'   '-fltrans' '-o' '/tmp/ccGLxkxt.ltrans0.ltrans.o'
-         /home/calvi/pspdev/bin/../lib/gcc/../../libexec/gcc/psp/15.1.1/lto1 -quiet -dumpbase ./cmTC_68e15.ltrans0.ltrans -mno-gpopt -mhard-float -msingle-float -mhard-float -msingle-float -O3 -version -fno-openmp -fno-openacc -fno-pie -fcf-protection=none -fltrans @/tmp/ccM4omVG -o /tmp/ccioZ2Mz.s
+        COLLECT_GCC_OPTIONS='-c' '-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-protection=none' '-mno-gpopt' '-mhard-float' '-msingle-float' '-O3' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float'   '-fltrans' '-o' '/tmp/ccGCRGTS.ltrans0.ltrans.o'
+         /home/calvi/pspdev/bin/../lib/gcc/../../libexec/gcc/psp/15.1.1/lto1 -quiet -dumpbase ./cmTC_697d6.ltrans0.ltrans -mno-gpopt -mhard-float -msingle-float -mhard-float -msingle-float -O3 -version -fno-openmp -fno-openacc -fno-pie -fcf-protection=none -fltrans @/tmp/ccKDFUFs -o /tmp/ccJUzqQU.s
         GNU GIMPLE (GCC) version 15.1.1 20250425 (psp)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version none
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-        COLLECT_GCC_OPTIONS='-c' '-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-protection=none' '-mno-gpopt' '-mhard-float' '-msingle-float' '-O3' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float'   '-fltrans' '-o' '/tmp/ccGLxkxt.ltrans0.ltrans.o'
-         /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/as -EL -O2 -mabi=eabi -mhard-float -mhard-float -msingle-float -msingle-float -o /tmp/ccGLxkxt.ltrans0.ltrans.o /tmp/ccioZ2Mz.s
+        COLLECT_GCC_OPTIONS='-c' '-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-protection=none' '-mno-gpopt' '-mhard-float' '-msingle-float' '-O3' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float'   '-fltrans' '-o' '/tmp/ccGCRGTS.ltrans0.ltrans.o'
+         /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/as -EL -O2 -mabi=eabi -mhard-float -mhard-float -msingle-float -msingle-float -o /tmp/ccGCRGTS.ltrans0.ltrans.o /tmp/ccJUzqQU.s
         COMPILER_PATH=/home/calvi/pspdev/bin/../lib/gcc/../../libexec/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../lib/gcc/../../libexec/gcc/:/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../libexec/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/
         LIBRARY_PATH=/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../lib/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/:/home/calvi/pspdev/bin/../psp/lib/
-        COLLECT_GCC_OPTIONS='-c' '-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-protection=none' '-mno-gpopt' '-mhard-float' '-msingle-float' '-O3' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float'   '-fltrans' '-o' '/tmp/ccGLxkxt.ltrans0.ltrans.o' '-dumpdir' './cmTC_68e15.ltrans0.ltrans.'
-        COLLECT_GCC_OPTIONS='-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-o' 'cmTC_68e15' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float' '-dumpdir' 'cmTC_68e15.'
-        gmake[1]: Leaving directory '/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-q5GCPP'
+        COLLECT_GCC_OPTIONS='-c' '-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-protection=none' '-mno-gpopt' '-mhard-float' '-msingle-float' '-O3' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float'   '-fltrans' '-o' '/tmp/ccGCRGTS.ltrans0.ltrans.o' '-dumpdir' './cmTC_697d6.ltrans0.ltrans.'
+        COLLECT_GCC_OPTIONS='-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-o' 'cmTC_697d6' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float' '-dumpdir' 'cmTC_697d6.'
+        gmake[1]: Leaving directory '/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-FsiTQc'
         
       exitCode: 0
   -
@@ -197,13 +197,13 @@ events:
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(psp-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-q5GCPP']
+        ignore line: [Change Dir: '/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-FsiTQc']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_68e15/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_68e15.dir/build.make CMakeFiles/cmTC_68e15.dir/build]
-        ignore line: [gmake[1]: Entering directory '/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-q5GCPP']
-        ignore line: [Building C object CMakeFiles/cmTC_68e15.dir/CMakeCCompilerABI.c.obj]
-        ignore line: [/home/calvi/pspdev/bin/psp-gcc -DPSP -D_PSP_FW_VERSION=600 -D__PSP__  -I/home/calvi/pspdev/psp/include -I/home/calvi/pspdev/psp/sdk/include -DPSP    -v -o CMakeFiles/cmTC_68e15.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_697d6/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_697d6.dir/build.make CMakeFiles/cmTC_697d6.dir/build]
+        ignore line: [gmake[1]: Entering directory '/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-FsiTQc']
+        ignore line: [Building C object CMakeFiles/cmTC_697d6.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [/home/calvi/pspdev/bin/psp-gcc -DPSP -D_PSP_FW_VERSION=600 -D__PSP__  -I/home/calvi/pspdev/psp/include -I/home/calvi/pspdev/psp/sdk/include -DPSP    -v -o CMakeFiles/cmTC_697d6.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/home/calvi/pspdev/bin/psp-gcc]
         ignore line: [Target: psp]
@@ -211,8 +211,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 15.1.1 20250425 (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_68e15.dir/CMakeCCompilerABI.c.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_68e15.dir/']
-        ignore line: [ /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/cc1 -quiet -v -I /home/calvi/pspdev/psp/include -I /home/calvi/pspdev/psp/sdk/include -iprefix /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/ -isysroot /home/calvi/pspdev/bin/../psp -DPSP=1 -D__PSP__=1 -D_PSP=1 -D__psp__=1 -D PSP -D _PSP_FW_VERSION=600 -D __PSP__ -D PSP /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_68e15.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mhard-float -msingle-float -version -o /tmp/cclxLY6d.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_697d6.dir/CMakeCCompilerABI.c.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_697d6.dir/']
+        ignore line: [ /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/cc1 -quiet -v -I /home/calvi/pspdev/psp/include -I /home/calvi/pspdev/psp/sdk/include -iprefix /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/ -isysroot /home/calvi/pspdev/bin/../psp -DPSP=1 -D__PSP__=1 -D_PSP=1 -D__psp__=1 -D PSP -D _PSP_FW_VERSION=600 -D __PSP__ -D PSP /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_697d6.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mhard-float -msingle-float -version -o /tmp/cc0YKRi9.s]
         ignore line: [GNU C23 (GCC) version 15.1.1 20250425 (psp)]
         ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version none]
         ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
@@ -231,14 +231,14 @@ events:
         ignore line: [ /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 145d923ef1b19c802491446a963daad3]
-        ignore line: [COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_68e15.dir/CMakeCCompilerABI.c.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_68e15.dir/']
-        ignore line: [ /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/as -EL -O1 -mabi=eabi -mhard-float -msingle-float -o CMakeFiles/cmTC_68e15.dir/CMakeCCompilerABI.c.obj /tmp/cclxLY6d.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_697d6.dir/CMakeCCompilerABI.c.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_697d6.dir/']
+        ignore line: [ /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/as -EL -O1 -mabi=eabi -mhard-float -msingle-float -o CMakeFiles/cmTC_697d6.dir/CMakeCCompilerABI.c.obj /tmp/cc0YKRi9.s]
         ignore line: [COMPILER_PATH=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../libexec/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/]
         ignore line: [LIBRARY_PATH=/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../lib/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/:/home/calvi/pspdev/bin/../psp/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_68e15.dir/CMakeCCompilerABI.c.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_68e15.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_68e15]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_68e15.dir/link.txt --verbose=1]
-        ignore line: [/home/calvi/pspdev/bin/psp-gcc -I/home/calvi/pspdev/psp/include -I/home/calvi/pspdev/psp/sdk/include -DPSP  -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -Wl -zmax-page-size=128 -v CMakeFiles/cmTC_68e15.dir/CMakeCCompilerABI.c.obj -o cmTC_68e15   -L/home/calvi/pspdev/lib  -L/home/calvi/pspdev/psp/lib  -L/home/calvi/pspdev/psp/sdk/lib ]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_697d6.dir/CMakeCCompilerABI.c.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_697d6.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_697d6]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_697d6.dir/link.txt --verbose=1]
+        ignore line: [/home/calvi/pspdev/bin/psp-gcc -I/home/calvi/pspdev/psp/include -I/home/calvi/pspdev/psp/sdk/include -DPSP  -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -Wl -zmax-page-size=128 -v CMakeFiles/cmTC_697d6.dir/CMakeCCompilerABI.c.obj -o cmTC_697d6   -L/home/calvi/pspdev/lib  -L/home/calvi/pspdev/psp/lib  -L/home/calvi/pspdev/psp/sdk/lib ]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/home/calvi/pspdev/bin/psp-gcc]
         ignore line: [COLLECT_LTO_WRAPPER=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper]
@@ -249,13 +249,13 @@ events:
         ignore line: [gcc version 15.1.1 20250425 (GCC) ]
         ignore line: [COMPILER_PATH=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../libexec/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/]
         ignore line: [LIBRARY_PATH=/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../lib/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/:/home/calvi/pspdev/bin/../psp/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-o' 'cmTC_68e15' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float' '-dumpdir' 'cmTC_68e15.']
-        link line: [ /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/collect2 -plugin /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/liblto_plugin.so -plugin-opt=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccR3Ffff.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lpthreadglue -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lcglue -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lpsputility -plugin-opt=-pass-through=-lpsprtc -plugin-opt=-pass-through=-lpspnet_inet -plugin-opt=-pass-through=-lpspnet_resolver -plugin-opt=-pass-through=-lpspsdk -plugin-opt=-pass-through=-lpspmodinfo -plugin-opt=-pass-through=-lpspuser -plugin-opt=-pass-through=-lpspkernel -plugin-opt=-pass-through=-lgcc --sysroot=/home/calvi/pspdev/bin/../psp -EL -o cmTC_68e15 /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/crt0.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crti.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtbegin.o -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -L/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1 -L/home/calvi/pspdev/bin/../lib/gcc -L/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib -L/home/calvi/pspdev/bin/../psp/lib -zmax-page-size=128 CMakeFiles/cmTC_68e15.dir/CMakeCCompilerABI.c.obj -lgcc -lm --start-group -lpthreadglue -lpthread -lcglue -lc --end-group -lpsputility -lpsprtc -lpspnet_inet -lpspnet_resolver -lpspsdk -lpspmodinfo -lpspuser -lpspkernel -lgcc /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtend.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-o' 'cmTC_697d6' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float' '-dumpdir' 'cmTC_697d6.']
+        link line: [ /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/collect2 -plugin /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/liblto_plugin.so -plugin-opt=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccfKLtK1.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lpthreadglue -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lcglue -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lpsputility -plugin-opt=-pass-through=-lpsprtc -plugin-opt=-pass-through=-lpspnet_inet -plugin-opt=-pass-through=-lpspnet_resolver -plugin-opt=-pass-through=-lpspsdk -plugin-opt=-pass-through=-lpspmodinfo -plugin-opt=-pass-through=-lpspuser -plugin-opt=-pass-through=-lpspkernel -plugin-opt=-pass-through=-lgcc --sysroot=/home/calvi/pspdev/bin/../psp -EL -o cmTC_697d6 /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/crt0.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crti.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtbegin.o -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -L/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1 -L/home/calvi/pspdev/bin/../lib/gcc -L/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib -L/home/calvi/pspdev/bin/../psp/lib -zmax-page-size=128 CMakeFiles/cmTC_697d6.dir/CMakeCCompilerABI.c.obj -lgcc -lm --start-group -lpthreadglue -lpthread -lcglue -lc --end-group -lpsputility -lpsprtc -lpspnet_inet -lpspnet_resolver -lpspsdk -lpspmodinfo -lpspuser -lpspkernel -lgcc /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtend.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtn.o]
           arg [/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccR3Ffff.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccfKLtK1.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lm] ==> ignore
           arg [-plugin-opt=-pass-through=-lpthreadglue] ==> ignore
@@ -274,7 +274,7 @@ events:
           arg [--sysroot=/home/calvi/pspdev/bin/../psp] ==> ignore
           arg [-EL] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_68e15] ==> ignore
+          arg [cmTC_697d6] ==> ignore
           arg [/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/crt0.o] ==> obj [/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/crt0.o]
           arg [/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crti.o] ==> obj [/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crti.o]
           arg [/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtbegin.o] ==> obj [/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtbegin.o]
@@ -289,7 +289,7 @@ events:
           arg [-L/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib] ==> dir [/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib]
           arg [-L/home/calvi/pspdev/bin/../psp/lib] ==> dir [/home/calvi/pspdev/bin/../psp/lib]
           arg [-zmax-page-size=128] ==> ignore
-          arg [CMakeFiles/cmTC_68e15.dir/CMakeCCompilerABI.c.obj] ==> ignore
+          arg [CMakeFiles/cmTC_697d6.dir/CMakeCCompilerABI.c.obj] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [-lm] ==> lib [m]
           arg [--start-group] ==> ignore
@@ -339,8 +339,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-Cx16eB"
-      binary: "/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-Cx16eB"
+      source: "/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-Y05xCm"
+      binary: "/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-Y05xCm"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-I/home/calvi/pspdev/psp/include -I/home/calvi/pspdev/psp/sdk/include -DPSP"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -349,15 +349,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-Cx16eB'
+        Change Dir: '/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-Y05xCm'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_fb230/fast
-        gmake: Warning: File 'Makefile' has modification time 0.099 s in the future
-        /usr/bin/gmake  -f CMakeFiles/cmTC_fb230.dir/build.make CMakeFiles/cmTC_fb230.dir/build
-        gmake[1]: Entering directory '/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-Cx16eB'
-        gmake[1]: Warning: File 'CMakeFiles/cmTC_fb230.dir/flags.make' has modification time 0.079 s in the future
-        Building CXX object CMakeFiles/cmTC_fb230.dir/CMakeCXXCompilerABI.cpp.obj
-        /home/calvi/pspdev/bin/psp-g++ -DPSP -D_PSP_FW_VERSION=600 -D__PSP__  -I/home/calvi/pspdev/psp/include -I/home/calvi/pspdev/psp/sdk/include -DPSP    -v -o CMakeFiles/cmTC_fb230.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_889d8/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_889d8.dir/build.make CMakeFiles/cmTC_889d8.dir/build
+        gmake[1]: Entering directory '/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-Y05xCm'
+        Building CXX object CMakeFiles/cmTC_889d8.dir/CMakeCXXCompilerABI.cpp.obj
+        /home/calvi/pspdev/bin/psp-g++ -DPSP -D_PSP_FW_VERSION=600 -D__PSP__  -I/home/calvi/pspdev/psp/include -I/home/calvi/pspdev/psp/sdk/include -DPSP    -v -o CMakeFiles/cmTC_889d8.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/home/calvi/pspdev/bin/psp-g++
         Target: psp
@@ -365,8 +363,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.1.1 20250425 (GCC) 
-        COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_fb230.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_fb230.dir/'
-         /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/cc1plus -quiet -v -I /home/calvi/pspdev/psp/include -I /home/calvi/pspdev/psp/sdk/include -iprefix /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/ -isysroot /home/calvi/pspdev/bin/../psp -DPSP=1 -D__PSP__=1 -D_PSP=1 -D__psp__=1 -D PSP -D _PSP_FW_VERSION=600 -D __PSP__ -D PSP /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_fb230.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mhard-float -msingle-float -version -o /tmp/ccsC0F3J.s
+        COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_889d8.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_889d8.dir/'
+         /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/cc1plus -quiet -v -I /home/calvi/pspdev/psp/include -I /home/calvi/pspdev/psp/sdk/include -iprefix /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/ -isysroot /home/calvi/pspdev/bin/../psp -DPSP=1 -D__PSP__=1 -D_PSP=1 -D__psp__=1 -D PSP -D _PSP_FW_VERSION=600 -D __PSP__ -D PSP /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_889d8.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mhard-float -msingle-float -version -o /tmp/ccaLZaQf.s
         GNU C++17 (GCC) version 15.1.1 20250425 (psp)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version none
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
@@ -391,14 +389,14 @@ events:
          /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/include
         End of search list.
         Compiler executable checksum: 7fd9daa43150a38782c948a6e1528bf4
-        COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_fb230.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_fb230.dir/'
-         /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/as -EL -O1 -mabi=eabi -mhard-float -msingle-float -o CMakeFiles/cmTC_fb230.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccsC0F3J.s
+        COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_889d8.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_889d8.dir/'
+         /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/as -EL -O1 -mabi=eabi -mhard-float -msingle-float -o CMakeFiles/cmTC_889d8.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccaLZaQf.s
         COMPILER_PATH=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../libexec/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/
         LIBRARY_PATH=/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../lib/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/:/home/calvi/pspdev/bin/../psp/lib/
-        COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_fb230.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_fb230.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_fb230
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fb230.dir/link.txt --verbose=1
-        /home/calvi/pspdev/bin/psp-g++ -I/home/calvi/pspdev/psp/include -I/home/calvi/pspdev/psp/sdk/include -DPSP  -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -Wl,-zmax-page-size=128 -v CMakeFiles/cmTC_fb230.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_fb230   -L/home/calvi/pspdev/lib  -L/home/calvi/pspdev/psp/lib  -L/home/calvi/pspdev/psp/sdk/lib 
+        COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_889d8.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_889d8.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_889d8
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_889d8.dir/link.txt --verbose=1
+        /home/calvi/pspdev/bin/psp-g++ -I/home/calvi/pspdev/psp/include -I/home/calvi/pspdev/psp/sdk/include -DPSP  -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -Wl,-zmax-page-size=128 -v CMakeFiles/cmTC_889d8.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_889d8   -L/home/calvi/pspdev/lib  -L/home/calvi/pspdev/psp/lib  -L/home/calvi/pspdev/psp/sdk/lib 
         Using built-in specs.
         COLLECT_GCC=/home/calvi/pspdev/bin/psp-g++
         COLLECT_LTO_WRAPPER=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper
@@ -409,11 +407,11 @@ events:
         gcc version 15.1.1 20250425 (GCC) 
         COMPILER_PATH=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../libexec/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/
         LIBRARY_PATH=/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../lib/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/:/home/calvi/pspdev/bin/../psp/lib/
-        COLLECT_GCC_OPTIONS='-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-o' 'cmTC_fb230' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float' '-dumpdir' 'cmTC_fb230.'
-         /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/collect2 -plugin /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/liblto_plugin.so -plugin-opt=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccFAnZhI.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lpthreadglue -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lcglue -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lpsputility -plugin-opt=-pass-through=-lpsprtc -plugin-opt=-pass-through=-lpspnet_inet -plugin-opt=-pass-through=-lpspnet_resolver -plugin-opt=-pass-through=-lpspsdk -plugin-opt=-pass-through=-lpspmodinfo -plugin-opt=-pass-through=-lpspuser -plugin-opt=-pass-through=-lpspkernel -plugin-opt=-pass-through=-lgcc --sysroot=/home/calvi/pspdev/bin/../psp -EL -o cmTC_fb230 /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/crt0.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crti.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtbegin.o -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -L/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1 -L/home/calvi/pspdev/bin/../lib/gcc -L/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib -L/home/calvi/pspdev/bin/../psp/lib -zmax-page-size=128 CMakeFiles/cmTC_fb230.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lm --start-group -lpthreadglue -lpthread -lcglue -lc --end-group -lpsputility -lpsprtc -lpspnet_inet -lpspnet_resolver -lpspsdk -lpspmodinfo -lpspuser -lpspkernel -lgcc /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtend.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtn.o
-        /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper -fresolution=/tmp/ccFAnZhI.res -flinker-output=exec /home/calvi/pspdev/psp/lib/libpthread.a@0x61266 /home/calvi/pspdev/psp/lib/libpthread.a@0x63302 /home/calvi/pspdev/psp/lib/libpthread.a@0x65602 /home/calvi/pspdev/psp/lib/libpthread.a@0x670de /home/calvi/pspdev/psp/lib/libpthread.a@0x1aae /home/calvi/pspdev/psp/lib/libpthread.a@0x5122 /home/calvi/pspdev/psp/lib/libpthread.a@0x71d6 /home/calvi/pspdev/psp/lib/libpthread.a@0xb74e /home/calvi/pspdev/psp/lib/libpthread.a@0x1a5aa /home/calvi/pspdev/psp/lib/libpthread.a@0x1c49e /home/calvi/pspdev/psp/lib/libpthread.a@0x272ee /home/calvi/pspdev/psp/lib/libpthread.a@0x54f5a /home/calvi/pspdev/psp/lib/libpthread.a@0x59a32 /home/calvi/pspdev/psp/lib/libpthread.a@0x5d51e /home/calvi/pspdev/psp/lib/libpthread.a@0x5f06a /home/calvi/pspdev/psp/lib/libpthread.a@0x693fa /home/calvi/pspdev/psp/lib/libpthread.a@0x6a92e /home/calvi/pspdev/psp/lib/libpthread.a@0x6ceb2 /home/calvi/pspdev/psp/lib/libpthread.a@0x3672 
-        /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper -fresolution=/tmp/ccFAnZhI.res -flinker-output=exec /home/calvi/pspdev/psp/lib/libpthread.a@0x61266 /home/calvi/pspdev/psp/lib/libpthread.a@0x63302 /home/calvi/pspdev/psp/lib/libpthread.a@0x65602 /home/calvi/pspdev/psp/lib/libpthread.a@0x670de /home/calvi/pspdev/psp/lib/libpthread.a@0x1aae /home/calvi/pspdev/psp/lib/libpthread.a@0x5122 /home/calvi/pspdev/psp/lib/libpthread.a@0x71d6 /home/calvi/pspdev/psp/lib/libpthread.a@0xb74e /home/calvi/pspdev/psp/lib/libpthread.a@0x1a5aa /home/calvi/pspdev/psp/lib/libpthread.a@0x1c49e /home/calvi/pspdev/psp/lib/libpthread.a@0x272ee /home/calvi/pspdev/psp/lib/libpthread.a@0x54f5a /home/calvi/pspdev/psp/lib/libpthread.a@0x59a32 /home/calvi/pspdev/psp/lib/libpthread.a@0x5d51e /home/calvi/pspdev/psp/lib/libpthread.a@0x5f06a /home/calvi/pspdev/psp/lib/libpthread.a@0x693fa /home/calvi/pspdev/psp/lib/libpthread.a@0x6a92e /home/calvi/pspdev/psp/lib/libpthread.a@0x6ceb2 /home/calvi/pspdev/psp/lib/libpthread.a@0x3672 
-        /home/calvi/pspdev/bin/psp-g++ @/tmp/ccDoPT2r
+        COLLECT_GCC_OPTIONS='-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-o' 'cmTC_889d8' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float' '-dumpdir' 'cmTC_889d8.'
+         /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/collect2 -plugin /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/liblto_plugin.so -plugin-opt=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJT1b58.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lpthreadglue -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lcglue -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lpsputility -plugin-opt=-pass-through=-lpsprtc -plugin-opt=-pass-through=-lpspnet_inet -plugin-opt=-pass-through=-lpspnet_resolver -plugin-opt=-pass-through=-lpspsdk -plugin-opt=-pass-through=-lpspmodinfo -plugin-opt=-pass-through=-lpspuser -plugin-opt=-pass-through=-lpspkernel -plugin-opt=-pass-through=-lgcc --sysroot=/home/calvi/pspdev/bin/../psp -EL -o cmTC_889d8 /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/crt0.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crti.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtbegin.o -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -L/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1 -L/home/calvi/pspdev/bin/../lib/gcc -L/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib -L/home/calvi/pspdev/bin/../psp/lib -zmax-page-size=128 CMakeFiles/cmTC_889d8.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lm --start-group -lpthreadglue -lpthread -lcglue -lc --end-group -lpsputility -lpsprtc -lpspnet_inet -lpspnet_resolver -lpspsdk -lpspmodinfo -lpspuser -lpspkernel -lgcc /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtend.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtn.o
+        /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper -fresolution=/tmp/ccJT1b58.res -flinker-output=exec /home/calvi/pspdev/psp/lib/libpthread.a@0x61266 /home/calvi/pspdev/psp/lib/libpthread.a@0x63302 /home/calvi/pspdev/psp/lib/libpthread.a@0x65602 /home/calvi/pspdev/psp/lib/libpthread.a@0x670de /home/calvi/pspdev/psp/lib/libpthread.a@0x1aae /home/calvi/pspdev/psp/lib/libpthread.a@0x5122 /home/calvi/pspdev/psp/lib/libpthread.a@0x71d6 /home/calvi/pspdev/psp/lib/libpthread.a@0xb74e /home/calvi/pspdev/psp/lib/libpthread.a@0x1a5aa /home/calvi/pspdev/psp/lib/libpthread.a@0x1c49e /home/calvi/pspdev/psp/lib/libpthread.a@0x272ee /home/calvi/pspdev/psp/lib/libpthread.a@0x54f5a /home/calvi/pspdev/psp/lib/libpthread.a@0x59a32 /home/calvi/pspdev/psp/lib/libpthread.a@0x5d51e /home/calvi/pspdev/psp/lib/libpthread.a@0x5f06a /home/calvi/pspdev/psp/lib/libpthread.a@0x693fa /home/calvi/pspdev/psp/lib/libpthread.a@0x6a92e /home/calvi/pspdev/psp/lib/libpthread.a@0x6ceb2 /home/calvi/pspdev/psp/lib/libpthread.a@0x3672 
+        /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper -fresolution=/tmp/ccJT1b58.res -flinker-output=exec /home/calvi/pspdev/psp/lib/libpthread.a@0x61266 /home/calvi/pspdev/psp/lib/libpthread.a@0x63302 /home/calvi/pspdev/psp/lib/libpthread.a@0x65602 /home/calvi/pspdev/psp/lib/libpthread.a@0x670de /home/calvi/pspdev/psp/lib/libpthread.a@0x1aae /home/calvi/pspdev/psp/lib/libpthread.a@0x5122 /home/calvi/pspdev/psp/lib/libpthread.a@0x71d6 /home/calvi/pspdev/psp/lib/libpthread.a@0xb74e /home/calvi/pspdev/psp/lib/libpthread.a@0x1a5aa /home/calvi/pspdev/psp/lib/libpthread.a@0x1c49e /home/calvi/pspdev/psp/lib/libpthread.a@0x272ee /home/calvi/pspdev/psp/lib/libpthread.a@0x54f5a /home/calvi/pspdev/psp/lib/libpthread.a@0x59a32 /home/calvi/pspdev/psp/lib/libpthread.a@0x5d51e /home/calvi/pspdev/psp/lib/libpthread.a@0x5f06a /home/calvi/pspdev/psp/lib/libpthread.a@0x693fa /home/calvi/pspdev/psp/lib/libpthread.a@0x6a92e /home/calvi/pspdev/psp/lib/libpthread.a@0x6ceb2 /home/calvi/pspdev/psp/lib/libpthread.a@0x3672 
+        /home/calvi/pspdev/bin/psp-g++ @/tmp/ccmNyc4C
         Using built-in specs.
         COLLECT_GCC=/home/calvi/pspdev/bin/psp-g++
         Target: psp
@@ -421,15 +419,15 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.1.1 20250425 (GCC) 
-        COLLECT_GCC_OPTIONS='-c' '-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-protection=none' '-mno-gpopt' '-mhard-float' '-msingle-float' '-O3' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float'   '-fltrans-output-list=/tmp/cc7FZk7L.ltrans.out' '-fwpa' '-fresolution=/tmp/ccFAnZhI.res' '-flinker-output=exec'
-         /home/calvi/pspdev/bin/../lib/gcc/../../libexec/gcc/psp/15.1.1/lto1 -quiet -dumpbase ./cmTC_fb230.wpa -mno-gpopt -mhard-float -msingle-float -mhard-float -msingle-float -O3 -version -fno-openmp -fno-openacc -fno-pie -fcf-protection=none -fltrans-output-list=/tmp/cc7FZk7L.ltrans.out -fwpa -fresolution=/tmp/ccFAnZhI.res -flinker-output=exec @/tmp/cc3UQtag
+        COLLECT_GCC_OPTIONS='-c' '-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-protection=none' '-mno-gpopt' '-mhard-float' '-msingle-float' '-O3' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float'   '-fltrans-output-list=/tmp/ccWqG9i4.ltrans.out' '-fwpa' '-fresolution=/tmp/ccJT1b58.res' '-flinker-output=exec'
+         /home/calvi/pspdev/bin/../lib/gcc/../../libexec/gcc/psp/15.1.1/lto1 -quiet -dumpbase ./cmTC_889d8.wpa -mno-gpopt -mhard-float -msingle-float -mhard-float -msingle-float -O3 -version -fno-openmp -fno-openacc -fno-pie -fcf-protection=none -fltrans-output-list=/tmp/ccWqG9i4.ltrans.out -fwpa -fresolution=/tmp/ccJT1b58.res -flinker-output=exec @/tmp/ccARq4Jd
         GNU GIMPLE (GCC) version 15.1.1 20250425 (psp)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version none
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
         COMPILER_PATH=/home/calvi/pspdev/bin/../lib/gcc/../../libexec/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../lib/gcc/../../libexec/gcc/:/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../libexec/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/
         LIBRARY_PATH=/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../lib/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/:/home/calvi/pspdev/bin/../psp/lib/
-        COLLECT_GCC_OPTIONS='-c' '-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-protection=none' '-mno-gpopt' '-mhard-float' '-msingle-float' '-O3' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float'   '-fltrans-output-list=/tmp/cc7FZk7L.ltrans.out' '-fwpa' '-fresolution=/tmp/ccFAnZhI.res' '-flinker-output=exec' '-dumpdir' './cmTC_fb230.wpa.'
-        /home/calvi/pspdev/bin/psp-g++ @/tmp/ccXdsk77
+        COLLECT_GCC_OPTIONS='-c' '-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-protection=none' '-mno-gpopt' '-mhard-float' '-msingle-float' '-O3' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float'   '-fltrans-output-list=/tmp/ccWqG9i4.ltrans.out' '-fwpa' '-fresolution=/tmp/ccJT1b58.res' '-flinker-output=exec' '-dumpdir' './cmTC_889d8.wpa.'
+        /home/calvi/pspdev/bin/psp-g++ @/tmp/ccnpO1G3
         Using built-in specs.
         COLLECT_GCC=/home/calvi/pspdev/bin/psp-g++
         Target: psp
@@ -437,20 +435,18 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.1.1 20250425 (GCC) 
-        COLLECT_GCC_OPTIONS='-c' '-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-protection=none' '-mno-gpopt' '-mhard-float' '-msingle-float' '-O3' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float'   '-fltrans' '-o' '/tmp/cc7FZk7L.ltrans0.ltrans.o'
-         /home/calvi/pspdev/bin/../lib/gcc/../../libexec/gcc/psp/15.1.1/lto1 -quiet -dumpbase ./cmTC_fb230.ltrans0.ltrans -mno-gpopt -mhard-float -msingle-float -mhard-float -msingle-float -O3 -version -fno-openmp -fno-openacc -fno-pie -fcf-protection=none -fltrans @/tmp/ccBWRK6o -o /tmp/cc2Ep10W.s
+        COLLECT_GCC_OPTIONS='-c' '-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-protection=none' '-mno-gpopt' '-mhard-float' '-msingle-float' '-O3' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float'   '-fltrans' '-o' '/tmp/ccWqG9i4.ltrans0.ltrans.o'
+         /home/calvi/pspdev/bin/../lib/gcc/../../libexec/gcc/psp/15.1.1/lto1 -quiet -dumpbase ./cmTC_889d8.ltrans0.ltrans -mno-gpopt -mhard-float -msingle-float -mhard-float -msingle-float -O3 -version -fno-openmp -fno-openacc -fno-pie -fcf-protection=none -fltrans @/tmp/ccoblBGs -o /tmp/ccoCLF1u.s
         GNU GIMPLE (GCC) version 15.1.1 20250425 (psp)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version none
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-        COLLECT_GCC_OPTIONS='-c' '-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-protection=none' '-mno-gpopt' '-mhard-float' '-msingle-float' '-O3' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float'   '-fltrans' '-o' '/tmp/cc7FZk7L.ltrans0.ltrans.o'
-         /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/as -EL -O2 -mabi=eabi -mhard-float -mhard-float -msingle-float -msingle-float -o /tmp/cc7FZk7L.ltrans0.ltrans.o /tmp/cc2Ep10W.s
+        COLLECT_GCC_OPTIONS='-c' '-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-protection=none' '-mno-gpopt' '-mhard-float' '-msingle-float' '-O3' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float'   '-fltrans' '-o' '/tmp/ccWqG9i4.ltrans0.ltrans.o'
+         /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/as -EL -O2 -mabi=eabi -mhard-float -mhard-float -msingle-float -msingle-float -o /tmp/ccWqG9i4.ltrans0.ltrans.o /tmp/ccoCLF1u.s
         COMPILER_PATH=/home/calvi/pspdev/bin/../lib/gcc/../../libexec/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../lib/gcc/../../libexec/gcc/:/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../libexec/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/
         LIBRARY_PATH=/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../lib/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/:/home/calvi/pspdev/bin/../psp/lib/
-        COLLECT_GCC_OPTIONS='-c' '-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-protection=none' '-mno-gpopt' '-mhard-float' '-msingle-float' '-O3' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float'   '-fltrans' '-o' '/tmp/cc7FZk7L.ltrans0.ltrans.o' '-dumpdir' './cmTC_fb230.ltrans0.ltrans.'
-        COLLECT_GCC_OPTIONS='-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-o' 'cmTC_fb230' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float' '-dumpdir' 'cmTC_fb230.'
-        gmake[1]: warning:  Clock skew detected.  Your build may be incomplete.
-        gmake[1]: Leaving directory '/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-Cx16eB'
-        gmake: warning:  Clock skew detected.  Your build may be incomplete.
+        COLLECT_GCC_OPTIONS='-c' '-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-protection=none' '-mno-gpopt' '-mhard-float' '-msingle-float' '-O3' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float'   '-fltrans' '-o' '/tmp/ccWqG9i4.ltrans0.ltrans.o' '-dumpdir' './cmTC_889d8.ltrans0.ltrans.'
+        COLLECT_GCC_OPTIONS='-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-o' 'cmTC_889d8' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float' '-dumpdir' 'cmTC_889d8.'
+        gmake[1]: Leaving directory '/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-Y05xCm'
         
       exitCode: 0
   -
@@ -490,15 +486,13 @@ events:
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(psp-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-Cx16eB']
+        ignore line: [Change Dir: '/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-Y05xCm']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_fb230/fast]
-        ignore line: [gmake: Warning: File 'Makefile' has modification time 0.099 s in the future]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_fb230.dir/build.make CMakeFiles/cmTC_fb230.dir/build]
-        ignore line: [gmake[1]: Entering directory '/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-Cx16eB']
-        ignore line: [gmake[1]: Warning: File 'CMakeFiles/cmTC_fb230.dir/flags.make' has modification time 0.079 s in the future]
-        ignore line: [Building CXX object CMakeFiles/cmTC_fb230.dir/CMakeCXXCompilerABI.cpp.obj]
-        ignore line: [/home/calvi/pspdev/bin/psp-g++ -DPSP -D_PSP_FW_VERSION=600 -D__PSP__  -I/home/calvi/pspdev/psp/include -I/home/calvi/pspdev/psp/sdk/include -DPSP    -v -o CMakeFiles/cmTC_fb230.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_889d8/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_889d8.dir/build.make CMakeFiles/cmTC_889d8.dir/build]
+        ignore line: [gmake[1]: Entering directory '/mnt/d/project-crystallis/build/CMakeFiles/CMakeScratch/TryCompile-Y05xCm']
+        ignore line: [Building CXX object CMakeFiles/cmTC_889d8.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [/home/calvi/pspdev/bin/psp-g++ -DPSP -D_PSP_FW_VERSION=600 -D__PSP__  -I/home/calvi/pspdev/psp/include -I/home/calvi/pspdev/psp/sdk/include -DPSP    -v -o CMakeFiles/cmTC_889d8.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/home/calvi/pspdev/bin/psp-g++]
         ignore line: [Target: psp]
@@ -506,8 +500,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 15.1.1 20250425 (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_fb230.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_fb230.dir/']
-        ignore line: [ /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/cc1plus -quiet -v -I /home/calvi/pspdev/psp/include -I /home/calvi/pspdev/psp/sdk/include -iprefix /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/ -isysroot /home/calvi/pspdev/bin/../psp -DPSP=1 -D__PSP__=1 -D_PSP=1 -D__psp__=1 -D PSP -D _PSP_FW_VERSION=600 -D __PSP__ -D PSP /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_fb230.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mhard-float -msingle-float -version -o /tmp/ccsC0F3J.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_889d8.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_889d8.dir/']
+        ignore line: [ /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/cc1plus -quiet -v -I /home/calvi/pspdev/psp/include -I /home/calvi/pspdev/psp/sdk/include -iprefix /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/ -isysroot /home/calvi/pspdev/bin/../psp -DPSP=1 -D__PSP__=1 -D_PSP=1 -D__psp__=1 -D PSP -D _PSP_FW_VERSION=600 -D __PSP__ -D PSP /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_889d8.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mhard-float -msingle-float -version -o /tmp/ccaLZaQf.s]
         ignore line: [GNU C++17 (GCC) version 15.1.1 20250425 (psp)]
         ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version none]
         ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
@@ -532,14 +526,14 @@ events:
         ignore line: [ /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 7fd9daa43150a38782c948a6e1528bf4]
-        ignore line: [COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_fb230.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_fb230.dir/']
-        ignore line: [ /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/as -EL -O1 -mabi=eabi -mhard-float -msingle-float -o CMakeFiles/cmTC_fb230.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccsC0F3J.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_889d8.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_889d8.dir/']
+        ignore line: [ /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/as -EL -O1 -mabi=eabi -mhard-float -msingle-float -o CMakeFiles/cmTC_889d8.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccaLZaQf.s]
         ignore line: [COMPILER_PATH=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../libexec/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/]
         ignore line: [LIBRARY_PATH=/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../lib/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/:/home/calvi/pspdev/bin/../psp/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_fb230.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_fb230.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_fb230]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fb230.dir/link.txt --verbose=1]
-        ignore line: [/home/calvi/pspdev/bin/psp-g++ -I/home/calvi/pspdev/psp/include -I/home/calvi/pspdev/psp/sdk/include -DPSP  -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -Wl -zmax-page-size=128 -v CMakeFiles/cmTC_fb230.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_fb230   -L/home/calvi/pspdev/lib  -L/home/calvi/pspdev/psp/lib  -L/home/calvi/pspdev/psp/sdk/lib ]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' 'PSP' '-D' '_PSP_FW_VERSION=600' '-D' '__PSP__' '-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-v' '-o' 'CMakeFiles/cmTC_889d8.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mhard-float' '-msingle-float' '-dumpdir' 'CMakeFiles/cmTC_889d8.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_889d8]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_889d8.dir/link.txt --verbose=1]
+        ignore line: [/home/calvi/pspdev/bin/psp-g++ -I/home/calvi/pspdev/psp/include -I/home/calvi/pspdev/psp/sdk/include -DPSP  -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -Wl -zmax-page-size=128 -v CMakeFiles/cmTC_889d8.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_889d8   -L/home/calvi/pspdev/lib  -L/home/calvi/pspdev/psp/lib  -L/home/calvi/pspdev/psp/sdk/lib ]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/home/calvi/pspdev/bin/psp-g++]
         ignore line: [COLLECT_LTO_WRAPPER=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper]
@@ -550,13 +544,13 @@ events:
         ignore line: [gcc version 15.1.1 20250425 (GCC) ]
         ignore line: [COMPILER_PATH=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../libexec/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/bin/]
         ignore line: [LIBRARY_PATH=/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/:/home/calvi/pspdev/bin/../lib/gcc/:/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/:/home/calvi/pspdev/bin/../psp/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-o' 'cmTC_fb230' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float' '-dumpdir' 'cmTC_fb230.']
-        link line: [ /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/collect2 -plugin /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/liblto_plugin.so -plugin-opt=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccFAnZhI.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lpthreadglue -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lcglue -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lpsputility -plugin-opt=-pass-through=-lpsprtc -plugin-opt=-pass-through=-lpspnet_inet -plugin-opt=-pass-through=-lpspnet_resolver -plugin-opt=-pass-through=-lpspsdk -plugin-opt=-pass-through=-lpspmodinfo -plugin-opt=-pass-through=-lpspuser -plugin-opt=-pass-through=-lpspkernel -plugin-opt=-pass-through=-lgcc --sysroot=/home/calvi/pspdev/bin/../psp -EL -o cmTC_fb230 /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/crt0.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crti.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtbegin.o -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -L/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1 -L/home/calvi/pspdev/bin/../lib/gcc -L/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib -L/home/calvi/pspdev/bin/../psp/lib -zmax-page-size=128 CMakeFiles/cmTC_fb230.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lm --start-group -lpthreadglue -lpthread -lcglue -lc --end-group -lpsputility -lpsprtc -lpspnet_inet -lpspnet_resolver -lpspsdk -lpspmodinfo -lpspuser -lpspkernel -lgcc /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtend.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-I' '/home/calvi/pspdev/psp/include' '-I' '/home/calvi/pspdev/psp/sdk/include' '-D' 'PSP' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-v' '-o' 'cmTC_889d8' '-L/home/calvi/pspdev/lib' '-L/home/calvi/pspdev/psp/lib' '-L/home/calvi/pspdev/psp/sdk/lib' '-mhard-float' '-msingle-float' '-dumpdir' 'cmTC_889d8.']
+        link line: [ /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/collect2 -plugin /home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/liblto_plugin.so -plugin-opt=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJT1b58.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lpthreadglue -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lcglue -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lpsputility -plugin-opt=-pass-through=-lpsprtc -plugin-opt=-pass-through=-lpspnet_inet -plugin-opt=-pass-through=-lpspnet_resolver -plugin-opt=-pass-through=-lpspsdk -plugin-opt=-pass-through=-lpspmodinfo -plugin-opt=-pass-through=-lpspuser -plugin-opt=-pass-through=-lpspkernel -plugin-opt=-pass-through=-lgcc --sysroot=/home/calvi/pspdev/bin/../psp -EL -o cmTC_889d8 /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/crt0.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crti.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtbegin.o -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -L/home/calvi/pspdev/lib -L/home/calvi/pspdev/psp/lib -L/home/calvi/pspdev/psp/sdk/lib -L/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1 -L/home/calvi/pspdev/bin/../lib/gcc -L/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib -L/home/calvi/pspdev/bin/../psp/lib -zmax-page-size=128 CMakeFiles/cmTC_889d8.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lm --start-group -lpthreadglue -lpthread -lcglue -lc --end-group -lpsputility -lpsprtc -lpspnet_inet -lpspnet_resolver -lpspsdk -lpspmodinfo -lpspuser -lpspkernel -lgcc /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtend.o /home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtn.o]
           arg [/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/home/calvi/pspdev/bin/../libexec/gcc/psp/15.1.1/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccFAnZhI.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccJT1b58.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lm] ==> ignore
           arg [-plugin-opt=-pass-through=-lpthreadglue] ==> ignore
@@ -575,7 +569,7 @@ events:
           arg [--sysroot=/home/calvi/pspdev/bin/../psp] ==> ignore
           arg [-EL] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_fb230] ==> ignore
+          arg [cmTC_889d8] ==> ignore
           arg [/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/crt0.o] ==> obj [/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib/crt0.o]
           arg [/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crti.o] ==> obj [/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crti.o]
           arg [/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtbegin.o] ==> obj [/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/crtbegin.o]
@@ -590,7 +584,7 @@ events:
           arg [-L/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib] ==> dir [/home/calvi/pspdev/bin/../lib/gcc/psp/15.1.1/../../../../psp/lib]
           arg [-L/home/calvi/pspdev/bin/../psp/lib] ==> dir [/home/calvi/pspdev/bin/../psp/lib]
           arg [-zmax-page-size=128] ==> ignore
-          arg [CMakeFiles/cmTC_fb230.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+          arg [CMakeFiles/cmTC_889d8.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc] ==> lib [gcc]

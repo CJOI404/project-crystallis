@@ -81,12 +81,12 @@ clean: CMakeFiles/Project_Crystallis.dir/clean
 CMakeFiles/Project_Crystallis.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target Project_Crystallis"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target Project_Crystallis"
 .PHONY : CMakeFiles/Project_Crystallis.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Project_Crystallis.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/project-crystallis/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/project-crystallis/build/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Project_Crystallis.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/project-crystallis/build/CMakeFiles 0
 .PHONY : CMakeFiles/Project_Crystallis.dir/rule

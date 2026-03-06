@@ -65,16 +65,19 @@ enum Role{
     SYNERGIST
 };
 
+enum Resistance{
+    IMMUNE,
+    RESISTANT,
+    HALVED,
+    NORMAL,
+    WEAK
+};
+
 struct Paradigm{
     const char* name;
     Role r1;
     Role r2;
     Role r3;
-};
-
-struct Effect{
-    Debuff debuff;
-    float length;
 };
 
 const char* roleToString(Role r);
@@ -116,5 +119,7 @@ enum Colours{
     LIGHTBLUE = 0xFFFFDD1C,
     LIGHTGREY = 0xFF8a928c,
     STAGGERBAR = 0xFF67b4e6,
-    LIGHTGREEN = 0xFF63c47c
+    LIGHTGREEN = 0xFF63c47c,
+    DARKGREY = 0xFF2e2e34,
+    MIDGREY = 0xFF45454d
 };

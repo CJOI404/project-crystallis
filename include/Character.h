@@ -41,6 +41,8 @@ class Character : public GameActor {
         //use this for stagger bar rendering
         float peakChainDuration = 1;
 
+        //cut/keep decrease when cursed
+        int curseCutDiff = 0;
 
         bool staggered = false;
 
@@ -62,23 +64,26 @@ class Character : public GameActor {
 
         int targetIndex = -1;
 
+        // std::vector<BattleCommand*> allCharacterCommands;
         std::vector<BattleCommand*> abilities;
 
+
         //resistances to elements/attack types
-        float resistances[Element::ELEMENTCOUNT]{};
+        Resistance resistances[Element::ELEMENTCOUNT]{};
         //immunity to debuffs (debuff chances)
         float immunities[Debuff::DEBUFFCOUNT]{};
+
+        //needed for dispel
+        Debuff mostRecentBuff;
 
         //stores active buffs/debuffs
         bool activeBuffs[Buff::BUFFCOUNT]{};
         bool activeDebuffs[Debuff::DEBUFFCOUNT]{};
-        float debuffDurations[Debuff::DEBUFFCOUNT] = {};
-
-        std::vector<Effect*> activeEffects;
+        float debuffDurations[Debuff::DEBUFFCOUNT]{};
 
         void startAttack(int targetIndex);
 
-        void setResistance(Element element, float val);
+        void setResistance(Element element, Resistance val);
         float getResistance(Element element);
 
         void setImmunity(Debuff debuff, float val);
@@ -94,5 +99,6 @@ class Character : public GameActor {
         void render(float dt) override;
 
         void updateEffects(float dt);
+        void revertDebuff(int effectIdx);
         
 };

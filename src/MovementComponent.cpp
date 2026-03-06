@@ -1,4 +1,6 @@
 #include "MovementComponent.h"
+#include <cstdint>
+#include <cmath>
 
 MovementComponent::MovementComponent(float* xPos, float* yPos){
     state = STATE_IDLE;
@@ -6,8 +8,12 @@ MovementComponent::MovementComponent(float* xPos, float* yPos){
     this->xPos = xPos;
     this->yPos = yPos;
 
+    magnitude = 0;
+
     xDir = 0;
     yDir = 0;
+    analogueX = 0;
+    analogueY = 0;
         
 }
 
@@ -17,6 +23,7 @@ void MovementComponent::setAnalogueMoveVals(float x, float y){
 }
 
 void MovementComponent::handleAnalogueMovement(){
+
     if (state == STATE_IDLE || state == STATE_WALKING){
 
         xDir = 0;
@@ -31,14 +38,14 @@ void MovementComponent::handleAnalogueMovement(){
         //Get Magnitude
         magnitude = sqrt(xDir * xDir + yDir * yDir);
 
-        //Normalize
+        // Normalize
         if (magnitude > 0.0f){
             state = STATE_WALKING;
             xDir /= magnitude;
             yDir /= magnitude;
 
-            xDir *= abs(analogueX);
-            yDir *= abs(analogueY);
+            xDir *= fabs(analogueX);
+            yDir *= fabs(analogueY);
         }
     }
 }

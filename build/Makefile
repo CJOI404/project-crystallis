@@ -226,30 +226,6 @@ src/CommandRegistry.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.s
 .PHONY : src/CommandRegistry.cpp.s
 
-src/DebuffCommand.obj: src/DebuffCommand.cpp.obj
-.PHONY : src/DebuffCommand.obj
-
-# target to build an object file
-src/DebuffCommand.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/DebuffCommand.cpp.obj
-.PHONY : src/DebuffCommand.cpp.obj
-
-src/DebuffCommand.i: src/DebuffCommand.cpp.i
-.PHONY : src/DebuffCommand.i
-
-# target to preprocess a source file
-src/DebuffCommand.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/DebuffCommand.cpp.i
-.PHONY : src/DebuffCommand.cpp.i
-
-src/DebuffCommand.s: src/DebuffCommand.cpp.s
-.PHONY : src/DebuffCommand.s
-
-# target to generate assembly for a file
-src/DebuffCommand.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/DebuffCommand.cpp.s
-.PHONY : src/DebuffCommand.cpp.s
-
 src/GlobalDefs.obj: src/GlobalDefs.cpp.obj
 .PHONY : src/GlobalDefs.obj
 
@@ -415,9 +391,6 @@ help:
 	@echo "... src/CommandRegistry.obj"
 	@echo "... src/CommandRegistry.i"
 	@echo "... src/CommandRegistry.s"
-	@echo "... src/DebuffCommand.obj"
-	@echo "... src/DebuffCommand.i"
-	@echo "... src/DebuffCommand.s"
 	@echo "... src/GlobalDefs.obj"
 	@echo "... src/GlobalDefs.i"
 	@echo "... src/GlobalDefs.s"

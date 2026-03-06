@@ -225,6 +225,12 @@ int main() {
 
     // Setup the library used for rendering
     initGu();
+    
+        //Load font data
+    UI::loadFont("PSPGameFont.fnt", "PSPGameFont.png");
+
+    //Load skills
+    Commands::loadSkills("project_crystallis_skill_sheet.csv");
 
     InputHandler playerInput;
 
@@ -281,12 +287,6 @@ int main() {
     clock_t currTime = 0;
     float deltaTime = 0;
 
-    //Load font data
-    UI::loadFont("PSPGameFont.fnt", "PSPGameFont.png");
-
-    //Load skills
-    Commands::loadSkills("project_crystallis_skill_sheet.csv");
-
     //Fill character ability lists
     // for (int i = 0; i < 10 && i < Commands::commandList.size(); i++){
     //     playerCharacter.addBattleCommand(Commands::commandList.at(i), i);
@@ -306,6 +306,11 @@ int main() {
 
     //writes to fixed text buffer
     // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "Lightning Health: %d", playerCharacter.health);
+    
+
+    //DEBUFF TESTING
+    // playerCharacter.activeDebuffs[Debuff::POISON] = true;
+    // playerCharacter.debuffDurations[Debuff::POISON] = 150;
 
 
     while(running){
@@ -428,9 +433,9 @@ int main() {
             // std::string fireResistance = "HEALTH: " + std::to_string(playerCharacter.health);
 
             for (int i = 0; i < Debuff::DEBUFFCOUNT; i++){
-                if (enemy.activeDebuffs[i]){
+                if (playerCharacter.activeDebuffs[i]){
                     UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, "TEST DEBUFF IS ON");
-                    snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%.2f", enemy.debuffDurations[i]);
+                    snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%.2f", playerCharacter.debuffDurations[i]);
                     UI::drawString(50, 20, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);                                   
                 }
             }

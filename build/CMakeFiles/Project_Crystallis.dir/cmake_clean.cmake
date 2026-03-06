@@ -7,8 +7,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Project_Crystallis.dir/src/Command.cpp.obj.d"
   "CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj"
   "CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj.d"
-  "CMakeFiles/Project_Crystallis.dir/src/DebuffCommand.cpp.obj"
-  "CMakeFiles/Project_Crystallis.dir/src/DebuffCommand.cpp.obj.d"
   "CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj"
   "CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj.d"
   "CMakeFiles/Project_Crystallis.dir/src/InputHandler.cpp.obj"

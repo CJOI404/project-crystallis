@@ -115,4 +115,9 @@ CMakeFiles/Project_Crystallis.dir/src/MovementComponent.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstddef \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator_args.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tuple
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
+ /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h \
+ /home/calvi/pspdev/psp/include/stdint.h \
+ /home/calvi/pspdev/psp/include/sys/_intsup.h \
+ /home/calvi/pspdev/psp/include/sys/_stdint.h

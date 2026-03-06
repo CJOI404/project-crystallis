@@ -36,7 +36,7 @@ AttackCommand::AttackCommand(CommandData& cmdData){
 
 
 void AttackCommand::execute(Character* sender, Character* receiver){
-    if (receiver->currCommand == nullptr || receiver->currCommand->keep <= sender->currCommand->cut){
+    if (receiver->currCommand == nullptr || receiver->currCommand->keep - receiver->curseCutDiff <= sender->currCommand->cut - sender->curseCutDiff ){
 
         //full dmg calculation (work in progress)
         receiver->health -= calculateDmg(sender, receiver);
@@ -111,27 +111,27 @@ void AttackCommand::handleStatus(Character* sender, Character* receiver){
             |                |                | Arise - Y   |            |            |
             |=========================================================================|
             | Imperil        | Resistances    | Esuna - Y   |            |            |
-            |                | decrease by 1  | Dispel - N  |  (None)    | (None)     |
+            |                | decrease by 1  | Dispel - N  |  (None)    | (None)     | XXX
             |                | rank (*4)      | Arise - Y   |            |            |
             |=========================================================================|
             | Slow           | ATB gauge fills| Esuna - Y   |            |            |
-            |                | up at half the | Dispel - N  |  (None)    | Haste      |
+            |                | up at half the | Dispel - N  |  (None)    | Haste      | XXX
             |                | normal speed   | Arise - Y   |            |            |
             |=========================================================================|
             | Fog            | Can no longer  | Esuna - Y   |            |            |
-            |                | execute magical| Dispel - N  |  (None)    | (None)     | 
+            |                | execute magical| Dispel - N  |  (None)    | (None)     | XXX
             |                | attacks        | Arise - Y   |            |            |
             |=========================================================================|
             | Pain           | Can no longer  | Esuna - Y   |            |            |
-            |                | execute phys   | Dispel - N  |  (None)    | (None)     | Need to add a way to mark abilities valid/invalid 
+            |                | execute phys   | Dispel - N  |  (None)    | (None)     | XXX When writing AI this will need to be checked (rn it just prevents the player from selecting it)
             |                | attacks        | Arise - Y   |            |            |
             |=========================================================================|
             | Curse          | Reduces Cut and| Esuna - Y   |            |            |
-            |                | Keep by 20 on  | Dispel - N  |  (None)    | Vigilance  |
+            |                | Keep by 20 on  | Dispel - N  |  (None)    | Vigilance  | XXX
             |                | all actions(*5)| Arise - Y   |            |            |
             |=========================================================================|
             | Daze           | Damage taken   | Esuna - Y   |            |            |
-            |                | doubles. Can't | Dispel - N  |  (None)    | (None)     | xxx double damage, cant perform actions not implemented yet
+            |                | doubles. Can't | Dispel - N  |  (None)    | (None)     | xxx 
             |                | perform actions| Arise - Y   |            |            |
             |=========================================================================|
             | Provoke        | Only targets   | Esuna - N   |            |            |
@@ -139,7 +139,7 @@ void AttackCommand::handleStatus(Character* sender, Character* receiver){
             |                | provoked       | Arise - N   |            |            |
             |=========================================================================|
             | Death          | Dies once the  | Esuna - N   |            |            |
-            | Sentence       | count reaches  | Dispel - N  |  (None)    | (None)     |
+            | Sentence       | count reaches  | Dispel - N  |  (None)    | (None)     | not doing this
             |                | zero           | Arise - (*6)|            |            |
             |=========================================================================|
             | Death          | Incapacitated  | Esuna - N   |            |            |
@@ -147,7 +147,7 @@ void AttackCommand::handleStatus(Character* sender, Character* receiver){
             |                |                | Arise -  Y  |            |            |
             *=========================================================================**/
 
-            //Apply effect overwrites
+            //Apply effect overwrites and effects
             switch (debuff){
                 case (DEBRAVE):
                     receiver->activeBuffs[Buff::BRAVERY] = false;
@@ -166,11 +166,24 @@ void AttackCommand::handleStatus(Character* sender, Character* receiver){
                     receiver->activeBuffs[Buff::SHELLRA] = false;
                     break;
                 case (SLOW):
+                    //half atb recharge rate
+                    receiver->atbRechargeSpeed /= 2;
                     receiver->activeBuffs[Buff::HASTE] = false;
                     break;
                 case (CURSE):
                     receiver->activeBuffs[Buff::VIGILANCE] = false;
+                    receiver->curseCutDiff = 20;
                     break;
+                case (IMPERIL): {
+                    for (int i = 0; i < std::size(receiver->resistances); i++){
+                        //Lower resistance by one (unless immune)
+                        if (receiver->resistances[i] > 0) receiver->resistances[i] = (Resistance)(receiver->resistances[i] - 1);
+                    }
+                }
+                case (DISPEL): 
+                
+                    receiver->activeBuffs[receiver->mostRecentBuff] = false;
+                
             }
         }
     }
