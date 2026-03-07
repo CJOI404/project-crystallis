@@ -29,6 +29,7 @@ AttackCommand::AttackCommand(CommandData& cmdData){
     this->element = cmdData.element;
 
     this->debuff = cmdData.debuff;
+    this->buff = cmdData.buff;
     this->chance = cmdData.chance;
     this->length = cmdData.length;
 
@@ -36,10 +37,12 @@ AttackCommand::AttackCommand(CommandData& cmdData){
 
 
 void AttackCommand::execute(Character* sender, Character* receiver){
-    if (cut < 0 || receiver->currCommand == nullptr || receiver->currCommand->keep - receiver->curseCutDiff <= sender->currCommand->cut - sender->curseCutDiff ){
+    if (cut < 0 || receiver->currCommand == nullptr || receiver->currCommand->keep + receiver->cutDiff <= sender->currCommand->cut - sender->cutDiff ){
 
         //full dmg calculation (work in progress)
-        receiver->health -= calculateDmg(sender, receiver);
+        if (atkDmgScale > 0 || ravDmgScale > 0){
+            receiver->health -= calculateDmg(sender, receiver);
+        }
 
         handleStatus(sender, receiver);
 
@@ -79,113 +82,293 @@ void AttackCommand::execute(Character* sender, Character* receiver){
 void AttackCommand::handleStatus(Character* sender, Character* receiver){
     //Full stick% calculataion
     //(Base chance %) * (alteration due to target's resistance) * Chain Bonus
-    if (getRandomFloat() <= (chance * receiver->resistances[debuff] * (receiver->stagger / 100))){ 
+    float statusChanceMod = 1;
+    if (receiver->activeBuffs[Buff::VEIL]) statusChanceMod *= 0.5;
+    if (getRandomFloat() <= (chance * receiver->immunities[debuff] * (receiver->stagger / 100) * statusChanceMod)){ 
         if (debuff != Debuff::NODEBUFF){
-            receiver->activeDebuffs[debuff] = true;
             receiver->debuffDurations[debuff] = length;
+            if (receiver->activeDebuffs[debuff] == false){
+                receiver->activeDebuffs[debuff] = true;
 
-            // xxx = accounted for in other algorithm (like damage calculation)
-            /* _________________________________________________________________________
-            |     Status     |     Effect     | Restoration | Overwrites |   Cancels  |
-            |=========================================================================|
-            | Debrave        | x0.1 physical  | Esuna - Y   |            |            |
-            |                |  attack        | Dispel - N  |  (None)    | Bravery/ra | XXX
-            |                |    (*3)        | Arise - Y   |            |            |
-            |=========================================================================|
-            | Defaith        | x0.1 magical   | Esuna - Y   |            |            |
-            |                |  attack        | Dispel - N  |  (None)    | Faith/ra   | XXX
-            |                |    (*3)        | Arise - Y   |            |            |
-            |=========================================================================|
-            | Deprotect      | physical damage| Esuna - Y   |            |            |
-            |                | taken increases| Dispel - N  |  (None)    | Protect/ra | XXX
-            |                | by 89%         | Arise - Y   |            |            |
-            |=========================================================================|
-            | Deshell        | magical damage | Esuna - Y   |            |            |
-            |                | taken increases| Dispel - N  |  (None)    | Shell/ra   | XXX
-            |                | by 89%         | Arise - Y   |            |            |
-            |=========================================================================|
-            | Poison         | Lose 1% max HP | Esuna - Y   |            |            |
-            |                | every 3 secs   | Dispel - N  |  (None)    | (None)     | XXX these 4 are accounted for when damage is calculated
-            |                |                | Arise - Y   |            |            |
-            |=========================================================================|
-            | Imperil        | Resistances    | Esuna - Y   |            |            |
-            |                | decrease by 1  | Dispel - N  |  (None)    | (None)     | XXX
-            |                | rank (*4)      | Arise - Y   |            |            |
-            |=========================================================================|
-            | Slow           | ATB gauge fills| Esuna - Y   |            |            |
-            |                | up at half the | Dispel - N  |  (None)    | Haste      | XXX
-            |                | normal speed   | Arise - Y   |            |            |
-            |=========================================================================|
-            | Fog            | Can no longer  | Esuna - Y   |            |            |
-            |                | execute magical| Dispel - N  |  (None)    | (None)     | XXX
-            |                | attacks        | Arise - Y   |            |            |
-            |=========================================================================|
-            | Pain           | Can no longer  | Esuna - Y   |            |            |
-            |                | execute phys   | Dispel - N  |  (None)    | (None)     | XXX When writing AI this will need to be checked (rn it just prevents the player from selecting it)
-            |                | attacks        | Arise - Y   |            |            |
-            |=========================================================================|
-            | Curse          | Reduces Cut and| Esuna - Y   |            |            |
-            |                | Keep by 20 on  | Dispel - N  |  (None)    | Vigilance  | XXX
-            |                | all actions(*5)| Arise - Y   |            |            |
-            |=========================================================================|
-            | Daze           | Damage taken   | Esuna - Y   |            |            |
-            |                | doubles. Can't | Dispel - N  |  (None)    | (None)     | xxx 
-            |                | perform actions| Arise - Y   |            |            |
-            |=========================================================================|
-            | Provoke        | Only targets   | Esuna - N   |            |            |
-            |                | the one who    | Dispel - N  |  (None)    | (None)     |
-            |                | provoked       | Arise - N   |            |            |
-            |=========================================================================|
-            | Death          | Dies once the  | Esuna - N   |            |            |
-            | Sentence       | count reaches  | Dispel - N  |  (None)    | (None)     | not doing this
-            |                | zero           | Arise - (*6)|            |            |
-            |=========================================================================|
-            | Death          | Incapacitated  | Esuna - N   |            |            |
-            |                | until revived  | Dispel - N  |  (None)    | (None)     |
-            |                |                | Arise -  Y  |            |            |
-            *=========================================================================**/
+                // xxx = accounted for in other algorithm (like damage calculation)
+                /* _________________________________________________________________________
+                |     Status     |     Effect     | Restoration | Overwrites |   Cancels  |
+                |=========================================================================|
+                | Debrave        | x0.1 physical  | Esuna - Y   |            |            |
+                |                |  attack        | Dispel - N  |  (None)    | Bravery/ra | XXX
+                |                |    (*3)        | Arise - Y   |            |            |
+                |=========================================================================|
+                | Defaith        | x0.1 magical   | Esuna - Y   |            |            |
+                |                |  attack        | Dispel - N  |  (None)    | Faith/ra   | XXX
+                |                |    (*3)        | Arise - Y   |            |            |
+                |=========================================================================|
+                | Deprotect      | physical damage| Esuna - Y   |            |            |
+                |                | taken increases| Dispel - N  |  (None)    | Protect/ra | XXX
+                |                | by 89%         | Arise - Y   |            |            |
+                |=========================================================================|
+                | Deshell        | magical damage | Esuna - Y   |            |            |
+                |                | taken increases| Dispel - N  |  (None)    | Shell/ra   | XXX
+                |                | by 89%         | Arise - Y   |            |            |
+                |=========================================================================|
+                | Poison         | Lose 1% max HP | Esuna - Y   |            |            |
+                |                | every 3 secs   | Dispel - N  |  (None)    | (None)     | XXX these 4 are accounted for when damage is calculated
+                |                |                | Arise - Y   |            |            |
+                |=========================================================================|
+                | Imperil        | Resistances    | Esuna - Y   |            |            |
+                |                | decrease by 1  | Dispel - N  |  (None)    | (None)     | XXX
+                |                | rank (*4)      | Arise - Y   |            |            |
+                |=========================================================================|
+                | Slow           | ATB gauge fills| Esuna - Y   |            |            |
+                |                | up at half the | Dispel - N  |  (None)    | Haste      | XXX
+                |                | normal speed   | Arise - Y   |            |            |
+                |=========================================================================|
+                | Fog            | Can no longer  | Esuna - Y   |            |            |
+                |                | execute magical| Dispel - N  |  (None)    | (None)     | XXX
+                |                | attacks        | Arise - Y   |            |            |
+                |=========================================================================|
+                | Pain           | Can no longer  | Esuna - Y   |            |            |
+                |                | execute phys   | Dispel - N  |  (None)    | (None)     | XXX When writing AI this will need to be checked (rn it just prevents the player from selecting it)
+                |                | attacks        | Arise - Y   |            |            |
+                |=========================================================================|
+                | Curse          | Reduces Cut and| Esuna - Y   |            |            |
+                |                | Keep by 20 on  | Dispel - N  |  (None)    | Vigilance  | XXX
+                |                | all actions(*5)| Arise - Y   |            |            |
+                |=========================================================================|
+                | Daze           | Damage taken   | Esuna - Y   |            |            |
+                |                | doubles. Can't | Dispel - N  |  (None)    | (None)     | xxx 
+                |                | perform actions| Arise - Y   |            |            |
+                |=========================================================================|
+                | Provoke        | Only targets   | Esuna - N   |            |            |
+                |                | the one who    | Dispel - N  |  (None)    | (None)     |
+                |                | provoked       | Arise - N   |            |            |
+                |=========================================================================|
+                | Death          | Dies once the  | Esuna - N   |            |            |
+                | Sentence       | count reaches  | Dispel - N  |  (None)    | (None)     | not doing this
+                |                | zero           | Arise - (*6)|            |            |
+                |=========================================================================|
+                | Death          | Incapacitated  | Esuna - N   |            |            |
+                |                | until revived  | Dispel - N  |  (None)    | (None)     |
+                |                |                | Arise -  Y  |            |            |
+                *=========================================================================**/
 
-            //Apply effect overwrites and effects
-            switch (debuff){
-                case (DEBRAVE):
-                    receiver->activeBuffs[Buff::BRAVERY] = false;
-                    receiver->activeBuffs[Buff::BRAVERA] = false;
-                    break;
-                case (DEFAITH): 
-                    receiver->activeBuffs[Buff::FAITH] = false;
-                    receiver->activeBuffs[Buff::FAITHRA] = false;
-                    break;
-                case (DEPROTECT):
-                    receiver->activeBuffs[Buff::PROTECT] = false;
-                    receiver->activeBuffs[Buff::PROTECTRA] = false;
-                    break;
-                case (DESHELL):
-                    receiver->activeBuffs[Buff::SHELL] = false;
-                    receiver->activeBuffs[Buff::SHELLRA] = false;
-                    break;
-                case (SLOW):
-                    //half atb recharge rate
-                    receiver->atbRechargeSpeed /= 2;
-                    receiver->activeBuffs[Buff::HASTE] = false;
-                    break;
-                case (CURSE):
-                    receiver->activeBuffs[Buff::VIGILANCE] = false;
-                    receiver->curseCutDiff = 20;
-                    break;
-                case (IMPERIL): {
-                    for (int i = 0; i < std::size(receiver->resistances); i++){
-                        //Lower resistance by one (unless immune)
-                        if (receiver->resistances[i] > 0) receiver->resistances[i] = (Resistance)(receiver->resistances[i] - 1);
+                //Apply effect overwrites and effects
+                switch (debuff){
+                    case (DEBRAVE):
+                        receiver->activeBuffs[Buff::BRAVERY] = false;
+                        receiver->activeBuffs[Buff::BRAVERA] = false;
+                        break;
+                    case (DEFAITH): 
+                        receiver->activeBuffs[Buff::FAITH] = false;
+                        receiver->activeBuffs[Buff::FAITHRA] = false;
+                        break;
+                    case (DEPROTECT):
+                        receiver->activeBuffs[Buff::PROTECT] = false;
+                        receiver->activeBuffs[Buff::PROTECTRA] = false;
+                        break;
+                    case (DESHELL):
+                        receiver->activeBuffs[Buff::SHELL] = false;
+                        receiver->activeBuffs[Buff::SHELLRA] = false;
+                        break;
+                    case (SLOW):
+                        //half atb recharge rate
+                        receiver->atbRechargeSpeed /= 2;
+                        receiver->activeBuffs[Buff::HASTE] = false;
+                        break;
+                    case (CURSE):
+                        receiver->activeBuffs[Buff::VIGILANCE] = false;
+                        receiver->cutDiff = -20;
+                        break;
+                    case (IMPERIL): {
+                        for (int i = 0; i < std::size(receiver->resistances); i++){
+                            //Lower resistance by one (unless immune)
+                            if (receiver->resistances[i] > Resistance::IMMUNE) receiver->resistances[i] = (Resistance)(receiver->resistances[i] - 1);
+                        }
+                        break;
                     }
+                    case (DISPEL): 
+                        receiver->activeBuffs[receiver->mostRecentBuff] = false;
+                    
                 }
-                case (DISPEL): 
-                
-                    receiver->activeBuffs[receiver->mostRecentBuff] = false;
-                
+            }
+            
+        }
+        
+    } else if (buff != Buff::NOBUFF){
+        //buff always sticks so no need for getRandomFloat
+        receiver->buffDurations[buff] = length;
+        if (receiver->activeBuffs[buff] == false){
+            receiver->activeBuffs[buff] = true;
+
+                /*  |     Status     |     Effect     | Restoration | Overwrites |   Cancels  |
+                    |=========================================================================|
+                    | Bravery        | x 1.4 physical | Esuna - N   |            |            |
+                    |                |   attack       | Dispel - Y  | Bravera    | Debrave    | XXX
+                    |                |                | Arise - N   |            |            |
+                    |=========================================================================|
+                    | Bravera        | x 1.8 physical | Esuna - N   |            |            |
+                    |                |   attack       | Dispel - Y  | Bravery    | Debrave    | XXX
+                    |                |                | Arise - N   |            |            |
+                    |=========================================================================|
+                    | Faith          | x 1.4 magical  | Esuna - N   |            |            |
+                    |                |   attack       | Dispel - Y  | Faithra    | Defaith    | XXX
+                    |                |                | Arise - N   |            |            |
+                    |=========================================================================|
+                    | Faithra        | x 1.8 magical  | Esuna - N   |            |            |
+                    |                |   attack       | Dispel - Y  | Faith      | Defaith    | XXX
+                    |                |                | Arise - N   |            |            |
+                    |=========================================================================|
+                    | Haste          | x 1.5 ATB      | Esuna - N   |            |            |
+                    |                |   gauge speed  | Dispel - Y  |  (None)    | Slow       | XXX
+                    |                |                | Arise - N   |            |            |
+                    |=========================================================================|
+                    | Vigilance      | +10 Cut & Keep | Esuna - N   |            |            |
+                    |                |  (*1)          | Dispel - Y  |  (None)    | Curse      | XXX
+                    |                |                | Arise - N   |            |            |
+                    |=========================================================================|
+                    | Enfire (*2)    | Non-elemental  | Esuna - N   |            |            |
+                    |                | attacks become | Dispel - Y  |  Any En-   | (None)     | XXX
+                    |                | fire elemental | Arise - N   |            |            |
+                    |=========================================================================|
+                    | Enfrost (*2)   | Non-elemental  | Esuna - N   |            |            |
+                    |                | attacks become | Dispel - Y  |  Any En-   | (None)     | XXX
+                    |                | ice elemental  | Arise - N   |            |            |
+                    |=========================================================================|
+                    | Enthunder (*2) | Non-elemental  | Esuna - N   |            |            |
+                    |                | attacks become | Dispel - Y  |  Any En-   | (None)     | XXX
+                    |                | thunder element| Arise - N   |            |            |
+                    |=========================================================================|
+                    | Enwater (*2)   | Non-elemental  | Esuna - N   |            |            |
+                    |                | attacks become | Dispel - Y  |  Any En-   | (None)     | XXX
+                    |                | water elemental| Arise - N   |            |            |
+                    |=========================================================================|
+                    | Protect        | Receive 67%    | Esuna - N   |            |            |
+                    |                | damage from    | Dispel - Y  |  Protectra | Deprotect  | XXX
+                    |                | phys attacks   | Arise - N   |            |            |
+                    |=========================================================================|
+                    | Protectra      | Receive 50%    | Esuna - N   |            |            |
+                    |                | damage from    | Dispel - Y  |  Protect   | Deprotect  | XXX
+                    |                | phys attacks   | Arise - N   |            |            |
+                    |=========================================================================|
+                    | Shell          | Receive 67%    | Esuna - N   |            |            |
+                    |                | damage from    | Dispel - Y  |  Shellra   | Deshell    | XXX
+                    |                | mag attacks    | Arise - N   |            |            |
+                    |=========================================================================|
+                    | Shellra        | Receive 50%    | Esuna - N   |            |            |
+                    |                | damage from    | Dispel - Y  |  Shell     | Deshell    | XXX
+                    |                | mag attacks    | Arise - N   |            |            |
+                    |=========================================================================|
+                    | Barfire        | Receive half   | Esuna - N   |            |            |
+                    |                | damage from the| Dispel - Y  |  Any Bar-  | (None)     | XXX
+                    |                | fire element   | Arise - N   |            |            |
+                    |=========================================================================|
+                    | Barfrost       | Receive half   | Esuna - N   |            |            |
+                    |                | damage from the| Dispel - Y  |  Any Bar-  | (None)     | XXX
+                    |                | ice element    | Arise - N   |            |            |
+                    |=========================================================================|
+                    | Barthunder     | Receive half   | Esuna - N   |            |            |
+                    |                | damage from the| Dispel - Y  |  Any Bar-  | (None)     | XXX
+                    |                | thunder element| Arise - N   |            |            |
+                    |=========================================================================|
+                    | Barwater       | Receive half   | Esuna - N   |            |            |
+                    |                | damage from the| Dispel - Y  |  Any Bar-  | (None)     | XXX
+                    |                | water element  | Arise - N   |            |            |
+                    |=========================================================================|
+                    | Veil           | x0.5 chance of | Esuna - N   |            |            |
+                    |                |  receiving a   | Dispel - Y  |  (None)    | (None)     | XXX
+                    |                |  neg status    | Arise - N   |            |            |
+                    |=========================================================================|*/
+
+
+            //apply effects and overwrites
+            //This switch statement is fucking absurd but it does the job 
+            switch (buff){    
+                case Buff::ENFIRE:
+                    receiver->activeBuffs[Buff::ENFROST] = false;
+                    receiver->activeBuffs[Buff::ENTHUNDER] = false;
+                    receiver->activeBuffs[Buff::ENWATER] = false;
+                    break;
+                case Buff::ENFROST:
+                    receiver->activeBuffs[Buff::ENFIRE] = false;
+                    receiver->activeBuffs[Buff::ENTHUNDER] = false;
+                    receiver->activeBuffs[Buff::ENWATER] = false;
+                    break;
+                case Buff::ENTHUNDER:
+                    receiver->activeBuffs[Buff::ENFROST] = false;
+                    receiver->activeBuffs[Buff::ENFIRE] = false;
+                    receiver->activeBuffs[Buff::ENWATER] = false;
+                    break;
+                case Buff::ENWATER:
+                    receiver->activeBuffs[Buff::ENFROST] = false;
+                    receiver->activeBuffs[Buff::ENTHUNDER] = false;
+                    receiver->activeBuffs[Buff::ENFIRE] = false;
+                    break;
+                case Buff::BARFIRE:
+                    receiver->activeBuffs[Buff::BARFROST] = false;
+                    receiver->activeBuffs[Buff::BARTHUNDER] = false;
+                    receiver->activeBuffs[Buff::BARWATER] = false;
+                    break;
+                case Buff::BARFROST:
+                    receiver->activeBuffs[Buff::BARFIRE] = false;
+                    receiver->activeBuffs[Buff::BARTHUNDER] = false;
+                    receiver->activeBuffs[Buff::BARWATER] = false;
+                    break;
+                case Buff::BARTHUNDER:
+                    receiver->activeBuffs[Buff::BARFROST] = false;
+                    receiver->activeBuffs[Buff::BARFIRE] = false;
+                    receiver->activeBuffs[Buff::BARWATER] = false;
+                    break;
+                case Buff::BARWATER:
+                    receiver->activeBuffs[Buff::BARFROST] = false;
+                    receiver->activeBuffs[Buff::BARTHUNDER] = false;
+                    receiver->activeBuffs[Buff::BARFIRE] = false;
+                    break;
+                case Buff::BRAVERY:
+                    receiver->activeBuffs[Buff::BRAVERA] = false;
+                    receiver->activeDebuffs[Debuff::DEBRAVE] = false;
+                    break;
+                case Buff::BRAVERA:
+                    receiver->activeBuffs[Buff::BRAVERY] = false;
+                    receiver->activeDebuffs[Debuff::DEBRAVE] = false;
+                    break;
+                case Buff::FAITH:
+                    receiver->activeBuffs[Buff::FAITHRA] = false;
+                    receiver->activeDebuffs[Debuff::DEFAITH] = false;
+                    break;
+                case Buff::FAITHRA:
+                    receiver->activeBuffs[Buff::FAITH] = false;
+                    receiver->activeDebuffs[Debuff::DEFAITH] = false;
+                    break;
+                case Buff::HASTE:
+                    //double speed
+                    receiver->atbRechargeSpeed *= 2;
+                    receiver->activeDebuffs[Debuff::SLOW] = false;
+                    break;
+                case Buff::VIGILANCE:
+                    receiver->cutDiff = 10;
+                    receiver->activeDebuffs[Debuff::CURSE] = false;
+                    break;
+                case Buff::PROTECTRA:
+                    receiver->activeBuffs[Buff::PROTECT] = false;
+                    receiver->activeDebuffs[Debuff::DEPROTECT] = false;
+                    break;
+                case Buff::PROTECT:
+                    receiver->activeBuffs[Buff::PROTECTRA] = false;
+                    receiver->activeDebuffs[Debuff::DEPROTECT] = false;
+                case Buff::SHELLRA:
+                    receiver->activeBuffs[Buff::SHELL] = false;
+                    receiver->activeDebuffs[Debuff::DESHELL] = false;
+                    break;
+                case Buff::SHELL:
+                    receiver->activeBuffs[Buff::SHELLRA] = false;
+                    receiver->activeDebuffs[Debuff::DESHELL] = false;
+                    
             }
         }
+
     }
-        
+
+    
+    
 }
 
 
@@ -224,12 +407,12 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver){
     float statusEffectsModRav = 1;
 
     if (sender->activeDebuffs[DEBRAVE]) statusEffectsModAtk *= 0.1;
-    if (sender->activeBuffs[BRAVERY]) statusEffectsModAtk *= 1.4;
     if (sender->activeBuffs[BRAVERA]) statusEffectsModAtk *= 1.8;
+    else if (sender->activeBuffs[BRAVERY]) statusEffectsModAtk *= 1.4;
 
     if (sender->activeDebuffs[DEFAITH]) statusEffectsModRav *= 0.1;
-    if (sender->activeBuffs[FAITH]) statusEffectsModRav *= 1.4;
     if (sender->activeBuffs[FAITHRA]) statusEffectsModRav *= 1.8;
+    else if (sender->activeBuffs[FAITH]) statusEffectsModRav *= 1.4;
 
     atkDmg *= statusEffectsModAtk;
     ravDmg *= statusEffectsModRav;
@@ -291,8 +474,15 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver){
     //8. Calculate elemental Resistances
 
     if (element != Element::NOELEMENT){
-        atkDmg *= receiver->getResistance(element);
-        ravDmg *= receiver->getResistance(element);
+        //apply en- elemental statuses
+        Element currElement = element;
+        if (sender->activeBuffs[Buff::ENFIRE]) currElement = Element::FIRE;
+        else if (sender->activeBuffs[Buff::ENFROST]) currElement = Element::ICE;
+        else if (sender->activeBuffs[Buff::ENTHUNDER]) currElement = Element::LIGHTNING;
+        else if (sender->activeBuffs[Buff::ENWATER]) currElement = Element::WATER;
+
+        atkDmg *= receiver->getResistance(currElement);
+        ravDmg *= receiver->getResistance(currElement);
     } 
 
     //"Deprotect and deshell are subtracted directly from physical and magical resistance"
@@ -336,10 +526,10 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver){
     if (receiver->activeBuffs[Buff::SHELLRA]) {enemyStatusModRav *= 0.50;}
     else if (receiver->activeBuffs[Buff::SHELL]) {enemyStatusModRav *= 0.67;}
 
-    if (sender->activeBuffs[Buff::BARFIRE] && element == Element::FIRE
-        || sender->activeBuffs[Buff::BARFROST] && element == Element::ICE
-        || sender->activeBuffs[Buff::BARTHUNDER] && element == Element::LIGHTNING
-        || sender->activeBuffs[Buff::BARWATER] && element == Element::WATER){
+    if (receiver->activeBuffs[Buff::BARFIRE] && element == Element::FIRE
+        || receiver->activeBuffs[Buff::BARFROST] && element == Element::ICE
+        || receiver->activeBuffs[Buff::BARTHUNDER] && element == Element::LIGHTNING
+        || receiver->activeBuffs[Buff::BARWATER] && element == Element::WATER){
             enemyStatusModAtk *= 0.5;
             enemyStatusModRav *= 0.5;
     }

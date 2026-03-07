@@ -429,10 +429,15 @@ int main() {
             // enemy2.update(deltaTime);
 
         } else if (state == GameState::SCAN){
-            // std::string playerHealth = "HEALTH: " + std::to_string(playerCharacter.health);
-            // std::string fireResistance = "HEALTH: " + std::to_string(playerCharacter.health);
+
+            //HACKY TERRIBLE SCAN SCREEN FOR TESTING
+            UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, "");
+            // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", );
+            UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
 
             for (int i = 0; i < Debuff::DEBUFFCOUNT; i++){
+                // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", );
+                UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
                 if (playerCharacter.activeDebuffs[i]){
                     UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, "TEST DEBUFF IS ON");
                     snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%.2f", playerCharacter.debuffDurations[i]);

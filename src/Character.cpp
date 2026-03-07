@@ -34,6 +34,8 @@ Character::Character(){
     immunities[Debuff::DAZE] = 1.0;
     immunities[Debuff::PROVOKE] = 1.0;
 
+    mostRecentBuff = Buff::NOBUFF;
+
 
 
 
@@ -104,18 +106,29 @@ void Character::revertDebuff(int effectIdx){
         case Debuff::IMPERIL:
             //restore resistances
             for (int i = 0; i < std::size(resistances); i++){
-                //Lower resistance by one (unless immune)
+                //Raise resistance val by one (unless already weak)
                 Resistance r = resistances[i];
-                if (r > 0) resistances[i] = (Resistance)((int)r - 1);
+                if (r < Resistance::WEAK) resistances[i] = (Resistance)((int)r + 1);
             }
             break;
         case Debuff::SLOW:
             atbRechargeSpeed *= 2;
             break;
         case Debuff::CURSE:
-            curseCutDiff = 0;
+            cutDiff = 0;
             break;
         
+    }
+}
+
+void Character::revertBuff(int effectIdx){
+    switch (effectIdx){
+        case Buff::VIGILANCE:
+            cutDiff = 0;
+            break;
+        case Buff::HASTE:
+            atbRechargeSpeed /= 2;
+            break;
     }
 }
 

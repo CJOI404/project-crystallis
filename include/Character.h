@@ -41,8 +41,8 @@ class Character : public GameActor {
         //use this for stagger bar rendering
         float peakChainDuration = 1;
 
-        //cut/keep decrease when cursed
-        int curseCutDiff = 0;
+        //cut/keep decrease or increase
+        int cutDiff = 0;
 
         bool staggered = false;
 
@@ -71,15 +71,17 @@ class Character : public GameActor {
         //resistances to elements/attack types
         Resistance resistances[Element::ELEMENTCOUNT]{};
         //immunity to debuffs (debuff chances)
-        float immunities[Debuff::DEBUFFCOUNT]{};
+        alignas(4) float immunities[Debuff::DEBUFFCOUNT]{};
 
         //needed for dispel
-        Debuff mostRecentBuff;
+        Buff mostRecentBuff;
 
         //stores active buffs/debuffs
+        //supposedly PSP requires 4 byte alignment for float operations, making attribute alligned necessary
         bool activeBuffs[Buff::BUFFCOUNT]{};
         bool activeDebuffs[Debuff::DEBUFFCOUNT]{};
-        float debuffDurations[Debuff::DEBUFFCOUNT]{};
+        alignas(4) float buffDurations[Buff::BUFFCOUNT]{};
+        alignas(4) float debuffDurations[Debuff::DEBUFFCOUNT]{};
 
         void startAttack(int targetIndex);
 
@@ -100,5 +102,6 @@ class Character : public GameActor {
 
         void updateEffects(float dt);
         void revertDebuff(int effectIdx);
+        void revertBuff(int effectIdx);
         
 };
