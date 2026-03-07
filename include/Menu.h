@@ -13,6 +13,7 @@ class Menu {
         TechniquesMenu,
         ItemsMenu,
         EnemyMenu,
+        TeamMenu,
         ParadigmMenu
     };
 

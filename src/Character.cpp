@@ -189,7 +189,11 @@ void Character::update(float dt){
         if (currCommandCooldownVal >= commandQueue.back()->useTime){
             // Change from vector implementation at some point; this is more suited for a queue or an array.
             // erase is not performant
-            commandQueue.at(0)->execute(this, enemyList.at(targetIndex));
+            if (currentRole == SYNERGIST || currentRole == MEDIC){
+                commandQueue.at(0)->execute(this, teamList.at(targetIndex));
+            } else {
+                commandQueue.at(0)->execute(this, enemyList.at(targetIndex));
+            }
             commandQueue.erase(commandQueue.begin());
             currCommandCooldownVal = 0;
         }

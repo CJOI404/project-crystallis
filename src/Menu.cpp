@@ -30,9 +30,9 @@ Menu::Menu(){
     Paradigm* p1 = new Paradigm {"RUTHLESS", Role::COMMANDO, Role::RAVAGER, Role::SABOTEUR};
     Paradigm* p2 = new Paradigm {"CERBERUS", Role::RAVAGER, Role::COMMANDO, Role::COMMANDO};
     Paradigm* p3 = new Paradigm {"Ruthless", Role::SABOTEUR, Role::RAVAGER, Role::SABOTEUR};
-    Paradigm* p4 = new Paradigm {"Cerberus", Role::RAVAGER, Role::COMMANDO, Role::COMMANDO};
-    Paradigm* p5 = new Paradigm {"Ruthless", Role::COMMANDO, Role::RAVAGER, Role::SABOTEUR};
-    Paradigm* p6 = new Paradigm {"Cerberus", Role::RAVAGER, Role::COMMANDO, Role::COMMANDO};
+    Paradigm* p4 = new Paradigm {"Cerberus", Role::SYNERGIST, Role::COMMANDO, Role::COMMANDO};
+    Paradigm* p5 = new Paradigm {"Ruthless", Role::MEDIC, Role::RAVAGER, Role::SABOTEUR};
+    Paradigm* p6 = new Paradigm {"Cerberus", Role::SENTINEL, Role::COMMANDO, Role::COMMANDO};
 
     paradigms[0] = p1;
     paradigms[1] = p2;
@@ -104,6 +104,10 @@ void Menu::changeMenuState(MenuState mState){
             selectedIndex = 0;
             optionMax = activeCharacter->enemyList.size() - 1;
             break;
+        case TeamMenu:
+            selectedIndex = 0;
+            optionMax = activeCharacter->teamList.size() - 1;
+            break;
         case ItemsMenu:
         case ParadigmMenu:
             selectedIndex = selectedParadigm;
@@ -144,9 +148,13 @@ void Menu::selectButton(){
                     && !(activeCharacter->activeDebuffs[Debuff::PAIN] && activeCharacter->abilities[selectedIndex]->pain)){
 
                         activeCharacter->commandQueue.push_back(activeCharacter->abilities[selectedIndex]);
-
+                        
                         if (activeCharacter->commandQueue.size() == activeCharacter->atbSegments){
-                            changeMenuState(EnemyMenu);
+                            if (activeCharacter->currentRole == Role::SYNERGIST || activeCharacter->currentRole == Role::MEDIC){
+                                changeMenuState(TeamMenu);
+                            } else {
+                                changeMenuState(EnemyMenu);
+                            }
 
                         }
                     }
@@ -157,7 +165,7 @@ void Menu::selectButton(){
             break;
         case ItemsMenu:
             break;
-
+        case TeamMenu:
         case EnemyMenu:
             //set the character's target and enter attack ready state, return to command menu
             activeCharacter->startAttack(selectedIndex);
@@ -214,7 +222,11 @@ void Menu::earlyExecuteButton(){
             if (activeCharacter->commandQueue.empty()){
                 changeMenuState(CommandMenu);         
             } else {
-                changeMenuState(EnemyMenu);
+                if (activeCharacter->currentRole == Role::SYNERGIST || activeCharacter->currentRole == Role::MEDIC){
+                    changeMenuState(TeamMenu);
+                } else {
+                    changeMenuState(EnemyMenu);
+                }
             }
             break;
         case CommandMenu:
@@ -328,6 +340,24 @@ void Menu::drawMenu(){
             }
 
             break;
+        case TeamMenu:
+            drawAtb();
+            for (int i = 0; i <= optionMax; i++){
+                if (i != 0 && i % 4 == 0){
+                    currX -= cascadeOffset*4;
+                    currX += buttonWidth + padding;
+                    currY = y;
+                }
+                Colours colour = Colours::LIGHTGREY;
+                if (selectedIndex == i) colour = Colours::RED;
+                UI::drawRect(currX, currY, buttonWidth, buttonHeight, colour);
+                UI::drawString(currX + 5, currY + 2, 0xFFFFFFFF, 0.35, 0.35, activeCharacter->teamList.at(i)->name);
+                currY += buttonHeight + padding;
+                currX += cascadeOffset;
+            }
+
+            break;
+            
         case ParadigmMenu:
             currY -= 30;
             for (int i = 0; i <= optionMax; i++){
