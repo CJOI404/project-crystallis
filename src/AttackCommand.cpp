@@ -36,14 +36,12 @@ AttackCommand::AttackCommand(CommandData& cmdData){
 
 
 void AttackCommand::execute(Character* sender, Character* receiver){
-    if (receiver->currCommand == nullptr || receiver->currCommand->keep - receiver->curseCutDiff <= sender->currCommand->cut - sender->curseCutDiff ){
+    if (cut < 0 || receiver->currCommand == nullptr || receiver->currCommand->keep - receiver->curseCutDiff <= sender->currCommand->cut - sender->curseCutDiff ){
 
         //full dmg calculation (work in progress)
         receiver->health -= calculateDmg(sender, receiver);
 
         handleStatus(sender, receiver);
-
-
 
         //simple chain calculation
         if (receiver->staggered == false){
@@ -53,8 +51,6 @@ void AttackCommand::execute(Character* sender, Character* receiver){
         } else {
             receiver->stagger += ((chain));
         }
-
-        
 
         //HEALTH DAMAGE FORMULA
         //MAX DAMAGE = BASE STAT X DMG MULTIPLIER X MODIFIERS X STAGGER CHAIN % - RANDOM %
