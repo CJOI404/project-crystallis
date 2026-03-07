@@ -81,7 +81,9 @@ void AttackCommand::execute(Character* sender, Character* receiver){
 }
 
 void AttackCommand::handleStatus(Character* sender, Character* receiver){
-    if (getRandomFloat() <= chance){ 
+    //Full stick% calculataion
+    //(Base chance %) * (alteration due to target's resistance) * Chain Bonus
+    if (getRandomFloat() <= (chance * receiver->resistances[debuff] * (receiver->stagger / 100))){ 
         if (debuff != Debuff::NODEBUFF){
             receiver->activeDebuffs[debuff] = true;
             receiver->debuffDurations[debuff] = length;
