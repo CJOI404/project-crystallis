@@ -141,24 +141,17 @@ void Menu::selectButton(){
             }
             break;
         case AbilitiesMenu:
-            //add corresponding attackcommand in list to the character's queue. 
-            if (activeCharacter->commandQueue.size() < activeCharacter->atbSegments){
-                //account for fog and pain 
-                if (!(activeCharacter->activeDebuffs[Debuff::FOG] && activeCharacter->abilities[selectedIndex]->fog)
-                    && !(activeCharacter->activeDebuffs[Debuff::PAIN] && activeCharacter->abilities[selectedIndex]->pain)){
 
-                        activeCharacter->commandQueue.push_back(activeCharacter->abilities[selectedIndex]);
-                        
-                        if (activeCharacter->commandQueue.size() == activeCharacter->atbSegments){
-                            if (activeCharacter->currentRole == Role::SYNERGIST || activeCharacter->currentRole == Role::MEDIC){
-                                changeMenuState(TeamMenu);
-                            } else {
-                                changeMenuState(EnemyMenu);
-                            }
-
-                        }
-                    }
+            activeCharacter->queueCommand(activeCharacter->abilities[selectedIndex]);
+            
+            if (activeCharacter->atbQueueAmt == activeCharacter->atbSegments){
+                if (activeCharacter->currentRole == Role::SYNERGIST || activeCharacter->currentRole == Role::MEDIC){
+                    changeMenuState(TeamMenu);
+                } else {
+                    changeMenuState(EnemyMenu);
+                }
             }
+            // }
 
             break;
         case TechniquesMenu:
@@ -381,7 +374,7 @@ void Menu::drawMenu(){
     int atbSpacing = 0;
     for (int i = 0; i < activeCharacter->commandQueue.size(); i++){
         UI::drawString(5 + atbSpacing, 160, 0xFFFFFFFF, 0.3, 0.3, activeCharacter->commandQueue.at(i)->name); 
-        atbSpacing += 50;              
+        atbSpacing += 50 * activeCharacter->commandQueue.at(i)->cost;              
     }
 
 }

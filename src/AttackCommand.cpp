@@ -37,6 +37,8 @@ AttackCommand::AttackCommand(CommandData& cmdData){
 
 
 void AttackCommand::execute(Character* sender, Character* receiver){
+    sender->atbQueueAmt -= cost;
+
     if (cut < 0 || receiver->currCommand == nullptr || receiver->currCommand->keep + receiver->cutDiff <= sender->currCommand->cut - sender->cutDiff ){
 
         //full dmg calculation (work in progress)
@@ -127,7 +129,7 @@ void AttackCommand::handleStatus(Character* sender, Character* receiver){
                 |                | attacks        | Arise - Y   |            |            |
                 |=========================================================================|
                 | Pain           | Can no longer  | Esuna - Y   |            |            |
-                |                | execute phys   | Dispel - N  |  (None)    | (None)     | XXX When writing AI this will need to be checked (rn it just prevents the player from selecting it)
+                |                | execute phys   | Dispel - N  |  (None)    | (None)     | XXX
                 |                | attacks        | Arise - Y   |            |            |
                 |=========================================================================|
                 | Curse          | Reduces Cut and| Esuna - Y   |            |            |

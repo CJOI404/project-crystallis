@@ -152,6 +152,17 @@ void Character::updateEffects(float dt){
     }
 }
 
+void Character::queueCommand(BattleCommand* command){
+    //Check if command can be queued 
+    if (command->cost + atbQueueAmt <= atbSegments){
+        if (!(activeDebuffs[Debuff::FOG] && command->fog)
+            && !(activeDebuffs[Debuff::PAIN] && command->pain)){
+                commandQueue.push_back(command);
+                atbQueueAmt += command->cost;
+        }   
+    }
+}
+
 void Character::update(float dt){
 
     updateEffects(dt);
@@ -190,7 +201,8 @@ void Character::update(float dt){
         }        
     } 
     if (characterState == AttackReady){
-        if (currAtbVal >= commandQueue.size()){
+        // if (currAtbVal >= commandQueue.size()){
+        if (currAtbVal >= atbQueueAmt){
             characterState = Attacking;
             currAtbCooldownVal = 0;
         }
@@ -208,6 +220,7 @@ void Character::update(float dt){
                 commandQueue.at(0)->execute(this, enemyList.at(targetIndex));
             }
             commandQueue.erase(commandQueue.begin());
+
             currCommandCooldownVal = 0;
         }
 

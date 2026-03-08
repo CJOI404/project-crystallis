@@ -50,6 +50,7 @@ class Character : public GameActor {
         int ravDamage  = 300;
 
         int atbSegments = 5;
+        int atbQueueAmt = 0;
         int atbRechargeSpeed = 1;
         float currAtbVal = 0;
         int atbChargeCooldown = 1;
@@ -90,6 +91,8 @@ class Character : public GameActor {
 
         void setImmunity(Debuff debuff, float val);
         float getImmunity(Debuff debuff);
+
+        void queueCommand(BattleCommand* command);
 
         void addBattleCommand(BattleCommand* command, int index);
         void addViableBattleCommands();

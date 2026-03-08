@@ -309,8 +309,8 @@ int main() {
     
 
     //DEBUFF TESTING
-    // playerCharacter.activeDebuffs[Debuff::POISON] = true;
-    // playerCharacter.debuffDurations[Debuff::POISON] = 150;
+    // playerCharacter.activeDebuffs[Debuff::PAIN] = true;
+    // playerCharacter.debuffDurations[Debuff::PAIN] = 150;
 
 
     while(running){
