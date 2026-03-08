@@ -64,6 +64,7 @@ class Character : public GameActor {
         float synCastSpeed = 1;
 
         int targetIndex = -1;
+        Character* target = nullptr;
 
         // std::vector<BattleCommand*> allCharacterCommands;
         std::vector<BattleCommand*> abilities;
@@ -84,13 +85,16 @@ class Character : public GameActor {
         alignas(4) float buffDurations[Buff::BUFFCOUNT]{};
         alignas(4) float debuffDurations[Debuff::DEBUFFCOUNT]{};
 
-        void startAttack(int targetIndex);
+        void startAttack();
 
         void setResistance(Element element, Resistance val);
         float getResistance(Element element);
 
         void setImmunity(Debuff debuff, float val);
         float getImmunity(Debuff debuff);
+
+        void setTarget(Character* target);
+        Character* getTarget();
 
         void queueCommand(BattleCommand* command);
         void dequeueCommand();

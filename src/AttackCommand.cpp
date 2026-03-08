@@ -195,6 +195,9 @@ void AttackCommand::handleStatus(Character* sender, Character* receiver){
                     }
                     case (DISPEL): 
                         receiver->activeBuffs[receiver->mostRecentBuff] = false;
+                        break;
+                    case (PROVOKE):
+                        receiver->target = sender;
                     
                 }
             }

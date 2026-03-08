@@ -159,9 +159,14 @@ void Menu::selectButton(){
         case ItemsMenu:
             break;
         case TeamMenu:
+            activeCharacter->setTarget(activeCharacter->teamList.at(selectedIndex));
+            activeCharacter->startAttack();
+            changeMenuState(CommandMenu);    
+            break;        
         case EnemyMenu:
             //set the character's target and enter attack ready state, return to command menu
-            activeCharacter->startAttack(selectedIndex);
+            activeCharacter->setTarget(activeCharacter->enemyList.at(selectedIndex));
+            activeCharacter->startAttack();
             changeMenuState(CommandMenu);
             break;
         case ParadigmMenu:

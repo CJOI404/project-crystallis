@@ -11,7 +11,7 @@ class GameActor{
         MovementComponent* moveComp = nullptr;
 
     public:
-        float xPos = 50, yPos = 50;
+        float xPos = 50, yPos = 50, zPos = 0;
 
         virtual void update(float dt) = 0;
         virtual void render(float dt) = 0;

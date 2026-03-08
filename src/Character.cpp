@@ -77,9 +77,16 @@ float Character::getImmunity(Debuff debuff){
     return immunities[debuff];
 }
 
-void Character::startAttack(int targetIndex){
-    this->targetIndex = targetIndex;
+void Character::startAttack(){
     characterState = AttackReady;
+}
+
+void Character::setTarget(Character* target){
+    if (!activeDebuffs[Debuff::PROVOKE]) this->target = target;
+}
+
+Character* Character::getTarget(){
+    return target;
 }
 
 void Character::addBattleCommand(BattleCommand* command, int index){
@@ -220,11 +227,12 @@ void Character::update(float dt){
         if (currCommandCooldownVal >= commandQueue.back()->useTime){
             // Change from vector implementation at some point; this is more suited for a queue or an array.
             // erase is not performant
-            if (currentRole == SYNERGIST || currentRole == MEDIC){
-                commandQueue.at(0)->execute(this, teamList.at(targetIndex));
-            } else {
-                commandQueue.at(0)->execute(this, enemyList.at(targetIndex));
-            }
+            // if (currentRole == SYNERGIST || currentRole == MEDIC){
+            //     commandQueue.at(0)->execute(this, teamList.at(targetIndex));
+            // } else {
+            //     commandQueue.at(0)->execute(this, enemyList.at(targetIndex));
+            // }
+            commandQueue.at(0)->execute(this, target);
             commandQueue.erase(commandQueue.begin());
 
             currCommandCooldownVal = 0;
@@ -232,7 +240,7 @@ void Character::update(float dt){
 
         //end attack once command queue is depleted
         if (commandQueue.empty()){
-            targetIndex = -1;
+            // targetIndex = -1;
             characterState = AttackCooldown;
         }
 
