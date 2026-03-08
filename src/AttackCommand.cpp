@@ -46,7 +46,10 @@ void AttackCommand::execute(Character* sender, Character* receiver){
             //(lost HP * Multi) + [(lost HP * MA) / 100,000] = recovery amount
             if (strcmp(type, "CURE") == 0) receiver->health += calculateDmg(sender, receiver, 0, sender->ravDamage * ravDmgScale + 100);
             else if (strcmp(type, "RCURE") == 0) receiver->health += calculateDmg(sender, receiver, 0, ((receiver->maxHealth - receiver->health) * ravDmgScale) + (((receiver->maxHealth - receiver->health) * sender->ravDamage) / 100000));
-            else receiver->health -= calculateDmg(sender, receiver, sender->atkDamage * atkDmgScale, sender->ravDamage * ravDmgScale);
+            else{
+                receiver->health -= calculateDmg(sender, receiver, sender->atkDamage * atkDmgScale, sender->ravDamage * ravDmgScale);
+                if (receiver->activeDebuffs[Debuff::DAZE]) receiver->activeDebuffs[Debuff::DAZE] = false;
+            } 
         }
 
         handleStatus(sender, receiver);

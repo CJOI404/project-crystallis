@@ -156,7 +156,8 @@ void Character::queueCommand(BattleCommand* command){
     //Check if command can be queued 
     if (command->cost + atbQueueAmt <= atbSegments){
         if (!(activeDebuffs[Debuff::FOG] && command->fog)
-            && !(activeDebuffs[Debuff::PAIN] && command->pain)){
+            && !(activeDebuffs[Debuff::PAIN] && command->pain)
+            && !activeDebuffs[Debuff::DAZE]){
                 commandQueue.push_back(command);
                 atbQueueAmt += command->cost;
         }   
@@ -198,7 +199,7 @@ void Character::update(float dt){
     }
 
     //ATB recharge
-    if (characterState != Attacking && characterState != AttackCooldown){
+    if (characterState != Attacking && characterState != AttackCooldown && !activeDebuffs[Debuff::DAZE]){
         if (currAtbVal < atbSegments){
             currAtbVal += atbRechargeSpeed * dt;
         } else {

@@ -309,8 +309,8 @@ int main() {
     
 
     //DEBUFF TESTING
-    // playerCharacter.activeDebuffs[Debuff::PAIN] = true;
-    // playerCharacter.debuffDurations[Debuff::PAIN] = 150;
+    // playerCharacter.activeDebuffs[Debuff::DAZE] = true;
+    // playerCharacter.debuffDurations[Debuff::DAZE] = 150;
 
 
     while(running){

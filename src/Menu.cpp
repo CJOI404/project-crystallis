@@ -303,7 +303,8 @@ void Menu::drawMenu(){
                 }
                 Colours colour = Colours::LIGHTGREY;
                 if ((activeCharacter->activeDebuffs[Debuff::FOG] && activeCharacter->abilities[i]->fog)
-                    || (activeCharacter->activeDebuffs[Debuff::PAIN] && activeCharacter->abilities[i]->pain)){
+                    || (activeCharacter->activeDebuffs[Debuff::PAIN] && activeCharacter->abilities[i]->pain)
+                    || activeCharacter->activeDebuffs[Debuff::DAZE]){
                         if (selectedIndex == i) colour = Colours::MIDGREY;
                         else colour = Colours::DARKGREY;
                     } else {
