@@ -24,7 +24,7 @@ class AttackCommand : public BattleCommand {
 
         void execute(Character* sender, Character* receiver) override;
 
-        int calculateDmg(Character* sender, Character* receiver);
+        int calculateDmg(Character* sender, Character* receiver, float atkDmgBase, float ravDmgBase);
         void handleStatus(Character* sender, Character* receiver);
    
 

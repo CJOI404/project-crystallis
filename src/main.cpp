@@ -235,14 +235,14 @@ int main() {
     InputHandler playerInput;
 
     Character playerCharacter;
-    playerCharacter.health = 2000;
+    playerCharacter.health = 300;
     playerCharacter.maxHealth = 2000;
     playerCharacter.name = "LIGHTNING";
     playerCharacter.currentRole = Role::COMMANDO;
 
     Character character2;
     character2.health = 2200;
-    character2.maxHealth = 2200;
+    character2.maxHealth = 30000;
     character2.xPos = 100;
     character2.yPos = 100;
     character2.name = "SAZH";

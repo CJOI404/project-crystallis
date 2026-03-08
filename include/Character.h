@@ -93,6 +93,7 @@ class Character : public GameActor {
         float getImmunity(Debuff debuff);
 
         void queueCommand(BattleCommand* command);
+        void dequeueCommand();
 
         void addBattleCommand(BattleCommand* command, int index);
         void addViableBattleCommands();

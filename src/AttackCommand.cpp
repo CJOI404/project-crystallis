@@ -43,7 +43,10 @@ void AttackCommand::execute(Character* sender, Character* receiver){
 
         //full dmg calculation (work in progress)
         if (atkDmgScale > 0 || ravDmgScale > 0){
-            receiver->health -= calculateDmg(sender, receiver);
+            //(lost HP * Multi) + [(lost HP * MA) / 100,000] = recovery amount
+            if (strcmp(type, "CURE") == 0) receiver->health += calculateDmg(sender, receiver, 0, sender->ravDamage * ravDmgScale + 100);
+            else if (strcmp(type, "RCURE") == 0) receiver->health += calculateDmg(sender, receiver, 0, ((receiver->maxHealth - receiver->health) * ravDmgScale) + (((receiver->maxHealth - receiver->health) * sender->ravDamage) / 100000));
+            else receiver->health -= calculateDmg(sender, receiver, sender->atkDamage * atkDmgScale, sender->ravDamage * ravDmgScale);
         }
 
         handleStatus(sender, receiver);
@@ -374,9 +377,9 @@ void AttackCommand::handleStatus(Character* sender, Character* receiver){
 }
 
 
-int AttackCommand::calculateDmg(Character* sender, Character* receiver){
-    float atkDmg = (sender->atkDamage * atkDmgScale);
-    float ravDmg = (sender->ravDamage * ravDmgScale);
+int AttackCommand::calculateDmg(Character* sender, Character* receiver, float atkDmgBase, float ravDmgBase){
+    float atkDmg = atkDmgBase;
+    float ravDmg = ravDmgBase;
 
     //1. check the following passive abilities, multiply base dmg to get D1
     /*

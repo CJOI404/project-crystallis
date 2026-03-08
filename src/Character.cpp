@@ -163,6 +163,11 @@ void Character::queueCommand(BattleCommand* command){
     }
 }
 
+void Character::dequeueCommand(){
+    atbQueueAmt -= commandQueue.back()->cost;
+    commandQueue.pop_back();
+}
+
 void Character::update(float dt){
 
     updateEffects(dt);

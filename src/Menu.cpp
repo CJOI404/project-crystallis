@@ -191,7 +191,7 @@ void Menu::backButton(){
         case AbilitiesMenu:
             //delete most recent command or return to command menu if queue is empty
             if (!(activeCharacter->commandQueue.empty())){
-                activeCharacter->commandQueue.pop_back();
+                activeCharacter->dequeueCommand();
             } else {
                 changeMenuState(CommandMenu);
             }
@@ -199,7 +199,9 @@ void Menu::backButton(){
 
         case EnemyMenu:
             //return to ability select
-            
+            changeMenuState(AbilitiesMenu);
+            break;
+        case TeamMenu:
             changeMenuState(AbilitiesMenu);
             break;
 
@@ -224,8 +226,9 @@ void Menu::earlyExecuteButton(){
             break;
         case CommandMenu:
             if (activeCharacter->characterState == CharacterState::AttackReady && activeCharacter->currAtbVal >= 1){
-                for (int i = activeCharacter->commandQueue.size() - 1; i >= (int)activeCharacter->currAtbVal; i--){
-                    activeCharacter->commandQueue.pop_back();
+                while (activeCharacter->atbQueueAmt > activeCharacter->currAtbVal){
+                // for (int i = activeCharacter->commandQueue.size() - 1; i >= (int)activeCharacter->currAtbVal; i--){
+                    activeCharacter->dequeueCommand();
                 }
             }
 
