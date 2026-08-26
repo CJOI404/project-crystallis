@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/d/project-crystallis/src/AttackCommand.cpp" "CMakeFiles/Project_Crystallis.dir/src/AttackCommand.cpp.obj" "gcc" "CMakeFiles/Project_Crystallis.dir/src/AttackCommand.cpp.obj.d"
   "/mnt/d/project-crystallis/src/Character.cpp" "CMakeFiles/Project_Crystallis.dir/src/Character.cpp.obj" "gcc" "CMakeFiles/Project_Crystallis.dir/src/Character.cpp.obj.d"
+  "/mnt/d/project-crystallis/src/CombatInstance.cpp" "CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj" "gcc" "CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj.d"
   "/mnt/d/project-crystallis/src/Command.cpp" "CMakeFiles/Project_Crystallis.dir/src/Command.cpp.obj" "gcc" "CMakeFiles/Project_Crystallis.dir/src/Command.cpp.obj.d"
   "/mnt/d/project-crystallis/src/CommandRegistry.cpp" "CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj" "gcc" "CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj.d"
   "/mnt/d/project-crystallis/src/GlobalDefs.cpp" "CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj" "gcc" "CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj.d"

@@ -2,17 +2,18 @@
 
 #include <pspctrl.h>
 
-class InputHandler{
+namespace InputHandler{
                    
 
-    public:
-        SceCtrlData gamePad;
-        SceCtrlData oldGamePad;
+    // public:
+        extern SceCtrlData gamePad;
+        extern SceCtrlData oldGamePad;
 
-        float analogueX;
-        float analogueY;
+        extern float analogueX;
+        extern float analogueY;
 
-        InputHandler();
+        // InputHandler();
+        void initializeInputHandler();
 
         void readInput();
         bool getButtonDown(PspCtrlButtons button);

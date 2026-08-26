@@ -14,6 +14,7 @@
 #include "UIRender.h"
 #include "CommandRegistry.h"
 #include "GlobalDefs.h"
+#include "CombatInstance.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
@@ -201,10 +202,10 @@ void endFrame(){
 //     sceGuDrawArray(GU_SPRITES, GU_TEXTURE_16BIT | GU_VERTEX_16BIT | GU_TRANSFORM_2D, 2, 0, vertices);
 // }
 
-enum GameState {
-    BATTLE,
-    SCAN
-};
+// enum GameState {
+//     BATTLE,
+//     SCAN
+// };
 
 
 int main() {
@@ -232,7 +233,8 @@ int main() {
     //Load skills
     Commands::loadSkills("project_crystallis_skill_sheet.csv");
 
-    InputHandler playerInput;
+    // InputHandler playerInput;
+    InputHandler::initializeInputHandler();
 
     Character playerCharacter;
     playerCharacter.health = 300;
@@ -242,7 +244,7 @@ int main() {
 
     Character character2;
     character2.health = 2200;
-    character2.maxHealth = 30000;
+    character2.maxHealth = 3000;
     character2.xPos = 100;
     character2.yPos = 100;
     character2.name = "SAZH";
@@ -313,23 +315,21 @@ int main() {
     playerCharacter.addViableBattleCommands();
 
     //start menu
-    Menu commandMenu;
+    // Menu commandMenu;
 
-    commandMenu.setActiveCharacter(&playerCharacter);
+    // commandMenu.setActiveCharacter(&playerCharacter);
 
     //Currently the activecharacter needs to be known for setparadigm to work
     //this is functional but not a particularly good design. Will probably (definitely) make a teammanager class of some sort to handle this but not rn lol
-    commandMenu.setParadigm();
+    // commandMenu.setParadigm();
 
     running = 1;
-
+    
     //writes to fixed text buffer
     // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "Lightning Health: %d", playerCharacter.health);
-    
-
-    //DEBUFF TESTING
-    // playerCharacter.activeDebuffs[Debuff::DAZE] = true;
-    // playerCharacter.debuffDurations[Debuff::DAZE] = 150;
+    CombatInstance testInstance(team, enemies);
+    // testInstance.setEnemies(enemies);
+    // testInstance.setTeam(team);
 
 
     while(running){
@@ -340,117 +340,141 @@ int main() {
         prevTime = currTime;
 
         //GET INPUTS
-        playerInput.readInput();
+        // playerInput.readInput();
+        InputHandler::readInput();
 
         startFrame();
 
         //RENDER
-        playerCharacter.render(deltaTime);
-        character2.render(deltaTime);
-        character3.render(deltaTime);
-        enemy.render(deltaTime);
-        enemy2.render(deltaTime);
-
-        commandMenu.drawMenu();
 
 
-        if (state == GameState::BATTLE){
-            //DO MOVEMENT
-            playerCharacter.moveComp->setAnalogueMoveVals(playerInput.analogueX, playerInput.analogueY);
+        // while (!testInstance.complete){
 
-            if (playerInput.getButtonDown(PSP_CTRL_SQUARE) && playerCharacter.currAtbVal >= 1){
-                    playerCharacter.moveComp->dash();
-                    playerCharacter.currAtbVal -= 1;
-                }
-            if (playerInput.getButtonDown(PSP_CTRL_DOWN)){
-                    commandMenu.cursorDown();
-                }
-            if (playerInput.getButtonDown(PSP_CTRL_UP)){
-                    commandMenu.cursorUp();
-                }
-            if (playerInput.getButtonDown(PSP_CTRL_LEFT)){
-                    commandMenu.cursorLeft();
-                }
-            if (playerInput.getButtonDown(PSP_CTRL_RIGHT)){
-                    commandMenu.cursorRight();
-                }
+        testInstance.update(deltaTime);
+        testInstance.render(deltaTime);
+        
+
+        // playerCharacter.render(deltaTime);
+        // character2.render(deltaTime);
+        // character3.render(deltaTime);
+        // enemy.render(deltaTime);
+        // enemy2.render(deltaTime);
+
+        // commandMenu.drawMenu();
+
+
+        // if (state == GameState::BATTLE){
+        //     //DO MOVEMENT
+        //     playerCharacter.moveComp->setAnalogueMoveVals(InputHandler::analogueX, InputHandler::analogueY);
+
+        //     if (InputHandler::getButtonDown(PSP_CTRL_SQUARE) && playerCharacter.currAtbVal >= 1){
+        //             playerCharacter.moveComp->dash();
+        //             playerCharacter.currAtbVal -= 1;
+        //         }
+        //     if (InputHandler::getButtonDown(PSP_CTRL_DOWN)){
+        //             commandMenu.cursorDown();
+        //         }
+        //     if (InputHandler::getButtonDown(PSP_CTRL_UP)){
+        //             commandMenu.cursorUp();
+        //         }
+        //     if (InputHandler::getButtonDown(PSP_CTRL_LEFT)){
+        //             commandMenu.cursorLeft();
+        //         }
+        //     if (InputHandler::getButtonDown(PSP_CTRL_RIGHT)){
+        //             commandMenu.cursorRight();
+        //         }
             
-            //handle menu
-            if (playerInput.getButtonDown(PSP_CTRL_CROSS)){
-                commandMenu.selectButton();
-            } else if (playerInput.getButtonDown(PSP_CTRL_CIRCLE)){
-                commandMenu.backButton();
-            } else if (playerInput.getButtonDown(PSP_CTRL_TRIANGLE)){
-                commandMenu.earlyExecuteButton();
-            } else if (playerInput.getButtonDown(PSP_CTRL_LTRIGGER)){
-                commandMenu.paradigmSwitchButton();
-            }
+        //     //handle menu
+        //     if (InputHandler::getButtonDown(PSP_CTRL_CROSS)){
+        //         commandMenu.selectButton();
+        //     } else if (InputHandler::getButtonDown(PSP_CTRL_CIRCLE)){
+        //         commandMenu.backButton();
+        //     } else if (InputHandler::getButtonDown(PSP_CTRL_TRIANGLE)){
+        //         commandMenu.earlyExecuteButton();
+        //     } else if (InputHandler::getButtonDown(PSP_CTRL_LTRIGGER)){
+        //         commandMenu.paradigmSwitchButton();
+        //     }
 
 
-            if (playerInput.getButtonDown(PSP_CTRL_RTRIGGER)){
-                state = GameState::SCAN;
-            }
+        //     if (InputHandler::getButtonDown(PSP_CTRL_RTRIGGER)){
+        //         state = GameState::SCAN;
+        //     }
 
 
-            //UPDATE ACTORS
-            playerCharacter.update(deltaTime);
-            enemy.update(deltaTime);
-            enemy2.update(deltaTime);
+        //     //UPDATE ACTORS
+        //     playerCharacter.update(deltaTime);
+        //     enemy.update(deltaTime);
+        //     enemy2.update(deltaTime);
 
-        } else if (state == GameState::SCAN){
+        // } else if (state == GameState::SCAN){
 
-            Character* scannedEnemy = nullptr;
+        //     Character* scannedEnemy = nullptr;
             
-            if (playerCharacter.target != nullptr) scannedEnemy = playerCharacter.target;
-            else scannedEnemy = playerCharacter.enemyList.at(0);
+        //     // for (int i = 0; i < enemies.size(); i++){
+        //     //     if (enemies[i] == playerCharacter.target){
+        //     //         currIdx = i;
+        //     //     }
+        //     // }
+        //     // if (playerCharacter.target != nullptr) scannedEnemy = playerCharacter.target;
+        //     // else scannedEnemy = playerCharacter.enemyList.at(0);
 
-            // draw tint
-            UI::drawRect(0, 0, 480, 272, 0xdc000000);
+        //     if (InputHandler::getButtonDown(PSP_CTRL_LEFT)) currIdx--;
+        //     if (InputHandler::getButtonDown(PSP_CTRL_RIGHT)) currIdx++;
 
-            //HACKY TERRIBLE SCAN SCREEN FOR TESTING
-            // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", );
-            // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
+        //     if (currIdx >= (int)enemies.size()) currIdx = 0;
+        //     if (currIdx < 0) currIdx = (int)enemies.size() - 1;
 
-            snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%S", scannedEnemy->name);
-            UI::drawString(20, 20, 0xFFFFFFFF, 0.6, 0.6, UI::textBuffer);
+        //     scannedEnemy = enemies[currIdx];
 
-            // UI::drawHealthBar(140, 20, 120, 12, scannedEnemy->health, scannedEnemy->maxHealth);
+        //     // draw tint
+        //     UI::drawRect(0, 0, 480, 272, 0xdc000000);
 
-            snprintf(UI::textBuffer, sizeof(UI::textBuffer), "HEALTH: %d", scannedEnemy->health);
-            UI::drawString(50, 40, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
+        //     //HACKY TERRIBLE SCAN SCREEN FOR TESTING
+        //     // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", );
+        //     // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
 
-            int tempy = 60;
-            for (int i = 0; i < Debuff::DEBUFFCOUNT; i++){
-                // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", );
-                // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
-                if (scannedEnemy->activeDebuffs[i]){
-                    // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, "TEST DEBUFF IS ON");
-                    snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s: %.2f", debuffToString(static_cast<Debuff>(i)), scannedEnemy->debuffDurations[i]);
-                    UI::drawString(50, tempy, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);   
-                    tempy += 10;                                
-                }
-            }
-            tempy = 60;
-            for (int i = 0; i < Buff::BUFFCOUNT; i++){
-                // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", );
-                // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
-                if (scannedEnemy->activeBuffs[i]){
-                    // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, "TEST DEBUFF IS ON");
-                    snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s: %.2f", buffToString(static_cast<Buff>(i)), scannedEnemy->buffDurations[i]);
-                    UI::drawString(150, tempy, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);   
-                    tempy += 10;                                
-                }
-            }
+        //     snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%S", scannedEnemy->name);
+        //     UI::drawString(20, 20, 0xFFFFFFFF, 0.6, 0.6, UI::textBuffer);
 
-            // UI::drawString(10, 5, 0xFFFFFFFF, 0.8, 0.8, "DEBUFFS: " + std::to_string(playerCharacter.health) + "");
-            // UI::drawString(10, 25, 0xFFFFFFFF, 0.4, 0.4, "RESISTANCES:");
-            // UI::drawString(10, 45, 0xFFFFFFFF, 0.3, 0.3, "FIRE: " + std::to_string(playerCharacter.resistances[Element::FIRE]));
+        //     // UI::drawHealthBar(140, 20, 120, 12, scannedEnemy->health, scannedEnemy->maxHealth);
+
+        //     snprintf(UI::textBuffer, sizeof(UI::textBuffer), "HEALTH: %d", scannedEnemy->health);
+        //     UI::drawString(50, 40, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
+
+        //     int tempy = 60;
+        //     for (int i = 0; i < Debuff::DEBUFFCOUNT; i++){
+        //         // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", );
+        //         // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
+        //         if (scannedEnemy->activeDebuffs[i]){
+        //             // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, "TEST DEBUFF IS ON");
+        //             snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s: %.2f", debuffToString(static_cast<Debuff>(i)), scannedEnemy->debuffDurations[i]);
+        //             UI::drawString(50, tempy, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);   
+        //             tempy += 10;                                
+        //         }
+        //     }
+        //     tempy = 60;
+        //     for (int i = 0; i < Buff::BUFFCOUNT; i++){
+        //         // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", );
+        //         // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
+        //         if (scannedEnemy->activeBuffs[i]){
+        //             // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, "TEST DEBUFF IS ON");
+        //             snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s: %.2f", buffToString(static_cast<Buff>(i)), scannedEnemy->buffDurations[i]);
+        //             UI::drawString(150, tempy, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);   
+        //             tempy += 10;                                
+        //         }
+        //     }
+
+        //     // UI::drawString(10, 5, 0xFFFFFFFF, 0.8, 0.8, "DEBUFFS: " + std::to_string(playerCharacter.health) + "");
+        //     // UI::drawString(10, 25, 0xFFFFFFFF, 0.4, 0.4, "RESISTANCES:");
+        //     // UI::drawString(10, 45, 0xFFFFFFFF, 0.3, 0.3, "FIRE: " + std::to_string(playerCharacter.resistances[Element::FIRE]));
 
 
-            if (playerInput.getButtonDown(PSP_CTRL_RTRIGGER) || playerInput.getButtonDown(PSP_CTRL_CIRCLE)){
-                state = GameState::BATTLE;
-            }
-        }
+        //     if (InputHandler::getButtonDown(PSP_CTRL_RTRIGGER) || InputHandler::getButtonDown(PSP_CTRL_CIRCLE)){
+        //         state = GameState::BATTLE;
+        //     }
+
+
+        // }
 
         endFrame();
 

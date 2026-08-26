@@ -21,6 +21,7 @@ namespace UI {
     extern char textBuffer[64];
 
     void loadFont(const char* fntPath, const char* texturePath);
+    void loadIcons(int size, int num, const char* texturePath);
     void drawString(int x, int y, uint32_t color, float scale, float yScale, std::string text);
     void drawRect(float x, float y, float w, float h, unsigned int colour);
 

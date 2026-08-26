@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Project_Crystallis.dir/src/AttackCommand.cpp.obj.d"
   "CMakeFiles/Project_Crystallis.dir/src/Character.cpp.obj"
   "CMakeFiles/Project_Crystallis.dir/src/Character.cpp.obj.d"
+  "CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj"
+  "CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj.d"
   "CMakeFiles/Project_Crystallis.dir/src/Command.cpp.obj"
   "CMakeFiles/Project_Crystallis.dir/src/Command.cpp.obj.d"
   "CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj"

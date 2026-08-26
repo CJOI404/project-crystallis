@@ -73,8 +73,11 @@ typedef struct
 namespace UI {
     FontChar fontData[128];
     char textBuffer[64];
+
     uint32_t* fontTexture = nullptr;
     uint32_t* uiSpriteTexture = nullptr;
+    uint32_t* symbolTexture = nullptr;
+
     int textWidth = 256;
 
     int extract(const std::string& line, const std::string& key) {
@@ -115,6 +118,21 @@ namespace UI {
         fontTexture = (uint32_t *) stbi_load(texturePath, &(textWidth), &(textWidth), NULL, STBI_rgb_alpha);
 
         sceKernelDcacheWritebackAll();
+    }
+
+    void loadIcons(int size, int num, const char* texturePath){
+        
+
+        symbolTexture = (uint32_t *) stbi_load(texturePath, &(textWidth), &(textWidth), NULL, STBI_rgb_alpha);
+
+    }
+
+    void drawIcon(int x, int y, int w, int h, int num){
+        TextureVertex* vertices = (TextureVertex*)sceGuGetMemory(2 * sizeof(TextureVertex));
+
+        //not done at all obv
+
+        sceGuDrawArray(GU_SPRITES, GU_COLOR_8888 | GU_TEXTURE_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_2D, 2, 0, vertices);
     }
 
     void drawString(int x, int y, uint32_t color, float xScale, float yScale, std::string text) {

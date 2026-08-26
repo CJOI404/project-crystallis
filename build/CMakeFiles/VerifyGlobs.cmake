@@ -16,6 +16,7 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/mnt/d/project-crystallis/src
 set(OLD_GLOB
   "/mnt/d/project-crystallis/src/AttackCommand.cpp"
   "/mnt/d/project-crystallis/src/Character.cpp"
+  "/mnt/d/project-crystallis/src/CombatInstance.cpp"
   "/mnt/d/project-crystallis/src/Command.cpp"
   "/mnt/d/project-crystallis/src/CommandRegistry.cpp"
   "/mnt/d/project-crystallis/src/GlobalDefs.cpp"

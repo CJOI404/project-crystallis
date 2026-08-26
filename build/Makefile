@@ -178,6 +178,30 @@ src/Character.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Character.cpp.s
 .PHONY : src/Character.cpp.s
 
+src/CombatInstance.obj: src/CombatInstance.cpp.obj
+.PHONY : src/CombatInstance.obj
+
+# target to build an object file
+src/CombatInstance.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj
+.PHONY : src/CombatInstance.cpp.obj
+
+src/CombatInstance.i: src/CombatInstance.cpp.i
+.PHONY : src/CombatInstance.i
+
+# target to preprocess a source file
+src/CombatInstance.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.i
+.PHONY : src/CombatInstance.cpp.i
+
+src/CombatInstance.s: src/CombatInstance.cpp.s
+.PHONY : src/CombatInstance.s
+
+# target to generate assembly for a file
+src/CombatInstance.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.s
+.PHONY : src/CombatInstance.cpp.s
+
 src/Command.obj: src/Command.cpp.obj
 .PHONY : src/Command.obj
 
@@ -385,6 +409,9 @@ help:
 	@echo "... src/Character.obj"
 	@echo "... src/Character.i"
 	@echo "... src/Character.s"
+	@echo "... src/CombatInstance.obj"
+	@echo "... src/CombatInstance.i"
+	@echo "... src/CombatInstance.s"
 	@echo "... src/Command.obj"
 	@echo "... src/Command.i"
 	@echo "... src/Command.s"

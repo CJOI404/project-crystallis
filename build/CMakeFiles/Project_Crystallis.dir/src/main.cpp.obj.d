@@ -197,9 +197,10 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /mnt/d/project-crystallis/include/UIRender.h \
  /mnt/d/project-crystallis/include/CommandRegistry.h \
  /mnt/d/project-crystallis/include/AttackCommand.h \
+ /mnt/d/project-crystallis/include/CombatInstance.h \
+ /mnt/d/project-crystallis/include/Menu.h \
  /home/calvi/pspdev/psp/include/stb_image.h \
  /home/calvi/pspdev/psp/include/assert.h \
- /mnt/d/project-crystallis/include/Menu.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/iomanip \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/ios_base.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/ext/atomicity.h \

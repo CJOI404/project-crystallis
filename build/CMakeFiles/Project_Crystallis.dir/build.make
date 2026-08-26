@@ -97,10 +97,24 @@ CMakeFiles/Project_Crystallis.dir/src/Character.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project_Crystallis.dir/src/Character.cpp.s"
 	/home/calvi/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/project-crystallis/src/Character.cpp -o CMakeFiles/Project_Crystallis.dir/src/Character.cpp.s
 
+CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj: CMakeFiles/Project_Crystallis.dir/flags.make
+CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj: /mnt/d/project-crystallis/src/CombatInstance.cpp
+CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj: CMakeFiles/Project_Crystallis.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj"
+	/home/calvi/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj -MF CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj.d -o CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj -c /mnt/d/project-crystallis/src/CombatInstance.cpp
+
+CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.i"
+	/home/calvi/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/project-crystallis/src/CombatInstance.cpp > CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.i
+
+CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.s"
+	/home/calvi/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/project-crystallis/src/CombatInstance.cpp -o CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.s
+
 CMakeFiles/Project_Crystallis.dir/src/Command.cpp.obj: CMakeFiles/Project_Crystallis.dir/flags.make
 CMakeFiles/Project_Crystallis.dir/src/Command.cpp.obj: /mnt/d/project-crystallis/src/Command.cpp
 CMakeFiles/Project_Crystallis.dir/src/Command.cpp.obj: CMakeFiles/Project_Crystallis.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project_Crystallis.dir/src/Command.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Project_Crystallis.dir/src/Command.cpp.obj"
 	/home/calvi/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project_Crystallis.dir/src/Command.cpp.obj -MF CMakeFiles/Project_Crystallis.dir/src/Command.cpp.obj.d -o CMakeFiles/Project_Crystallis.dir/src/Command.cpp.obj -c /mnt/d/project-crystallis/src/Command.cpp
 
 CMakeFiles/Project_Crystallis.dir/src/Command.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/Project_Crystallis.dir/src/Command.cpp.s: cmake_force
 CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj: CMakeFiles/Project_Crystallis.dir/flags.make
 CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj: /mnt/d/project-crystallis/src/CommandRegistry.cpp
 CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj: CMakeFiles/Project_Crystallis.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj"
 	/home/calvi/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj -MF CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj.d -o CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj -c /mnt/d/project-crystallis/src/CommandRegistry.cpp
 
 CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.s: cmake_force
 CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj: CMakeFiles/Project_Crystallis.dir/flags.make
 CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj: /mnt/d/project-crystallis/src/GlobalDefs.cpp
 CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj: CMakeFiles/Project_Crystallis.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj"
 	/home/calvi/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj -MF CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj.d -o CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj -c /mnt/d/project-crystallis/src/GlobalDefs.cpp
 
 CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.s: cmake_force
 CMakeFiles/Project_Crystallis.dir/src/InputHandler.cpp.obj: CMakeFiles/Project_Crystallis.dir/flags.make
 CMakeFiles/Project_Crystallis.dir/src/InputHandler.cpp.obj: /mnt/d/project-crystallis/src/InputHandler.cpp
 CMakeFiles/Project_Crystallis.dir/src/InputHandler.cpp.obj: CMakeFiles/Project_Crystallis.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Project_Crystallis.dir/src/InputHandler.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Project_Crystallis.dir/src/InputHandler.cpp.obj"
 	/home/calvi/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project_Crystallis.dir/src/InputHandler.cpp.obj -MF CMakeFiles/Project_Crystallis.dir/src/InputHandler.cpp.obj.d -o CMakeFiles/Project_Crystallis.dir/src/InputHandler.cpp.obj -c /mnt/d/project-crystallis/src/InputHandler.cpp
 
 CMakeFiles/Project_Crystallis.dir/src/InputHandler.cpp.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/Project_Crystallis.dir/src/InputHandler.cpp.s: cmake_force
 CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.obj: CMakeFiles/Project_Crystallis.dir/flags.make
 CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.obj: /mnt/d/project-crystallis/src/Menu.cpp
 CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.obj: CMakeFiles/Project_Crystallis.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.obj"
 	/home/calvi/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.obj -MF CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.obj.d -o CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.obj -c /mnt/d/project-crystallis/src/Menu.cpp
 
 CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.i: cmake_force
@@ -170,7 +184,7 @@ CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.s: cmake_force
 CMakeFiles/Project_Crystallis.dir/src/MovementComponent.cpp.obj: CMakeFiles/Project_Crystallis.dir/flags.make
 CMakeFiles/Project_Crystallis.dir/src/MovementComponent.cpp.obj: /mnt/d/project-crystallis/src/MovementComponent.cpp
 CMakeFiles/Project_Crystallis.dir/src/MovementComponent.cpp.obj: CMakeFiles/Project_Crystallis.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Project_Crystallis.dir/src/MovementComponent.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Project_Crystallis.dir/src/MovementComponent.cpp.obj"
 	/home/calvi/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project_Crystallis.dir/src/MovementComponent.cpp.obj -MF CMakeFiles/Project_Crystallis.dir/src/MovementComponent.cpp.obj.d -o CMakeFiles/Project_Crystallis.dir/src/MovementComponent.cpp.obj -c /mnt/d/project-crystallis/src/MovementComponent.cpp
 
 CMakeFiles/Project_Crystallis.dir/src/MovementComponent.cpp.i: cmake_force
@@ -184,7 +198,7 @@ CMakeFiles/Project_Crystallis.dir/src/MovementComponent.cpp.s: cmake_force
 CMakeFiles/Project_Crystallis.dir/src/UIRender.cpp.obj: CMakeFiles/Project_Crystallis.dir/flags.make
 CMakeFiles/Project_Crystallis.dir/src/UIRender.cpp.obj: /mnt/d/project-crystallis/src/UIRender.cpp
 CMakeFiles/Project_Crystallis.dir/src/UIRender.cpp.obj: CMakeFiles/Project_Crystallis.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Project_Crystallis.dir/src/UIRender.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Project_Crystallis.dir/src/UIRender.cpp.obj"
 	/home/calvi/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project_Crystallis.dir/src/UIRender.cpp.obj -MF CMakeFiles/Project_Crystallis.dir/src/UIRender.cpp.obj.d -o CMakeFiles/Project_Crystallis.dir/src/UIRender.cpp.obj -c /mnt/d/project-crystallis/src/UIRender.cpp
 
 CMakeFiles/Project_Crystallis.dir/src/UIRender.cpp.i: cmake_force
@@ -198,7 +212,7 @@ CMakeFiles/Project_Crystallis.dir/src/UIRender.cpp.s: cmake_force
 CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: CMakeFiles/Project_Crystallis.dir/flags.make
 CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/src/main.cpp
 CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: CMakeFiles/Project_Crystallis.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj"
 	/home/calvi/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj -MF CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj.d -o CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj -c /mnt/d/project-crystallis/src/main.cpp
 
 CMakeFiles/Project_Crystallis.dir/src/main.cpp.i: cmake_force
@@ -213,6 +227,7 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.s: cmake_force
 Project_Crystallis_OBJECTS = \
 "CMakeFiles/Project_Crystallis.dir/src/AttackCommand.cpp.obj" \
 "CMakeFiles/Project_Crystallis.dir/src/Character.cpp.obj" \
+"CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj" \
 "CMakeFiles/Project_Crystallis.dir/src/Command.cpp.obj" \
 "CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj" \
 "CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj" \
@@ -227,6 +242,7 @@ Project_Crystallis_EXTERNAL_OBJECTS =
 
 Project_Crystallis: CMakeFiles/Project_Crystallis.dir/src/AttackCommand.cpp.obj
 Project_Crystallis: CMakeFiles/Project_Crystallis.dir/src/Character.cpp.obj
+Project_Crystallis: CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj
 Project_Crystallis: CMakeFiles/Project_Crystallis.dir/src/Command.cpp.obj
 Project_Crystallis: CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj
 Project_Crystallis: CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj
@@ -237,7 +253,7 @@ Project_Crystallis: CMakeFiles/Project_Crystallis.dir/src/UIRender.cpp.obj
 Project_Crystallis: CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj
 Project_Crystallis: CMakeFiles/Project_Crystallis.dir/build.make
 Project_Crystallis: CMakeFiles/Project_Crystallis.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable Project_Crystallis"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/d/project-crystallis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable Project_Crystallis"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Project_Crystallis.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/cmake -E cmake_echo_color --cyan Not\ stripping\ binary\ for\ target\ Project_Crystallis\ because\ building\ PRX.
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Calling psp-fixup-imports for target Project_Crystallis"
