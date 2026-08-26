@@ -374,36 +374,12 @@ int main() {
             // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "Lightning Health: %d", playerCharacter.health);
             // UI::drawString(300, 200, 0xFFFFFFFF, 0.5, 0.5, UI::textBuffer);
 
-            //draw stagger
-            UI::drawRect(230, 5, 200, 12, Colours::LIGHTGREY);
-
-            float barPercent;
-
-            if (enemy.chainDuration != 0){  //protect against FPU exception (div by 0)
-                if (!enemy.staggered) barPercent = ((enemy.stagger - 100) / (enemy.staggerPoint - 100)) * ((enemy.chainDuration / enemy.peakChainDuration));
-                else barPercent =  (enemy.chainDuration / enemy.peakChainDuration);
-            } else {
-                barPercent = 0;
-            }
-
-            if (enemy.stagger > 100){
-                UI::drawRect(230, 7, barPercent * 200, 8, Colours::STAGGERBAR);
-            }
 
             // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "Health: %.2f", enemy.health);
 
             // eStagger = eStagger.substr(0, eStagger.find('.') + 3);
             // eStaggerPoint = eStaggerPoint.substr(0, eStaggerPoint.find('.') + 3);
             
-            
-            if (!enemy.staggered){
-                snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%.2f / %.2f", enemy.stagger, enemy.staggerPoint);
-                UI::drawString(230, 20, 0xFFFFFFFF, 0.5, 0.5, UI::textBuffer);
-            } 
-            else {
-                snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%.2f", enemy.stagger);
-                UI::drawString(230, 20, 0xFFFFFFFF, 0.5, 0.5, UI::textBuffer);
-            }
 
             //draw health bar
 
@@ -413,14 +389,6 @@ int main() {
             if ((playerInput.gamePad.Buttons & PSP_CTRL_RTRIGGER) && !(playerInput.oldGamePad.Buttons & PSP_CTRL_RTRIGGER)){
                 state = GameState::SCAN;
             }
-
-            //temp draw atb bar
-            // UI::drawRect(5, 170, playerCharacter.atbSegments * 50, 12, Colours::LIGHTGREY);
-            // UI::drawRect(5, 172, playerCharacter.currAtbVal * 50, 8, Colours::LIGHTBLUE);
-
-            //temp draw stagger info
-            // UI::drawString(250, 40, 0xFFFFFFFF, 0.5, 0.5, "Duration: " + std::to_string(enemy.chainDuration) + "");
-            if (enemy.staggered) UI::drawString(320, 20, 0xFFFFFFFF, 0.5, 0.5, "STAGGERED!!");
 
 
             //UPDATE ACTORS

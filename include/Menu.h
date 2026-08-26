@@ -52,6 +52,7 @@ class Menu {
 
         void drawAtb();
         void drawTeamStats();
+        void drawStagger();
 
         void selectButton();
         void backButton();

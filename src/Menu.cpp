@@ -275,6 +275,43 @@ void Menu::drawTeamStats(){
     }
 }
 
+void Menu::drawStagger(){
+
+    if (activeCharacter->target == nullptr){
+        return;
+    }
+
+    Character* enemy = activeCharacter->target;
+
+    //draw stagger
+    UI::drawRect(230, 5, 200, 12, Colours::LIGHTGREY);
+
+    float barPercent;
+
+    if (enemy->chainDuration != 0){  //protect against FPU exception (div by 0)
+        if (!enemy->staggered) barPercent = ((enemy->stagger - 100) / (enemy->staggerPoint - 100)) * ((enemy->chainDuration / enemy->peakChainDuration));
+        else barPercent = (enemy->chainDuration / enemy->peakChainDuration);
+    } else {
+        barPercent = 0;
+    }
+
+    if (activeCharacter->target->stagger > 100){
+        UI::drawRect(230, 7, barPercent * 200, 8, Colours::STAGGERBAR);
+    }
+
+    if (!enemy->staggered){
+        snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%.2f / %.2f", enemy->stagger, enemy->staggerPoint);
+        UI::drawString(230, 20, 0xFFFFFFFF, 0.5, 0.5, UI::textBuffer);
+    } 
+    else {
+        snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%.2f", enemy->stagger);
+        UI::drawString(230, 20, 0xFFFFFFFF, 0.5, 0.5, UI::textBuffer);
+    }
+
+    if (enemy->staggered) UI::drawString(320, 20, 0xFFFFFFFF, 0.5, 0.5, "STAGGERED!!");
+
+}
+
 void Menu::drawMenu(){
 
     int currX = x;
@@ -282,6 +319,7 @@ void Menu::drawMenu(){
     // int currCascadeOffset = cascadeOffset;
 
     drawTeamStats();
+    drawStagger();
 
     switch (menuState){
         case CommandMenu:
