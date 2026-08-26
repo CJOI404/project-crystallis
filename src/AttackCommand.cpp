@@ -52,6 +52,10 @@ void AttackCommand::execute(Character* sender, Character* receiver){
             } 
         }
 
+        //normalize dmg
+        if (receiver->health > receiver->maxHealth) receiver->health = receiver->maxHealth;
+        else if (receiver->health < 0) receiver->health = 0;
+
         handleStatus(sender, receiver);
 
         //simple chain calculation
