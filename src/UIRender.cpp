@@ -202,5 +202,8 @@ namespace UI {
         UI::drawRect(x, y + (h - ((h*2)/3))/2, ((float) health / maxHealth) * w, ((h*2)/3), Colours::LIGHTGREEN);
     }
 
-
+    void drawButton(float x, float y, float w, float h, std::string text, uint32_t color){
+        UI::drawRect(x, y, w, h, color);
+        UI::drawString(x + 5, y + 2, 0xFFFFFFFF, 0.35, 0.35, text);
+    }
 }

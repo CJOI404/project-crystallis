@@ -25,4 +25,5 @@ namespace UI {
     void drawRect(float x, float y, float w, float h, unsigned int colour);
 
     void drawHealthBar(float x, float y, float w, float h, int health, int maxHealth);
+    void drawButton(float x, float y, float w, float h, std::string text, uint32_t color);
 }

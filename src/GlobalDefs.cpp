@@ -32,6 +32,30 @@ const char* debuffToString(Debuff d) {
     }
 }
 
+const char* buffToString(Buff b){
+    switch (b) {
+        case BRAVERY:       return "BRAVERY";      
+        case BRAVERA:       return "BRAVERA";
+        case FAITH:         return "FATH";
+        case FAITHRA:       return "FAITHRA";
+        case HASTE:         return "HASTE";
+        case VIGILANCE:     return "VIGILANCE";
+        case ENFIRE:        return "ENFIRE";
+        case ENFROST:       return "ENFROST";
+        case ENTHUNDER:     return "ENTHUNDER";
+        case ENWATER:       return "ENWATER";
+        case PROTECT:       return "PROTECT";
+        case PROTECTRA:     return "PROTECTRA";
+        case SHELL:         return "SHELL";
+        case SHELLRA:       return "SHELLRA";
+        case BARFIRE:       return "BARFIRE";
+        case BARFROST:      return "BARFROST";
+        case BARTHUNDER:    return "BARTHUNDER";
+        case BARWATER:      return "BARWATER";
+        case VEIL:          return "VEIL";
+    }
+}
+
 float getRandomFloat() {
     // Use static variables for the random device, engine, and distribution
     // to ensure they are initialized only once and maintain state across calls.

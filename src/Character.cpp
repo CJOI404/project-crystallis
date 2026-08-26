@@ -150,7 +150,17 @@ void Character::updateEffects(float dt){
                 revertDebuff(i);
             }
         } 
+    }
 
+    for (int i = 0; i < std::size(activeBuffs); i++){
+        if (activeBuffs[i]){
+            buffDurations[i] -= dt;
+            if (buffDurations[i] <= 0){
+                buffDurations[i] = 0;
+                activeBuffs[i] = false;
+                revertBuff(i);
+            }
+        } 
     }
     
     /*Poison causes the target to continuously lose HP every second equal to 0.32% of their maximum*/

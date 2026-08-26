@@ -279,20 +279,23 @@ int main() {
     enemy2.staggerPoint = 600;
     enemy2.drawHealthBar = true;
 
-    //assign enemies to characters
-    playerCharacter.enemyList.push_back(&enemy);
-    // character2.enemyList.push_back(&enemy);
-    // character3.enemyList.push_back(&enemy);
+    std::vector<Character*> team;
+    team.push_back(&playerCharacter);
+    team.push_back(&character2);
+    team.push_back(&character3);
 
-    playerCharacter.enemyList.push_back(&enemy2);
+    std::vector<Character*> enemies;
+    enemies.push_back(&enemy);
+    enemies.push_back(&enemy2);
 
-    character2.enemyList = playerCharacter.enemyList;
-    character3.enemyList = playerCharacter.enemyList;
-
-    //assign teammates to players
-    playerCharacter.teamList.push_back(&playerCharacter);
-    playerCharacter.teamList.push_back(&character2);
-    playerCharacter.teamList.push_back(&character3);
+    for (int i = 0; i < team.size(); i++){
+        team.at(i)->teamList = team;
+        team.at(i)->enemyList = enemies;
+    }
+    for (int i = 0; i < enemies.size(); i++){
+        enemies.at(i)->teamList = enemies;
+        enemies.at(i)->enemyList = team;
+    }
 
     float xMoveDir = 0;
     int xPos = 50;
@@ -424,6 +427,17 @@ int main() {
                     // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, "TEST DEBUFF IS ON");
                     snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s: %.2f", debuffToString(static_cast<Debuff>(i)), scannedEnemy->debuffDurations[i]);
                     UI::drawString(50, tempy, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);   
+                    tempy += 10;                                
+                }
+            }
+            tempy = 60;
+            for (int i = 0; i < Buff::BUFFCOUNT; i++){
+                // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", );
+                // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
+                if (scannedEnemy->activeBuffs[i]){
+                    // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, "TEST DEBUFF IS ON");
+                    snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s: %.2f", buffToString(static_cast<Buff>(i)), scannedEnemy->buffDurations[i]);
+                    UI::drawString(150, tempy, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);   
                     tempy += 10;                                
                 }
             }

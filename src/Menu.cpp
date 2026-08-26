@@ -336,8 +336,9 @@ void Menu::drawMenu(){
             for (int i = 0; i <= optionMax; i++){
                 Colours colour = Colours::LIGHTGREY;
                 if (selectedIndex == i) colour = Colours::RED;
-                UI::drawRect(currX, currY, buttonWidth, buttonHeight, colour);
-                UI::drawString(currX + 5, currY + 2, 0xFFFFFFFF, 0.35, 0.35, options[i]);
+                UI::drawButton(currX, currY, buttonWidth, buttonHeight, options[i], colour);
+                // UI::drawRect(currX, currY, buttonWidth, buttonHeight, colour);
+                // UI::drawString(currX + 5, currY + 2, 0xFFFFFFFF, 0.35, 0.35, options[i]);
                 currY += buttonHeight + padding;
                 currX += cascadeOffset;
             }
@@ -362,10 +363,9 @@ void Menu::drawMenu(){
                     } else {
                         if (selectedIndex == i) colour = Colours::RED;
                     }
-                UI::drawRect(currX, currY, buttonWidth, buttonHeight, colour);
+                    
+                if (activeCharacter->abilities[i] != nullptr) UI::drawButton(currX, currY, buttonWidth, buttonHeight, activeCharacter->abilities[i]->name, colour);
 
-                //IMPORTANT: CHECK FOR ENOUGH ABILITIES
-                if (activeCharacter->abilities[i] != nullptr) UI::drawString(currX + 5, currY + 2, 0xFFFFFFFF, 0.35, 0.35, activeCharacter->abilities[i]->name);
                 currY += buttonHeight + padding;
                 currX += cascadeOffset;
             }

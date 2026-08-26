@@ -133,19 +133,9 @@ namespace Commands{
                 else if (data[17] == "VEIL") {cData.buff = Buff::VEIL;}
                 else {cData.buff = Buff::NOBUFF;}
 
-
-
-
                 cData.chance = std::atof(data[18].c_str());
 
                 cData.length = std::atoi(data[19].c_str());
-
-
-
-
-                //17 = effect (debuff)
-                //18 = chance (debuff)
-                //19 = length (debuff)
 
 
             com = new AttackCommand(cData);
