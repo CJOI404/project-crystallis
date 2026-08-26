@@ -81,6 +81,7 @@ struct Paradigm{
 };
 
 const char* roleToString(Role r);
+const char* debuffToString(Debuff d);
 
 float getRandomFloat();
 

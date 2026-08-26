@@ -396,23 +396,38 @@ int main() {
 
         } else if (state == GameState::SCAN){
 
-            //HACKY TERRIBLE SCAN SCREEN FOR TESTING
-            UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, "");
-            // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", );
-            UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
+            Character* scannedEnemy = nullptr;
+            
+            if (playerCharacter.target != nullptr) scannedEnemy = playerCharacter.target;
+            else scannedEnemy = playerCharacter.enemyList.at(0);
 
+            // draw tint
+            UI::drawRect(0, 0, 480, 272, 0xdc000000);
+
+            //HACKY TERRIBLE SCAN SCREEN FOR TESTING
+            // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", );
+            // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
+
+            snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%S", scannedEnemy->name);
+            UI::drawString(20, 20, 0xFFFFFFFF, 0.6, 0.6, UI::textBuffer);
+
+            // UI::drawHealthBar(140, 20, 120, 12, scannedEnemy->health, scannedEnemy->maxHealth);
+
+            snprintf(UI::textBuffer, sizeof(UI::textBuffer), "HEALTH: %d", scannedEnemy->health);
+            UI::drawString(50, 40, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
+
+            int tempy = 60;
             for (int i = 0; i < Debuff::DEBUFFCOUNT; i++){
                 // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", );
-                UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
-                if (playerCharacter.activeDebuffs[i]){
-                    UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, "TEST DEBUFF IS ON");
-                    snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%.2f", playerCharacter.debuffDurations[i]);
-                    UI::drawString(50, 20, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);                                   
+                // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
+                if (scannedEnemy->activeDebuffs[i]){
+                    // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, "TEST DEBUFF IS ON");
+                    snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s: %.2f", debuffToString(static_cast<Debuff>(i)), scannedEnemy->debuffDurations[i]);
+                    UI::drawString(50, tempy, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);   
+                    tempy += 10;                                
                 }
             }
 
-            snprintf(UI::textBuffer, sizeof(UI::textBuffer), "Health: %d", enemy.health);
-            UI::drawString(50, 50, 0xFFFFFFFF, 0.5, 0.5, UI::textBuffer);
             // UI::drawString(10, 5, 0xFFFFFFFF, 0.8, 0.8, "DEBUFFS: " + std::to_string(playerCharacter.health) + "");
             // UI::drawString(10, 25, 0xFFFFFFFF, 0.4, 0.4, "RESISTANCES:");
             // UI::drawString(10, 45, 0xFFFFFFFF, 0.3, 0.3, "FIRE: " + std::to_string(playerCharacter.resistances[Element::FIRE]));

@@ -265,6 +265,5 @@ void Character::render(float dt){
 }
 
 void Character::drawHealth(){
-    UI::drawRect(xPos - 60, yPos - 10, 120, 6, Colours::LIGHTGREY);
-    UI::drawRect(xPos - 60, yPos - 9, ((float) health / maxHealth) * 120, 4, Colours::LIGHTGREEN);
+    UI::drawHealthBar(xPos - 60, yPos - 10, 120, 6, health, maxHealth);
 }

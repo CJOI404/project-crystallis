@@ -41,9 +41,6 @@ Menu::Menu(){
     paradigms[4] = p5;
     paradigms[5] = p6;
 
-
-
-
 }
 
 void Menu::setActiveCharacter(Character* character){
@@ -114,6 +111,8 @@ void Menu::changeMenuState(MenuState mState){
             optionMax = std::size(paradigms) - 1;
             break;
         case TechniquesMenu:
+            break;
+        case Scan:
             break;
     }
 }
@@ -249,6 +248,14 @@ void Menu::paradigmSwitchButton(){
     }
 }
 
+void Menu::scanButton(){
+    if (menuState == Scan){
+        changeMenuState(CommandMenu);
+    } else {
+        changeMenuState(Scan);
+    }
+}
+
 void Menu::drawPage(int buttonWidth, int buttonHeight, int yButtonAmt, int cascade){
 
 }
@@ -265,14 +272,11 @@ void Menu::drawTeamStats(){
 
 
     for (int i = 0; i < activeCharacter->teamList.size(); i++){
-        UI::drawRect(currX + 80, currY + 2, 120, 6, Colours::LIGHTGREY);
-        UI::drawRect(currX + 80, currY + 3, ((float) activeCharacter->teamList.at(i)->health / activeCharacter->teamList.at(i)->maxHealth) * 120, 4, Colours::LIGHTGREEN);
-
+        UI::drawHealthBar(currX + 80, currY + 2, 120, 6, activeCharacter->teamList.at(i)->health, activeCharacter->teamList.at(i)->maxHealth);
         UI::drawString(currX + 80, currY - 8, 0xFFFFFFFF, 0.3, 0.3, activeCharacter->teamList.at(i)->name);
         UI::drawString(currX + 150, currY - 8, 0xFFFFFFFF, 0.3, 0.3, roleToString(activeCharacter->teamList.at(i)->currentRole));
         currY += 15;
         currX += cascadeOffset;
-
     }
 }
 
@@ -311,6 +315,10 @@ void Menu::drawStagger(){
 
     if (enemy->staggered) UI::drawString(320, 20, 0xFFFFFFFF, 0.5, 0.5, "STAGGERED!!");
 
+}
+
+void Menu::drawScan(){
+    
 }
 
 void Menu::drawMenu(){
@@ -423,6 +431,11 @@ void Menu::drawMenu(){
     for (int i = 0; i < activeCharacter->commandQueue.size(); i++){
         UI::drawString(5 + atbSpacing, 160, 0xFFFFFFFF, 0.3, 0.3, activeCharacter->commandQueue.at(i)->name); 
         atbSpacing += 50 * activeCharacter->commandQueue.at(i)->cost;              
+    }
+
+    //draw scan
+    if (menuState == Scan){
+        drawScan();
     }
 
 }

@@ -23,4 +23,6 @@ namespace UI {
     void loadFont(const char* fntPath, const char* texturePath);
     void drawString(int x, int y, uint32_t color, float scale, float yScale, std::string text);
     void drawRect(float x, float y, float w, float h, unsigned int colour);
+
+    void drawHealthBar(float x, float y, float w, float h, int health, int maxHealth);
 }

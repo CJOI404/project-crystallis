@@ -14,7 +14,8 @@ class Menu {
         ItemsMenu,
         EnemyMenu,
         TeamMenu,
-        ParadigmMenu
+        ParadigmMenu,
+        Scan
     };
 
     public:
@@ -53,11 +54,13 @@ class Menu {
         void drawAtb();
         void drawTeamStats();
         void drawStagger();
+        void drawScan();
 
         void selectButton();
         void backButton();
         void earlyExecuteButton();
         void paradigmSwitchButton();
+        void scanButton();
         void changeMenuState(MenuState mState);
         void setParadigm();
 

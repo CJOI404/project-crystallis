@@ -13,6 +13,25 @@ const char* roleToString(Role r) {
     }
 }
 
+const char* debuffToString(Debuff d) {
+    switch (d) {
+        case DEBRAVE:       return "DEBRAVE";
+        case DEFAITH:       return "DEFAITH";
+        case DEPROTECT:     return "DEPROTECT";
+        case DESHELL:       return "DESHELL";
+        case POISON:        return "POISON";
+        case IMPERIL:       return "IMPERIL";
+        case SLOW:          return "SLOW";
+        case FOG:           return "FOG";
+        case PAIN:          return "PAIN";
+        case CURSE:         return "CURSE";
+        case DAZE:          return "DAZE";
+        case PROVOKE:       return "PROVOKE";
+        case DISPEL:        return "DISPEL";
+        default:            return "???";
+    }
+}
+
 float getRandomFloat() {
     // Use static variables for the random device, engine, and distribution
     // to ensure they are initialized only once and maintain state across calls.

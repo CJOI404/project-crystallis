@@ -197,4 +197,10 @@ namespace UI {
         sceGuDrawArray(GU_SPRITES, GU_TEXTURE_16BIT | GU_VERTEX_16BIT | GU_TRANSFORM_2D, 2, 0, vertices);
     }
 
+    void drawHealthBar(float x, float y, float w, float h, int health, int maxHealth){
+        UI::drawRect(x, y, w, h, Colours::LIGHTGREY);
+        UI::drawRect(x, y + (h - ((h*2)/3))/2, ((float) health / maxHealth) * w, ((h*2)/3), Colours::LIGHTGREEN);
+    }
+
+
 }
