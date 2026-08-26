@@ -30,6 +30,8 @@ class Character : public GameActor {
 
         const char* name;
 
+        bool drawHealthBar = false;
+
         int health = 0;
         int maxHealth = 0;
 
@@ -107,6 +109,8 @@ class Character : public GameActor {
 
         void update(float dt) override;
         void render(float dt) override;
+
+        void drawHealth();
 
         void updateEffects(float dt);
         void revertDebuff(int effectIdx);

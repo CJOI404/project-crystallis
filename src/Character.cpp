@@ -259,4 +259,12 @@ void Character::render(float dt){
     UI::drawRect(xPos, yPos, 20, 20, moveComp->color);
     snprintf(UI::textBuffer, sizeof(UI::textBuffer), name);
     UI::drawString(xPos, yPos, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer); 
+
+    if (drawHealthBar) drawHealth();
+
+}
+
+void Character::drawHealth(){
+    UI::drawRect(xPos - 60, yPos - 10, 120, 6, Colours::LIGHTGREY);
+    UI::drawRect(xPos - 60, yPos - 9, ((float) health / maxHealth) * 120, 4, Colours::LIGHTGREEN);
 }

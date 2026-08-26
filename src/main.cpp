@@ -267,11 +267,27 @@ int main() {
     enemy.health = 450000;
     enemy.maxHealth = 450000;
     enemy.staggerPoint = 600;
+    enemy.drawHealthBar = true;
+
+    Character enemy2;
+    enemy2.moveComp->color = Colours::BLUE;
+    enemy2.xPos = 400;
+    enemy2.yPos = 120;
+    enemy2.name = "ENEMY 2";
+    enemy2.health = 450000;
+    enemy2.maxHealth = 450000;
+    enemy2.staggerPoint = 600;
+    enemy2.drawHealthBar = true;
 
     //assign enemies to characters
     playerCharacter.enemyList.push_back(&enemy);
-    character2.enemyList.push_back(&enemy);
-    character3.enemyList.push_back(&enemy);
+    // character2.enemyList.push_back(&enemy);
+    // character3.enemyList.push_back(&enemy);
+
+    playerCharacter.enemyList.push_back(&enemy2);
+
+    character2.enemyList = playerCharacter.enemyList;
+    character3.enemyList = playerCharacter.enemyList;
 
     //assign teammates to players
     playerCharacter.teamList.push_back(&playerCharacter);
@@ -315,7 +331,6 @@ int main() {
 
     while(running){
 
-
         //UPDATE DELTATIME
         currTime = clock();
         deltaTime = float(currTime - prevTime) / CLOCKS_PER_SEC;
@@ -326,15 +341,15 @@ int main() {
 
         startFrame();
 
-
+        //RENDER
         playerCharacter.render(deltaTime);
         character2.render(deltaTime);
         character3.render(deltaTime);
         enemy.render(deltaTime);
+        enemy2.render(deltaTime);
 
-        // UI::drawRect(playerCharacter.xPos, playerCharacter.yPos, 20, 20, playerCharacter.moveComp->color);
+        commandMenu.drawMenu();
 
-        // UI::drawRect(enemy.xPos, enemy.yPos, 20, 20, enemy.moveComp->color);
 
         if (state == GameState::BATTLE){
             //DO MOVEMENT
@@ -369,24 +384,7 @@ int main() {
             }
 
 
-            commandMenu.drawMenu();
-
-            // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "Lightning Health: %d", playerCharacter.health);
-            // UI::drawString(300, 200, 0xFFFFFFFF, 0.5, 0.5, UI::textBuffer);
-
-
-            // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "Health: %.2f", enemy.health);
-
-            // eStagger = eStagger.substr(0, eStagger.find('.') + 3);
-            // eStaggerPoint = eStaggerPoint.substr(0, eStaggerPoint.find('.') + 3);
-            
-
-            //draw health bar
-
-            UI::drawRect(enemy.xPos - 60, enemy.yPos - 10, 120, 6, Colours::LIGHTGREY);
-            UI::drawRect(enemy.xPos - 60, enemy.yPos - 9, ((float) enemy.health / enemy.maxHealth) * 120, 4, Colours::LIGHTGREEN);
-
-            if ((playerInput.gamePad.Buttons & PSP_CTRL_RTRIGGER) && !(playerInput.oldGamePad.Buttons & PSP_CTRL_RTRIGGER)){
+            if (playerInput.getButtonDown(PSP_CTRL_RTRIGGER)){
                 state = GameState::SCAN;
             }
 
@@ -394,7 +392,7 @@ int main() {
             //UPDATE ACTORS
             playerCharacter.update(deltaTime);
             enemy.update(deltaTime);
-            // enemy2.update(deltaTime);
+            enemy2.update(deltaTime);
 
         } else if (state == GameState::SCAN){
 
@@ -426,54 +424,6 @@ int main() {
         }
 
         endFrame();
-
-
-        // float xMoveDir = 0;
-        // float yMoveDir = 0;
-        // float length = 0;
-        // int moveSpeed = 5;
-
-
-
-
-        // xMoveDir += (pad.Lx - 128) / 127.0f ; //sets center to 0, left to -128 and right to 128
-        // yMoveDir += (pad.Ly - 128) / 127.0f ; //sets center to 0, left to -128 and right to 128
-
-        // //clamp
-        // if (xMoveDir > 1) xMoveDir = 1;
-        // if (xMoveDir < -1) xMoveDir = -1;
-        // if (yMoveDir > 1) yMoveDir = 1;
-        // if (yMoveDir < -1) yMoveDir = -1;
-
-        // length = sqrt(xMoveDir * xMoveDir + yMoveDir * yMoveDir);
-
-        // if (length < 0.1){
-        //     xMoveDir = 0;
-        //     yMoveDir = 0;
-        // }
-
-        // printf("length: %.2f", length);
-        // printf("XDir: %.2f", playerInput.analogueX);
-
-        // if (length > 0.0f){
-        //     xMoveDir /= length;
-        //     yMoveDir /= length;
-        // }
-
-        // pspDebugScreenPrintf("xMoveDir: %0.2f", playerInput.analogueX);
-
-        // xPos += xMoveDir * moveSpeed;
-        // yPos += yMoveDir * moveSpeed;
-
-        // pspDebugScreenPrintf("\nXpos: %d", xPos);
-
-
-        // if (xPos > SCREEN_WIDTH - 34) xPos = SCREEN_WIDTH - 34;
-        // if (xPos < 0) xPos = 0;
-
-        // drawRect(xPos, yPos, 20, 20);
-
-        // endFrame();
 
     }
 

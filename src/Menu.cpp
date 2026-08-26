@@ -191,6 +191,7 @@ void Menu::backButton(){
         case CommandMenu:
             //cancel queued commands
             activeCharacter->commandQueue.clear();
+            activeCharacter->atbQueueAmt = 0;
             activeCharacter->characterState = CharacterState::Waiting;
             break;
         case AbilitiesMenu:
