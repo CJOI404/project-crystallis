@@ -3,7 +3,7 @@
 #include "Character.h"
 #include "Menu.h"
 
-enum GameState {
+enum CombatState {
     BATTLE,
     SCAN
 };
@@ -19,7 +19,7 @@ class CombatInstance {
 
         Character* scannedEnemy = nullptr;
 
-        GameState state;
+        CombatState state;
         bool complete;
 
         int scanIdx;

@@ -298,6 +298,30 @@ src/InputHandler.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/InputHandler.cpp.s
 .PHONY : src/InputHandler.cpp.s
 
+src/MainMenu.obj: src/MainMenu.cpp.obj
+.PHONY : src/MainMenu.obj
+
+# target to build an object file
+src/MainMenu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/MainMenu.cpp.obj
+.PHONY : src/MainMenu.cpp.obj
+
+src/MainMenu.i: src/MainMenu.cpp.i
+.PHONY : src/MainMenu.i
+
+# target to preprocess a source file
+src/MainMenu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/MainMenu.cpp.i
+.PHONY : src/MainMenu.cpp.i
+
+src/MainMenu.s: src/MainMenu.cpp.s
+.PHONY : src/MainMenu.s
+
+# target to generate assembly for a file
+src/MainMenu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/MainMenu.cpp.s
+.PHONY : src/MainMenu.cpp.s
+
 src/Menu.obj: src/Menu.cpp.obj
 .PHONY : src/Menu.obj
 
@@ -424,6 +448,9 @@ help:
 	@echo "... src/InputHandler.obj"
 	@echo "... src/InputHandler.i"
 	@echo "... src/InputHandler.s"
+	@echo "... src/MainMenu.obj"
+	@echo "... src/MainMenu.i"
+	@echo "... src/MainMenu.s"
 	@echo "... src/Menu.obj"
 	@echo "... src/Menu.i"
 	@echo "... src/Menu.s"

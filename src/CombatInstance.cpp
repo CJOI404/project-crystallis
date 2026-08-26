@@ -6,7 +6,7 @@
 
 CombatInstance::CombatInstance(std::vector<Character*> team, std::vector<Character*> enemies){
     complete = false;
-    state = GameState::BATTLE;
+    state = CombatState::BATTLE;
 
     setEnemies(enemies);
     setTeam(team);
@@ -32,7 +32,7 @@ void CombatInstance::update(float dt){
     // Menu commandMenu;
 
 
-    if (state == GameState::BATTLE){
+    if (state == CombatState::BATTLE){
         //DO MOVEMENT
         playerCharacter->moveComp->setAnalogueMoveVals(InputHandler::analogueX, InputHandler::analogueY);
             if (InputHandler::getButtonDown(PSP_CTRL_SQUARE) && playerCharacter->currAtbVal >= 1){
@@ -71,7 +71,7 @@ void CombatInstance::update(float dt){
                     scanIdx = i;
                 }
             }
-            state = GameState::SCAN;
+            state = CombatState::SCAN;
         }
         
 
@@ -84,10 +84,10 @@ void CombatInstance::update(float dt){
             enemies[i]->update(dt);
         }
 
-    } else if (state == GameState::SCAN){
+    } else if (state == CombatState::SCAN){
         
         if (InputHandler::getButtonDown(PSP_CTRL_RTRIGGER) || InputHandler::getButtonDown(PSP_CTRL_CIRCLE)){
-            state = GameState::BATTLE;
+            state = CombatState::BATTLE;
         }
 
         if (InputHandler::getButtonDown(PSP_CTRL_LEFT)) scanIdx--;
@@ -157,7 +157,7 @@ void CombatInstance::render(float dt){
 
     commandMenu.drawMenu();
 
-    if (state == GameState::SCAN){
+    if (state == CombatState::SCAN){
         UI::drawRect(0, 0, 480, 272, 0xdc000000);
 
         snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", scannedEnemy->name);

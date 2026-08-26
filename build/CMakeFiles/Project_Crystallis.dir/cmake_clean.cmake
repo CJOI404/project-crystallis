@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj.d"
   "CMakeFiles/Project_Crystallis.dir/src/InputHandler.cpp.obj"
   "CMakeFiles/Project_Crystallis.dir/src/InputHandler.cpp.obj.d"
+  "CMakeFiles/Project_Crystallis.dir/src/MainMenu.cpp.obj"
+  "CMakeFiles/Project_Crystallis.dir/src/MainMenu.cpp.obj.d"
   "CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.obj"
   "CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.obj.d"
   "CMakeFiles/Project_Crystallis.dir/src/MovementComponent.cpp.obj"

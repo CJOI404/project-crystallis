@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "/home/calvi/pspdev/psp/sdk/include",
-                "/home/calvi/pspdev/**"
+                "/home/calvi/pspdev/**",
+                "${workspaceFolder}/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

@@ -15,6 +15,7 @@
 #include "CommandRegistry.h"
 #include "GlobalDefs.h"
 #include "CombatInstance.h"
+#include "MainMenu.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
@@ -207,10 +208,14 @@ void endFrame(){
 //     SCAN
 // };
 
+enum GameState {
+    MAINMENU,
+    COMBAT
+};
 
 int main() {
 
-    GameState state = GameState::BATTLE;
+    GameState state = GameState::MAINMENU;
 
     // SceCtrlData pad;
 
@@ -236,68 +241,68 @@ int main() {
     // InputHandler playerInput;
     InputHandler::initializeInputHandler();
 
-    Character playerCharacter;
-    playerCharacter.health = 300;
-    playerCharacter.maxHealth = 2000;
-    playerCharacter.name = "LIGHTNING";
-    playerCharacter.currentRole = Role::COMMANDO;
+    // Character playerCharacter;
+    // playerCharacter.health = 300;
+    // playerCharacter.maxHealth = 2000;
+    // playerCharacter.name = "LIGHTNING";
+    // playerCharacter.currentRole = Role::COMMANDO;
 
-    Character character2;
-    character2.health = 2200;
-    character2.maxHealth = 3000;
-    character2.xPos = 100;
-    character2.yPos = 100;
-    character2.name = "SAZH";
-    character2.currentRole = Role::RAVAGER;
+    // Character character2;
+    // character2.health = 2200;
+    // character2.maxHealth = 3000;
+    // character2.xPos = 100;
+    // character2.yPos = 100;
+    // character2.name = "SAZH";
+    // character2.currentRole = Role::RAVAGER;
 
-    Character character3;
-    character3.health = 1700;
-    character3.maxHealth = 1700;
-    character3.xPos = 150;
-    character3.yPos = 150;
-    character3.name = "VANILLE";
-    character3.currentRole = Role::SABOTEUR;
-
-
+    // Character character3;
+    // character3.health = 1700;
+    // character3.maxHealth = 1700;
+    // character3.xPos = 150;
+    // character3.yPos = 150;
+    // character3.name = "VANILLE";
+    // character3.currentRole = Role::SABOTEUR;
 
 
-    Character enemy;
-    enemy.moveComp->color = Colours::BLUE;
-    enemy.xPos = 350;
-    enemy.yPos = 70;
-    enemy.name = "ENEMY 1";
-    enemy.health = 450000;
-    enemy.maxHealth = 450000;
-    enemy.staggerPoint = 600;
-    enemy.drawHealthBar = true;
 
-    Character enemy2;
-    enemy2.moveComp->color = Colours::BLUE;
-    enemy2.xPos = 400;
-    enemy2.yPos = 120;
-    enemy2.name = "ENEMY 2";
-    enemy2.health = 450000;
-    enemy2.maxHealth = 450000;
-    enemy2.staggerPoint = 600;
-    enemy2.drawHealthBar = true;
 
-    std::vector<Character*> team;
-    team.push_back(&playerCharacter);
-    team.push_back(&character2);
-    team.push_back(&character3);
+    // Character enemy;
+    // enemy.moveComp->color = Colours::BLUE;
+    // enemy.xPos = 350;
+    // enemy.yPos = 70;
+    // enemy.name = "ENEMY 1";
+    // enemy.health = 450000;
+    // enemy.maxHealth = 450000;
+    // enemy.staggerPoint = 600;
+    // enemy.drawHealthBar = true;
 
-    std::vector<Character*> enemies;
-    enemies.push_back(&enemy);
-    enemies.push_back(&enemy2);
+    // Character enemy2;
+    // enemy2.moveComp->color = Colours::BLUE;
+    // enemy2.xPos = 400;
+    // enemy2.yPos = 120;
+    // enemy2.name = "ENEMY 2";
+    // enemy2.health = 450000;
+    // enemy2.maxHealth = 450000;
+    // enemy2.staggerPoint = 600;
+    // enemy2.drawHealthBar = true;
 
-    for (int i = 0; i < team.size(); i++){
-        team.at(i)->teamList = team;
-        team.at(i)->enemyList = enemies;
-    }
-    for (int i = 0; i < enemies.size(); i++){
-        enemies.at(i)->teamList = enemies;
-        enemies.at(i)->enemyList = team;
-    }
+    // std::vector<Character*> team;
+    // team.push_back(&playerCharacter);
+    // team.push_back(&character2);
+    // team.push_back(&character3);
+
+    // std::vector<Character*> enemies;
+    // enemies.push_back(&enemy);
+    // enemies.push_back(&enemy2);
+
+    // for (int i = 0; i < team.size(); i++){
+    //     team.at(i)->teamList = team;
+    //     team.at(i)->enemyList = enemies;
+    // }
+    // for (int i = 0; i < enemies.size(); i++){
+    //     enemies.at(i)->teamList = enemies;
+    //     enemies.at(i)->enemyList = team;
+    // }
 
     float xMoveDir = 0;
     int xPos = 50;
@@ -312,7 +317,7 @@ int main() {
     // for (int i = 0; i < 10 && i < Commands::commandList.size(); i++){
     //     playerCharacter.addBattleCommand(Commands::commandList.at(i), i);
     // }
-    playerCharacter.addViableBattleCommands();
+    // playerCharacter.addViableBattleCommands();
 
     //start menu
     // Menu commandMenu;
@@ -327,9 +332,23 @@ int main() {
     
     //writes to fixed text buffer
     // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "Lightning Health: %d", playerCharacter.health);
-    CombatInstance testInstance(team, enemies);
+    // CombatInstance testInstance(team, enemies);
     // testInstance.setEnemies(enemies);
     // testInstance.setTeam(team);
+
+    MainMenu mainMenu;
+    CombatInstance* combatInstance = nullptr;
+
+
+    std::vector<Character*> team;
+    std::vector<Character*> enemies;
+
+    Character playerCharacter;
+    Character character2;
+    Character character3;
+
+    Character enemy;
+    Character enemy2;
 
 
     while(running){
@@ -345,140 +364,93 @@ int main() {
 
         startFrame();
 
-        //RENDER
+        if (state == MAINMENU){
+            mainMenu.update(deltaTime);
+            mainMenu.render(deltaTime);
 
+            if (mainMenu.startFlag){
 
-        // while (!testInstance.complete){
+                //Initialize characters
 
-        testInstance.update(deltaTime);
-        testInstance.render(deltaTime);
-        
+                // Character playerCharacter;
+                playerCharacter.health = 300;
+                playerCharacter.maxHealth = 2000;
+                playerCharacter.name = "LIGHTNING";
+                playerCharacter.currentRole = Role::COMMANDO;
 
-        // playerCharacter.render(deltaTime);
-        // character2.render(deltaTime);
-        // character3.render(deltaTime);
-        // enemy.render(deltaTime);
-        // enemy2.render(deltaTime);
+                // Character character2;
+                character2.health = 2200;
+                character2.maxHealth = 3000;
+                character2.xPos = 100;
+                character2.yPos = 100;
+                character2.name = "SAZH";
+                character2.currentRole = Role::RAVAGER;
+// 
+                // Character character3;
+                character3.health = 1700;
+                character3.maxHealth = 1700;
+                character3.xPos = 150;
+                character3.yPos = 150;
+                character3.name = "VANILLE";
+                character3.currentRole = Role::SABOTEUR;
 
-        // commandMenu.drawMenu();
+                // Character enemy;
+                enemy.moveComp->color = Colours::BLUE;
+                enemy.xPos = 350;
+                enemy.yPos = 70;
+                enemy.name = "ENEMY 1";
+                enemy.health = 450000;
+                enemy.maxHealth = 450000;
+                enemy.staggerPoint = 600;
+                enemy.drawHealthBar = true;
 
+                // Character enemy2;
+                enemy2.moveComp->color = Colours::BLUE;
+                enemy2.xPos = 400;
+                enemy2.yPos = 120;
+                enemy2.name = "ENEMY 2";
+                enemy2.health = 450000;
+                enemy2.maxHealth = 450000;
+                enemy2.staggerPoint = 600;
+                enemy2.drawHealthBar = true;
 
-        // if (state == GameState::BATTLE){
-        //     //DO MOVEMENT
-        //     playerCharacter.moveComp->setAnalogueMoveVals(InputHandler::analogueX, InputHandler::analogueY);
+                team.push_back(&playerCharacter);
+                team.push_back(&character2);
+                team.push_back(&character3);
 
-        //     if (InputHandler::getButtonDown(PSP_CTRL_SQUARE) && playerCharacter.currAtbVal >= 1){
-        //             playerCharacter.moveComp->dash();
-        //             playerCharacter.currAtbVal -= 1;
-        //         }
-        //     if (InputHandler::getButtonDown(PSP_CTRL_DOWN)){
-        //             commandMenu.cursorDown();
-        //         }
-        //     if (InputHandler::getButtonDown(PSP_CTRL_UP)){
-        //             commandMenu.cursorUp();
-        //         }
-        //     if (InputHandler::getButtonDown(PSP_CTRL_LEFT)){
-        //             commandMenu.cursorLeft();
-        //         }
-        //     if (InputHandler::getButtonDown(PSP_CTRL_RIGHT)){
-        //             commandMenu.cursorRight();
-        //         }
-            
-        //     //handle menu
-        //     if (InputHandler::getButtonDown(PSP_CTRL_CROSS)){
-        //         commandMenu.selectButton();
-        //     } else if (InputHandler::getButtonDown(PSP_CTRL_CIRCLE)){
-        //         commandMenu.backButton();
-        //     } else if (InputHandler::getButtonDown(PSP_CTRL_TRIANGLE)){
-        //         commandMenu.earlyExecuteButton();
-        //     } else if (InputHandler::getButtonDown(PSP_CTRL_LTRIGGER)){
-        //         commandMenu.paradigmSwitchButton();
-        //     }
+                enemies.push_back(&enemy);
+                enemies.push_back(&enemy2);
 
+                for (int i = 0; i < team.size(); i++){
+                    team.at(i)->teamList = team;
+                    team.at(i)->enemyList = enemies;
+                }
+                for (int i = 0; i < enemies.size(); i++){
+                    enemies.at(i)->teamList = enemies;
+                    enemies.at(i)->enemyList = team;
+                }
 
-        //     if (InputHandler::getButtonDown(PSP_CTRL_RTRIGGER)){
-        //         state = GameState::SCAN;
-        //     }
+                //Fill ability list
+                playerCharacter.addViableBattleCommands();
 
+                //Create instance
+                combatInstance = new CombatInstance(team, enemies);
 
-        //     //UPDATE ACTORS
-        //     playerCharacter.update(deltaTime);
-        //     enemy.update(deltaTime);
-        //     enemy2.update(deltaTime);
+                state = COMBAT;
+            }
 
-        // } else if (state == GameState::SCAN){
+        } else if (state == COMBAT){
+            combatInstance->update(deltaTime);
+            combatInstance->render(deltaTime);
+        }
 
-        //     Character* scannedEnemy = nullptr;
-            
-        //     // for (int i = 0; i < enemies.size(); i++){
-        //     //     if (enemies[i] == playerCharacter.target){
-        //     //         currIdx = i;
-        //     //     }
-        //     // }
-        //     // if (playerCharacter.target != nullptr) scannedEnemy = playerCharacter.target;
-        //     // else scannedEnemy = playerCharacter.enemyList.at(0);
-
-        //     if (InputHandler::getButtonDown(PSP_CTRL_LEFT)) currIdx--;
-        //     if (InputHandler::getButtonDown(PSP_CTRL_RIGHT)) currIdx++;
-
-        //     if (currIdx >= (int)enemies.size()) currIdx = 0;
-        //     if (currIdx < 0) currIdx = (int)enemies.size() - 1;
-
-        //     scannedEnemy = enemies[currIdx];
-
-        //     // draw tint
-        //     UI::drawRect(0, 0, 480, 272, 0xdc000000);
-
-        //     //HACKY TERRIBLE SCAN SCREEN FOR TESTING
-        //     // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", );
-        //     // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
-
-        //     snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%S", scannedEnemy->name);
-        //     UI::drawString(20, 20, 0xFFFFFFFF, 0.6, 0.6, UI::textBuffer);
-
-        //     // UI::drawHealthBar(140, 20, 120, 12, scannedEnemy->health, scannedEnemy->maxHealth);
-
-        //     snprintf(UI::textBuffer, sizeof(UI::textBuffer), "HEALTH: %d", scannedEnemy->health);
-        //     UI::drawString(50, 40, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
-
-        //     int tempy = 60;
-        //     for (int i = 0; i < Debuff::DEBUFFCOUNT; i++){
-        //         // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", );
-        //         // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
-        //         if (scannedEnemy->activeDebuffs[i]){
-        //             // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, "TEST DEBUFF IS ON");
-        //             snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s: %.2f", debuffToString(static_cast<Debuff>(i)), scannedEnemy->debuffDurations[i]);
-        //             UI::drawString(50, tempy, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);   
-        //             tempy += 10;                                
-        //         }
-        //     }
-        //     tempy = 60;
-        //     for (int i = 0; i < Buff::BUFFCOUNT; i++){
-        //         // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", );
-        //         // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
-        //         if (scannedEnemy->activeBuffs[i]){
-        //             // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, "TEST DEBUFF IS ON");
-        //             snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s: %.2f", buffToString(static_cast<Buff>(i)), scannedEnemy->buffDurations[i]);
-        //             UI::drawString(150, tempy, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);   
-        //             tempy += 10;                                
-        //         }
-        //     }
-
-        //     // UI::drawString(10, 5, 0xFFFFFFFF, 0.8, 0.8, "DEBUFFS: " + std::to_string(playerCharacter.health) + "");
-        //     // UI::drawString(10, 25, 0xFFFFFFFF, 0.4, 0.4, "RESISTANCES:");
-        //     // UI::drawString(10, 45, 0xFFFFFFFF, 0.3, 0.3, "FIRE: " + std::to_string(playerCharacter.resistances[Element::FIRE]));
-
-
-        //     if (InputHandler::getButtonDown(PSP_CTRL_RTRIGGER) || InputHandler::getButtonDown(PSP_CTRL_CIRCLE)){
-        //         state = GameState::BATTLE;
-        //     }
-
-
-        // }
+ 
 
         endFrame();
 
     }
+
+    delete combatInstance;
 
     return 0;
 }

@@ -21,6 +21,7 @@ set(OLD_GLOB
   "/mnt/d/project-crystallis/src/CommandRegistry.cpp"
   "/mnt/d/project-crystallis/src/GlobalDefs.cpp"
   "/mnt/d/project-crystallis/src/InputHandler.cpp"
+  "/mnt/d/project-crystallis/src/MainMenu.cpp"
   "/mnt/d/project-crystallis/src/Menu.cpp"
   "/mnt/d/project-crystallis/src/MovementComponent.cpp"
   "/mnt/d/project-crystallis/src/UIRender.cpp"
