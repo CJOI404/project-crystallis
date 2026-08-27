@@ -53,6 +53,7 @@ const char* buffToString(Buff b){
         case BARTHUNDER:    return "BARTHUNDER";
         case BARWATER:      return "BARWATER";
         case VEIL:          return "VEIL";
+        default:            return "???";
     }
 }
 

@@ -274,6 +274,78 @@ src/GlobalDefs.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.s
 .PHONY : src/GlobalDefs.cpp.s
 
+src/Graphics/Texture.obj: src/Graphics/Texture.cpp.obj
+.PHONY : src/Graphics/Texture.obj
+
+# target to build an object file
+src/Graphics/Texture.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/Texture.cpp.obj
+.PHONY : src/Graphics/Texture.cpp.obj
+
+src/Graphics/Texture.i: src/Graphics/Texture.cpp.i
+.PHONY : src/Graphics/Texture.i
+
+# target to preprocess a source file
+src/Graphics/Texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/Texture.cpp.i
+.PHONY : src/Graphics/Texture.cpp.i
+
+src/Graphics/Texture.s: src/Graphics/Texture.cpp.s
+.PHONY : src/Graphics/Texture.s
+
+# target to generate assembly for a file
+src/Graphics/Texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/Texture.cpp.s
+.PHONY : src/Graphics/Texture.cpp.s
+
+src/Graphics/TextureManager.obj: src/Graphics/TextureManager.cpp.obj
+.PHONY : src/Graphics/TextureManager.obj
+
+# target to build an object file
+src/Graphics/TextureManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/TextureManager.cpp.obj
+.PHONY : src/Graphics/TextureManager.cpp.obj
+
+src/Graphics/TextureManager.i: src/Graphics/TextureManager.cpp.i
+.PHONY : src/Graphics/TextureManager.i
+
+# target to preprocess a source file
+src/Graphics/TextureManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/TextureManager.cpp.i
+.PHONY : src/Graphics/TextureManager.cpp.i
+
+src/Graphics/TextureManager.s: src/Graphics/TextureManager.cpp.s
+.PHONY : src/Graphics/TextureManager.s
+
+# target to generate assembly for a file
+src/Graphics/TextureManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/TextureManager.cpp.s
+.PHONY : src/Graphics/TextureManager.cpp.s
+
+src/Graphics/UIRender.obj: src/Graphics/UIRender.cpp.obj
+.PHONY : src/Graphics/UIRender.obj
+
+# target to build an object file
+src/Graphics/UIRender.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/UIRender.cpp.obj
+.PHONY : src/Graphics/UIRender.cpp.obj
+
+src/Graphics/UIRender.i: src/Graphics/UIRender.cpp.i
+.PHONY : src/Graphics/UIRender.i
+
+# target to preprocess a source file
+src/Graphics/UIRender.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/UIRender.cpp.i
+.PHONY : src/Graphics/UIRender.cpp.i
+
+src/Graphics/UIRender.s: src/Graphics/UIRender.cpp.s
+.PHONY : src/Graphics/UIRender.s
+
+# target to generate assembly for a file
+src/Graphics/UIRender.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/UIRender.cpp.s
+.PHONY : src/Graphics/UIRender.cpp.s
+
 src/InputHandler.obj: src/InputHandler.cpp.obj
 .PHONY : src/InputHandler.obj
 
@@ -370,30 +442,6 @@ src/MovementComponent.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/MovementComponent.cpp.s
 .PHONY : src/MovementComponent.cpp.s
 
-src/UIRender.obj: src/UIRender.cpp.obj
-.PHONY : src/UIRender.obj
-
-# target to build an object file
-src/UIRender.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/UIRender.cpp.obj
-.PHONY : src/UIRender.cpp.obj
-
-src/UIRender.i: src/UIRender.cpp.i
-.PHONY : src/UIRender.i
-
-# target to preprocess a source file
-src/UIRender.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/UIRender.cpp.i
-.PHONY : src/UIRender.cpp.i
-
-src/UIRender.s: src/UIRender.cpp.s
-.PHONY : src/UIRender.s
-
-# target to generate assembly for a file
-src/UIRender.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/UIRender.cpp.s
-.PHONY : src/UIRender.cpp.s
-
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -445,6 +493,15 @@ help:
 	@echo "... src/GlobalDefs.obj"
 	@echo "... src/GlobalDefs.i"
 	@echo "... src/GlobalDefs.s"
+	@echo "... src/Graphics/Texture.obj"
+	@echo "... src/Graphics/Texture.i"
+	@echo "... src/Graphics/Texture.s"
+	@echo "... src/Graphics/TextureManager.obj"
+	@echo "... src/Graphics/TextureManager.i"
+	@echo "... src/Graphics/TextureManager.s"
+	@echo "... src/Graphics/UIRender.obj"
+	@echo "... src/Graphics/UIRender.i"
+	@echo "... src/Graphics/UIRender.s"
 	@echo "... src/InputHandler.obj"
 	@echo "... src/InputHandler.i"
 	@echo "... src/InputHandler.s"
@@ -457,9 +514,6 @@ help:
 	@echo "... src/MovementComponent.obj"
 	@echo "... src/MovementComponent.i"
 	@echo "... src/MovementComponent.s"
-	@echo "... src/UIRender.obj"
-	@echo "... src/UIRender.i"
-	@echo "... src/UIRender.s"
 	@echo "... src/main.obj"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

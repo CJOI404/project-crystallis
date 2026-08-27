@@ -1,6 +1,6 @@
 #include "CombatInstance.h"
 #include "Menu.h"
-#include "UIRender.h"
+#include "graphics/UIRender.h"
 #include "InputHandler.h"
 
 
@@ -19,6 +19,7 @@ CombatInstance::CombatInstance(std::vector<Character*> team, std::vector<Charact
 
 }
 
+
 void CombatInstance::setEnemies(std::vector<Character*> enemies){
     this->enemies = enemies;
 }
@@ -31,28 +32,29 @@ void CombatInstance::setTeam(std::vector<Character*> team){
 void CombatInstance::update(float dt){
     // Menu commandMenu;
 
-
     if (state == CombatState::BATTLE){
         //DO MOVEMENT
         playerCharacter->moveComp->setAnalogueMoveVals(InputHandler::analogueX, InputHandler::analogueY);
-            if (InputHandler::getButtonDown(PSP_CTRL_SQUARE) && playerCharacter->currAtbVal >= 1){
-                    playerCharacter->moveComp->dash();
-                    playerCharacter->currAtbVal -= 1;
-                }
-            if (InputHandler::getButtonDown(PSP_CTRL_DOWN)){
-                    commandMenu.cursorDown();
-                }
-            if (InputHandler::getButtonDown(PSP_CTRL_UP)){
-                    commandMenu.cursorUp();
-                }
-            if (InputHandler::getButtonDown(PSP_CTRL_LEFT)){
-                    commandMenu.cursorLeft();
-                }
-            if (InputHandler::getButtonDown(PSP_CTRL_RIGHT)){
-                    commandMenu.cursorRight();
-                }
-            
         
+        // if (InputHandler::getButtonDown(PSP_CTRL_SQUARE) && playerCharacter->currAtbVal >= 1){
+        //     playerCharacter->moveComp->dash();
+        //     playerCharacter->currAtbVal -= 1;
+        // }
+
+        if (InputHandler::getButtonDown(PSP_CTRL_DOWN)){
+            commandMenu.cursorDown();
+        }
+        if (InputHandler::getButtonDown(PSP_CTRL_UP)){
+            commandMenu.cursorUp();
+        }
+        if (InputHandler::getButtonDown(PSP_CTRL_LEFT)){
+            commandMenu.cursorLeft();
+        }
+        if (InputHandler::getButtonDown(PSP_CTRL_RIGHT)){
+            commandMenu.cursorRight();
+        }
+        
+    
         //handle menu
         if (InputHandler::getButtonDown(PSP_CTRL_CROSS)){
             commandMenu.selectButton();

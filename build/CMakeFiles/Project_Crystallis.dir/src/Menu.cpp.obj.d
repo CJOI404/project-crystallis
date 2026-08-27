@@ -98,13 +98,13 @@ CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator_args.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
- /mnt/d/project-crystallis/include/BattleCommand.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
  /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h \
  /home/calvi/pspdev/psp/include/stdint.h \
  /home/calvi/pspdev/psp/include/sys/_intsup.h \
  /home/calvi/pspdev/psp/include/sys/_stdint.h \
- /mnt/d/project-crystallis/include/UIRender.h \
+ /mnt/d/project-crystallis/include/BattleCommand.h \
+ /mnt/d/project-crystallis/include/graphics/UIRender.h \
  /home/calvi/pspdev/psp/sdk/include/pspgu.h \
  /home/calvi/pspdev/psp/sdk/include/psptypes.h \
  /home/calvi/pspdev/psp/sdk/include/pspge.h \
@@ -113,6 +113,16 @@ CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_vector.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_bvector.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/vector.tcc \
+ /mnt/d/project-crystallis/include/graphics/TextureManager.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/unordered_map \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/unordered_map.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/hashtable.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/hashtable_policy.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/ext/aligned_buffer.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/enable_special_members.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/node_handle.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/erase_if.h \
+ /mnt/d/project-crystallis/include/graphics/Texture.h \
  /mnt/d/project-crystallis/include/AttackCommand.h \
  /mnt/d/project-crystallis/include/Character.h \
  /mnt/d/project-crystallis/include/GameActor.h \

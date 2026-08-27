@@ -1,5 +1,5 @@
 #include "Menu.h"
-#include "UIRender.h"
+#include "graphics/UIRender.h"
 #include "AttackCommand.h"
 #include "CommandRegistry.h"
 
@@ -348,6 +348,12 @@ void Menu::drawMenu(){
             int idx = (selectedIndex / 8) * 8;
             currX = x;
             currY = y;
+            if (activeCharacter->abilities.size() > 8){
+                int posx = 280;
+                int posy = 225;
+                UI::drawTri(posx + 0, posy + 0, posx + 0, posy+ 10, posx + 5, posy+ 5, Colours::RED);
+            }
+
             for (int i = idx; i < activeCharacter->abilities.size() && i < idx + 8; i++){
                 if (i != idx && i % 4 == 0){
                     currX -= cascadeOffset*4;
@@ -363,7 +369,7 @@ void Menu::drawMenu(){
                     } else {
                         if (selectedIndex == i) colour = Colours::RED;
                     }
-                    
+
                 if (activeCharacter->abilities[i] != nullptr) UI::drawButton(currX, currY, buttonWidth, buttonHeight, activeCharacter->abilities[i]->name, colour);
 
                 currY += buttonHeight + padding;

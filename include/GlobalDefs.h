@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <cstdint>
 
 enum Element{
     FIRE,
@@ -110,7 +111,6 @@ struct CommandData{
     float chance;
     int length;
 
-
 };
 
 //Colours
@@ -125,3 +125,22 @@ enum Colours{
     DARKGREY = 0xFF2e2e34,
     MIDGREY = 0xFF45454d
 };
+
+//Texture stuff
+// typedef struct
+// {
+//     int width, height;
+//     uint32_t* data;
+// } Texture;
+
+typedef struct {
+    unsigned short u, v;
+    short x, y, z;
+} Vertex;
+
+typedef struct
+{
+    float u, v;
+    unsigned int colour;
+    float x, y, z;
+} TextureVertex;

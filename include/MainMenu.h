@@ -1,5 +1,5 @@
 #pragma once
-#include "UIRender.h"
+#include "graphics/UIRender.h"
 #include "GlobalDefs.h"
 #include "InputHandler.h"
 
@@ -19,4 +19,6 @@ class MainMenu{
         int selectedIdx;
 
         const char* options[2];
+
+        Texture* logo;
 };

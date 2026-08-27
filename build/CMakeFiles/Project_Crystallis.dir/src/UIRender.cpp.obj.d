@@ -1,6 +1,6 @@
 CMakeFiles/Project_Crystallis.dir/src/UIRender.cpp.obj: \
  /mnt/d/project-crystallis/src/UIRender.cpp \
- /mnt/d/project-crystallis/include/UIRender.h \
+ /mnt/d/project-crystallis/include/graphics/UIRender.h \
  /home/calvi/pspdev/psp/sdk/include/pspgu.h \
  /home/calvi/pspdev/psp/sdk/include/psptypes.h \
  /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h \
@@ -182,4 +182,5 @@ CMakeFiles/Project_Crystallis.dir/src/UIRender.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/basic_file.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++io.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/fstream.tcc \
- /mnt/d/project-crystallis/include/GlobalDefs.h
+ /mnt/d/project-crystallis/include/GlobalDefs.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint

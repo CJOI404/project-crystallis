@@ -11,7 +11,7 @@
 #include "Character.h"
 #include <ctime>
 #include <string>
-#include "UIRender.h"
+#include "graphics/UIRender.h"
 #include "CommandRegistry.h"
 #include "GlobalDefs.h"
 #include "CombatInstance.h"
@@ -371,6 +371,8 @@ int main() {
             if (mainMenu.startFlag){
 
                 //Initialize characters
+                team.clear();
+                enemies.clear();
 
                 // Character playerCharacter;
                 playerCharacter.health = 300;
@@ -385,7 +387,7 @@ int main() {
                 character2.yPos = 100;
                 character2.name = "SAZH";
                 character2.currentRole = Role::RAVAGER;
-// 
+ 
                 // Character character3;
                 character3.health = 1700;
                 character3.maxHealth = 1700;
@@ -440,8 +442,17 @@ int main() {
             }
 
         } else if (state == COMBAT){
+
             combatInstance->update(deltaTime);
             combatInstance->render(deltaTime);
+
+
+            if (InputHandler::getButtonDown(PSP_CTRL_START)){
+                mainMenu.startFlag = false;
+                delete combatInstance;
+                state = MAINMENU;
+            }
+
         }
 
  

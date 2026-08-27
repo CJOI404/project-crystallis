@@ -179,9 +179,9 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator_args.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
  /mnt/d/project-crystallis/include/Character.h \
  /mnt/d/project-crystallis/include/BattleCommand.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
  /home/calvi/pspdev/psp/include/c++/15.1.1/queue \
  /home/calvi/pspdev/psp/include/c++/15.1.1/deque \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_uninitialized.h \
@@ -194,7 +194,17 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_heap.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_queue.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/ctime \
- /mnt/d/project-crystallis/include/UIRender.h \
+ /mnt/d/project-crystallis/include/graphics/UIRender.h \
+ /mnt/d/project-crystallis/include/graphics/TextureManager.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/unordered_map \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/unordered_map.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/hashtable.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/hashtable_policy.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/ext/aligned_buffer.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/enable_special_members.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/node_handle.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/erase_if.h \
+ /mnt/d/project-crystallis/include/graphics/Texture.h \
  /mnt/d/project-crystallis/include/CommandRegistry.h \
  /mnt/d/project-crystallis/include/AttackCommand.h \
  /mnt/d/project-crystallis/include/CombatInstance.h \

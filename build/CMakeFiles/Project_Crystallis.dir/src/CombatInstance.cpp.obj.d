@@ -124,12 +124,12 @@ CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj: \
  /home/calvi/pspdev/psp/include/sys/errno.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/charconv.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/basic_string.tcc \
- /mnt/d/project-crystallis/include/BattleCommand.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
  /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h \
  /home/calvi/pspdev/psp/include/stdint.h \
  /home/calvi/pspdev/psp/include/sys/_intsup.h \
  /home/calvi/pspdev/psp/include/sys/_stdint.h \
+ /mnt/d/project-crystallis/include/BattleCommand.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/queue \
  /home/calvi/pspdev/psp/include/c++/15.1.1/deque \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_deque.h \
@@ -137,9 +137,19 @@ CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_heap.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_queue.h \
  /mnt/d/project-crystallis/include/Menu.h \
- /mnt/d/project-crystallis/include/UIRender.h \
+ /mnt/d/project-crystallis/include/graphics/UIRender.h \
  /home/calvi/pspdev/psp/sdk/include/pspgu.h \
  /home/calvi/pspdev/psp/sdk/include/psptypes.h \
  /home/calvi/pspdev/psp/sdk/include/pspge.h \
+ /mnt/d/project-crystallis/include/graphics/TextureManager.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/unordered_map \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/unordered_map.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/hashtable.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/hashtable_policy.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/ext/aligned_buffer.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/enable_special_members.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/node_handle.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/erase_if.h \
+ /mnt/d/project-crystallis/include/graphics/Texture.h \
  /mnt/d/project-crystallis/include/InputHandler.h \
  /home/calvi/pspdev/psp/sdk/include/pspctrl.h

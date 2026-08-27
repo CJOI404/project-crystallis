@@ -1,7 +1,7 @@
 CMakeFiles/Project_Crystallis.dir/src/MainMenu.cpp.obj: \
  /mnt/d/project-crystallis/src/MainMenu.cpp \
  /mnt/d/project-crystallis/include/MainMenu.h \
- /mnt/d/project-crystallis/include/UIRender.h \
+ /mnt/d/project-crystallis/include/graphics/UIRender.h \
  /home/calvi/pspdev/psp/sdk/include/pspgu.h \
  /home/calvi/pspdev/psp/sdk/include/psptypes.h \
  /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h \
@@ -110,6 +110,17 @@ CMakeFiles/Project_Crystallis.dir/src/MainMenu.cpp.obj: \
  /home/calvi/pspdev/psp/include/sys/errno.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/charconv.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/basic_string.tcc \
+ /mnt/d/project-crystallis/include/graphics/TextureManager.h \
  /mnt/d/project-crystallis/include/GlobalDefs.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/unordered_map \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/unordered_map.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/hashtable.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/hashtable_policy.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/ext/aligned_buffer.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/enable_special_members.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/node_handle.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/erase_if.h \
+ /mnt/d/project-crystallis/include/graphics/Texture.h \
  /mnt/d/project-crystallis/include/InputHandler.h \
  /home/calvi/pspdev/psp/sdk/include/pspctrl.h

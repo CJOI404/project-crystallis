@@ -5,7 +5,8 @@
 
 enum CombatState {
     BATTLE,
-    SCAN
+    SCAN,
+    PAUSE
 };
 
 class CombatInstance {
@@ -27,6 +28,7 @@ class CombatInstance {
         Menu commandMenu;
 
         CombatInstance(std::vector<Character*> team, std::vector<Character*> enemies);
+
 
         void setTeam(std::vector<Character*> team);
         void setEnemies(std::vector<Character*> enemies);
