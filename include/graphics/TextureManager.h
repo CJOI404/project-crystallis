@@ -1,9 +1,12 @@
 #pragma once
+#include <psptypes.h>
 #include "GlobalDefs.h"
 #include <unordered_map>
 #include "graphics/Texture.h"
 
 namespace TextureManager {
+
+        void swizzle_fast(u8* out, const u8* in, unsigned int width, unsigned int height);
 
         Texture* load(const char* texturePath, int textureSize);
         void unload(const char* texturePath);

@@ -22,7 +22,7 @@ void MovementComponent::setAnalogueMoveVals(float x, float y){
     analogueY = y;
 }
 
-void MovementComponent::handleAnalogueMovement(){
+void MovementComponent::handleAnalogueMovement(float dt){
 
     if (state == STATE_IDLE || state == STATE_WALKING){
 
@@ -44,8 +44,8 @@ void MovementComponent::handleAnalogueMovement(){
             xDir /= magnitude;
             yDir /= magnitude;
 
-            xDir *= fabs(analogueX);
-            yDir *= fabs(analogueY);
+            xDir *= fabs(analogueX) * dt;
+            yDir *= fabs(analogueY) * dt;
         }
     }
 }
@@ -63,7 +63,7 @@ void MovementComponent::dash(){
 
 void MovementComponent::update(float dt){
 
-    handleAnalogueMovement();
+    handleAnalogueMovement(dt);
 
     //Calculate cooldowns
     if (currDashCooldown > 0){

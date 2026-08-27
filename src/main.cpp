@@ -241,68 +241,6 @@ int main() {
     // InputHandler playerInput;
     InputHandler::initializeInputHandler();
 
-    // Character playerCharacter;
-    // playerCharacter.health = 300;
-    // playerCharacter.maxHealth = 2000;
-    // playerCharacter.name = "LIGHTNING";
-    // playerCharacter.currentRole = Role::COMMANDO;
-
-    // Character character2;
-    // character2.health = 2200;
-    // character2.maxHealth = 3000;
-    // character2.xPos = 100;
-    // character2.yPos = 100;
-    // character2.name = "SAZH";
-    // character2.currentRole = Role::RAVAGER;
-
-    // Character character3;
-    // character3.health = 1700;
-    // character3.maxHealth = 1700;
-    // character3.xPos = 150;
-    // character3.yPos = 150;
-    // character3.name = "VANILLE";
-    // character3.currentRole = Role::SABOTEUR;
-
-
-
-
-    // Character enemy;
-    // enemy.moveComp->color = Colours::BLUE;
-    // enemy.xPos = 350;
-    // enemy.yPos = 70;
-    // enemy.name = "ENEMY 1";
-    // enemy.health = 450000;
-    // enemy.maxHealth = 450000;
-    // enemy.staggerPoint = 600;
-    // enemy.drawHealthBar = true;
-
-    // Character enemy2;
-    // enemy2.moveComp->color = Colours::BLUE;
-    // enemy2.xPos = 400;
-    // enemy2.yPos = 120;
-    // enemy2.name = "ENEMY 2";
-    // enemy2.health = 450000;
-    // enemy2.maxHealth = 450000;
-    // enemy2.staggerPoint = 600;
-    // enemy2.drawHealthBar = true;
-
-    // std::vector<Character*> team;
-    // team.push_back(&playerCharacter);
-    // team.push_back(&character2);
-    // team.push_back(&character3);
-
-    // std::vector<Character*> enemies;
-    // enemies.push_back(&enemy);
-    // enemies.push_back(&enemy2);
-
-    // for (int i = 0; i < team.size(); i++){
-    //     team.at(i)->teamList = team;
-    //     team.at(i)->enemyList = enemies;
-    // }
-    // for (int i = 0; i < enemies.size(); i++){
-    //     enemies.at(i)->teamList = enemies;
-    //     enemies.at(i)->enemyList = team;
-    // }
 
     float xMoveDir = 0;
     int xPos = 50;
@@ -312,21 +250,6 @@ int main() {
     clock_t prevTime = 0;
     clock_t currTime = 0;
     float deltaTime = 0;
-
-    //Fill character ability lists
-    // for (int i = 0; i < 10 && i < Commands::commandList.size(); i++){
-    //     playerCharacter.addBattleCommand(Commands::commandList.at(i), i);
-    // }
-    // playerCharacter.addViableBattleCommands();
-
-    //start menu
-    // Menu commandMenu;
-
-    // commandMenu.setActiveCharacter(&playerCharacter);
-
-    //Currently the activecharacter needs to be known for setparadigm to work
-    //this is functional but not a particularly good design. Will probably (definitely) make a teammanager class of some sort to handle this but not rn lol
-    // commandMenu.setParadigm();
 
     running = 1;
     
@@ -350,6 +273,9 @@ int main() {
     Character enemy;
     Character enemy2;
 
+    float fpsTimer = 0.0f;
+    int frameCount = 0;
+
 
     while(running){
 
@@ -357,6 +283,19 @@ int main() {
         currTime = clock();
         deltaTime = float(currTime - prevTime) / CLOCKS_PER_SEC;
         prevTime = currTime;
+
+        //print fps
+        fpsTimer += deltaTime;
+        frameCount++;
+
+        if (fpsTimer >= 1.0f)
+        {
+            printf("FPS: %d\n", frameCount);
+            fflush(stdout);
+            
+            frameCount = 0;
+            fpsTimer = 0.0f;
+        }
 
         //GET INPUTS
         // playerInput.readInput();
@@ -401,9 +340,9 @@ int main() {
                 enemy.xPos = 350;
                 enemy.yPos = 70;
                 enemy.name = "ENEMY 1";
-                enemy.health = 450000;
-                enemy.maxHealth = 450000;
-                enemy.staggerPoint = 600;
+                enemy.health = 45000;
+                enemy.maxHealth = 45000;
+                enemy.staggerPoint = 250;
                 enemy.drawHealthBar = true;
 
                 // Character enemy2;

@@ -12,13 +12,7 @@ namespace UI {
     FontChar fontData[128];
     char textBuffer[64];
 
-    // uint32_t* fontTexture = nullptr;
-    // uint32_t* uiSpriteTexture = nullptr;
-    
-    // Texture symbolTexture;
     Texture* fontTexture;
-
-    // Texture uiSpriteTexture;
 
     int textWidth = 256;
 
@@ -64,32 +58,12 @@ namespace UI {
         sceKernelDcacheWritebackAll();
     }
 
-    // void loadIcons(int size, int num, const char* texturePath){
-        
-    //     symbolTexture.data = (uint32_t *) stbi_load(texturePath, &(textWidth), &(textWidth), NULL, STBI_rgb_alpha);
-
-    // }
-
-    // void loadSprite(const char*texturePath){
-
-    //     uiSpriteTexture.data = (uint32_t *) stbi_load(texturePath, &(textWidth), &(textWidth), NULL, STBI_rgb_alpha);
-    // }
-
-    // void drawSprite(int x, int y, float u, float v, int w, int h)
-
-    // void drawIcon(int x, int y, int w, int h, int num){
-    //     TextureVertex* vertices = (TextureVertex*)sceGuGetMemory(2 * sizeof(TextureVertex));
-
-    //     //not done at all obv
-
-    //     sceGuDrawArray(GU_SPRITES, GU_COLOR_8888 | GU_TEXTURE_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_2D, 2, 0, vertices);
-    // }
 
     void drawString(int x, int y, uint32_t color, float xScale, float yScale, std::string text) {
 
         int currentX = x;
 
-        sceGuTexMode(GU_PSM_8888, 0, 0, GU_FALSE);
+        sceGuTexMode(GU_PSM_8888, 0, 0, GU_TRUE);
         sceGuTexFunc(GU_TFX_REPLACE, GU_TCC_RGBA);
         sceGuTexImage(0, 256, 256, 256, fontTexture->data);
 
@@ -129,47 +103,6 @@ namespace UI {
         sceGuDisable(GU_TEXTURE_2D);
         
     }
-
-    // void loadSprite(const char* fntPath, const char* texturePath){
-    //     uiSpriteTexture.data = (uint32_t *) stbi_load(texturePath, &(textWidth), &(textWidth), NULL, STBI_rgb_alpha);
-    // }
-
-    // void drawSprite(int x, int y, int u, int v, uint32_t color, float xScale, float yScale){
-    //     sceGuTexMode(GU_PSM_8888, 0, 0, GU_FALSE);
-    //     sceGuTexFunc(GU_TFX_REPLACE, GU_TCC_RGBA);
-    //     sceGuTexImage(0, 256, 256, 256, uiSpriteTexture.data);
-
-    //     //enable transparency
-    //     sceGuEnable(GU_BLEND);
-    //     sceGuBlendFunc(GU_ADD, GU_SRC_ALPHA, GU_ONE_MINUS_SRC_ALPHA, 0, 0);
-
-    //     sceGuEnable(GU_TEXTURE_2D); 
-
-    //     TextureVertex* vertices = (TextureVertex*)sceGuGetMemory(2 * sizeof(TextureVertex));
-
-    //     // Top-Left
-    //     vertices[0].u = 0;
-    //     vertices[0].v = 0;
-    //     vertices[0].x = x * xScale; 
-    //     vertices[0].y = y * yScale; 
-    //     vertices[0].z = 0;
-
-    //     // Bottom-Right
-    //     vertices[1].u = 256;
-    //     vertices[1].v = 256;
-    //     vertices[1].x = (x + 256) * xScale; 
-    //     vertices[1].y = (y + 256) * yScale; 
-    //     vertices[1].z = 0;
-
-        
-    //     sceGuDrawArray(GU_SPRITES, GU_COLOR_8888 | GU_TEXTURE_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_2D, 2, 0, vertices);
-        
-    //     sceKernelDcacheWritebackAll();
-
-    //     sceGuDisable(GU_TEXTURE_2D);
-
-
-    // }
 
     void drawRect(float x, float y, float w, float h, unsigned int colour) {
 

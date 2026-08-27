@@ -2,6 +2,7 @@
 #include <vector>
 #include "Character.h"
 #include "Menu.h"
+#include "graphics/Texture.h"
 
 enum CombatState {
     BATTLE,
@@ -35,4 +36,6 @@ class CombatInstance {
 
         void update(float dt);
         void render(float dt);
+
+        Texture* background;
 };

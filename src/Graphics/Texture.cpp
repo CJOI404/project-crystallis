@@ -10,7 +10,9 @@ void Texture::draw(float x, float y, float width, float height){
         return;
     }
 
-    sceGuTexMode(GU_PSM_8888, 0, 0, GU_FALSE);
+    // sceGuTexMode(GU_PSM_8888, 0, 0, GU_FALSE);
+    //GU_TRUE enables swizzled texture reads; WAY faster but textures need to be swizzled on load
+    sceGuTexMode(GU_PSM_8888, 0, 0, GU_TRUE);
     sceGuTexFunc(GU_TFX_REPLACE, GU_TCC_RGBA);
     sceGuTexImage(0, this->size, this->size, this->size, this->data);
 
@@ -39,7 +41,6 @@ void Texture::draw(float x, float y, float width, float height){
     
     sceGuDrawArray(GU_SPRITES, GU_COLOR_8888 | GU_TEXTURE_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_2D, 2, 0, vertices);
     
-    sceKernelDcacheWritebackAll();
 
     sceGuDisable(GU_TEXTURE_2D);
 }

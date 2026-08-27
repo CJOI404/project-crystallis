@@ -32,7 +32,7 @@ class MovementComponent : Component {
         //CONSTANTS:
 
         const int DASH_SPEED = 20;
-        const int WALK_SPEED = 4;
+        const int WALK_SPEED = 350;
 
         //Time in seconds for abilities
         const float DASH_COOLDOWN = 3;
@@ -51,7 +51,7 @@ class MovementComponent : Component {
 
         void setAnalogueMoveVals(float x, float y);
 
-        void handleAnalogueMovement();
+        void handleAnalogueMovement(float dt);
 
         void update(float dt) override;
 

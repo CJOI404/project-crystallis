@@ -17,6 +17,8 @@ CombatInstance::CombatInstance(std::vector<Character*> team, std::vector<Charact
     scannedEnemy = this->enemies[0];
     scanIdx = 0;
 
+    background = TextureManager::load("background.png", 512);
+
 }
 
 
@@ -35,7 +37,7 @@ void CombatInstance::update(float dt){
     if (state == CombatState::BATTLE){
         //DO MOVEMENT
         playerCharacter->moveComp->setAnalogueMoveVals(InputHandler::analogueX, InputHandler::analogueY);
-        
+
         // if (InputHandler::getButtonDown(PSP_CTRL_SQUARE) && playerCharacter->currAtbVal >= 1){
         //     playerCharacter->moveComp->dash();
         //     playerCharacter->currAtbVal -= 1;
@@ -149,6 +151,8 @@ void CombatInstance::update(float dt){
 }
 
 void CombatInstance::render(float dt){
+    background->draw(0, 0, 512, 512);
+
     //RENDER
     for (int i = 0; i < team.size(); i++){
         team[i]->render(dt);

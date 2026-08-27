@@ -1,6 +1,14 @@
 CMakeFiles/Project_Crystallis.dir/src/Graphics/TextureManager.cpp.obj: \
  /mnt/d/project-crystallis/src/Graphics/TextureManager.cpp \
  /mnt/d/project-crystallis/include/graphics/TextureManager.h \
+ /home/calvi/pspdev/psp/sdk/include/psptypes.h \
+ /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h \
+ /home/calvi/pspdev/psp/include/stdint.h \
+ /home/calvi/pspdev/psp/include/machine/_default_types.h \
+ /home/calvi/pspdev/psp/include/sys/features.h \
+ /home/calvi/pspdev/psp/include/_newlib_version.h \
+ /home/calvi/pspdev/psp/include/sys/_intsup.h \
+ /home/calvi/pspdev/psp/include/sys/_stdint.h \
  /mnt/d/project-crystallis/include/GlobalDefs.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/string \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/requires_hosted.h \
@@ -16,14 +24,11 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/TextureManager.cpp.obj: \
  /home/calvi/pspdev/psp/include/wchar.h \
  /home/calvi/pspdev/psp/include/_ansi.h \
  /home/calvi/pspdev/psp/include/newlib.h \
- /home/calvi/pspdev/psp/include/_newlib_version.h \
  /home/calvi/pspdev/psp/include/sys/config.h \
  /home/calvi/pspdev/psp/include/machine/ieeefp.h \
- /home/calvi/pspdev/psp/include/sys/features.h \
  /home/calvi/pspdev/psp/include/sys/reent.h \
  /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stddef.h \
  /home/calvi/pspdev/psp/include/sys/cdefs.h \
- /home/calvi/pspdev/psp/include/machine/_default_types.h \
  /home/calvi/pspdev/psp/include/sys/_types.h \
  /home/calvi/pspdev/psp/include/machine/_types.h \
  /home/calvi/pspdev/psp/include/sys/lock.h \
@@ -99,10 +104,6 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/TextureManager.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator_args.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
- /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h \
- /home/calvi/pspdev/psp/include/stdint.h \
- /home/calvi/pspdev/psp/include/sys/_intsup.h \
- /home/calvi/pspdev/psp/include/sys/_stdint.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/unordered_map \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/unordered_map.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/hashtable.h \
@@ -115,7 +116,6 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/TextureManager.cpp.obj: \
  /home/calvi/pspdev/psp/include/stb_image.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/stdlib.h \
  /home/calvi/pspdev/psp/sdk/include/psputils.h \
- /home/calvi/pspdev/psp/sdk/include/psptypes.h \
  /home/calvi/pspdev/psp/include/sys/time.h \
  /home/calvi/pspdev/psp/include/sys/_timeval.h \
  /home/calvi/pspdev/psp/include/sys/types.h \

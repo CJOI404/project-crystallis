@@ -8,21 +8,8 @@ MainMenu::MainMenu(){
     options[1] = "OPTIONS";
 
     //Load Textures
-    // logo = TextureManager::load("Logo256.png", 256);
     logo = TextureManager::load("Logo.png", 512);
-    // logo = TextureManager::load("Logo copy.png", 256);
-    // logo = TextureManager::load("Logo copy 2.png", 256);
-    // logo = TextureManager::load("Logo copy 3.png", 256);
-    // logo = TextureManager::load("Logo copy 4.png", 256);
-    //     logo = TextureManager::load("Logo.png", 256);
-    // logo = TextureManager::load("Logo copy.png", 256);
-    // logo = TextureManager::load("Logo copy 2.png", 256);
-    // logo = TextureManager::load("Logo copy 3.png", 256);
-    // logo = TextureManager::load("Logo copy 4.png", 256);
 
-    // logo = TextureManager::load("Logo.png", 256);
-    // logo = TextureManager::load("Logo.png", 256);
-    // UI::loadSprite("Logo.png");
 }
 
 void MainMenu::selectButton(){
