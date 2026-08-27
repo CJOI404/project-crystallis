@@ -155,5 +155,28 @@ CMakeFiles/Project_Crystallis.dir/src/Character.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/node_handle.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/erase_if.h \
  /mnt/d/project-crystallis/include/graphics/Renderer.h \
+ /home/calvi/pspdev/psp/sdk/include/psputils.h \
+ /home/calvi/pspdev/psp/include/sys/time.h \
+ /home/calvi/pspdev/psp/include/sys/_timeval.h \
+ /home/calvi/pspdev/psp/include/sys/types.h \
+ /home/calvi/pspdev/psp/include/machine/endian.h \
+ /home/calvi/pspdev/psp/include/machine/_endian.h \
+ /home/calvi/pspdev/psp/include/sys/select.h \
+ /home/calvi/pspdev/psp/include/sys/_sigset.h \
+ /home/calvi/pspdev/psp/include/sys/timespec.h \
+ /home/calvi/pspdev/psp/include/sys/_timespec.h \
+ /home/calvi/pspdev/psp/include/sys/_pthreadtypes.h \
+ /home/calvi/pspdev/psp/include/bits/posix_opt.h \
+ /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/limits.h \
+ /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/syslimits.h \
+ /home/calvi/pspdev/psp/include/limits.h \
+ /home/calvi/pspdev/psp/include/sys/syslimits.h \
+ /home/calvi/pspdev/psp/include/sys/sched.h \
+ /home/calvi/pspdev/psp/include/machine/types.h \
+ /home/calvi/pspdev/psp/include/time.h \
+ /home/calvi/pspdev/psp/include/machine/time.h \
+ /home/calvi/pspdev/psp/include/signal.h \
+ /home/calvi/pspdev/psp/include/sys/signal.h \
+ /home/calvi/pspdev/psp/include/machine/_time.h \
  /mnt/d/project-crystallis/include/CommandRegistry.h \
  /mnt/d/project-crystallis/include/AttackCommand.h

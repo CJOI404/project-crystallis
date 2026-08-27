@@ -87,6 +87,14 @@ void initGu(){
     sceGuEnable(GU_SCISSOR_TEST);
     sceGuScissor(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
+
+    // NEW WE WEREWR Projection Matrix Setup (Run once or on resize)
+    sceGumMatrixMode(GU_PROJECTION);
+    sceGumLoadIdentity();
+    sceGumPerspective(75.0f, 480.0f / 272.0f, 0.5f, 1000.0f); // Field of view, Aspect ratio, Near, Far
+
+
+
     // Start a new frame and enable the display
     sceGuFinish();
     sceGuDisplay(GU_TRUE);
@@ -104,7 +112,14 @@ void startFrame(){
     sceGuClear(GU_COLOR_BUFFER_BIT | GU_DEPTH_BUFFER_BIT);
     // sceGuClear(GU_COLOR_BUFFER_BIT);
     // sceGuClearDepth();
+
     RenderState::resetCache();
+
+                // View Matrix Setup (Run in your frame update)
+        sceGumMatrixMode(GU_VIEW);
+        sceGumLoadIdentity();
+        ScePspFVector3 pos = { 0.0f, 0.0f, -5.0f }; // Back up 5 units from origin
+        sceGumTranslate(&pos);
 }
 
 void endFrame(){
@@ -218,6 +233,10 @@ int main() {
 
                 Texture* spritesheet = TextureManager::load("testspritesheet.png", 128);
                 Mesh* myModel = MeshManager::loadOBJ("lightning.obj");
+
+                // printf("vertices: %s", myModel->vertices);
+                // printf("vertex count: %d", myModel->vertexCount);
+                // printf("vertices: %s", myModel->vertices);
 
                 SpriteManager::registerSprite("topleft", spritesheet, 0, 0, 64, 64);
                 SpriteManager::registerSprite("topright", spritesheet, 64, 0, 64, 64);
