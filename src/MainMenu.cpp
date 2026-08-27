@@ -9,7 +9,7 @@ MainMenu::MainMenu(){
     options[1] = "OPTIONS";
 
     //Load Textures
-    logo = TextureManager::load("Logo.png", 512);
+    logo = TextureManager::load("Logo.png", 512, 512);
 
 }
 

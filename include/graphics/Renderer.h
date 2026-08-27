@@ -58,7 +58,7 @@ namespace Renderer {
         sceGuTexMode(GU_PSM_8888, 0, 0, GU_TRUE); 
         sceGuTexFunc(GU_TFX_MODULATE, GU_TCC_RGBA);
         sceGuColor(0xFFFFFFFF);
-        sceGuTexImage(0, texture->size, texture->size, texture->size, texture->data);
+        sceGuTexImage(0, texture->width, texture->height, texture->width, texture->data);
 
         // 3. Apply Model Matrix Transforms (Translate & Rotate)
         sceGumMatrixMode(GU_MODEL);

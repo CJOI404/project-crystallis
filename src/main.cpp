@@ -155,7 +155,7 @@ int main() {
     initGu();
     
         //Load font data
-    UI::loadFont("PSPGameFont.fnt", "PSPGameFont.png");
+    UI::loadFont("PSPGameFont128.fnt", "PSPGameFont128.png");
 
     //Load skills
     Commands::loadSkills("project_crystallis_skill_sheet.csv");
@@ -231,7 +231,7 @@ int main() {
 
             if (mainMenu.startFlag){
 
-                Texture* spritesheet = TextureManager::load("testspritesheet.png", 128);
+                Texture* spritesheet = TextureManager::load("testspritesheet.png", 256, 128);
                 Mesh* myModel = MeshManager::loadOBJ("lightning.obj");
 
                 // printf("vertices: %s", myModel->vertices);
@@ -254,7 +254,7 @@ int main() {
                 playerCharacter.currentRole = Role::COMMANDO;
                 playerCharacter.sprite = SpriteManager::getSprite("topleft");
                 playerCharacter.mesh = myModel;
-                playerCharacter.meshTexture = TextureManager::load("Lightning_01.png", 256);
+                playerCharacter.meshTexture = TextureManager::load("Lightning_01.png", 256, 256);
 
                 // Character character2;
                 character2.health = 2200;

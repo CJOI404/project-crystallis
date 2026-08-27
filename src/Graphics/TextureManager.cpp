@@ -8,7 +8,7 @@ namespace TextureManager {
 
     std::unordered_map<std::string, Texture> textures;
 
-    void swizzle_fast(uint8_t* out, const uint8_t* in, unsigned int width, unsigned int height) {
+    void swizzle32(uint8_t* out, const uint8_t* in, unsigned int width, unsigned int height) {
         unsigned int blockx, blocky, j;
         
         // 16 bytes = 4 pixels in 32-bit mode
@@ -39,7 +39,7 @@ namespace TextureManager {
         }
     }
 
-    Texture* load(const char* texturePath, int textureSize){
+    Texture* load(const char* texturePath, int textureWidth, int textureHeight){
         // Already loaded?
         auto it = textures.find(texturePath);
 
@@ -53,14 +53,15 @@ namespace TextureManager {
 
         Texture texture;
 
-        uint8_t* originalData = (uint8_t *) stbi_load(texturePath, &(textureSize), &(textureSize), NULL, STBI_rgb_alpha);
-        uint8_t* swizzledData = (uint8_t *) malloc(textureSize * textureSize * 4);
+        uint8_t* originalData = (uint8_t *) stbi_load(texturePath, &(textureWidth), &(textureHeight), NULL, STBI_rgb_alpha);
+        uint8_t* swizzledData = (uint8_t *) malloc(textureWidth * textureHeight * 4);
 
-        swizzle_fast(swizzledData, originalData, textureSize, textureSize);
+        swizzle32(swizzledData, originalData, textureWidth, textureHeight);
 
         // texture.data = (uint32_t *) stbi_load(texturePath, &(textureSize), &(textureSize), NULL, STBI_rgb_alpha);
         texture.data = (uint32_t*) swizzledData;
-        texture.size = textureSize;
+        texture.width = textureWidth;
+        texture.height = textureHeight;
 
         if (!texture.data){
             printf("%s Not Found.", texturePath);

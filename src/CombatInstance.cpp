@@ -19,8 +19,8 @@ CombatInstance::CombatInstance(std::vector<Character*> team, std::vector<Charact
     scannedEnemy = this->enemies[0];
     scanIdx = 0;
 
-    background = TextureManager::load("background.png", 512);
-    testlogo = TextureManager::load("logo256.png", 256);
+    background = TextureManager::load("background.png", 512, 512);
+    testlogo = TextureManager::load("logo256.png", 256, 256);
 
 }
 
@@ -192,8 +192,8 @@ void CombatInstance::render(float dt){
     if (state == CombatState::SCAN){
         UI::drawRect(0, 0, 480, 272, 0xdc000000);
 
-        snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", scannedEnemy->name);
-        UI::drawString(20, 20, 0xFFFFFFFF, 0.6, 0.6, UI::textBuffer);
+        // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", scannedEnemy->name);
+        UI::drawString(20, 20, 0xFFFFFFFF, 0.6, 0.6, scannedEnemy->name);
 
         snprintf(UI::textBuffer, sizeof(UI::textBuffer), "HEALTH: %d", scannedEnemy->health);
         UI::drawString(50, 40, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);

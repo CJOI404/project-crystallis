@@ -15,7 +15,7 @@ void Texture::draw(float x, float y, float width, float height, uint32_t colour 
     sceGuTexMode(GU_PSM_8888, 0, 0, GU_TRUE);
     sceGuTexFunc(GU_TFX_MODULATE, GU_TCC_RGBA);
     
-    sceGuTexImage(0, this->size, this->size, this->size, this->data);
+    sceGuTexImage(0, this->width, this->height, this->width, this->data);
 
     //enable transparency
     sceGuEnable(GU_BLEND);
@@ -35,8 +35,8 @@ void Texture::draw(float x, float y, float width, float height, uint32_t colour 
     vertices[0].colour = colour;
 
     // Bottom-Right
-    vertices[1].u = this->size;
-    vertices[1].v = this->size;
+    vertices[1].u = this->width;
+    vertices[1].v = this->height;
     vertices[1].x = x + width; 
     vertices[1].y = y + height; 
     vertices[1].z = 0;
@@ -61,7 +61,7 @@ void Texture::draw(float u1, float v1, float u2, float v2, float x, float y, flo
     sceGuTexMode(GU_PSM_8888, 0, 0, GU_TRUE);
     sceGuTexFunc(GU_TFX_MODULATE, GU_TCC_RGBA);
     
-    sceGuTexImage(0, this->size, this->size, this->size, this->data);
+    sceGuTexImage(0, this->width, this->height, this->width, this->data);
 
     //enable transparency
     sceGuEnable(GU_BLEND);

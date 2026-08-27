@@ -15,6 +15,7 @@ namespace UI {
     Texture* fontTexture;
 
     int textWidth = 256;
+    int textHeight = 128;
 
     int extract(const std::string& line, const std::string& key) {
         size_t pos = line.find(key + "=");
@@ -51,20 +52,20 @@ namespace UI {
 
         inFS.close(); 
 
-        fontTexture = TextureManager::load(texturePath, textWidth);
+        fontTexture = TextureManager::load(texturePath, textWidth, textHeight);
 
         // fontTexture.data = (uint32_t *) stbi_load(texturePath, &(textWidth), &(textWidth), NULL, STBI_rgb_alpha);
 
         sceKernelDcacheWritebackAll();
     }
 
-    void drawString(int x, int y, uint32_t color, float xScale, float yScale, std::string text) {
+    void drawString(int x, int y, uint32_t color, float xScale, float yScale, const std::string& text) {
 
         int currentX = x;
 
         sceGuTexMode(GU_PSM_8888, 0, 0, GU_TRUE);
         sceGuTexFunc(GU_TFX_REPLACE, GU_TCC_RGBA);
-        sceGuTexImage(0, 256, 256, 256, fontTexture->data);
+        sceGuTexImage(0, textWidth, textHeight, textWidth, fontTexture->data);
 
         //enable transparency
         sceGuEnable(GU_BLEND);
