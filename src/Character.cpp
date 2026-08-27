@@ -284,8 +284,9 @@ void Character::render(float dt){
 void Character::render3D(float dt) {
     if (mesh){
         ScePspFVector3 pos = {0.0f, -70.0f, -200.0f}; // Push model forward on Z axis
-        ScePspFVector3 rot = {0.0f, 15.0f, 0.0f};
-        Renderer::renderMesh(mesh, &pos, &rot);
+        ScePspFVector3 rot = {0.0f, 0.0f, 0.0f};
+        // Renderer::renderMesh(mesh, &pos, &rot);
+        Renderer::renderTexturedMesh(mesh, meshTexture, &pos, &rot);
     }
 }
 

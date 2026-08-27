@@ -21,6 +21,7 @@ class Character : public GameActor {
     public:
         Sprite* sprite = nullptr;
         Mesh* mesh = nullptr;
+        Texture* meshTexture = nullptr;
 
 
         BattleCommand* currCommand = nullptr;

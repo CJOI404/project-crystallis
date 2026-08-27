@@ -254,6 +254,7 @@ int main() {
                 playerCharacter.currentRole = Role::COMMANDO;
                 playerCharacter.sprite = SpriteManager::getSprite("topleft");
                 playerCharacter.mesh = myModel;
+                playerCharacter.meshTexture = TextureManager::load("Lightning_01.png", 256);
 
                 // Character character2;
                 character2.health = 2200;

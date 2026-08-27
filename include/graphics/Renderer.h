@@ -7,45 +7,88 @@
 namespace Renderer {
 
     void renderMesh(Mesh* mesh, ScePspFVector3* pos, ScePspFVector3* rot) {
-    if (!mesh || !mesh->vertices || mesh->vertexCount == 0) return;
+        if (!mesh || !mesh->vertices || mesh->vertexCount == 0) return;
 
-    // 1. Set render state
-    sceGuDisable(GU_CULL_FACE);
-    sceGuDisable(GU_TEXTURE_2D);
-    sceGuDisable(GU_LIGHTING);
+        // 1. Set render state
+        sceGuDisable(GU_CULL_FACE);
+        sceGuDisable(GU_TEXTURE_2D);
+        sceGuDisable(GU_LIGHTING);
 
-    // 2. Set solid render color (Green)
-    sceGuColor(0xFFFFFFFF);
+        // 2. Set solid render color (Green)
+        sceGuColor(0xFFFFFFFF);
 
-    // 3. Apply Model Matrix Transforms (Translate & Rotate)
-    sceGumMatrixMode(GU_MODEL);
-    sceGumPushMatrix();
-    sceGumLoadIdentity();
+        // 3. Apply Model Matrix Transforms (Translate & Rotate)
+        sceGumMatrixMode(GU_MODEL);
+        sceGumPushMatrix();
+        sceGumLoadIdentity();
 
-    // Apply parameters passed into renderMesh
-    sceGumTranslate(pos);
-    sceGumRotateX(rot->x);
-    sceGumRotateY(rot->y);
-    sceGumRotateZ(rot->z);
+        // Apply parameters passed into renderMesh
+        sceGumTranslate(pos);
+        sceGumRotateX(rot->x);
+        sceGumRotateY(rot->y);
+        sceGumRotateZ(rot->z);
 
-    // Push transformations to PSP hardware registers
-    sceGumUpdateMatrix();
+        // Push transformations to PSP hardware registers
+        sceGumUpdateMatrix();
 
-    // 4. Invalidate D-cache for vertex DMA transfer (correct size!)
-    sceKernelDcacheWritebackInvalidateRange(mesh->vertices, sizeof(Vertex3D) * mesh->vertexCount);
+        // 4. Invalidate D-cache for vertex DMA transfer (correct size!)
+        sceKernelDcacheWritebackInvalidateRange(mesh->vertices, sizeof(Vertex3D) * mesh->vertexCount);
 
-    // 5. Draw using 32-bit float layout matching your Vertex3D struct
-    sceGumDrawArray(
-        GU_TRIANGLES,
-        GU_TEXTURE_32BITF | GU_NORMAL_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_3D,
-        mesh->vertexCount,
-        0,
-        mesh->vertices
-    );
+        // 5. Draw using 32-bit float layout matching your Vertex3D struct
+        sceGumDrawArray(
+            GU_TRIANGLES,
+            GU_TEXTURE_32BITF | GU_NORMAL_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_3D,
+            mesh->vertexCount,
+            0,
+            mesh->vertices
+        );
 
-    // 6. Clean up matrix stack
-    sceGumPopMatrix();
-}
+        // 6. Clean up matrix stack
+        sceGumPopMatrix();
+    }
+
+    void renderTexturedMesh(Mesh* mesh, Texture* texture, ScePspFVector3* pos, ScePspFVector3* rot) {
+        if (!mesh || !mesh->vertices || mesh->vertexCount == 0) return;
+
+        // 1. Enable 2D Texturing in the GU State
+        sceGuEnable(GU_TEXTURE_2D);
+
+        // 2. Bind your texture details
+        // (Texture format e.g., GU_PSM_8888, Mipmap levels, Buffer width, Texture pointer)
+        sceGuTexMode(GU_PSM_8888, 0, 0, GU_TRUE); 
+        sceGuTexFunc(GU_TFX_MODULATE, GU_TCC_RGBA);
+        sceGuColor(0xFFFFFFFF);
+        sceGuTexImage(0, texture->size, texture->size, texture->size, texture->data);
+
+        // 3. Apply Model Matrix Transforms (Translate & Rotate)
+        sceGumMatrixMode(GU_MODEL);
+        sceGumPushMatrix();
+        sceGumLoadIdentity();
+
+        // Apply parameters passed into renderMesh
+        sceGumTranslate(pos);
+        sceGumRotateX(rot->x);
+        sceGumRotateY(rot->y);
+        sceGumRotateZ(rot->z);
+
+        // Push transformations to PSP hardware registers
+        sceGumUpdateMatrix();
+
+        // 4. Invalidate D-cache for vertex DMA transfer (correct size!)
+        sceKernelDcacheWritebackInvalidateRange(mesh->vertices, sizeof(Vertex3D) * mesh->vertexCount);
+
+        // 5. Draw using 32-bit float layout matching your Vertex3D struct
+        sceGumDrawArray(
+            GU_TRIANGLES,
+            GU_TEXTURE_32BITF | GU_NORMAL_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_3D,
+            mesh->vertexCount,
+            0,
+            mesh->vertices
+        );
+
+        // 6. Clean up matrix stack
+        sceGumPopMatrix();
+    }
 
 //     void renderMesh(Mesh* mesh, ScePspFVector3* pos, ScePspFVector3* rot) {
 //         // 1. Force state: No textures, no lighting, no culling

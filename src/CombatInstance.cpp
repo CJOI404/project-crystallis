@@ -163,6 +163,7 @@ void CombatInstance::render(float dt){
 
     //Opaque 3d render
     RenderState::setDepthState(DepthState::DEPTH_READ_WRITE);
+    RenderState::setBlendMode(BLEND_NONE);
     for (int i = 0; i < team.size(); i++){
         team[i]->render3D(dt);
     }

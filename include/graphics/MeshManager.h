@@ -127,6 +127,7 @@ namespace MeshManager{
         mesh->vertexCount = f_count;
 
         printf("Successfully loaded %s (%d vertices)\n", filename, f_count);
+
         return mesh;
 }
 
