@@ -2,6 +2,7 @@
 #include <stb_image.h>
 #include <psputils.h>
 #include <pspsysmem.h>
+#include <pspsdk.h>
 
 namespace TextureManager {
 
@@ -17,25 +18,17 @@ namespace TextureManager {
             return &it->second;
         }
 
-        //Check space availability
-
-        // STBI_rgb_alpha forces 4 bytes per pixel.
-        size_t requiredMemory = (size_t)textureSize * textureSize * 4;
-        // Check available memory here.
-        size_t freeMemory = sceKernelTotalFreeMemSize();
-        if (requiredMemory > freeMemory){
-            printf("load failed: not enough space. Required memory: %d, Available memory: %d\n", requiredMemory, freeMemory);
-            fflush(stdout);
-            return nullptr;
-        }
         // Create a new texture
 
         Texture texture;
         texture.data = (uint32_t *) stbi_load(texturePath, &(textureSize), &(textureSize), NULL, STBI_rgb_alpha);
         texture.size = textureSize;
 
-        if (!texture.data)
+        if (!texture.data){
+            printf("%s Not Found.", texturePath);
+            fflush(stdout);
             return nullptr;
+        }
 
         sceKernelDcacheWritebackAll();
 
@@ -62,6 +55,9 @@ namespace TextureManager {
 
         if (it->second.data)
             stbi_image_free(it->second.data);
+
+        printf("Unloaded %s", texturePath);
+        fflush(stdout);
 
         textures.erase(it);
     }

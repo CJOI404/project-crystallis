@@ -438,6 +438,7 @@ int main() {
                 //Create instance
                 combatInstance = new CombatInstance(team, enemies);
 
+                
                 state = COMBAT;
             }
 

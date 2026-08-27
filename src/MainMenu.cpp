@@ -8,16 +8,17 @@ MainMenu::MainMenu(){
     options[1] = "OPTIONS";
 
     //Load Textures
-    logo = TextureManager::load("Logo.png", 256);
-    logo = TextureManager::load("Logo copy.png", 256);
-    logo = TextureManager::load("Logo copy 2.png", 256);
-    logo = TextureManager::load("Logo copy 3.png", 256);
-    logo = TextureManager::load("Logo copy 4.png", 256);
-        logo = TextureManager::load("Logo.png", 256);
-    logo = TextureManager::load("Logo copy.png", 256);
-    logo = TextureManager::load("Logo copy 2.png", 256);
-    logo = TextureManager::load("Logo copy 3.png", 256);
-    logo = TextureManager::load("Logo copy 4.png", 256);
+    // logo = TextureManager::load("Logo256.png", 256);
+    logo = TextureManager::load("Logo.png", 512);
+    // logo = TextureManager::load("Logo copy.png", 256);
+    // logo = TextureManager::load("Logo copy 2.png", 256);
+    // logo = TextureManager::load("Logo copy 3.png", 256);
+    // logo = TextureManager::load("Logo copy 4.png", 256);
+    //     logo = TextureManager::load("Logo.png", 256);
+    // logo = TextureManager::load("Logo copy.png", 256);
+    // logo = TextureManager::load("Logo copy 2.png", 256);
+    // logo = TextureManager::load("Logo copy 3.png", 256);
+    // logo = TextureManager::load("Logo copy 4.png", 256);
 
     // logo = TextureManager::load("Logo.png", 256);
     // logo = TextureManager::load("Logo.png", 256);
@@ -52,7 +53,7 @@ void MainMenu::render(float dt){
 
     UI::drawRect(0, 0, 480, 272, 0xFFFFFFFF);
     // UI::drawSprite(112, -40, 1, 1, 0x00000000, 1, 1);
-    logo->draw(112, -40, 300, 300);
+    logo->draw(50, -80, 400, 400);
 
 
     Colours colour = Colours::LIGHTGREY;

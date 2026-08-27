@@ -1051,8 +1051,13 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/TextureManager.cpp.obj: /mnt/d/pr
   /home/calvi/pspdev/psp/include/sys/types.h \
   /home/calvi/pspdev/psp/include/time.h \
   /home/calvi/pspdev/psp/include/wchar.h \
+  /home/calvi/pspdev/psp/sdk/include/pspdebug.h \
   /home/calvi/pspdev/psp/sdk/include/pspkerneltypes.h \
+  /home/calvi/pspdev/psp/sdk/include/pspmoduleinfo.h \
+  /home/calvi/pspdev/psp/sdk/include/pspmodulemgr.h \
+  /home/calvi/pspdev/psp/sdk/include/pspsdk.h \
   /home/calvi/pspdev/psp/sdk/include/pspsysmem.h \
+  /home/calvi/pspdev/psp/sdk/include/pspthreadman.h \
   /home/calvi/pspdev/psp/sdk/include/psptypes.h \
   /home/calvi/pspdev/psp/sdk/include/psputils.h \
   /mnt/d/project-crystallis/include/GlobalDefs.h \
@@ -1919,13 +1924,9 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
   /mnt/d/project-crystallis/include/graphics/UIRender.h
 
 
-/home/calvi/pspdev/psp/sdk/include/pspthreadman.h:
-
 /home/calvi/pspdev/psp/sdk/include/pspsysreg.h:
 
 /home/calvi/pspdev/psp/sdk/include/pspstdio.h:
-
-/home/calvi/pspdev/psp/sdk/include/pspmodulemgr.h:
 
 /home/calvi/pspdev/psp/sdk/include/psploadcore.h:
 
@@ -1953,6 +1954,10 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/sstream.tcc:
 
+/home/calvi/pspdev/psp/include/c++/15.1.1/bits/quoted_string.h:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/bits/locale_conv.h:
+
 /home/calvi/pspdev/psp/include/string.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_laguerre.tcc:
@@ -1964,6 +1969,8 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_uninitialized.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/range_access.h:
+
+/home/calvi/pspdev/psp/sdk/include/pspthreadman.h:
 
 /home/calvi/pspdev/psp/include/sys/_types.h:
 
@@ -1978,10 +1985,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/sdk/include/pspctrl.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_hermite.tcc:
-
-/home/calvi/pspdev/psp/sdk/include/pspmoduleinfo.h:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/tr1/exp_integral.tcc:
 
 /mnt/d/project-crystallis/include/MainMenu.h:
 
@@ -2015,8 +2018,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++locale.h:
 
-/home/calvi/pspdev/psp/include/c++/15.1.1/bits/locale_conv.h:
-
 /home/calvi/pspdev/psp/include/machine/time.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/ext/numeric_traits.h:
@@ -2038,8 +2039,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /mnt/d/project-crystallis/src/main.cpp:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/cstdio:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/bits/quoted_string.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint:
 
@@ -2068,6 +2067,10 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/exception.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/cctype:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/bits/locale_facets_nonio.tcc:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_iterator.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/functional_hash.h:
 
@@ -2125,6 +2128,10 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdarg.h:
 
+/home/calvi/pspdev/psp/include/c++/15.1.1/bits/locale_facets_nonio.h:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/ios:
+
 /home/calvi/pspdev/psp/sdk/include/pspuser.h:
 
 /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h:
@@ -2140,10 +2147,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/c++/15.1.1/ext/atomicity.h:
 
 /home/calvi/pspdev/psp/include/sys/syslimits.h:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_iterator.h:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/bits/locale_facets_nonio.tcc:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/vector.tcc:
 
@@ -2170,6 +2173,10 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/ostream_insert.h:
 
 /home/calvi/pspdev/psp/include/sched.h:
+
+/home/calvi/pspdev/psp/include/assert.h:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/ext/alloc_traits.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_heap.h:
 
@@ -2283,10 +2290,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator.h:
 
-/home/calvi/pspdev/psp/sdk/include/pspdebug.h:
-
-/home/calvi/pspdev/psp/include/sys/lock.h:
-
 /home/calvi/pspdev/psp/include/strings.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/deque:
@@ -2324,6 +2327,10 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/utility.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/unordered_map.h:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/tr1/exp_integral.tcc:
+
+/home/calvi/pspdev/psp/sdk/include/pspmoduleinfo.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/unordered_map:
 
@@ -2382,10 +2389,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/signal.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/fstream.tcc:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/ext/alloc_traits.h:
-
-/home/calvi/pspdev/psp/include/assert.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/ios_base.h:
 
@@ -2481,6 +2484,14 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/include/stb_image.h:
 
+/home/calvi/pspdev/psp/include/sys/lock.h:
+
+/home/calvi/pspdev/psp/sdk/include/pspdebug.h:
+
+/home/calvi/pspdev/psp/sdk/include/pspmodulemgr.h:
+
+/home/calvi/pspdev/psp/sdk/include/pspsdk.h:
+
 /mnt/d/project-crystallis/src/Graphics/UIRender.cpp:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/std_abs.h:
@@ -2490,7 +2501,3 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /mnt/d/project-crystallis/src/InputHandler.cpp:
 
 /mnt/d/project-crystallis/src/MainMenu.cpp:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/ios:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/bits/locale_facets_nonio.h:

@@ -4,9 +4,15 @@
 #include <psputils.h>
 
 void Texture::draw(float x, float y, float width, float height){
+    if (this == nullptr){
+        printf("Cannot draw %s. No texture data found", this);
+        fflush(stdout);
+        return;
+    }
+
     sceGuTexMode(GU_PSM_8888, 0, 0, GU_FALSE);
     sceGuTexFunc(GU_TFX_REPLACE, GU_TCC_RGBA);
-    sceGuTexImage(0, 256, 256, 256, this->data);
+    sceGuTexImage(0, this->size, this->size, this->size, this->data);
 
     //enable transparency
     sceGuEnable(GU_BLEND);

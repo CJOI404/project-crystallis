@@ -139,4 +139,9 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/TextureManager.cpp.obj: \
  /home/calvi/pspdev/psp/include/sys/signal.h \
  /home/calvi/pspdev/psp/include/machine/_time.h \
  /home/calvi/pspdev/psp/sdk/include/pspsysmem.h \
- /home/calvi/pspdev/psp/sdk/include/pspkerneltypes.h
+ /home/calvi/pspdev/psp/sdk/include/pspkerneltypes.h \
+ /home/calvi/pspdev/psp/sdk/include/pspsdk.h \
+ /home/calvi/pspdev/psp/sdk/include/pspmodulemgr.h \
+ /home/calvi/pspdev/psp/sdk/include/pspmoduleinfo.h \
+ /home/calvi/pspdev/psp/sdk/include/pspthreadman.h \
+ /home/calvi/pspdev/psp/sdk/include/pspdebug.h
