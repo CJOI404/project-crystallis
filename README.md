@@ -1,5 +1,7 @@
 # project-crystallis
 
+<img width="692" height="389" alt="image" src="https://github.com/user-attachments/assets/b60bfa49-2043-47c7-b14d-5a362280167a" />
+
 This is a complete remake of the Final Fantasy 13 combat system for the Playstation Portable (PSP).
 
 This can be played on real PSP hardware as well as PC, iOS, and Android through the PPSSPP emulator using the PSP.EBOOT file. 
