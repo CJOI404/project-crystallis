@@ -23,6 +23,8 @@ class Character : public GameActor {
         Mesh* mesh = nullptr;
         Texture* meshTexture = nullptr;
 
+        float rotation = 0.0f;
+
 
         BattleCommand* currCommand = nullptr;
         BattleCommand* prevCommand = nullptr;

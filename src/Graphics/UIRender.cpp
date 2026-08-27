@@ -58,7 +58,6 @@ namespace UI {
         sceKernelDcacheWritebackAll();
     }
 
-
     void drawString(int x, int y, uint32_t color, float xScale, float yScale, std::string text) {
 
         int currentX = x;
@@ -73,33 +72,33 @@ namespace UI {
 
         sceGuEnable(GU_TEXTURE_2D); 
 
-        for (int i = 0; text[i] != '\0'; i++){
+        TextureVertex* vertices = (TextureVertex*)sceGuGetMemory(text.length() * 2 * sizeof(TextureVertex));
+        int idx = 0;
 
-            TextureVertex* vertices = (TextureVertex*)sceGuGetMemory(2 * sizeof(TextureVertex));
+        for (int i = 0; text[i] != '\0'; i++){
 
             int j = text[i];
 
             // Top-Left
-            vertices[0].u = fontData[j].x; 
-            vertices[0].v = fontData[j].y;
-            vertices[0].x = currentX + (fontData[j].xoffset * xScale); 
-            vertices[0].y = y + (fontData[j].yoffset * yScale); 
-            vertices[0].z = 0;
+            vertices[idx].u = fontData[j].x; 
+            vertices[idx].v = fontData[j].y;
+            vertices[idx].x = currentX + (fontData[j].xoffset * xScale); 
+            vertices[idx].y = y + (fontData[j].yoffset * yScale); 
+            vertices[idx].z = 0;
 
             // Bottom-Right
-            vertices[1].u = fontData[j].x + fontData[j].width; 
-            vertices[1].v = fontData[j].y + fontData[j].height;
-            vertices[1].x = currentX + ((fontData[j].width + fontData[j].xoffset) * xScale); 
-            vertices[1].y = y + ((fontData[j].height + fontData[j].yoffset) * yScale); 
-            vertices[1].z = 0;
+            vertices[idx+1].u = fontData[j].x + fontData[j].width; 
+            vertices[idx+1].v = fontData[j].y + fontData[j].height;
+            vertices[idx+1].x = currentX + ((fontData[j].width + fontData[j].xoffset) * xScale); 
+            vertices[idx+1].y = y + ((fontData[j].height + fontData[j].yoffset) * yScale); 
+            vertices[idx+1].z = 0;
 
-            sceGuDrawArray(GU_SPRITES, GU_COLOR_8888 | GU_TEXTURE_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_2D, 2, 0, vertices);
-
+            idx += 2;
             currentX += fontData[j].xadvance * xScale;
         }
-        sceKernelDcacheWritebackAll();
 
-        currentX = 0;
+        sceGuDrawArray(GU_SPRITES, GU_COLOR_8888 | GU_TEXTURE_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_2D, text.length() * 2, 0, vertices);
+
         sceGuDisable(GU_TEXTURE_2D);
         
     }
