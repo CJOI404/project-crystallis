@@ -139,6 +139,13 @@ CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_queue.h \
  /mnt/d/project-crystallis/include/graphics/Sprite.h \
  /mnt/d/project-crystallis/include/graphics/Texture.h \
+ /mnt/d/project-crystallis/include/graphics/Mesh.h \
+ /home/calvi/pspdev/psp/sdk/include/pspgu.h \
+ /home/calvi/pspdev/psp/sdk/include/psptypes.h \
+ /home/calvi/pspdev/psp/sdk/include/pspge.h \
+ /home/calvi/pspdev/psp/sdk/include/pspgum.h \
+ /home/calvi/pspdev/psp/include/malloc.h \
+ /home/calvi/pspdev/psp/include/machine/malloc.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/fstream \
  /home/calvi/pspdev/psp/include/c++/15.1.1/istream \
  /home/calvi/pspdev/psp/include/c++/15.1.1/ios \

@@ -123,4 +123,5 @@ CMakeFiles/Project_Crystallis.dir/src/MainMenu.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/erase_if.h \
  /mnt/d/project-crystallis/include/graphics/Texture.h \
  /mnt/d/project-crystallis/include/InputHandler.h \
- /home/calvi/pspdev/psp/sdk/include/pspctrl.h
+ /home/calvi/pspdev/psp/sdk/include/pspctrl.h \
+ /mnt/d/project-crystallis/include/graphics/RenderState.h

@@ -138,11 +138,15 @@ CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_queue.h \
  /mnt/d/project-crystallis/include/graphics/Sprite.h \
  /mnt/d/project-crystallis/include/graphics/Texture.h \
- /mnt/d/project-crystallis/include/Menu.h \
- /mnt/d/project-crystallis/include/graphics/UIRender.h \
+ /mnt/d/project-crystallis/include/graphics/Mesh.h \
  /home/calvi/pspdev/psp/sdk/include/pspgu.h \
  /home/calvi/pspdev/psp/sdk/include/psptypes.h \
  /home/calvi/pspdev/psp/sdk/include/pspge.h \
+ /home/calvi/pspdev/psp/sdk/include/pspgum.h \
+ /home/calvi/pspdev/psp/include/malloc.h \
+ /home/calvi/pspdev/psp/include/machine/malloc.h \
+ /mnt/d/project-crystallis/include/Menu.h \
+ /mnt/d/project-crystallis/include/graphics/UIRender.h \
  /mnt/d/project-crystallis/include/graphics/TextureManager.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/unordered_map \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/unordered_map.h \

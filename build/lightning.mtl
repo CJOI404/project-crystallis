@@ -1,0 +1,32 @@
+# Blender 4.1.1 MTL File: 'None'
+# www.blender.org
+
+newmtl diss_00.png
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd C:/Users/calvi/Downloads/PlayStation Portable - Dissidia 012 (Duodecim)_ Final Fantasy - Playable Characters - Cosmos - Lightning/Lightning/Lightning_00.png
+
+newmtl diss_01.png
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd C:/Users/calvi/Downloads/PlayStation Portable - Dissidia 012 (Duodecim)_ Final Fantasy - Playable Characters - Cosmos - Lightning/Lightning/Lightning_01.png
+
+newmtl diss_03.png
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd C:/Users/calvi/Downloads/PlayStation Portable - Dissidia 012 (Duodecim)_ Final Fantasy - Playable Characters - Cosmos - Lightning/Lightning/Lightning_03.png

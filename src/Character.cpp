@@ -1,5 +1,6 @@
 #include "Character.h"
 #include "graphics/UIRender.h"
+#include "graphics/Renderer.h"
 #include <CommandRegistry.h>
 
 Character::Character(){
@@ -276,8 +277,16 @@ void Character::render(float dt){
     if (sprite == nullptr){
         return;
     }
-
     sprite->draw(xPos, yPos, 20, 20, 0xFFFFFFFF);
+
+}
+
+void Character::render3D(float dt) {
+    if (mesh){
+        ScePspFVector3 pos = {0.0f, 0.0f, -5.0f}; // Push model forward on Z axis
+        ScePspFVector3 rot = {0.0f, 0.0f, 0.0f};
+        Renderer::renderMesh(mesh, &pos, &rot);
+    }
 }
 
 void Character::drawHealth(){

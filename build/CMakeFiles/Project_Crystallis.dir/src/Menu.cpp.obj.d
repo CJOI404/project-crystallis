@@ -152,4 +152,8 @@ CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_heap.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_queue.h \
  /mnt/d/project-crystallis/include/graphics/Sprite.h \
+ /mnt/d/project-crystallis/include/graphics/Mesh.h \
+ /home/calvi/pspdev/psp/sdk/include/pspgum.h \
+ /home/calvi/pspdev/psp/include/malloc.h \
+ /home/calvi/pspdev/psp/include/machine/malloc.h \
  /mnt/d/project-crystallis/include/CommandRegistry.h

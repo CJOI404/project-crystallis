@@ -1,11 +1,22 @@
 #include "graphics/RenderState.h"
 
 namespace RenderState {
-    static BlendMode currentBlendMode = BLEND_NONE;
+    static BlendMode currentBlendMode = BLEND_UNKNOWN;
+    static DepthState currentDepthMode = DEPTH_UNKNOWN;
+    static CullMode currentCullMode = CULL_UNKNOWN;
+
+    // static const void* currentTexture = nullptr;
 
     void init() {
-        currentBlendMode = BLEND_NONE;
+        resetCache();
         sceGuDisable(GU_BLEND);
+    }
+
+    void resetCache() {
+        currentBlendMode   = BLEND_NONE;
+        currentDepthMode   = DEPTH_DISABLED;
+        currentCullMode    = CULL_NONE;
+        // s_currentTexture = nullptr;
     }
 
     void setBlendMode(BlendMode mode) {
@@ -33,6 +44,42 @@ namespace RenderState {
                 sceGuEnable(GU_BLEND);
                 sceGuBlendFunc(GU_ADD, GU_DST_COLOR, GU_ZERO, 0, 0);
                 break;
+        }
+    }
+
+    void setDepthState(DepthState state) {
+        if (currentDepthMode == state) return;
+        currentDepthMode = state;
+
+        switch (state) {
+            case DEPTH_DISABLED:
+                sceGuDisable(GU_DEPTH_TEST);
+                sceGuDepthMask(GU_TRUE); // Disable writing to Z-buffer
+                break;
+
+            case DEPTH_READ_WRITE:
+                sceGuEnable(GU_DEPTH_TEST);
+                sceGuDepthFunc(GU_GEQUAL); // PSP hardware uses GEQUAL for front-to-back depth
+                sceGuDepthMask(GU_FALSE);  // Enable writing to Z-buffer
+                break;
+
+            case DEPTH_READ_ONLY:
+                sceGuEnable(GU_DEPTH_TEST);
+                sceGuDepthFunc(GU_GEQUAL);
+                sceGuDepthMask(GU_TRUE);   // Read depth, but don't overwrite Z-buffer
+                break;
+        }
+    }
+
+    void setCullMode(CullMode mode) {
+        if (currentCullMode == mode) return;
+        currentCullMode = mode;
+
+        if (mode == CULL_NONE) {
+            sceGuDisable(GU_CULL_FACE);
+        } else {
+            sceGuEnable(GU_CULL_FACE);
+            sceGuFrontFace(mode == CULL_CW ? GU_CW : GU_CCW);
         }
     }
 }

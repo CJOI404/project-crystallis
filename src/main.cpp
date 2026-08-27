@@ -17,6 +17,8 @@
 #include "GlobalDefs.h"
 #include "CombatInstance.h"
 #include "MainMenu.h"
+#include "graphics/MeshManager.h"
+#include "graphics/RenderState.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
@@ -54,47 +56,30 @@ int setup_callbacks(void) {
     return thid;
 }
 
+//framebuffers
 void * fbp0;
 void * fbp1;
+//depthbuffer
+void * zbp;
 
 void initGu(){
-    // sceGuInit();
-    
-    // //Set up buffers
-    // sceGuStart(GU_DIRECT, list);
-    // sceGuDrawBuffer(GU_PSM_8888,(void*)0,BUFFER_WIDTH);
-    // sceGuDispBuffer(SCREEN_WIDTH,SCREEN_HEIGHT,(void*)0x88000,BUFFER_WIDTH);
-    // sceGuDepthBuffer((void*)0x110000,BUFFER_WIDTH);
-
-    // //Set up viewport
-    // sceGuOffset(2048 - (SCREEN_WIDTH / 2), 2048 - (SCREEN_HEIGHT / 2));
-    // sceGuViewport(2048, 2048, SCREEN_WIDTH, SCREEN_HEIGHT);
-    // sceGuEnable(GU_SCISSOR_TEST);
-    // sceGuScissor(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-
-    // //Set some stuff
-    // sceGuDepthRange(65535, 0); //Use the full buffer for depth testing - buffer is reversed order
-
-    // sceGuDepthFunc(GU_GEQUAL); //Depth buffer is reversed, so GEQUAL instead of LEQUAL
-    // sceGuEnable(GU_DEPTH_TEST); //Enable depth testing
-
-    // sceGuFinish();
-    // sceGuDisplay(GU_TRUE);
-
 
     sceGuInit();
 
     fbp0 = guGetStaticVramBuffer(BUFFER_WIDTH, BUFFER_HEIGHT, GU_PSM_8888);
     fbp1 = guGetStaticVramBuffer(BUFFER_WIDTH, BUFFER_HEIGHT, GU_PSM_8888);
+    zbp = guGetStaticVramBuffer(BUFFER_WIDTH, BUFFER_HEIGHT, GU_PSM_8888);
 
     //Set up buffers
     sceGuStart(GU_DIRECT, list);
     sceGuDrawBuffer(GU_PSM_8888, fbp0, BUFFER_WIDTH);
     sceGuDispBuffer(SCREEN_WIDTH,SCREEN_HEIGHT,fbp1, BUFFER_WIDTH);
-    
-    // We do not care about the depth buffer in this example
-    sceGuDepthBuffer(fbp0, 0); // Set depth buffer to a length of 0
-    sceGuDisable(GU_DEPTH_TEST); // Disable depth testing
+
+    sceGuDepthBuffer(zbp, BUFFER_WIDTH); // Set depth buffer to a length of 0
+    sceGuEnable(GU_DEPTH_TEST); //enable depth testing
+    sceGuDepthFunc(GU_LEQUAL);
+    sceGuDepthRange(65535, 0);
+    // sceGuDisable(GU_DEPTH_TEST); // Disable depth testing
 
     //Set up viewport
     sceGuOffset(2048 - (SCREEN_WIDTH / 2), 2048 - (SCREEN_HEIGHT / 2));
@@ -115,7 +100,11 @@ void endGu(){
 void startFrame(){
     sceGuStart(GU_DIRECT, list);
     sceGuClearColor(0xFF000000); // Black background
-    sceGuClear(GU_COLOR_BUFFER_BIT);
+    sceGuClearDepth(0);
+    sceGuClear(GU_COLOR_BUFFER_BIT | GU_DEPTH_BUFFER_BIT);
+    // sceGuClear(GU_COLOR_BUFFER_BIT);
+    // sceGuClearDepth();
+    RenderState::resetCache();
 }
 
 void endFrame(){
@@ -125,89 +114,6 @@ void endFrame(){
     sceGuSwapBuffers();
 }
 
-// typedef struct {
-//     unsigned short u, v;
-//     short x, y, z;
-// } Vertex;
-
-// typedef struct
-// {
-//     float u, v;
-//     uint32_t colour;
-//     float x, y, z;
-// } TextureVertex;
-
-// typedef struct
-// {
-//     int width, height;
-//     uint32_t* data;
-// } Texture;
-
-// Texture* loadTexture(const char * filename) {
-//     Texture* texture = (Texture *) calloc(1, sizeof(Texture));
-
-//     texture->data = (uint32_t *) stbi_load(filename, &(texture->width), &(texture->height), NULL, STBI_rgb_alpha);
-
-//     // Make sure the texture cache is reloaded
-//     sceKernelDcacheWritebackInvalidateAll();
-
-//     return texture;
-// }
-
-// void drawTexture(Texture * texture, float x, float y, float w, float h) {
-//     static TextureVertex vertices[2];
-
-//     vertices[0].u = 0.0f;
-//     vertices[0].v = 0.0f;
-//     vertices[0].colour = 0xFFFFFFFF;
-//     vertices[0].x = x;
-//     vertices[0].y = y;
-//     vertices[0].z = 0.0f;
-
-//     vertices[1].u = w;
-//     vertices[1].v = h;
-//     vertices[1].colour = 0xFFFFFFFF;
-//     vertices[1].x = x + w;
-//     vertices[1].y = y + h;
-//     vertices[1].z = 0.0f;
-
-//     sceGuTexMode(GU_PSM_8888, 0, 0, GU_FALSE);
-//     sceGuTexFunc(GU_TFX_REPLACE, GU_TCC_RGBA);
-//     sceGuTexImage(0, texture->width, texture->height, texture->width, texture->data);
-
-//     //this is needed to allow transparency, dunno why
-//     sceGuEnable(GU_BLEND);
-//     sceGuBlendFunc(GU_ADD, GU_SRC_ALPHA, GU_ONE_MINUS_SRC_ALPHA, 0, 0);
-
-//     sceGuEnable(GU_TEXTURE_2D); 
-//     sceGuDrawArray(GU_SPRITES, GU_COLOR_8888 | GU_TEXTURE_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_2D, 2, 0, vertices);
-//     sceGuDisable(GU_TEXTURE_2D);
-// }
-
-// void drawRect(float x, float y, float w, float h, unsigned int colour) {
-
-//     Vertex* vertices = (Vertex*)sceGuGetMemory(2 * sizeof(Vertex));
-
-//     vertices[0].x = x;
-//     vertices[0].y = y;
-
-//     vertices[1].x = x + w;
-//     vertices[1].y = y + h;
-
-//     if (colour == Colours::RED){
-//         sceGuColor(0xFF0000FF); // Red, colors are ABGR
-//     } else if (colour == Colours::BLUE){
-//         sceGuColor(0xFFFF0000); // Blue, colors are ABGR
-//     } else {
-//         sceGuColor(0xFF000000); // Black, colors are ABGR
-//     }
-//     sceGuDrawArray(GU_SPRITES, GU_TEXTURE_16BIT | GU_VERTEX_16BIT | GU_TRANSFORM_2D, 2, 0, vertices);
-// }
-
-// enum GameState {
-//     BATTLE,
-//     SCAN
-// };
 
 enum GameState {
     MAINMENU,
@@ -311,6 +217,7 @@ int main() {
             if (mainMenu.startFlag){
 
                 Texture* spritesheet = TextureManager::load("testspritesheet.png", 128);
+                Mesh* myModel = MeshManager::loadOBJ("lightning.obj");
 
                 SpriteManager::registerSprite("topleft", spritesheet, 0, 0, 64, 64);
                 SpriteManager::registerSprite("topright", spritesheet, 64, 0, 64, 64);
@@ -327,6 +234,7 @@ int main() {
                 playerCharacter.name = "LIGHTNING";
                 playerCharacter.currentRole = Role::COMMANDO;
                 playerCharacter.sprite = SpriteManager::getSprite("topleft");
+                playerCharacter.mesh = myModel;
 
                 // Character character2;
                 character2.health = 2200;

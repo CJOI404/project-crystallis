@@ -13,6 +13,7 @@ enum CombatState {
 class CombatInstance {
 
     public:
+    
 
         std::vector<Character*> team;
         std::vector<Character*> enemies;

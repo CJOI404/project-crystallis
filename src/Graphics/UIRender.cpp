@@ -110,9 +110,11 @@ namespace UI {
 
         vertices[0].x = x;
         vertices[0].y = y;
+        vertices[0].z = 0;
 
         vertices[1].x = x + w;
         vertices[1].y = y + h;
+        vertices[1].z = 0;
 
         sceGuColor(colour);
 

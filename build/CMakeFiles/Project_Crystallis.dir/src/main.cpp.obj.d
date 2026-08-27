@@ -195,6 +195,10 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_queue.h \
  /mnt/d/project-crystallis/include/graphics/Sprite.h \
  /mnt/d/project-crystallis/include/graphics/Texture.h \
+ /mnt/d/project-crystallis/include/graphics/Mesh.h \
+ /home/calvi/pspdev/psp/sdk/include/pspgum.h \
+ /home/calvi/pspdev/psp/include/malloc.h \
+ /home/calvi/pspdev/psp/include/machine/malloc.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/ctime \
  /mnt/d/project-crystallis/include/graphics/UIRender.h \
  /mnt/d/project-crystallis/include/graphics/TextureManager.h \
@@ -216,6 +220,9 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /mnt/d/project-crystallis/include/CombatInstance.h \
  /mnt/d/project-crystallis/include/Menu.h \
  /mnt/d/project-crystallis/include/MainMenu.h \
+ /mnt/d/project-crystallis/include/graphics/MeshManager.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstring \
+ /mnt/d/project-crystallis/include/graphics/RenderState.h \
  /home/calvi/pspdev/psp/include/stb_image.h \
  /home/calvi/pspdev/psp/include/assert.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/iomanip \

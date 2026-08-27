@@ -113,7 +113,9 @@ CMakeFiles/Project_Crystallis.dir/src/AttackCommand.cpp.obj: /mnt/d/project-crys
   /home/calvi/pspdev/psp/include/machine/_default_types.h \
   /home/calvi/pspdev/psp/include/machine/_types.h \
   /home/calvi/pspdev/psp/include/machine/ieeefp.h \
+  /home/calvi/pspdev/psp/include/machine/malloc.h \
   /home/calvi/pspdev/psp/include/machine/stdlib.h \
+  /home/calvi/pspdev/psp/include/malloc.h \
   /home/calvi/pspdev/psp/include/math.h \
   /home/calvi/pspdev/psp/include/newlib.h \
   /home/calvi/pspdev/psp/include/stdint.h \
@@ -134,6 +136,10 @@ CMakeFiles/Project_Crystallis.dir/src/AttackCommand.cpp.obj: /mnt/d/project-crys
   /home/calvi/pspdev/psp/include/sys/stdio.h \
   /home/calvi/pspdev/psp/include/sys/string.h \
   /home/calvi/pspdev/psp/include/wchar.h \
+  /home/calvi/pspdev/psp/sdk/include/pspge.h \
+  /home/calvi/pspdev/psp/sdk/include/pspgu.h \
+  /home/calvi/pspdev/psp/sdk/include/pspgum.h \
+  /home/calvi/pspdev/psp/sdk/include/psptypes.h \
   /mnt/d/project-crystallis/include/AttackCommand.h \
   /mnt/d/project-crystallis/include/BattleCommand.h \
   /mnt/d/project-crystallis/include/Character.h \
@@ -141,6 +147,7 @@ CMakeFiles/Project_Crystallis.dir/src/AttackCommand.cpp.obj: /mnt/d/project-crys
   /mnt/d/project-crystallis/include/GameActor.h \
   /mnt/d/project-crystallis/include/GlobalDefs.h \
   /mnt/d/project-crystallis/include/MovementComponent.h \
+  /mnt/d/project-crystallis/include/graphics/Mesh.h \
   /mnt/d/project-crystallis/include/graphics/Sprite.h \
   /mnt/d/project-crystallis/include/graphics/Texture.h
 
@@ -263,7 +270,9 @@ CMakeFiles/Project_Crystallis.dir/src/Character.cpp.obj: /mnt/d/project-crystall
   /home/calvi/pspdev/psp/include/machine/_default_types.h \
   /home/calvi/pspdev/psp/include/machine/_types.h \
   /home/calvi/pspdev/psp/include/machine/ieeefp.h \
+  /home/calvi/pspdev/psp/include/machine/malloc.h \
   /home/calvi/pspdev/psp/include/machine/stdlib.h \
+  /home/calvi/pspdev/psp/include/malloc.h \
   /home/calvi/pspdev/psp/include/math.h \
   /home/calvi/pspdev/psp/include/newlib.h \
   /home/calvi/pspdev/psp/include/stdint.h \
@@ -283,6 +292,7 @@ CMakeFiles/Project_Crystallis.dir/src/Character.cpp.obj: /mnt/d/project-crystall
   /home/calvi/pspdev/psp/include/wchar.h \
   /home/calvi/pspdev/psp/sdk/include/pspge.h \
   /home/calvi/pspdev/psp/sdk/include/pspgu.h \
+  /home/calvi/pspdev/psp/sdk/include/pspgum.h \
   /home/calvi/pspdev/psp/sdk/include/psptypes.h \
   /mnt/d/project-crystallis/include/AttackCommand.h \
   /mnt/d/project-crystallis/include/BattleCommand.h \
@@ -292,6 +302,8 @@ CMakeFiles/Project_Crystallis.dir/src/Character.cpp.obj: /mnt/d/project-crystall
   /mnt/d/project-crystallis/include/GameActor.h \
   /mnt/d/project-crystallis/include/GlobalDefs.h \
   /mnt/d/project-crystallis/include/MovementComponent.h \
+  /mnt/d/project-crystallis/include/graphics/Mesh.h \
+  /mnt/d/project-crystallis/include/graphics/Renderer.h \
   /mnt/d/project-crystallis/include/graphics/Sprite.h \
   /mnt/d/project-crystallis/include/graphics/Texture.h \
   /mnt/d/project-crystallis/include/graphics/TextureManager.h \
@@ -416,7 +428,9 @@ CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj: /mnt/d/project-cry
   /home/calvi/pspdev/psp/include/machine/_default_types.h \
   /home/calvi/pspdev/psp/include/machine/_types.h \
   /home/calvi/pspdev/psp/include/machine/ieeefp.h \
+  /home/calvi/pspdev/psp/include/machine/malloc.h \
   /home/calvi/pspdev/psp/include/machine/stdlib.h \
+  /home/calvi/pspdev/psp/include/malloc.h \
   /home/calvi/pspdev/psp/include/math.h \
   /home/calvi/pspdev/psp/include/newlib.h \
   /home/calvi/pspdev/psp/include/stdint.h \
@@ -437,6 +451,7 @@ CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj: /mnt/d/project-cry
   /home/calvi/pspdev/psp/sdk/include/pspctrl.h \
   /home/calvi/pspdev/psp/sdk/include/pspge.h \
   /home/calvi/pspdev/psp/sdk/include/pspgu.h \
+  /home/calvi/pspdev/psp/sdk/include/pspgum.h \
   /home/calvi/pspdev/psp/sdk/include/psptypes.h \
   /mnt/d/project-crystallis/include/BattleCommand.h \
   /mnt/d/project-crystallis/include/Character.h \
@@ -448,6 +463,7 @@ CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj: /mnt/d/project-cry
   /mnt/d/project-crystallis/include/Menu.h \
   /mnt/d/project-crystallis/include/MovementComponent.h \
   /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
+  /mnt/d/project-crystallis/include/graphics/Mesh.h \
   /mnt/d/project-crystallis/include/graphics/RenderState.h \
   /mnt/d/project-crystallis/include/graphics/Sprite.h \
   /mnt/d/project-crystallis/include/graphics/Texture.h \
@@ -610,10 +626,12 @@ CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj: /mnt/d/project-cr
   /home/calvi/pspdev/psp/include/machine/_types.h \
   /home/calvi/pspdev/psp/include/machine/endian.h \
   /home/calvi/pspdev/psp/include/machine/ieeefp.h \
+  /home/calvi/pspdev/psp/include/machine/malloc.h \
   /home/calvi/pspdev/psp/include/machine/setjmp.h \
   /home/calvi/pspdev/psp/include/machine/stdlib.h \
   /home/calvi/pspdev/psp/include/machine/time.h \
   /home/calvi/pspdev/psp/include/machine/types.h \
+  /home/calvi/pspdev/psp/include/malloc.h \
   /home/calvi/pspdev/psp/include/math.h \
   /home/calvi/pspdev/psp/include/newlib.h \
   /home/calvi/pspdev/psp/include/pte_types.h \
@@ -652,6 +670,10 @@ CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj: /mnt/d/project-cr
   /home/calvi/pspdev/psp/include/time.h \
   /home/calvi/pspdev/psp/include/wchar.h \
   /home/calvi/pspdev/psp/include/wctype.h \
+  /home/calvi/pspdev/psp/sdk/include/pspge.h \
+  /home/calvi/pspdev/psp/sdk/include/pspgu.h \
+  /home/calvi/pspdev/psp/sdk/include/pspgum.h \
+  /home/calvi/pspdev/psp/sdk/include/psptypes.h \
   /mnt/d/project-crystallis/include/AttackCommand.h \
   /mnt/d/project-crystallis/include/BattleCommand.h \
   /mnt/d/project-crystallis/include/Character.h \
@@ -660,6 +682,7 @@ CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj: /mnt/d/project-cr
   /mnt/d/project-crystallis/include/GameActor.h \
   /mnt/d/project-crystallis/include/GlobalDefs.h \
   /mnt/d/project-crystallis/include/MovementComponent.h \
+  /mnt/d/project-crystallis/include/graphics/Mesh.h \
   /mnt/d/project-crystallis/include/graphics/Sprite.h \
   /mnt/d/project-crystallis/include/graphics/Texture.h
 
@@ -1443,6 +1466,7 @@ CMakeFiles/Project_Crystallis.dir/src/MainMenu.cpp.obj: /mnt/d/project-crystalli
   /mnt/d/project-crystallis/include/GlobalDefs.h \
   /mnt/d/project-crystallis/include/InputHandler.h \
   /mnt/d/project-crystallis/include/MainMenu.h \
+  /mnt/d/project-crystallis/include/graphics/RenderState.h \
   /mnt/d/project-crystallis/include/graphics/Texture.h \
   /mnt/d/project-crystallis/include/graphics/TextureManager.h \
   /mnt/d/project-crystallis/include/graphics/UIRender.h
@@ -1566,7 +1590,9 @@ CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.obj: /mnt/d/project-crystallis/sr
   /home/calvi/pspdev/psp/include/machine/_default_types.h \
   /home/calvi/pspdev/psp/include/machine/_types.h \
   /home/calvi/pspdev/psp/include/machine/ieeefp.h \
+  /home/calvi/pspdev/psp/include/machine/malloc.h \
   /home/calvi/pspdev/psp/include/machine/stdlib.h \
+  /home/calvi/pspdev/psp/include/malloc.h \
   /home/calvi/pspdev/psp/include/math.h \
   /home/calvi/pspdev/psp/include/newlib.h \
   /home/calvi/pspdev/psp/include/stdint.h \
@@ -1586,6 +1612,7 @@ CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.obj: /mnt/d/project-crystallis/sr
   /home/calvi/pspdev/psp/include/wchar.h \
   /home/calvi/pspdev/psp/sdk/include/pspge.h \
   /home/calvi/pspdev/psp/sdk/include/pspgu.h \
+  /home/calvi/pspdev/psp/sdk/include/pspgum.h \
   /home/calvi/pspdev/psp/sdk/include/psptypes.h \
   /mnt/d/project-crystallis/include/AttackCommand.h \
   /mnt/d/project-crystallis/include/BattleCommand.h \
@@ -1596,6 +1623,7 @@ CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.obj: /mnt/d/project-crystallis/sr
   /mnt/d/project-crystallis/include/GlobalDefs.h \
   /mnt/d/project-crystallis/include/Menu.h \
   /mnt/d/project-crystallis/include/MovementComponent.h \
+  /mnt/d/project-crystallis/include/graphics/Mesh.h \
   /mnt/d/project-crystallis/include/graphics/Sprite.h \
   /mnt/d/project-crystallis/include/graphics/Texture.h \
   /mnt/d/project-crystallis/include/graphics/TextureManager.h \
@@ -1825,6 +1853,7 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
   /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cstdio \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cstdlib \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/cstring \
   /home/calvi/pspdev/psp/include/c++/15.1.1/ctime \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cwchar \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cwctype \
@@ -1898,10 +1927,12 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
   /home/calvi/pspdev/psp/include/machine/_types.h \
   /home/calvi/pspdev/psp/include/machine/endian.h \
   /home/calvi/pspdev/psp/include/machine/ieeefp.h \
+  /home/calvi/pspdev/psp/include/machine/malloc.h \
   /home/calvi/pspdev/psp/include/machine/setjmp.h \
   /home/calvi/pspdev/psp/include/machine/stdlib.h \
   /home/calvi/pspdev/psp/include/machine/time.h \
   /home/calvi/pspdev/psp/include/machine/types.h \
+  /home/calvi/pspdev/psp/include/malloc.h \
   /home/calvi/pspdev/psp/include/math.h \
   /home/calvi/pspdev/psp/include/memory.h \
   /home/calvi/pspdev/psp/include/newlib.h \
@@ -1948,6 +1979,7 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
   /home/calvi/pspdev/psp/sdk/include/pspdisplay.h \
   /home/calvi/pspdev/psp/sdk/include/pspge.h \
   /home/calvi/pspdev/psp/sdk/include/pspgu.h \
+  /home/calvi/pspdev/psp/sdk/include/pspgum.h \
   /home/calvi/pspdev/psp/sdk/include/pspintrman.h \
   /home/calvi/pspdev/psp/sdk/include/pspintrman_kernel.h \
   /home/calvi/pspdev/psp/sdk/include/pspiofilemgr.h \
@@ -1985,6 +2017,9 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
   /mnt/d/project-crystallis/include/MainMenu.h \
   /mnt/d/project-crystallis/include/Menu.h \
   /mnt/d/project-crystallis/include/MovementComponent.h \
+  /mnt/d/project-crystallis/include/graphics/Mesh.h \
+  /mnt/d/project-crystallis/include/graphics/MeshManager.h \
+  /mnt/d/project-crystallis/include/graphics/RenderState.h \
   /mnt/d/project-crystallis/include/graphics/Sprite.h \
   /mnt/d/project-crystallis/include/graphics/SpriteManager.h \
   /mnt/d/project-crystallis/include/graphics/Texture.h \
@@ -2038,6 +2073,14 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /mnt/d/project-crystallis/src/MainMenu.cpp:
 
+/mnt/d/project-crystallis/src/Graphics/UIRender.cpp:
+
+/home/calvi/pspdev/psp/sdk/include/pspthreadman.h:
+
+/home/calvi/pspdev/psp/sdk/include/pspsdk.h:
+
+/home/calvi/pspdev/psp/sdk/include/pspmodulemgr.h:
+
 /home/calvi/pspdev/psp/include/string.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_laguerre.tcc:
@@ -2049,8 +2092,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_uninitialized.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/range_access.h:
-
-/home/calvi/pspdev/psp/sdk/include/pspthreadman.h:
 
 /home/calvi/pspdev/psp/include/sys/_types.h:
 
@@ -2098,6 +2139,8 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/new:
 
+/mnt/d/project-crystallis/include/graphics/Renderer.h:
+
 /home/calvi/pspdev/psp/include/c++/15.1.1/debug/assertions.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++locale.h:
@@ -2141,6 +2184,8 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_queue.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_iterator_base_funcs.h:
+
+/mnt/d/project-crystallis/include/graphics/MeshManager.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/localefwd.h:
 
@@ -2224,16 +2269,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_numeric.h:
 
-/home/calvi/pspdev/psp/include/sys/errno.h:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_map.h:
-
-/home/calvi/pspdev/psp/include/machine/stdlib.h:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/ext/atomicity.h:
-
-/home/calvi/pspdev/psp/include/sys/syslimits.h:
-
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/vector.tcc:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/deque.tcc:
@@ -2266,6 +2301,10 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_heap.h:
 
+/home/calvi/pspdev/psp/sdk/include/pspsysmem.h:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/bits/enable_special_members.h:
+
 /home/calvi/pspdev/psp/include/locale.h:
 
 /home/calvi/pspdev/psp/sdk/include/pspkernel.h:
@@ -2288,14 +2327,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/include/sys/_pthreadtypes.h:
 
-/home/calvi/pspdev/psp/include/c++/15.1.1/bits/enable_special_members.h:
-
-/home/calvi/pspdev/psp/sdk/include/pspsysmem.h:
-
-/home/calvi/pspdev/psp/include/stdio.h:
-
-/home/calvi/pspdev/psp/include/sys/_locale.h:
-
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/alloc_traits.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/codecvt.h:
@@ -2305,10 +2336,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/basic_string.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/new_allocator.h:
-
-/home/calvi/pspdev/psp/include/sys/config.h:
-
-/home/calvi/pspdev/psp/include/sys/_intsup.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/cerrno:
 
@@ -2350,6 +2377,8 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bit:
 
+/home/calvi/pspdev/psp/include/machine/malloc.h:
+
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/ptr_traits.h:
 
 /home/calvi/pspdev/psp/sdk/include/pspmodulemgr_kernel.h:
@@ -2362,6 +2391,8 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_vector.h:
 
+/home/calvi/pspdev/psp/sdk/include/pspgum.h:
+
 /home/calvi/pspdev/psp/include/sys/time.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/initializer_list:
@@ -2369,6 +2400,14 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/string_view.tcc:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/pstl/execution_defs.h:
+
+/home/calvi/pspdev/psp/include/stdio.h:
+
+/home/calvi/pspdev/psp/include/sys/_locale.h:
+
+/home/calvi/pspdev/psp/include/sys/_intsup.h:
+
+/home/calvi/pspdev/psp/include/sys/config.h:
 
 /home/calvi/pspdev/psp/include/sys/stdio.h:
 
@@ -2382,11 +2421,25 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /mnt/d/project-crystallis/src/Graphics/RenderState.cpp:
 
+/home/calvi/pspdev/psp/include/sys/errno.h:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_map.h:
+
+/home/calvi/pspdev/psp/include/machine/stdlib.h:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/ext/atomicity.h:
+
+/home/calvi/pspdev/psp/include/sys/syslimits.h:
+
 /home/calvi/pspdev/psp/include/strings.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/deque:
 
 /home/calvi/pspdev/psp/include/sys/string.h:
+
+/home/calvi/pspdev/psp/sdk/include/pspge.h:
+
+/home/calvi/pspdev/psp/sdk/include/psptypes.h:
 
 /mnt/d/project-crystallis/include/BattleCommand.h:
 
@@ -2440,10 +2493,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/unordered_map:
 
-/home/calvi/pspdev/psp/sdk/include/pspge.h:
-
-/home/calvi/pspdev/psp/sdk/include/psptypes.h:
-
 /mnt/d/project-crystallis/include/InputHandler.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/stdexcept:
@@ -2451,6 +2500,8 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/c++/15.1.1/istream:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/ext/numeric_traits.h:
+
+/home/calvi/pspdev/psp/include/malloc.h:
 
 /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h:
 
@@ -2530,6 +2581,8 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/include/_ansi.h:
 
+/mnt/d/project-crystallis/include/graphics/Mesh.h:
+
 /home/calvi/pspdev/psp/include/c++/15.1.1/typeinfo:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/memory_resource.h:
@@ -2585,9 +2638,3 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/sys/lock.h:
 
 /home/calvi/pspdev/psp/sdk/include/pspdebug.h:
-
-/home/calvi/pspdev/psp/sdk/include/pspmodulemgr.h:
-
-/home/calvi/pspdev/psp/sdk/include/pspsdk.h:
-
-/mnt/d/project-crystallis/src/Graphics/UIRender.cpp:

@@ -19,6 +19,7 @@ void Texture::draw(float x, float y, float width, float height, uint32_t colour 
 
     //enable transparency
     sceGuEnable(GU_BLEND);
+    // sceGuDisable(GU_DEPTH_TEST);
     sceGuBlendFunc(GU_ADD, GU_SRC_ALPHA, GU_ONE_MINUS_SRC_ALPHA, 0, 0);
 
     sceGuEnable(GU_TEXTURE_2D); 

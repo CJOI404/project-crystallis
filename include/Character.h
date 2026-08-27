@@ -6,6 +6,7 @@
 #include <string>
 #include <queue>
 #include "graphics/Sprite.h"
+#include "graphics/Mesh.h"
 
 enum CharacterState{
     Attacking,
@@ -19,6 +20,7 @@ class Character : public GameActor {
 
     public:
         Sprite* sprite = nullptr;
+        Mesh* mesh = nullptr;
 
 
         BattleCommand* currCommand = nullptr;
@@ -113,6 +115,7 @@ class Character : public GameActor {
 
         void update(float dt) override;
         void render(float dt) override;
+        void render3D(float dt);
 
         void drawHealth();
 
