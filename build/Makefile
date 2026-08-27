@@ -274,6 +274,78 @@ src/GlobalDefs.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.s
 .PHONY : src/GlobalDefs.cpp.s
 
+src/Graphics/RenderState.obj: src/Graphics/RenderState.cpp.obj
+.PHONY : src/Graphics/RenderState.obj
+
+# target to build an object file
+src/Graphics/RenderState.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderState.cpp.obj
+.PHONY : src/Graphics/RenderState.cpp.obj
+
+src/Graphics/RenderState.i: src/Graphics/RenderState.cpp.i
+.PHONY : src/Graphics/RenderState.i
+
+# target to preprocess a source file
+src/Graphics/RenderState.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderState.cpp.i
+.PHONY : src/Graphics/RenderState.cpp.i
+
+src/Graphics/RenderState.s: src/Graphics/RenderState.cpp.s
+.PHONY : src/Graphics/RenderState.s
+
+# target to generate assembly for a file
+src/Graphics/RenderState.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderState.cpp.s
+.PHONY : src/Graphics/RenderState.cpp.s
+
+src/Graphics/Sprite.obj: src/Graphics/Sprite.cpp.obj
+.PHONY : src/Graphics/Sprite.obj
+
+# target to build an object file
+src/Graphics/Sprite.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/Sprite.cpp.obj
+.PHONY : src/Graphics/Sprite.cpp.obj
+
+src/Graphics/Sprite.i: src/Graphics/Sprite.cpp.i
+.PHONY : src/Graphics/Sprite.i
+
+# target to preprocess a source file
+src/Graphics/Sprite.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/Sprite.cpp.i
+.PHONY : src/Graphics/Sprite.cpp.i
+
+src/Graphics/Sprite.s: src/Graphics/Sprite.cpp.s
+.PHONY : src/Graphics/Sprite.s
+
+# target to generate assembly for a file
+src/Graphics/Sprite.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/Sprite.cpp.s
+.PHONY : src/Graphics/Sprite.cpp.s
+
+src/Graphics/SpriteManager.obj: src/Graphics/SpriteManager.cpp.obj
+.PHONY : src/Graphics/SpriteManager.obj
+
+# target to build an object file
+src/Graphics/SpriteManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/SpriteManager.cpp.obj
+.PHONY : src/Graphics/SpriteManager.cpp.obj
+
+src/Graphics/SpriteManager.i: src/Graphics/SpriteManager.cpp.i
+.PHONY : src/Graphics/SpriteManager.i
+
+# target to preprocess a source file
+src/Graphics/SpriteManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/SpriteManager.cpp.i
+.PHONY : src/Graphics/SpriteManager.cpp.i
+
+src/Graphics/SpriteManager.s: src/Graphics/SpriteManager.cpp.s
+.PHONY : src/Graphics/SpriteManager.s
+
+# target to generate assembly for a file
+src/Graphics/SpriteManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/SpriteManager.cpp.s
+.PHONY : src/Graphics/SpriteManager.cpp.s
+
 src/Graphics/Texture.obj: src/Graphics/Texture.cpp.obj
 .PHONY : src/Graphics/Texture.obj
 
@@ -493,6 +565,15 @@ help:
 	@echo "... src/GlobalDefs.obj"
 	@echo "... src/GlobalDefs.i"
 	@echo "... src/GlobalDefs.s"
+	@echo "... src/Graphics/RenderState.obj"
+	@echo "... src/Graphics/RenderState.i"
+	@echo "... src/Graphics/RenderState.s"
+	@echo "... src/Graphics/Sprite.obj"
+	@echo "... src/Graphics/Sprite.i"
+	@echo "... src/Graphics/Sprite.s"
+	@echo "... src/Graphics/SpriteManager.obj"
+	@echo "... src/Graphics/SpriteManager.i"
+	@echo "... src/Graphics/SpriteManager.s"
 	@echo "... src/Graphics/Texture.obj"
 	@echo "... src/Graphics/Texture.i"
 	@echo "... src/Graphics/Texture.s"

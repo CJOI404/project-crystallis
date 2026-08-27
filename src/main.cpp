@@ -12,6 +12,7 @@
 #include <ctime>
 #include <string>
 #include "graphics/UIRender.h"
+#include "graphics/SpriteManager.h"
 #include "CommandRegistry.h"
 #include "GlobalDefs.h"
 #include "CombatInstance.h"
@@ -292,7 +293,7 @@ int main() {
         {
             printf("FPS: %d\n", frameCount);
             fflush(stdout);
-            
+
             frameCount = 0;
             fpsTimer = 0.0f;
         }
@@ -309,6 +310,13 @@ int main() {
 
             if (mainMenu.startFlag){
 
+                Texture* spritesheet = TextureManager::load("testspritesheet.png", 128);
+
+                SpriteManager::registerSprite("topleft", spritesheet, 0, 0, 64, 64);
+                SpriteManager::registerSprite("topright", spritesheet, 64, 0, 64, 64);
+                SpriteManager::registerSprite("bottomleft", spritesheet, 0, 64, 64, 64);
+                SpriteManager::registerSprite("bottomright", spritesheet, 64, 64, 64, 64);
+
                 //Initialize characters
                 team.clear();
                 enemies.clear();
@@ -318,6 +326,7 @@ int main() {
                 playerCharacter.maxHealth = 2000;
                 playerCharacter.name = "LIGHTNING";
                 playerCharacter.currentRole = Role::COMMANDO;
+                playerCharacter.sprite = SpriteManager::getSprite("topleft");
 
                 // Character character2;
                 character2.health = 2200;
@@ -326,6 +335,7 @@ int main() {
                 character2.yPos = 100;
                 character2.name = "SAZH";
                 character2.currentRole = Role::RAVAGER;
+                character2.sprite = SpriteManager::getSprite("bottomright");
  
                 // Character character3;
                 character3.health = 1700;
@@ -334,6 +344,7 @@ int main() {
                 character3.yPos = 150;
                 character3.name = "VANILLE";
                 character3.currentRole = Role::SABOTEUR;
+                character3.sprite = SpriteManager::getSprite("bottomleft");
 
                 // Character enemy;
                 enemy.moveComp->color = Colours::BLUE;
@@ -344,6 +355,7 @@ int main() {
                 enemy.maxHealth = 45000;
                 enemy.staggerPoint = 250;
                 enemy.drawHealthBar = true;
+                enemy.sprite = SpriteManager::getSprite("topright");
 
                 // Character enemy2;
                 enemy2.moveComp->color = Colours::BLUE;

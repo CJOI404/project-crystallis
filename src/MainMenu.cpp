@@ -40,7 +40,7 @@ void MainMenu::render(float dt){
 
     UI::drawRect(0, 0, 480, 272, 0xFFFFFFFF);
     // UI::drawSprite(112, -40, 1, 1, 0x00000000, 1, 1);
-    logo->draw(50, -80, 400, 400);
+    logo->draw(50, -80, 400, 400, 0xFFFFFFFF);
 
 
     Colours colour = Colours::LIGHTGREY;

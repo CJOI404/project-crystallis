@@ -1,0 +1,18 @@
+CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderState.cpp.obj: \
+ /mnt/d/project-crystallis/src/Graphics/RenderState.cpp \
+ /mnt/d/project-crystallis/include/graphics/RenderState.h \
+ /home/calvi/pspdev/psp/sdk/include/pspgu.h \
+ /home/calvi/pspdev/psp/sdk/include/psptypes.h \
+ /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h \
+ /home/calvi/pspdev/psp/include/stdint.h \
+ /home/calvi/pspdev/psp/include/machine/_default_types.h \
+ /home/calvi/pspdev/psp/include/sys/features.h \
+ /home/calvi/pspdev/psp/include/_newlib_version.h \
+ /home/calvi/pspdev/psp/include/sys/_intsup.h \
+ /home/calvi/pspdev/psp/include/sys/_stdint.h \
+ /home/calvi/pspdev/psp/sdk/include/pspge.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++config.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/os_defines.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/cpu_defines.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/pstl/pstl_config.h

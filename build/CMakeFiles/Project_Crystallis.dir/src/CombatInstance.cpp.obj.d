@@ -136,8 +136,9 @@ CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/deque.tcc \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_heap.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_queue.h \
- /mnt/d/project-crystallis/include/Menu.h \
+ /mnt/d/project-crystallis/include/graphics/Sprite.h \
  /mnt/d/project-crystallis/include/graphics/Texture.h \
+ /mnt/d/project-crystallis/include/Menu.h \
  /mnt/d/project-crystallis/include/graphics/UIRender.h \
  /home/calvi/pspdev/psp/sdk/include/pspgu.h \
  /home/calvi/pspdev/psp/sdk/include/psptypes.h \
@@ -151,5 +152,7 @@ CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/enable_special_members.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/node_handle.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/erase_if.h \
+ /mnt/d/project-crystallis/include/graphics/RenderState.h \
+ /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
  /mnt/d/project-crystallis/include/InputHandler.h \
  /home/calvi/pspdev/psp/sdk/include/pspctrl.h

@@ -266,12 +266,18 @@ void Character::update(float dt){
 }
 
 void Character::render(float dt){
+
     UI::drawRect(xPos, yPos, 20, 20, moveComp->color);
     snprintf(UI::textBuffer, sizeof(UI::textBuffer), name);
     UI::drawString(xPos, yPos, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer); 
 
     if (drawHealthBar) drawHealth();
 
+    if (sprite == nullptr){
+        return;
+    }
+
+    sprite->draw(xPos, yPos, 20, 20, 0xFFFFFFFF);
 }
 
 void Character::drawHealth(){

@@ -5,6 +5,7 @@
 #include "GlobalDefs.h"
 #include <string>
 #include <queue>
+#include "graphics/Sprite.h"
 
 enum CharacterState{
     Attacking,
@@ -17,6 +18,9 @@ class Character : public GameActor {
 
 
     public:
+        Sprite* sprite = nullptr;
+
+
         BattleCommand* currCommand = nullptr;
         BattleCommand* prevCommand = nullptr;
 

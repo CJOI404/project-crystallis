@@ -1,0 +1,34 @@
+CMakeFiles/Project_Crystallis.dir/src/Graphics/Sprite.cpp.obj: \
+ /mnt/d/project-crystallis/src/Graphics/Sprite.cpp \
+ /mnt/d/project-crystallis/include/graphics/Sprite.h \
+ /mnt/d/project-crystallis/include/graphics/Texture.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++config.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/os_defines.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/cpu_defines.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/pstl/pstl_config.h \
+ /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h \
+ /home/calvi/pspdev/psp/include/stdint.h \
+ /home/calvi/pspdev/psp/include/machine/_default_types.h \
+ /home/calvi/pspdev/psp/include/sys/features.h \
+ /home/calvi/pspdev/psp/include/_newlib_version.h \
+ /home/calvi/pspdev/psp/include/sys/_intsup.h \
+ /home/calvi/pspdev/psp/include/sys/_stdint.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstdio \
+ /home/calvi/pspdev/psp/include/stdio.h \
+ /home/calvi/pspdev/psp/include/_ansi.h \
+ /home/calvi/pspdev/psp/include/newlib.h \
+ /home/calvi/pspdev/psp/include/sys/config.h \
+ /home/calvi/pspdev/psp/include/machine/ieeefp.h \
+ /home/calvi/pspdev/psp/include/sys/cdefs.h \
+ /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stddef.h \
+ /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdarg.h \
+ /home/calvi/pspdev/psp/include/sys/reent.h \
+ /home/calvi/pspdev/psp/include/_ansi.h \
+ /home/calvi/pspdev/psp/include/sys/_types.h \
+ /home/calvi/pspdev/psp/include/machine/_types.h \
+ /home/calvi/pspdev/psp/include/sys/lock.h \
+ /home/calvi/pspdev/psp/include/sys/stdio.h \
+ /home/calvi/pspdev/psp/sdk/include/pspgu.h \
+ /home/calvi/pspdev/psp/sdk/include/psptypes.h \
+ /home/calvi/pspdev/psp/sdk/include/pspge.h

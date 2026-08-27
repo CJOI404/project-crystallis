@@ -193,6 +193,8 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/vector.tcc \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_heap.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_queue.h \
+ /mnt/d/project-crystallis/include/graphics/Sprite.h \
+ /mnt/d/project-crystallis/include/graphics/Texture.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/ctime \
  /mnt/d/project-crystallis/include/graphics/UIRender.h \
  /mnt/d/project-crystallis/include/graphics/TextureManager.h \
@@ -204,7 +206,11 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/enable_special_members.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/node_handle.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/erase_if.h \
- /mnt/d/project-crystallis/include/graphics/Texture.h \
+ /mnt/d/project-crystallis/include/graphics/SpriteManager.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/map \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_tree.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_map.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_multimap.h \
  /mnt/d/project-crystallis/include/CommandRegistry.h \
  /mnt/d/project-crystallis/include/AttackCommand.h \
  /mnt/d/project-crystallis/include/CombatInstance.h \

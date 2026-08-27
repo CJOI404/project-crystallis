@@ -38,4 +38,6 @@ class CombatInstance {
         void render(float dt);
 
         Texture* background;
+
+        Texture* testlogo;
 };

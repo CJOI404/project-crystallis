@@ -1,6 +1,8 @@
 #include "CombatInstance.h"
 #include "Menu.h"
 #include "graphics/UIRender.h"
+#include "graphics/RenderState.h"
+#include "graphics/GraphicsUtils.h"
 #include "InputHandler.h"
 
 
@@ -18,6 +20,7 @@ CombatInstance::CombatInstance(std::vector<Character*> team, std::vector<Charact
     scanIdx = 0;
 
     background = TextureManager::load("background.png", 512);
+    testlogo = TextureManager::load("logo256.png", 256);
 
 }
 
@@ -151,12 +154,19 @@ void CombatInstance::update(float dt){
 }
 
 void CombatInstance::render(float dt){
-    background->draw(0, 0, 512, 512);
+
+    RenderState::setBlendMode(BLEND_NONE);
+    background->draw(0, 0, 512, 512, GraphicsUtils::ColourRGBA(255, 127, 30, 1.0f));
+
+    RenderState::setBlendMode(BLEND_ALPHA);
+    testlogo->draw(100, 100, 100, 100, GraphicsUtils::ColourRGBA(255, 255, 255, 0.5f));
+
 
     //RENDER
     for (int i = 0; i < team.size(); i++){
         team[i]->render(dt);
     }
+
     for (int i = 0; i < enemies.size(); i++){
         enemies[i]->render(dt);
     }

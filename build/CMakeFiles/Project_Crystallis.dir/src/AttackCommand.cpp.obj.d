@@ -136,6 +136,8 @@ CMakeFiles/Project_Crystallis.dir/src/AttackCommand.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/vector.tcc \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_heap.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_queue.h \
+ /mnt/d/project-crystallis/include/graphics/Sprite.h \
+ /mnt/d/project-crystallis/include/graphics/Texture.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstring \
  /home/calvi/pspdev/psp/include/string.h \
  /home/calvi/pspdev/psp/include/strings.h \

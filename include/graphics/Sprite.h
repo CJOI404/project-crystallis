@@ -3,11 +3,10 @@
 
 typedef struct {
     Texture* texture;
-    int u;
-    int v;
+    int u0, u1, v0, v1;
     int width;
     int height;  
 
-    void draw();
+    void draw(float x, float y, float width, float height, uint32_t colour);
 
 } Sprite;

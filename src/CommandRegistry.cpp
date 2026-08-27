@@ -2,17 +2,6 @@
 #include <fstream>
 #include <cstring>
 
-
-
-
-// CommandRegistry::CommandRegistry(){
-// }
-// CommandRegistry::~CommandRegistry(){
-//     for (BattleCommand* p : commandList){
-//         delete p;
-//     }
-// }
-
 namespace Commands{
 
     std::vector<BattleCommand*> commandList;

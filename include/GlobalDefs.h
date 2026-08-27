@@ -137,10 +137,3 @@ typedef struct {
     unsigned short u, v;
     short x, y, z;
 } Vertex;
-
-typedef struct
-{
-    float u, v;
-    unsigned int colour;
-    float x, y, z;
-} TextureVertex;
