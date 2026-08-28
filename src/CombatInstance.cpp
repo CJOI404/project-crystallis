@@ -164,16 +164,20 @@ void CombatInstance::render(float dt){
     //Opaque 3d render
     RenderState::setDepthState(DepthState::DEPTH_READ_WRITE);
     RenderState::setBlendMode(BLEND_NONE);
+        for (int i = 0; i < enemies.size(); i++){
+        enemies[i]->render3D(dt);
+    }
     for (int i = 0; i < team.size(); i++){
         team[i]->render3D(dt);
     }
+
 
     //translucent 3d render
 
     //2d UI render
     RenderState::setDepthState(DEPTH_DISABLED);
     RenderState::setBlendMode(BLEND_ALPHA);
-    testlogo->draw(100, 100, 100, 100, GraphicsUtils::ColourRGBA(255, 255, 255, 0.5f));
+    // testlogo->draw(100, 100, 100, 100, GraphicsUtils::ColourRGBA(255, 255, 255, 0.5f));
 
     // RenderState::setDepthState(DepthState::DEPTH_READ_WRITE);
     //RENDER

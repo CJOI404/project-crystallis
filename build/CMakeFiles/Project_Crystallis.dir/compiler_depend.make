@@ -326,6 +326,7 @@ CMakeFiles/Project_Crystallis.dir/src/Character.cpp.obj: /mnt/d/project-crystall
   /mnt/d/project-crystallis/include/GlobalDefs.h \
   /mnt/d/project-crystallis/include/MovementComponent.h \
   /mnt/d/project-crystallis/include/graphics/Mesh.h \
+  /mnt/d/project-crystallis/include/graphics/RenderState.h \
   /mnt/d/project-crystallis/include/graphics/Renderer.h \
   /mnt/d/project-crystallis/include/graphics/Sprite.h \
   /mnt/d/project-crystallis/include/graphics/Texture.h \
@@ -858,7 +859,8 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderState.cpp.obj: /mnt/d/proje
   /home/calvi/pspdev/psp/sdk/include/pspge.h \
   /home/calvi/pspdev/psp/sdk/include/pspgu.h \
   /home/calvi/pspdev/psp/sdk/include/psptypes.h \
-  /mnt/d/project-crystallis/include/graphics/RenderState.h
+  /mnt/d/project-crystallis/include/graphics/RenderState.h \
+  /mnt/d/project-crystallis/include/graphics/Texture.h
 
 CMakeFiles/Project_Crystallis.dir/src/Graphics/Sprite.cpp.obj: /mnt/d/project-crystallis/src/Graphics/Sprite.cpp \
   /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdarg.h \
@@ -1360,6 +1362,7 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/UIRender.cpp.obj: /mnt/d/project-
   /home/calvi/pspdev/psp/sdk/include/psptypes.h \
   /home/calvi/pspdev/psp/sdk/include/psputils.h \
   /mnt/d/project-crystallis/include/GlobalDefs.h \
+  /mnt/d/project-crystallis/include/graphics/RenderState.h \
   /mnt/d/project-crystallis/include/graphics/Texture.h \
   /mnt/d/project-crystallis/include/graphics/TextureManager.h \
   /mnt/d/project-crystallis/include/graphics/UIRender.h

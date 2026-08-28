@@ -4,6 +4,7 @@ namespace RenderState {
     static BlendMode currentBlendMode = BLEND_UNKNOWN;
     static DepthState currentDepthMode = DEPTH_UNKNOWN;
     static CullMode currentCullMode = CULL_UNKNOWN;
+    static Texture* currentTexture = nullptr;
 
     // static const void* currentTexture = nullptr;
 
@@ -82,4 +83,12 @@ namespace RenderState {
             sceGuFrontFace(mode == CULL_CW ? GU_CW : GU_CCW);
         }
     }
+
+    void bindTexture(Texture* texture){
+        if (currentTexture != texture){
+            sceGuTexImage(0, texture->width, texture->height, texture->width, texture->data);
+            currentTexture = texture;
+        }
+    }
+
 }

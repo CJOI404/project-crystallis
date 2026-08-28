@@ -93,7 +93,7 @@ void initGu(){
     sceGumLoadIdentity();
     sceGumPerspective(75.0f, 480.0f / 272.0f, 0.5f, 1000.0f); // Field of view, Aspect ratio, Near, Far
 
-
+    
 
     // Start a new frame and enable the display
     sceGuFinish();
@@ -115,7 +115,7 @@ void startFrame(){
 
     RenderState::resetCache();
 
-                // View Matrix Setup (Run in your frame update)
+        // View Matrix Setup (Run in your frame update)
         sceGumMatrixMode(GU_VIEW);
         sceGumLoadIdentity();
         ScePspFVector3 pos = { 0.0f, 0.0f, -5.0f }; // Back up 5 units from origin
@@ -232,11 +232,8 @@ int main() {
             if (mainMenu.startFlag){
 
                 Texture* spritesheet = TextureManager::load("testspritesheet.png", 256, 128);
-                Mesh* myModel = MeshManager::loadOBJ("lightning.obj");
-
-                // printf("vertices: %s", myModel->vertices);
-                // printf("vertex count: %d", myModel->vertexCount);
-                // printf("vertices: %s", myModel->vertices);
+                Mesh* myModel = MeshManager::loadOBJ("Lightning/lightning.obj");
+                Texture* lightningTex = TextureManager::load("Lightning/Lightning_01.png", 256, 256);
 
                 SpriteManager::registerSprite("topleft", spritesheet, 0, 0, 64, 64);
                 SpriteManager::registerSprite("topright", spritesheet, 64, 0, 64, 64);
@@ -254,7 +251,7 @@ int main() {
                 playerCharacter.currentRole = Role::COMMANDO;
                 playerCharacter.sprite = SpriteManager::getSprite("topleft");
                 playerCharacter.mesh = myModel;
-                playerCharacter.meshTexture = TextureManager::load("Lightning_01.png", 256, 256);
+                playerCharacter.meshTexture = lightningTex;
 
                 // Character character2;
                 character2.health = 2200;
@@ -264,6 +261,7 @@ int main() {
                 character2.name = "SAZH";
                 character2.currentRole = Role::RAVAGER;
                 character2.sprite = SpriteManager::getSprite("bottomright");
+                
  
                 // Character character3;
                 character3.health = 1700;
@@ -276,14 +274,16 @@ int main() {
 
                 // Character enemy;
                 enemy.moveComp->color = Colours::BLUE;
-                enemy.xPos = 350;
-                enemy.yPos = 70;
+                enemy.xPos = 120;
+                enemy.yPos = 100;
                 enemy.name = "ENEMY 1";
                 enemy.health = 45000;
                 enemy.maxHealth = 45000;
                 enemy.staggerPoint = 250;
                 enemy.drawHealthBar = true;
                 enemy.sprite = SpriteManager::getSprite("topright");
+                enemy.mesh = myModel;
+                enemy.meshTexture = lightningTex;
 
                 // Character enemy2;
                 enemy2.moveComp->color = Colours::BLUE;

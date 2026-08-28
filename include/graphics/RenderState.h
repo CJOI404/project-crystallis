@@ -1,6 +1,7 @@
 #pragma once
 #include <pspgu.h>
 #include <cstdint>
+#include "Texture.h"
 
 enum BlendMode {
     BLEND_NONE,       // Disables blending (opaque geometry)
@@ -24,12 +25,16 @@ enum CullMode {
     CULL_UNKNOWN
 };
 
+enum TextureMode {
+    Tex_
+};
+
 namespace RenderState {
     void init();
     void setBlendMode(BlendMode mode);
     void setDepthState(DepthState state);
     void setCullMode(CullMode mode);
-    void bindTexture(const void* textureData, uint32_t width);
+    void bindTexture(Texture* texture);
     
     // Call at the very beginning of each frame loop
     void resetCache();

@@ -2,6 +2,7 @@
 #include <pspgu.h>
 #include <GlobalDefs.h>
 #include <psputils.h>
+#include "graphics/RenderState.h"
 
 void Texture::draw(float x, float y, float width, float height, uint32_t colour = 0xFFFFFFFF){
     if (this == nullptr){
@@ -15,7 +16,8 @@ void Texture::draw(float x, float y, float width, float height, uint32_t colour 
     sceGuTexMode(GU_PSM_8888, 0, 0, GU_TRUE);
     sceGuTexFunc(GU_TFX_MODULATE, GU_TCC_RGBA);
     
-    sceGuTexImage(0, this->width, this->height, this->width, this->data);
+    // sceGuTexImage(0, this->width, this->height, this->width, this->data);
+    RenderState::bindTexture(this);
 
     //enable transparency
     sceGuEnable(GU_BLEND);
@@ -61,7 +63,8 @@ void Texture::draw(float u1, float v1, float u2, float v2, float x, float y, flo
     sceGuTexMode(GU_PSM_8888, 0, 0, GU_TRUE);
     sceGuTexFunc(GU_TFX_MODULATE, GU_TCC_RGBA);
     
-    sceGuTexImage(0, this->width, this->height, this->width, this->data);
+    // sceGuTexImage(0, this->width, this->height, this->width, this->data);
+    RenderState::bindTexture(this);
 
     //enable transparency
     sceGuEnable(GU_BLEND);

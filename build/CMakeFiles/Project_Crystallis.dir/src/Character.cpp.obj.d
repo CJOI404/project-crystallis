@@ -178,5 +178,6 @@ CMakeFiles/Project_Crystallis.dir/src/Character.cpp.obj: \
  /home/calvi/pspdev/psp/include/signal.h \
  /home/calvi/pspdev/psp/include/sys/signal.h \
  /home/calvi/pspdev/psp/include/machine/_time.h \
+ /mnt/d/project-crystallis/include/graphics/RenderState.h \
  /mnt/d/project-crystallis/include/CommandRegistry.h \
  /mnt/d/project-crystallis/include/AttackCommand.h

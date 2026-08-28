@@ -15,8 +15,8 @@ namespace MeshManager{
             return nullptr;
         }
 
-        // Allocate larger temporary buffers (10,000 limit)
-        const int MAX_TEMP = 10000;
+        // Allocate temporary buffers
+        const int MAX_TEMP = 2000;
         auto temp_v  = (float(*)[3])malloc(sizeof(float) * 3 * MAX_TEMP);
         auto temp_vt = (float(*)[2])malloc(sizeof(float) * 2 * MAX_TEMP);
         auto temp_vn = (float(*)[3])malloc(sizeof(float) * 3 * MAX_TEMP);
@@ -29,38 +29,38 @@ namespace MeshManager{
 
         char line[256];
         while (fgets(line, sizeof(line), file)) {
-            // 1. Vertex Positions
+            //Vertex Positions
             if (line[0] == 'v' && line[1] == ' ') {
                 if (v_count < MAX_TEMP) {
                     sscanf(line, "v %f %f %f", &temp_v[v_count][0], &temp_v[v_count][1], &temp_v[v_count][2]);
                     v_count++;
                 }
             }
-            // 2. Texture Coordinates
+            //Texture Coordinates
             else if (line[0] == 'v' && line[1] == 't') {
                 if (vt_count < MAX_TEMP) {
                     sscanf(line, "vt %f %f", &temp_vt[vt_count][0], &temp_vt[vt_count][1]);
                     vt_count++;
                 }
             }
-            // 3. Vertex Normals
+            //Vertex Normals
             else if (line[0] == 'v' && line[1] == 'n') {
                 if (vn_count < MAX_TEMP) {
                     sscanf(line, "vn %f %f %f", &temp_vn[vn_count][0], &temp_vn[vn_count][1], &temp_vn[vn_count][2]);
                     vn_count++;
                 }
             }
-            // 4. Faces
+            //Faces
             else if (line[0] == 'f' && line[1] == ' ') {
                 int v_idx[3] = {0}, vt_idx[3] = {0}, vn_idx[3] = {0};
-                
-                // Try v/vt/vn format first
+            
+                //Try v/vt/vn format first
                 int matches = sscanf(line, "f %d/%d/%d %d/%d/%d %d/%d/%d",
                                     &v_idx[0], &vt_idx[0], &vn_idx[0],
                                     &v_idx[1], &vt_idx[1], &vn_idx[1],
                                     &v_idx[2], &vt_idx[2], &vn_idx[2]);
 
-                // Try v//vn format
+                //Try v//vn format
                 if (matches < 9) {
                     matches = sscanf(line, "f %d//%d %d//%d %d//%d",
                                     &v_idx[0], &vn_idx[0],
@@ -68,7 +68,7 @@ namespace MeshManager{
                                     &v_idx[2], &vn_idx[2]);
                 }
 
-                // Try v/vt format
+                //Try v/vt format
                 if (matches < 6) {
                     matches = sscanf(line, "f %d/%d %d/%d %d/%d",
                                     &v_idx[0], &vt_idx[0],
@@ -76,7 +76,7 @@ namespace MeshManager{
                                     &v_idx[2], &vt_idx[2]);
                 }
 
-                // Fallback for raw v format
+                //Fallback for raw v format
                 if (matches < 6) {
                     sscanf(line, "f %d %d %d", &v_idx[0], &v_idx[1], &v_idx[2]);
                 }

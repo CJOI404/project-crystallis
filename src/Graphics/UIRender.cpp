@@ -7,6 +7,7 @@
 #include <vector>
 #include <fstream>
 #include <GlobalDefs.h>
+#include "graphics/RenderState.h"
 
 namespace UI {
     FontChar fontData[128];
@@ -65,7 +66,8 @@ namespace UI {
 
         sceGuTexMode(GU_PSM_8888, 0, 0, GU_TRUE);
         sceGuTexFunc(GU_TFX_REPLACE, GU_TCC_RGBA);
-        sceGuTexImage(0, textWidth, textHeight, textWidth, fontTexture->data);
+        // sceGuTexImage(0, textWidth, textHeight, textWidth, fontTexture->data);
+        RenderState::bindTexture(fontTexture);
 
         //enable transparency
         sceGuEnable(GU_BLEND);

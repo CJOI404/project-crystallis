@@ -193,4 +193,5 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/UIRender.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/codecvt.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/basic_file.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++io.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/bits/fstream.tcc
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/fstream.tcc \
+ /mnt/d/project-crystallis/include/graphics/RenderState.h

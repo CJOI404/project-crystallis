@@ -15,4 +15,5 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderState.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++config.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/os_defines.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/cpu_defines.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/pstl/pstl_config.h
+ /home/calvi/pspdev/psp/include/c++/15.1.1/pstl/pstl_config.h \
+ /mnt/d/project-crystallis/include/graphics/Texture.h
