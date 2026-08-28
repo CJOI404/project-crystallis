@@ -99,5 +99,6 @@ void Texture::draw(float u1, float v1, float u2, float v2, float x, float y, flo
     sceGuDrawArray(GU_SPRITES, GU_COLOR_8888 | GU_TEXTURE_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_2D, 2, 0, vertices);
     
 
-    sceGuDisable(GU_TEXTURE_2D);
+    // sceGuDisable(GU_TEXTURE_2D);
+    RenderState::set(GU_TEXTURE_2D, false);
 }

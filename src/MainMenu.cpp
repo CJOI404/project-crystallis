@@ -56,7 +56,7 @@ void MainMenu::render(float dt){
 
         
         UI::drawRect(25, currY, 150, 20, colour);
-        UI::drawString(25, currY, 0x00000000, 0.5, 0.5, options[i]);
+        UI::drawString(25, currY, 0xFFFFFFFF, 0.5, 0.5, options[i]);
         currY += 25;
     }
 

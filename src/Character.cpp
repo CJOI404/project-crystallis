@@ -276,7 +276,7 @@ void Character::render(float dt){
 
     UI::drawRect(xPos, yPos, 20, 20, moveComp->color);
     snprintf(UI::textBuffer, sizeof(UI::textBuffer), name);
-    UI::drawString(xPos, yPos, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer); 
+    UI::drawString(xPos, yPos, 0xFF00FFFF, 0.3, 0.3, UI::textBuffer); 
 
     if (drawHealthBar) drawHealth();
 

@@ -157,8 +157,8 @@ void CombatInstance::render(float dt){
 
     //Background render
     RenderState::setDepthState(DEPTH_DISABLED);
-    RenderState::setBlendMode(BLEND_ALPHA);
-    background->draw(0, 0, 512, 512, GraphicsUtils::ColourRGBA(255, 255, 200, 0.8f));
+    RenderState::setBlendMode(BLEND_NONE);
+    background->draw(0, 0, 512, 512, GraphicsUtils::ColourRGBA(255, 255, 200, 1.0f));
 
 
     //Opaque 3d render
@@ -194,7 +194,9 @@ void CombatInstance::render(float dt){
     commandMenu.drawMenu();
 
     if (state == CombatState::SCAN){
+
         UI::drawRect(0, 0, 480, 272, 0xdc000000);
+
 
         // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", scannedEnemy->name);
         UI::drawString(20, 20, 0xFFFFFFFF, 0.6, 0.6, scannedEnemy->name);

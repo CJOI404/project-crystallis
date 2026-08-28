@@ -65,7 +65,7 @@ namespace UI {
         int currentX = x;
 
         sceGuTexMode(GU_PSM_8888, 0, 0, GU_TRUE);
-        sceGuTexFunc(GU_TFX_REPLACE, GU_TCC_RGBA);
+        sceGuTexFunc(GU_TFX_MODULATE, GU_TCC_RGBA);
         // sceGuTexImage(0, textWidth, textHeight, textWidth, fontTexture->data);
         RenderState::bindTexture(fontTexture);
 
@@ -78,7 +78,7 @@ namespace UI {
         RenderState::set(GU_TEXTURE_2D, true);
 
         TextureVertex* vertices = (TextureVertex*)sceGuGetMemory(text.length() * 2 * sizeof(TextureVertex));
-        
+
         int idx = 0;
 
         for (int i = 0; text[i] != '\0'; i++){
@@ -91,6 +91,7 @@ namespace UI {
             vertices[idx].x = currentX + (fontData[j].xoffset * xScale); 
             vertices[idx].y = y + (fontData[j].yoffset * yScale); 
             vertices[idx].z = 0;
+            vertices[idx].colour = color;
 
             // Bottom-Right
             vertices[idx+1].u = fontData[j].x + fontData[j].width; 
@@ -98,6 +99,7 @@ namespace UI {
             vertices[idx+1].x = currentX + ((fontData[j].width + fontData[j].xoffset) * xScale); 
             vertices[idx+1].y = y + ((fontData[j].height + fontData[j].yoffset) * yScale); 
             vertices[idx+1].z = 0;
+            vertices[idx+1].colour = color;
 
             idx += 2;
             currentX += fontData[j].xadvance * xScale;
@@ -110,7 +112,7 @@ namespace UI {
         
     }
 
-    void drawRect(float x, float y, float w, float h, unsigned int colour) {
+    void drawRect(short x, short y, short w, short h, unsigned int colour) {
 
         Vertex* vertices = (Vertex*)sceGuGetMemory(2 * sizeof(Vertex));
 
