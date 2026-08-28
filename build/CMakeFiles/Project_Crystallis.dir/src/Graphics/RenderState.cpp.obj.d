@@ -16,4 +16,25 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderState.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/os_defines.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/cpu_defines.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/pstl/pstl_config.h \
- /mnt/d/project-crystallis/include/graphics/Texture.h
+ /mnt/d/project-crystallis/include/graphics/Texture.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstdio \
+ /home/calvi/pspdev/psp/include/stdio.h \
+ /home/calvi/pspdev/psp/include/_ansi.h \
+ /home/calvi/pspdev/psp/include/newlib.h \
+ /home/calvi/pspdev/psp/include/sys/config.h \
+ /home/calvi/pspdev/psp/include/machine/ieeefp.h \
+ /home/calvi/pspdev/psp/include/sys/cdefs.h \
+ /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stddef.h \
+ /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdarg.h \
+ /home/calvi/pspdev/psp/include/sys/reent.h \
+ /home/calvi/pspdev/psp/include/_ansi.h \
+ /home/calvi/pspdev/psp/include/sys/_types.h \
+ /home/calvi/pspdev/psp/include/machine/_types.h \
+ /home/calvi/pspdev/psp/include/sys/lock.h \
+ /home/calvi/pspdev/psp/include/sys/stdio.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstring \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/version.h \
+ /home/calvi/pspdev/psp/include/string.h \
+ /home/calvi/pspdev/psp/include/sys/_locale.h \
+ /home/calvi/pspdev/psp/include/strings.h \
+ /home/calvi/pspdev/psp/include/sys/string.h

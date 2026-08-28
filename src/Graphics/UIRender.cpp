@@ -70,12 +70,15 @@ namespace UI {
         RenderState::bindTexture(fontTexture);
 
         //enable transparency
-        sceGuEnable(GU_BLEND);
+        // sceGuEnable(GU_BLEND);
+        RenderState::set(GU_BLEND, true);
         sceGuBlendFunc(GU_ADD, GU_SRC_ALPHA, GU_ONE_MINUS_SRC_ALPHA, 0, 0);
 
-        sceGuEnable(GU_TEXTURE_2D); 
+        // sceGuEnable(GU_TEXTURE_2D); 
+        RenderState::set(GU_TEXTURE_2D, true);
 
         TextureVertex* vertices = (TextureVertex*)sceGuGetMemory(text.length() * 2 * sizeof(TextureVertex));
+        
         int idx = 0;
 
         for (int i = 0; text[i] != '\0'; i++){
@@ -102,7 +105,8 @@ namespace UI {
 
         sceGuDrawArray(GU_SPRITES, GU_COLOR_8888 | GU_TEXTURE_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_2D, text.length() * 2, 0, vertices);
 
-        sceGuDisable(GU_TEXTURE_2D);
+        // sceGuDisable(GU_TEXTURE_2D);
+        RenderState::set(GU_TEXTURE_2D, false);
         
     }
 

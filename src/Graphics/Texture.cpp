@@ -20,11 +20,13 @@ void Texture::draw(float x, float y, float width, float height, uint32_t colour 
     RenderState::bindTexture(this);
 
     //enable transparency
-    sceGuEnable(GU_BLEND);
+    // sceGuEnable(GU_BLEND);
+    RenderState::set(GU_BLEND, true);
     // sceGuDisable(GU_DEPTH_TEST);
     sceGuBlendFunc(GU_ADD, GU_SRC_ALPHA, GU_ONE_MINUS_SRC_ALPHA, 0, 0);
 
-    sceGuEnable(GU_TEXTURE_2D); 
+    // sceGuEnable(GU_TEXTURE_2D); 
+    RenderState::set(GU_TEXTURE_2D, true);
 
     TextureVertex* vertices = (TextureVertex*)sceGuGetMemory(2 * sizeof(TextureVertex));
 
@@ -48,7 +50,8 @@ void Texture::draw(float x, float y, float width, float height, uint32_t colour 
     sceGuDrawArray(GU_SPRITES, GU_COLOR_8888 | GU_TEXTURE_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_2D, 2, 0, vertices);
     
 
-    sceGuDisable(GU_TEXTURE_2D);
+    // sceGuDisable(GU_TEXTURE_2D);
+    RenderState::set(GU_TEXTURE_2D, false);
 }
 
 void Texture::draw(float u1, float v1, float u2, float v2, float x, float y, float width, float height, uint32_t colour = 0xFFFFFFFF){
@@ -67,10 +70,12 @@ void Texture::draw(float u1, float v1, float u2, float v2, float x, float y, flo
     RenderState::bindTexture(this);
 
     //enable transparency
-    sceGuEnable(GU_BLEND);
+    // sceGuEnable(GU_BLEND);
+    RenderState::set(GU_BLEND, true);
     sceGuBlendFunc(GU_ADD, GU_SRC_ALPHA, GU_ONE_MINUS_SRC_ALPHA, 0, 0);
 
-    sceGuEnable(GU_TEXTURE_2D); 
+    // sceGuEnable(GU_TEXTURE_2D); 
+    RenderState::set(GU_TEXTURE_2D, true);
 
     TextureVertex* vertices = (TextureVertex*)sceGuGetMemory(2 * sizeof(TextureVertex));
 

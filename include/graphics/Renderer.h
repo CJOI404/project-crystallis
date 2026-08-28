@@ -11,9 +11,12 @@ namespace Renderer {
         if (!mesh || !mesh->vertices || mesh->vertexCount == 0) return;
 
         // 1. Set render state
-        sceGuDisable(GU_CULL_FACE);
-        sceGuDisable(GU_TEXTURE_2D);
-        sceGuDisable(GU_LIGHTING);
+        // sceGuDisable(GU_CULL_FACE);
+        // sceGuDisable(GU_TEXTURE_2D);
+        // sceGuDisable(GU_LIGHTING);
+        RenderState::set(GU_CULL_FACE, false);
+        RenderState::set(GU_TEXTURE_2D, false);
+        RenderState::set(GU_LIGHTING, false);
 
         // 2. Set solid render color (Green)
         sceGuColor(0xFFFFFFFF);
@@ -52,7 +55,8 @@ namespace Renderer {
         if (!mesh || !mesh->vertices || mesh->vertexCount == 0) return;
 
         //Enable 2D Texturing in the GU State
-        sceGuEnable(GU_TEXTURE_2D);
+        // sceGuEnable(GU_TEXTURE_2D);
+        RenderState::set(GU_TEXTURE_2D, true);
 
         //Bind texture details
         sceGuTexMode(GU_PSM_8888, 0, 0, GU_TRUE); 
