@@ -7,6 +7,8 @@
 #include "graphics/AssetManagers/MeshManager.h"
 #include "graphics/AssetManagers/SpriteManager.h"
 #include <pspgum.h>
+#include "Scenes/SceneManager.h"
+#include "Scenes/MainMenu.h"
 
 
 CombatInstance::CombatInstance(){
@@ -138,17 +140,14 @@ void CombatInstance::setTeam(std::vector<Character*> team){
 }
 
 void CombatInstance::update(float dt){
-    // Menu commandMenu;
 
     if (state == CombatState::BATTLE){
-        //DO MOVEMENT
+
         playerCharacter.moveComp->setAnalogueMoveVals(InputHandler::analogueX, InputHandler::analogueY);
 
-        // if (InputHandler::getButtonDown(PSP_CTRL_SQUARE) && playerCharacter->currAtbVal >= 1){
-        //     playerCharacter->moveComp->dash();
-        //     playerCharacter->currAtbVal -= 1;
-        // }
-
+        if (InputHandler::getButtonDown(PSP_CTRL_START)){
+            SceneManager::setNextScene(new MainMenu());
+        }
         if (InputHandler::getButtonDown(PSP_CTRL_DOWN)){
             commandMenu.cursorDown();
         }
@@ -195,6 +194,8 @@ void CombatInstance::update(float dt){
         }
 
     } else if (state == CombatState::SCAN){
+
+        enemies[scanIdx]->worldPos = {0.0f, -80.0f, -90.0f};
         
         if (InputHandler::getButtonDown(PSP_CTRL_RTRIGGER) || InputHandler::getButtonDown(PSP_CTRL_CIRCLE)){
             state = CombatState::BATTLE;
@@ -207,6 +208,10 @@ void CombatInstance::update(float dt){
         if (scanIdx < 0) scanIdx = (int)enemies.size() - 1;
 
         scannedEnemy = enemies[scanIdx];
+
+
+
+        // scannedEnemy->worldPos = {0.0f, 0.0f, -5.0f};
 
     }
     
@@ -247,6 +252,8 @@ void CombatInstance::render(float dt){
     }
 
     for (int i = 0; i < enemies.size(); i++){
+        ScePspFMatrix4 viewProjMatrix = GraphicsUtils::getViewProjectionMatrix();
+        enemies[i]->screenPos = GraphicsUtils::worldToScreen(enemies[i]->worldPos, viewProjMatrix);
         enemies[i]->render(dt);
     }
 
@@ -293,5 +300,14 @@ void CombatInstance::render(float dt){
 
 
 void CombatInstance::unload(){
+    TextureManager::unload("Lightning/Lightning_01.png");
 
+    TextureManager::unload("logo256.png");
+    TextureManager::unload("background.png");
+
+    TextureManager::unload("testspritesheet.png");
+    SpriteManager::unload("topleft.png");
+    SpriteManager::unload("topright.png");
+    SpriteManager::unload("bottomleft.png");
+    SpriteManager::unload("bottomright.png");
 }

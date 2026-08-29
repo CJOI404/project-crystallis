@@ -193,4 +193,6 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/map \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_tree.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_map.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_multimap.h
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_multimap.h \
+ /mnt/d/project-crystallis/include/Scenes/SceneManager.h \
+ /mnt/d/project-crystallis/include/Scenes/MainMenu.h

@@ -92,7 +92,11 @@ namespace TextureManager {
     {
         auto it = textures.find(texturePath);
 
-        if (it == textures.end()) return;
+        if (it == textures.end()){
+            printf("DID NOT UNLOAD. COULD NOT FIND %s\n", texturePath);
+            fflush(stdout);
+            return;
+        } 
 
         it->second.refCount--;
         if (it->second.refCount <= 0 && it->second.data) {
