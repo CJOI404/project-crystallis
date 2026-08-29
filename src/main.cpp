@@ -19,8 +19,8 @@
 #include "Scenes/MainMenu.h"
 #include "graphics/AssetManagers/MeshManager.h"
 #include "Scenes/SceneManager.h"
-#include "graphics/RenderState.h"
-#include "graphics/RenderQueue.h"
+#include "graphics/Pipeline/RenderState.h"
+#include "graphics/Pipeline/RenderQueue.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
@@ -163,31 +163,9 @@ int main() {
     float deltaTime = 0;
 
     running = 1;
-    
-    //writes to fixed text buffer
-    // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "Lightning Health: %d", playerCharacter.health);
-    // CombatInstance testInstance(team, enemies);
-    // testInstance.setEnemies(enemies);
-    // testInstance.setTeam(team);
-
-    // MainMenu mainMenu;
-    // CombatInstance* combatInstance = nullptr;
-
-
-    // std::vector<Character*> team;
-    // std::vector<Character*> enemies;
-
-    // Character playerCharacter;
-    // Character character2;
-    // Character character3;
-
-    // Character enemy;
-    // Character enemy2;
 
     float fpsTimer = 0.0f;
     int frameCount = 0;
-
-
 
     //Set beginning scene
     SceneManager::currentScene = new MainMenu();

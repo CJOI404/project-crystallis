@@ -2,7 +2,7 @@
 #include "graphics/AssetManagers/UIRender.h"
 #include "Entities/AttackCommand.h"
 #include "CommandRegistry.h"
-#include "graphics/RenderQueue.h"
+#include "graphics/Pipeline/RenderQueue.h"
 
 Menu::Menu(){
     x = 5;
@@ -266,10 +266,8 @@ void Menu::drawPage(int buttonWidth, int buttonHeight, int yButtonAmt, int casca
 
 void Menu::drawAtb(){
 
-    // UI::drawRect(5, 172, activeCharacter->atbSegments * 50, 10, Colours::LIGHTGREY);
     SubmitRect(&g_queue, 5, 172, activeCharacter->atbSegments * 50, 10, Colours::LIGHTGREY, GraphicsUtils::Layer::UI_3);
 
-    // UI::drawRect(5, 174, activeCharacter->currAtbVal * 50, 6, Colours::LIGHTBLUE);
     SubmitRect(&g_queue, 5, 174, activeCharacter->currAtbVal * 50, 6, Colours::LIGHTBLUE, GraphicsUtils::Layer::UI_3);
 }
 
@@ -282,9 +280,8 @@ void Menu::drawTeamStats(){
 
     for (int i = 0; i < activeCharacter->teamList.size(); i++){
         UI::drawHealthBar(currX + 80, currY + 2, 120, 6, activeCharacter->teamList.at(i)->health, activeCharacter->teamList.at(i)->maxHealth);
-        // UI::drawString(currX + 80, currY - 8, 0xFFFFFFFF, 0.3, 0.3, activeCharacter->teamList.at(i)->name);
+
         SubmitText(&g_queue, activeCharacter->teamList.at(i)->name, currX + 80, currY - 8, 0.3, 0.3, 0xFFFFFFFF, GraphicsUtils::Layer::UI_3);
-        // UI::drawString(currX + 150, currY - 8, 0xFFFFFFFF, 0.3, 0.3, roleToString(activeCharacter->teamList.at(i)->currentRole));
         SubmitText(&g_queue, roleToString(activeCharacter->teamList.at(i)->currentRole), currX + 150, currY - 8, 0.3, 0.3, 0xFFFFFFFF, GraphicsUtils::Layer::UI_3);
         currY += 15;
         currX += cascadeOffset;
@@ -301,7 +298,6 @@ void Menu::drawStagger(){
     Character* enemy = activeCharacter->target;
 
     SubmitRect(&g_queue, 230, 5, 200, 12, Colours::LIGHTGREY, GraphicsUtils::Layer::UI_3);
-    // UI::drawRect(230, 5, 200, 12, Colours::LIGHTGREY);
 
     float barPercent;
 
@@ -319,16 +315,15 @@ void Menu::drawStagger(){
     if (!enemy->staggered){
         snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%.2f / %.2f", enemy->stagger, enemy->staggerPoint);
         SubmitText(&g_queue, UI::textBuffer, 230, 20, 0.5, 0.5, 0xFFFFFFFF, GraphicsUtils::Layer::UI_3);
-        // UI::drawString(230, 20, 0xFFFFFFFF, 0.5, 0.5, UI::textBuffer);
+
     } 
     else {
         snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%.2f", enemy->stagger);
         SubmitText(&g_queue, UI::textBuffer, 230, 20, 0.5, 0.5, 0xFFFFFFFF, GraphicsUtils::Layer::UI_3);
-        // UI::drawString(230, 20, 0xFFFFFFFF, 0.5, 0.5, UI::textBuffer);
+
     }
 
     if (enemy->staggered){
-    // UI::drawString(320, 20, 0xFFFFFFFF, 0.5, 0.5, "STAGGERED!!");
     SubmitText(&g_queue, "STAGGERED!!", 320, 20, 0.5, 0.5, 0xFFFFFFFF, GraphicsUtils::Layer::UI_3);
     } 
 
@@ -342,7 +337,6 @@ void Menu::drawMenu(){
 
     int currX = x;
     int currY = y;
-    // int currCascadeOffset = cascadeOffset;
 
     drawTeamStats();
     drawStagger();
@@ -353,11 +347,9 @@ void Menu::drawMenu(){
             for (int i = 0; i <= optionMax; i++){
                 Colours colour = Colours::LIGHTGREY;
                 if (selectedIndex == i) colour = Colours::RED;
-                // UI::drawButton(currX, currY, buttonWidth, buttonHeight, options[i], colour);
-                SubmitRect(&g_queue, currX, currY, buttonWidth, buttonHeight, colour, GraphicsUtils::Layer::UI_3);
-                SubmitText(&g_queue, options[i], currX + 5, currY + 2, 0.35, 0.35, 0xFFFFFFFF, GraphicsUtils::Layer::UI_3);
-                // UI::drawRect(currX, currY, buttonWidth, buttonHeight, colour);
-                // UI::drawString(currX + 5, currY + 2, 0xFFFFFFFF, 0.35, 0.35, options[i]);
+
+                UI::drawButton(currX, currY, buttonWidth, buttonHeight, options[i], colour);
+                
                 currY += buttonHeight + padding;
                 currX += cascadeOffset;
             }
@@ -385,11 +377,8 @@ void Menu::drawMenu(){
                     }
 
                 if (activeCharacter->abilities[i] != nullptr){
-                    // UI::drawRect(x, y, w, h, color);
-                    // UI::drawString(x + 5, y + 2, 0xFFFFFFFF, 0.35, 0.35, text);
-                    // UI::drawButton(currX, currY, buttonWidth, buttonHeight, activeCharacter->abilities[i]->name, colour);
-                    SubmitRect(&g_queue, currX, currY, buttonWidth, buttonHeight, colour, GraphicsUtils::Layer::UI_3);
-                    SubmitText(&g_queue, activeCharacter->abilities[i]->name, currX + 5, currY + 2, 0.35, 0.35, 0xFFFFFFFF, GraphicsUtils::Layer::UI_3);
+
+                    UI::drawButton(currX, currY, buttonWidth, buttonHeight, activeCharacter->abilities[i]->name, colour);
 
                 } 
                 currY += buttonHeight + padding;
@@ -408,10 +397,9 @@ void Menu::drawMenu(){
                 }
                 Colours colour = Colours::LIGHTGREY;
                 if (selectedIndex == i) colour = Colours::RED;
-                // UI::drawRect(currX, currY, buttonWidth, buttonHeight, colour);
-                // UI::drawString(currX + 5, currY + 2, 0xFFFFFFFF, 0.35, 0.35, activeCharacter->enemyList.at(i)->name);
-                SubmitRect(&g_queue, currX, currY, buttonWidth, buttonHeight, colour, GraphicsUtils::Layer::UI_3);
-                SubmitText(&g_queue, activeCharacter->enemyList.at(i)->name, currX + 5, currY + 2, 0.35, 0.35, 0xFFFFFFFF, GraphicsUtils::Layer::UI_3);
+
+                UI::drawButton(currX, currY, buttonWidth, buttonHeight, activeCharacter->enemyList.at(i)->name, colour);
+
                 currY += buttonHeight + padding;
                 currX += cascadeOffset;
             }
@@ -427,10 +415,8 @@ void Menu::drawMenu(){
                 }
                 Colours colour = Colours::LIGHTGREY;
                 if (selectedIndex == i) colour = Colours::RED;
-                // UI::drawRect(currX, currY, buttonWidth, buttonHeight, colour);
-                // UI::drawString(currX + 5, currY + 2, 0xFFFFFFFF, 0.35, 0.35, activeCharacter->teamList.at(i)->name);
-                SubmitRect(&g_queue, currX, currY, buttonWidth, buttonHeight, colour, GraphicsUtils::Layer::UI_3);
-                SubmitText(&g_queue, activeCharacter->teamList.at(i)->name, currX + 5, currY + 2, 0.35, 0.35, 0xFFFFFFFF, GraphicsUtils::Layer::UI_3);
+
+                UI::drawButton(currX, currY, buttonWidth, buttonHeight, activeCharacter->teamList.at(i)->name, colour);
                 
                 currY += buttonHeight + padding;
                 currX += cascadeOffset;
@@ -441,18 +427,15 @@ void Menu::drawMenu(){
         case ParadigmMenu:
             currY -= 30;
             for (int i = 0; i <= optionMax; i++){
-                // if (i != 0 && i % 4 == 0){
-                //     currX += buttonWidth + padding;
-                //     currY = y - 30;;
-                // }
+
                 Colours colour = Colours::LIGHTGREY;
                 if (selectedIndex == i) colour = Colours::RED;
-                // UI::drawRect(currX, currY, buttonWidth * 1.5, buttonHeight * 0.9, colour);
+
                 SubmitRect(&g_queue, currX, currY, buttonWidth * 1.5, buttonHeight * 0.9, colour, GraphicsUtils::Layer::UI_3);
                 
                 snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s \t %s %s %s", paradigms[i]->name, roleToString(paradigms[i]->r1), roleToString(paradigms[i]->r2), roleToString(paradigms[i]->r3));
-                // UI::drawString(currX + 5, currY, 0xFFFFFFFF, 0.35, 0.35, UI::textBuffer);
                 SubmitText(&g_queue, UI::textBuffer, currX + 5, currY, 0.35, 0.35, 0xFFFFFFFF, GraphicsUtils::Layer::UI_3);
+
                 currY += (buttonHeight * 0.9) + padding;
             }
 
@@ -462,7 +445,7 @@ void Menu::drawMenu(){
     //draw abilities in queue
     int atbSpacing = 0;
     for (int i = 0; i < activeCharacter->commandQueue.size(); i++){
-        // UI::drawString(5 + atbSpacing, 160, 0xFFFFFFFF, 0.3, 0.3, activeCharacter->commandQueue.at(i)->name); 
+
         SubmitText(&g_queue, activeCharacter->commandQueue.at(i)->name, 5 + atbSpacing, 160, 0.3, 0.3, 0xFFFFFFFF, GraphicsUtils::Layer::UI_3);
         atbSpacing += 50 * activeCharacter->commandQueue.at(i)->cost;              
     }
@@ -472,6 +455,5 @@ void Menu::drawMenu(){
         drawScan();
     }
 
-    // SubmitVertices(&g_queue, &vertices, GraphicsUtils::Layer::UI_3);
 
 }

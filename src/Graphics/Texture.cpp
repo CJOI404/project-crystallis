@@ -2,7 +2,7 @@
 #include <pspgu.h>
 #include <GlobalDefs.h>
 #include <psputils.h>
-#include "graphics/RenderState.h"
+#include "graphics/Pipeline/RenderState.h"
 
 void Texture::draw(float x, float y, float width, float height, uint32_t colour = 0xFFFFFFFF){
     if (this == nullptr){

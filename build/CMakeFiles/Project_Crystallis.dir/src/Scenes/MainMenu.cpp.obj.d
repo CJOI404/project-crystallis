@@ -125,7 +125,7 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/MainMenu.cpp.obj: \
  /mnt/d/project-crystallis/include/InputHandler.h \
  /home/calvi/pspdev/psp/sdk/include/pspctrl.h \
  /mnt/d/project-crystallis/include/Scenes/Scene.h \
- /mnt/d/project-crystallis/include/graphics/RenderState.h \
+ /mnt/d/project-crystallis/include/graphics/Pipeline/RenderState.h \
  /mnt/d/project-crystallis/include/Scenes/CombatInstance.h \
  /mnt/d/project-crystallis/include/Entities/Character.h \
  /mnt/d/project-crystallis/include/Entities/GameActor.h \
@@ -144,8 +144,8 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/MainMenu.cpp.obj: \
  /home/calvi/pspdev/psp/include/machine/malloc.h \
  /mnt/d/project-crystallis/include/Entities/Menu.h \
  /mnt/d/project-crystallis/include/Scenes/SceneManager.h \
- /mnt/d/project-crystallis/include/graphics/RenderQueue.h \
- /mnt/d/project-crystallis/include/graphics/Renderer.h \
+ /mnt/d/project-crystallis/include/graphics/Pipeline/RenderQueue.h \
+ /mnt/d/project-crystallis/include/graphics/Pipeline/Renderer.h \
  /home/calvi/pspdev/psp/sdk/include/psputils.h \
  /home/calvi/pspdev/psp/include/sys/time.h \
  /home/calvi/pspdev/psp/include/sys/_timeval.h \

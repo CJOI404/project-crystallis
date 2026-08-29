@@ -139,8 +139,8 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Menu.cpp.obj: \
  /home/calvi/pspdev/psp/include/malloc.h \
  /home/calvi/pspdev/psp/include/machine/malloc.h \
  /mnt/d/project-crystallis/include/CommandRegistry.h \
- /mnt/d/project-crystallis/include/graphics/RenderQueue.h \
- /mnt/d/project-crystallis/include/graphics/Renderer.h \
+ /mnt/d/project-crystallis/include/graphics/Pipeline/RenderQueue.h \
+ /mnt/d/project-crystallis/include/graphics/Pipeline/Renderer.h \
  /home/calvi/pspdev/psp/sdk/include/psputils.h \
  /home/calvi/pspdev/psp/include/sys/time.h \
  /home/calvi/pspdev/psp/include/sys/_timeval.h \
@@ -164,7 +164,7 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Menu.cpp.obj: \
  /home/calvi/pspdev/psp/include/signal.h \
  /home/calvi/pspdev/psp/include/sys/signal.h \
  /home/calvi/pspdev/psp/include/machine/_time.h \
- /mnt/d/project-crystallis/include/graphics/RenderState.h \
+ /mnt/d/project-crystallis/include/graphics/Pipeline/RenderState.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstring \
  /home/calvi/pspdev/psp/include/string.h \
  /home/calvi/pspdev/psp/include/strings.h \

@@ -3,7 +3,7 @@
 #include "graphics/Assets/Mesh.h"
 #include "graphics/GraphicsUtils.h"
 #include "graphics/Assets/Sprite.h"
-#include "graphics/Renderer.h"
+#include "graphics/Pipeline/Renderer.h"
 #include <variant>
 
 enum RenderType { 

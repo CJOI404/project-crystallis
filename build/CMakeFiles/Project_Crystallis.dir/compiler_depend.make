@@ -376,6 +376,7 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj: /mnt/d/project
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/range_access.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/refwrap.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/requires_hosted.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/specfun.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/std_abs.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_algobase.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_bvector.h \
@@ -401,6 +402,7 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj: /mnt/d/project
   /home/calvi/pspdev/psp/include/c++/15.1.1/cctype \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cerrno \
   /home/calvi/pspdev/psp/include/c++/15.1.1/clocale \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/cmath \
   /home/calvi/pspdev/psp/include/c++/15.1.1/concepts \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cstddef \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
@@ -418,6 +420,7 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj: /mnt/d/project
   /home/calvi/pspdev/psp/include/c++/15.1.1/ext/type_traits.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/initializer_list \
   /home/calvi/pspdev/psp/include/c++/15.1.1/iosfwd \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/limits \
   /home/calvi/pspdev/psp/include/c++/15.1.1/new \
   /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++allocator.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++config.h \
@@ -428,6 +431,18 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj: /mnt/d/project
   /home/calvi/pspdev/psp/include/c++/15.1.1/queue \
   /home/calvi/pspdev/psp/include/c++/15.1.1/string \
   /home/calvi/pspdev/psp/include/c++/15.1.1/string_view \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/bessel_function.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/beta_function.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/ell_integral.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/exp_integral.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/gamma.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/hypergeometric.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/legendre_function.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/modified_bessel_func.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_hermite.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_laguerre.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/riemann_zeta.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/special_function_util.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
   /home/calvi/pspdev/psp/include/c++/15.1.1/type_traits \
   /home/calvi/pspdev/psp/include/c++/15.1.1/unordered_map \
@@ -448,6 +463,7 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj: /mnt/d/project
   /home/calvi/pspdev/psp/include/machine/time.h \
   /home/calvi/pspdev/psp/include/machine/types.h \
   /home/calvi/pspdev/psp/include/malloc.h \
+  /home/calvi/pspdev/psp/include/math.h \
   /home/calvi/pspdev/psp/include/newlib.h \
   /home/calvi/pspdev/psp/include/signal.h \
   /home/calvi/pspdev/psp/include/stdint.h \
@@ -497,9 +513,9 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj: /mnt/d/project
   /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
   /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
-  /mnt/d/project-crystallis/include/graphics/RenderQueue.h \
-  /mnt/d/project-crystallis/include/graphics/RenderState.h \
-  /mnt/d/project-crystallis/include/graphics/Renderer.h
+  /mnt/d/project-crystallis/include/graphics/Pipeline/RenderQueue.h \
+  /mnt/d/project-crystallis/include/graphics/Pipeline/RenderState.h \
+  /mnt/d/project-crystallis/include/graphics/Pipeline/Renderer.h
 
 CMakeFiles/Project_Crystallis.dir/src/Entities/Command.cpp.obj: /mnt/d/project-crystallis/src/Entities/Command.cpp
 
@@ -672,9 +688,9 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Menu.cpp.obj: /mnt/d/project-crys
   /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
   /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
-  /mnt/d/project-crystallis/include/graphics/RenderQueue.h \
-  /mnt/d/project-crystallis/include/graphics/RenderState.h \
-  /mnt/d/project-crystallis/include/graphics/Renderer.h
+  /mnt/d/project-crystallis/include/graphics/Pipeline/RenderQueue.h \
+  /mnt/d/project-crystallis/include/graphics/Pipeline/RenderState.h \
+  /mnt/d/project-crystallis/include/graphics/Pipeline/Renderer.h
 
 CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj: /mnt/d/project-crystallis/src/GlobalDefs.cpp \
   /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdarg.h \
@@ -1120,9 +1136,9 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderQueue.cpp.obj: /mnt/d/proje
   /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
   /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
-  /mnt/d/project-crystallis/include/graphics/RenderQueue.h \
-  /mnt/d/project-crystallis/include/graphics/RenderState.h \
-  /mnt/d/project-crystallis/include/graphics/Renderer.h
+  /mnt/d/project-crystallis/include/graphics/Pipeline/RenderQueue.h \
+  /mnt/d/project-crystallis/include/graphics/Pipeline/RenderState.h \
+  /mnt/d/project-crystallis/include/graphics/Pipeline/Renderer.h
 
 CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderState.cpp.obj: /mnt/d/project-crystallis/src/Graphics/RenderState.cpp \
   /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdarg.h \
@@ -1161,7 +1177,7 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderState.cpp.obj: /mnt/d/proje
   /home/calvi/pspdev/psp/sdk/include/pspgu.h \
   /home/calvi/pspdev/psp/sdk/include/psptypes.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
-  /mnt/d/project-crystallis/include/graphics/RenderState.h
+  /mnt/d/project-crystallis/include/graphics/Pipeline/RenderState.h
 
 CMakeFiles/Project_Crystallis.dir/src/Graphics/Sprite.cpp.obj: /mnt/d/project-crystallis/src/Graphics/Sprite.cpp \
   /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdarg.h \
@@ -1442,7 +1458,7 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/Texture.cpp.obj: /mnt/d/project-c
   /home/calvi/pspdev/psp/sdk/include/psputils.h \
   /mnt/d/project-crystallis/include/GlobalDefs.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
-  /mnt/d/project-crystallis/include/graphics/RenderState.h
+  /mnt/d/project-crystallis/include/graphics/Pipeline/RenderState.h
 
 CMakeFiles/Project_Crystallis.dir/src/Graphics/TextureManager.cpp.obj: /mnt/d/project-crystallis/src/Graphics/TextureManager.cpp \
   /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/limits.h \
@@ -1792,9 +1808,9 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/UIRender.cpp.obj: /mnt/d/project-
   /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
   /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
-  /mnt/d/project-crystallis/include/graphics/RenderQueue.h \
-  /mnt/d/project-crystallis/include/graphics/RenderState.h \
-  /mnt/d/project-crystallis/include/graphics/Renderer.h
+  /mnt/d/project-crystallis/include/graphics/Pipeline/RenderQueue.h \
+  /mnt/d/project-crystallis/include/graphics/Pipeline/RenderState.h \
+  /mnt/d/project-crystallis/include/graphics/Pipeline/Renderer.h
 
 CMakeFiles/Project_Crystallis.dir/src/InputHandler.cpp.obj: /mnt/d/project-crystallis/src/InputHandler.cpp \
   /home/calvi/pspdev/psp/sdk/include/pspctrl.h \
@@ -1979,9 +1995,9 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: /mnt/d/proj
   /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
   /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
-  /mnt/d/project-crystallis/include/graphics/RenderQueue.h \
-  /mnt/d/project-crystallis/include/graphics/RenderState.h \
-  /mnt/d/project-crystallis/include/graphics/Renderer.h
+  /mnt/d/project-crystallis/include/graphics/Pipeline/RenderQueue.h \
+  /mnt/d/project-crystallis/include/graphics/Pipeline/RenderState.h \
+  /mnt/d/project-crystallis/include/graphics/Pipeline/Renderer.h
 
 CMakeFiles/Project_Crystallis.dir/src/Scenes/MainMenu.cpp.obj: /mnt/d/project-crystallis/src/Scenes/MainMenu.cpp \
   /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/limits.h \
@@ -2156,9 +2172,9 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/MainMenu.cpp.obj: /mnt/d/project-cr
   /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
   /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
-  /mnt/d/project-crystallis/include/graphics/RenderQueue.h \
-  /mnt/d/project-crystallis/include/graphics/RenderState.h \
-  /mnt/d/project-crystallis/include/graphics/Renderer.h
+  /mnt/d/project-crystallis/include/graphics/Pipeline/RenderQueue.h \
+  /mnt/d/project-crystallis/include/graphics/Pipeline/RenderState.h \
+  /mnt/d/project-crystallis/include/graphics/Pipeline/Renderer.h
 
 CMakeFiles/Project_Crystallis.dir/src/Scenes/SceneManager.cpp.obj: /mnt/d/project-crystallis/src/Scenes/SceneManager.cpp \
   /mnt/d/project-crystallis/include/Scenes/Scene.h \
@@ -2441,14 +2457,12 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
   /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
   /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
-  /mnt/d/project-crystallis/include/graphics/RenderQueue.h \
-  /mnt/d/project-crystallis/include/graphics/RenderState.h \
-  /mnt/d/project-crystallis/include/graphics/Renderer.h
+  /mnt/d/project-crystallis/include/graphics/Pipeline/RenderQueue.h \
+  /mnt/d/project-crystallis/include/graphics/Pipeline/RenderState.h \
+  /mnt/d/project-crystallis/include/graphics/Pipeline/Renderer.h
 
 
 /home/calvi/pspdev/psp/sdk/include/pspsysreg.h:
-
-/home/calvi/pspdev/psp/sdk/include/pspstdio.h:
 
 /home/calvi/pspdev/psp/sdk/include/psploadcore.h:
 
@@ -2535,8 +2549,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/basic_file.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/new:
-
-/mnt/d/project-crystallis/include/graphics/Renderer.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++locale.h:
 
@@ -2650,8 +2662,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/ext/alloc_traits.h:
 
-/mnt/d/project-crystallis/include/graphics/RenderQueue.h:
-
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_heap.h:
 
 /home/calvi/pspdev/psp/sdk/include/pspsysmem.h:
@@ -2708,8 +2718,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/include/pte_types.h:
 
-/mnt/d/project-crystallis/include/graphics/RenderState.h:
-
 /home/calvi/pspdev/psp/include/c++/15.1.1/pstl/glue_algorithm_defs.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/exception.h:
@@ -2747,8 +2755,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/sdk/include/pspiofilemgr_dirent.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/predefined_ops.h:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/bits/postypes.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/invoke.h:
 
@@ -3014,37 +3020,19 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/node_handle.h:
 
-/home/calvi/pspdev/psp/include/c++/15.1.1/ctime:
+/home/calvi/pspdev/psp/include/c++/15.1.1/bits/postypes.h:
 
-/home/calvi/pspdev/psp/include/c++/15.1.1/bits/utility.h:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/bits/unordered_map.h:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/unordered_map:
-
-/home/calvi/pspdev/psp/include/locale.h:
-
-/mnt/d/project-crystallis/include/graphics/AssetManagers/TextureManager.h:
-
-/home/calvi/pspdev/psp/include/machine/_time.h:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/tuple:
-
-/mnt/d/project-crystallis/src/Entities/Command.cpp:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++config.h:
-
-/mnt/d/project-crystallis/src/Entities/Menu.cpp:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/tr1/beta_function.tcc:
+/mnt/d/project-crystallis/include/graphics/Pipeline/RenderState.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/specfun.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/riemann_zeta.tcc:
 
-/home/calvi/pspdev/lib/gcc/psp/15.1.1/include/syslimits.h:
+/home/calvi/pspdev/psp/include/c++/15.1.1/ctime:
 
-/home/calvi/pspdev/psp/include/c++/15.1.1/bits/uniform_int_dist.h:
+/home/calvi/pspdev/psp/include/c++/15.1.1/bits/utility.h:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/bits/unordered_map.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/cmath:
 
@@ -3052,7 +3040,11 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/gamma.tcc:
 
-/home/calvi/pspdev/psp/include/c++/15.1.1/numeric:
+/home/calvi/pspdev/psp/include/c++/15.1.1/tr1/beta_function.tcc:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++config.h:
+
+/mnt/d/project-crystallis/src/Entities/Menu.cpp:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/exception_defines.h:
 
@@ -3065,6 +3057,30 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/modified_bessel_func.tcc:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_hermite.tcc:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/unordered_map:
+
+/home/calvi/pspdev/psp/include/locale.h:
+
+/mnt/d/project-crystallis/include/graphics/AssetManagers/TextureManager.h:
+
+/home/calvi/pspdev/psp/include/machine/_time.h:
+
+/home/calvi/pspdev/psp/sdk/include/pspstdio.h:
+
+/mnt/d/project-crystallis/include/graphics/Pipeline/RenderQueue.h:
+
+/mnt/d/project-crystallis/include/graphics/Pipeline/Renderer.h:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/tuple:
+
+/mnt/d/project-crystallis/src/Entities/Command.cpp:
+
+/home/calvi/pspdev/lib/gcc/psp/15.1.1/include/syslimits.h:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/bits/uniform_int_dist.h:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/numeric:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bit:
 

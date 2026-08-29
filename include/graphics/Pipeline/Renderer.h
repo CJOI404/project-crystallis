@@ -3,7 +3,7 @@
 #include <pspgum.h>
 #include <pspgu.h>
 #include <psputils.h>
-#include "graphics/RenderState.h"
+#include "graphics/Pipeline/RenderState.h"
 #include "graphics/GraphicsUtils.h"
 #include <vector>
 #include <cstring>

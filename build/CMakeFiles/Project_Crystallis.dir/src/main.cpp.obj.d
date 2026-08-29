@@ -223,9 +223,9 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /mnt/d/project-crystallis/include/graphics/AssetManagers/MeshManager.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstring \
  /mnt/d/project-crystallis/include/Scenes/SceneManager.h \
- /mnt/d/project-crystallis/include/graphics/RenderState.h \
- /mnt/d/project-crystallis/include/graphics/RenderQueue.h \
- /mnt/d/project-crystallis/include/graphics/Renderer.h \
+ /mnt/d/project-crystallis/include/graphics/Pipeline/RenderState.h \
+ /mnt/d/project-crystallis/include/graphics/Pipeline/RenderQueue.h \
+ /mnt/d/project-crystallis/include/graphics/Pipeline/Renderer.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/variant \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/monostate.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/parse_numbers.h \

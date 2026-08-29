@@ -136,7 +136,10 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/enable_special_members.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/node_handle.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/erase_if.h \
- /mnt/d/project-crystallis/include/graphics/Renderer.h \
+ /mnt/d/project-crystallis/include/CommandRegistry.h \
+ /mnt/d/project-crystallis/include/Entities/AttackCommand.h \
+ /mnt/d/project-crystallis/include/graphics/Pipeline/RenderQueue.h \
+ /mnt/d/project-crystallis/include/graphics/Pipeline/Renderer.h \
  /home/calvi/pspdev/psp/sdk/include/psputils.h \
  /home/calvi/pspdev/psp/include/sys/time.h \
  /home/calvi/pspdev/psp/include/sys/_timeval.h \
@@ -160,14 +163,27 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj: \
  /home/calvi/pspdev/psp/include/signal.h \
  /home/calvi/pspdev/psp/include/sys/signal.h \
  /home/calvi/pspdev/psp/include/machine/_time.h \
- /mnt/d/project-crystallis/include/graphics/RenderState.h \
+ /mnt/d/project-crystallis/include/graphics/Pipeline/RenderState.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstring \
  /home/calvi/pspdev/psp/include/string.h \
  /home/calvi/pspdev/psp/include/strings.h \
  /home/calvi/pspdev/psp/include/sys/string.h \
- /mnt/d/project-crystallis/include/CommandRegistry.h \
- /mnt/d/project-crystallis/include/Entities/AttackCommand.h \
- /mnt/d/project-crystallis/include/graphics/RenderQueue.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/variant \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/monostate.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/bits/parse_numbers.h
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/parse_numbers.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cmath \
+ /home/calvi/pspdev/psp/include/math.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/specfun.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/limits \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/gamma.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/special_function_util.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/bessel_function.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/beta_function.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/ell_integral.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/exp_integral.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/hypergeometric.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/legendre_function.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/modified_bessel_func.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_hermite.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_laguerre.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/riemann_zeta.tcc

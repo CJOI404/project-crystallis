@@ -10,11 +10,19 @@ class GameActor{
         // MovementComponent* moveComp = nullptr;
 
     public:
-        float xPos = 50, yPos = 50, zPos = 0;
+        // float xPos = 50, yPos = 50, zPos = 0;
         ScePspFVector3 worldRot = {0.0f, 0.0f, 0.0f};
         ScePspFVector3 worldPos = {0, 0, 0};
         GraphicsUtils::ScreenPos screenPos = {0.0f, 0.0f, false};
 
         virtual void update(float dt) = 0;
         virtual void render(float dt) = 0;
+
+        void setworldPos(ScePspFVector3 worldPos){
+            this->worldPos = worldPos;
+        }
+
+        void setworldRot(ScePspFVector3 worldRot){
+            this->worldRot = worldRot;
+        }
 };

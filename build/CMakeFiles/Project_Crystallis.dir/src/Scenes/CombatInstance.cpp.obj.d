@@ -139,7 +139,7 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/enable_special_members.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/node_handle.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/erase_if.h \
- /mnt/d/project-crystallis/include/graphics/RenderState.h \
+ /mnt/d/project-crystallis/include/graphics/Pipeline/RenderState.h \
  /mnt/d/project-crystallis/include/InputHandler.h \
  /home/calvi/pspdev/psp/sdk/include/pspctrl.h \
  /mnt/d/project-crystallis/include/graphics/AssetManagers/MeshManager.h \
@@ -177,8 +177,8 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_multimap.h \
  /mnt/d/project-crystallis/include/Scenes/SceneManager.h \
  /mnt/d/project-crystallis/include/Scenes/MainMenu.h \
- /mnt/d/project-crystallis/include/graphics/RenderQueue.h \
- /mnt/d/project-crystallis/include/graphics/Renderer.h \
+ /mnt/d/project-crystallis/include/graphics/Pipeline/RenderQueue.h \
+ /mnt/d/project-crystallis/include/graphics/Pipeline/Renderer.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/variant \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/monostate.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/parse_numbers.h

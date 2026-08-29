@@ -1,6 +1,6 @@
 CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderState.cpp.obj: \
  /mnt/d/project-crystallis/src/Graphics/RenderState.cpp \
- /mnt/d/project-crystallis/include/graphics/RenderState.h \
+ /mnt/d/project-crystallis/include/graphics/Pipeline/RenderState.h \
  /home/calvi/pspdev/psp/sdk/include/pspgu.h \
  /home/calvi/pspdev/psp/sdk/include/psptypes.h \
  /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h \

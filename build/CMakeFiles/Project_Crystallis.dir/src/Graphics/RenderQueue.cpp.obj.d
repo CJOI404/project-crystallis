@@ -1,6 +1,6 @@
 CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderQueue.cpp.obj: \
  /mnt/d/project-crystallis/src/Graphics/RenderQueue.cpp \
- /mnt/d/project-crystallis/include/graphics/RenderQueue.h \
+ /mnt/d/project-crystallis/include/graphics/Pipeline/RenderQueue.h \
  /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++config.h \
@@ -113,7 +113,7 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderQueue.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
  /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
  /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
- /mnt/d/project-crystallis/include/graphics/Renderer.h \
+ /mnt/d/project-crystallis/include/graphics/Pipeline/Renderer.h \
  /home/calvi/pspdev/psp/sdk/include/psputils.h \
  /home/calvi/pspdev/psp/include/sys/time.h \
  /home/calvi/pspdev/psp/include/sys/_timeval.h \
@@ -137,7 +137,7 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderQueue.cpp.obj: \
  /home/calvi/pspdev/psp/include/signal.h \
  /home/calvi/pspdev/psp/include/sys/signal.h \
  /home/calvi/pspdev/psp/include/machine/_time.h \
- /mnt/d/project-crystallis/include/graphics/RenderState.h \
+ /mnt/d/project-crystallis/include/graphics/Pipeline/RenderState.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/vector \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_uninitialized.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_vector.h \

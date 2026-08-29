@@ -1,17 +1,14 @@
 #include "Entities/Character.h"
 #include "graphics/AssetManagers/UIRender.h"
-#include "graphics/Renderer.h"
 #include "CommandRegistry.h"
 #include "graphics/GraphicsUtils.h"
-#include "graphics/RenderQueue.h"
+#include "graphics/Pipeline/RenderQueue.h"
+#include <cmath>
 
 Character::Character(){
 
 
     characterState = Waiting;
-
-    //add components here 
-    // moveComp = new MovementComponent(&xPos, &yPos);
 
     //initialize resistances (0.5 = half damage taken, 2.0 = double, etc)
     resistances[Element::FIRE] = Resistance::NORMAL;
@@ -39,7 +36,7 @@ Character::Character(){
 
     mostRecentBuff = Buff::NOBUFF;
 
-
+    worldPos = {0.0f, 0.0f, -100.0f};
 
 
 }
@@ -273,9 +270,34 @@ void Character::update(float dt){
         }
     }
 
-    worldPos = {xPos, -yPos, -100.0f};
-
 }
+
+void Character::updateMovement(float analogueX, float analogueY, float dt){
+
+
+    float xDir = 0;
+    float yDir = 0;
+
+    //Ignore Deadzone
+    if (analogueX <= 0.1 && analogueX >= -0.1) xDir = 0;
+    else xDir = analogueX;
+    if (analogueY <= 0.1 && analogueY >= -0.1) yDir = 0;
+    else yDir = analogueY;
+
+    //Get Magnitude
+    float magnitude = sqrt(xDir * xDir + yDir * yDir);
+
+    //Normalize
+    if (magnitude > 0.0f){
+        xDir /= magnitude;
+        yDir /= magnitude;  
+
+    }
+
+    worldPos.x += xDir * dt * moveSpeed;
+    worldPos.y -= yDir * dt * moveSpeed;
+}
+
 
 void Character::render(float dt){
 
@@ -284,14 +306,12 @@ void Character::render(float dt){
         Submit3D(&g_queue, mesh, meshTexture, &worldPos, &worldRot, GraphicsUtils::Layer::OPAQUE_3D_1);
 
     }
-    SubmitRect(&g_queue, screenPos.x, screenPos.y - 200, 20, 20, 0xFFFF0000, GraphicsUtils::Layer::UI_3);
-    SubmitText(&g_queue, name, screenPos.x, screenPos.y - 200, 0.3, 0.3, 0xFF00FFFF, GraphicsUtils::Layer::UI_3);
+    // SubmitRect(&g_queue, screenPos.x, screenPos.y - 200, 20, 20, 0xFFFF0000, GraphicsUtils::Layer::UI_3);
+    SubmitText(&g_queue, name, screenPos.x - 40, screenPos.y - 150, 0.3, 0.3, 0xFF00FFFF, GraphicsUtils::Layer::UI_3);
 
-        // UI::drawRect(screenPos.x, screenPos.y - 200, 20, 20, moveComp->color);
-    // snprintf(UI::textBuffer, sizeof(UI::textBuffer), name);
-    // UI::drawString(screenPos.x, screenPos.y - 200, 0xFF00FFFF, 0.3, 0.3, name); 
-
-    // if (drawHealthBar) drawHealth();
+    if (drawHealthBar){
+        UI::drawHealthBar(screenPos.x - 60, screenPos.y - 140, 120, 6, health, maxHealth);
+    } 
 
     // if (sprite == nullptr){
     //     return;
@@ -300,14 +320,4 @@ void Character::render(float dt){
 
 }
 
-void Character::render3D(float dt) {
-    // if (mesh){
 
-    //     Submit3D(&g_queue, mesh, meshTexture, &worldPos, &worldRot, GraphicsUtils::Layer::OPAQUE_3D_1);
-
-    // }
-}
-
-void Character::drawHealth(){
-    UI::drawHealthBar(xPos - 60, yPos - 10, 120, 6, health, maxHealth);
-}

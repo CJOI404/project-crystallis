@@ -1,8 +1,8 @@
 #include "Scenes/MainMenu.h"
-#include "graphics/RenderState.h"
+#include "graphics/Pipeline/RenderState.h"
 #include "Scenes/CombatInstance.h"
 #include "Scenes/SceneManager.h"
-#include "graphics/RenderQueue.h"
+#include "graphics/Pipeline/RenderQueue.h"
 #include "graphics/GraphicsUtils.h"
 
 MainMenu::MainMenu(){
@@ -47,9 +47,7 @@ void MainMenu::render(float dt){
     //DRAW 2d
     // RenderState::setDepthState(DEPTH_DISABLED);
     SubmitRect(&g_queue, 0, 0, 480, 272, 0xFFFFFFFF, GraphicsUtils::Layer::BACKGROUND_0);
-    // UI::drawRect(0, 0, 480, 272, 0xFFFFFFFF);
     Submit2D(&g_queue, logo, 50, -80, 400, 400, 0xFFFFFFFF, GraphicsUtils::Layer::BACKGROUND_0);
-    // logo->draw(50, -80, 400, 400, 0xFFFFFFFF);
 
 
     Colours colour = Colours::LIGHTGREY;
@@ -61,9 +59,8 @@ void MainMenu::render(float dt){
         else colour = Colours::LIGHTGREY;
 
         SubmitRect(&g_queue, 25, currY, 150, 20, colour, GraphicsUtils::Layer::UI_3);
-        // UI::drawRect(25, currY, 150, 20, colour);
         SubmitText(&g_queue, options[i], 25, currY, 0.5, 0.5, 0xFFFFFFFF, GraphicsUtils::Layer::UI_3);
-        // UI::drawString(25, currY, 0xFFFFFFFF, 0.5, 0.5, options[i]);
+
         currY += 25;
     }
 

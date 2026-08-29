@@ -7,8 +7,8 @@
 #include <vector>
 #include <fstream>
 #include <GlobalDefs.h>
-#include "graphics/RenderState.h"
-#include "graphics/RenderQueue.h"
+#include "graphics/Pipeline/RenderState.h"
+#include "graphics/Pipeline/RenderQueue.h"
 
 //TODO: TOTAL REFORMAT! SHOULD BE HELPER FUNCTIONS THAT SUBMIT TO QUEUE. DIRECT DRAWS GO IN RENDERER. 
 namespace UI {
@@ -57,22 +57,16 @@ namespace UI {
 
         fontTexture = TextureManager::load(texturePath, textWidth, textHeight);
 
-        // fontTexture.data = (uint32_t *) stbi_load(texturePath, &(textWidth), &(textWidth), NULL, STBI_rgb_alpha);
-
         sceKernelDcacheWritebackAll();
     }
 
     void drawHealthBar(float x, float y, float w, float h, int health, int maxHealth){
-        // UI::drawRect(x, y, w, h, Colours::LIGHTGREY);
         SubmitRect(&g_queue, x, y, w, h, Colours::LIGHTGREY, GraphicsUtils::Layer::UI_3);
-        // UI::drawRect(x, y + (h - ((h*2)/3))/2, ((float) health / maxHealth) * w, ((h*2)/3), Colours::LIGHTGREEN);
         SubmitRect(&g_queue, x, y + (h - ((h*2)/3))/2, ((float) health / maxHealth) * w, ((h*2)/3), Colours::LIGHTGREEN, GraphicsUtils::Layer::UI_3);
     }
 
     void drawButton(float x, float y, float w, float h, std::string text, uint32_t color){
         SubmitRect(&g_queue, x, y, w, h, color, GraphicsUtils::Layer::UI_3);
-        // UI::drawRect(x, y, w, h, color);
         SubmitText(&g_queue, text, x + 5, y + 2, 0.35, 0.35, 0xFFFFFFFF, GraphicsUtils::Layer::UI_3);
-        // UI::drawString(x + 5, y + 2, 0xFFFFFFFF, 0.35, 0.35, text);
     }
 }

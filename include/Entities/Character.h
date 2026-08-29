@@ -74,6 +74,8 @@ class Character : public GameActor {
         float medCastSpeed = 1;
         float synCastSpeed = 1;
 
+        int moveSpeed = 250;
+
         int targetIndex = -1;
         Character* target = nullptr;
 
@@ -118,10 +120,8 @@ class Character : public GameActor {
 
         void update(float dt) override;
         void render(float dt) override;
-        void render3D(float dt);
 
-        void drawHealth();
-
+        void updateMovement(float analogueX, float analogueY, float dt);
         void updateEffects(float dt);
         void revertDebuff(int effectIdx);
         void revertBuff(int effectIdx);

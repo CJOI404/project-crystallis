@@ -1,7 +1,7 @@
 #include "Scenes/CombatInstance.h"
 #include "Entities/Menu.h"
 #include "graphics/AssetManagers/UIRender.h"
-#include "graphics/RenderState.h"
+#include "graphics/Pipeline/RenderState.h"
 #include "graphics/GraphicsUtils.h"
 #include "InputHandler.h"
 #include "graphics/AssetManagers/MeshManager.h"
@@ -9,7 +9,7 @@
 #include <pspgum.h>
 #include "Scenes/SceneManager.h"
 #include "Scenes/MainMenu.h"
-#include "graphics/RenderQueue.h"
+#include "graphics/Pipeline/RenderQueue.h"
 
 
 CombatInstance::CombatInstance(){
@@ -44,6 +44,7 @@ CombatInstance::CombatInstance(){
     enemies.clear();
 
     // Character playerCharacter;
+    playerCharacter.setworldPos({100.0f, 100.0f, -140.0f});
     playerCharacter.health = 300;
     playerCharacter.maxHealth = 2000;
     playerCharacter.name = "LIGHTNING";
@@ -55,8 +56,7 @@ CombatInstance::CombatInstance(){
     // Character character2;
     character2.health = 2200;
     character2.maxHealth = 3000;
-    character2.xPos = 100;
-    character2.yPos = 100;
+    character2.setworldPos({100.0f, 100.0f, -200.0f});
     character2.name = "SAZH";
     character2.currentRole = Role::RAVAGER;
     character2.sprite = SpriteManager::getSprite("bottomright");
@@ -65,16 +65,14 @@ CombatInstance::CombatInstance(){
     // Character character3;
     character3.health = 1700;
     character3.maxHealth = 1700;
-    character3.xPos = 150;
-    character3.yPos = 150;
+    character2.setworldPos({150.0f, 150.0f, -200.0f});
     character3.name = "VANILLE";
     character3.currentRole = Role::SABOTEUR;
     character3.sprite = SpriteManager::getSprite("bottomleft");
 
     // Character enemy;
     // enemy.moveComp->color = Colours::BLUE;
-    enemy.xPos = 120;
-    enemy.yPos = 100;
+    enemy.setworldPos({5.0f, -50.0f, -200.0f});
     enemy.name = "ENEMY 1";
     enemy.health = 45000;
     enemy.maxHealth = 45000;
@@ -86,8 +84,7 @@ CombatInstance::CombatInstance(){
 
     // Character enemy2;
     // enemy2.moveComp->color = Colours::BLUE;
-    enemy2.xPos = 400;
-    enemy2.yPos = 120;
+    enemy2.setworldPos({400.0f, 120.0f, -200.0f});
     enemy2.name = "ENEMY 2";
     enemy2.health = 450000;
     enemy2.maxHealth = 450000;
@@ -144,7 +141,7 @@ void CombatInstance::update(float dt){
 
     if (state == CombatState::BATTLE){
 
-        // playerCharacter.moveComp->setAnalogueMoveVals(InputHandler::analogueX, InputHandler::analogueY);
+        playerCharacter.updateMovement(InputHandler::analogueX, InputHandler::analogueY, dt);
 
         if (InputHandler::getButtonDown(PSP_CTRL_START)){
             SceneManager::setNextScene(new MainMenu());
@@ -251,6 +248,7 @@ void CombatInstance::render(float dt){
         // SubmitText(&g_queue, scannedEnemy->health, 50, 40, 0.3, 0.3, 0xFFFFFFFF, GraphicsUtils::Layer::UI_4); 
 
         snprintf(UI::textBuffer, sizeof(UI::textBuffer), "HEALTH: %d", scannedEnemy->health);
+        SubmitText(&g_queue, UI::textBuffer, 50, 40, 0.3, 0.3, 0xFFFFFFFF, GraphicsUtils::Layer::UI_4);
         SubmitText(&g_queue, scannedEnemy->name, 20, 20, 0.6, 0.6, 0xFFFFFFFF, GraphicsUtils::Layer::UI_4);
 
         int tempy = 60;
