@@ -14,12 +14,14 @@ endif()
 # PROJECT_SOURCES at CMakeLists.txt:17 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/mnt/d/project-crystallis/src/*.cpp")
 set(OLD_GLOB
-  "/mnt/d/project-crystallis/src/AttackCommand.cpp"
-  "/mnt/d/project-crystallis/src/Character.cpp"
-  "/mnt/d/project-crystallis/src/CombatInstance.cpp"
-  "/mnt/d/project-crystallis/src/Command.cpp"
   "/mnt/d/project-crystallis/src/CommandRegistry.cpp"
+  "/mnt/d/project-crystallis/src/Components/MovementComponent.cpp"
+  "/mnt/d/project-crystallis/src/Entities/AttackCommand.cpp"
+  "/mnt/d/project-crystallis/src/Entities/Character.cpp"
+  "/mnt/d/project-crystallis/src/Entities/Command.cpp"
+  "/mnt/d/project-crystallis/src/Entities/Menu.cpp"
   "/mnt/d/project-crystallis/src/GlobalDefs.cpp"
+  "/mnt/d/project-crystallis/src/Graphics/MeshManager.cpp"
   "/mnt/d/project-crystallis/src/Graphics/RenderState.cpp"
   "/mnt/d/project-crystallis/src/Graphics/Sprite.cpp"
   "/mnt/d/project-crystallis/src/Graphics/SpriteManager.cpp"
@@ -27,9 +29,9 @@ set(OLD_GLOB
   "/mnt/d/project-crystallis/src/Graphics/TextureManager.cpp"
   "/mnt/d/project-crystallis/src/Graphics/UIRender.cpp"
   "/mnt/d/project-crystallis/src/InputHandler.cpp"
-  "/mnt/d/project-crystallis/src/MainMenu.cpp"
-  "/mnt/d/project-crystallis/src/Menu.cpp"
-  "/mnt/d/project-crystallis/src/MovementComponent.cpp"
+  "/mnt/d/project-crystallis/src/Scenes/CombatInstance.cpp"
+  "/mnt/d/project-crystallis/src/Scenes/MainMenu.cpp"
+  "/mnt/d/project-crystallis/src/Scenes/SceneManager.cpp"
   "/mnt/d/project-crystallis/src/main.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

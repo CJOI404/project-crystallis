@@ -17,6 +17,8 @@ typedef struct
     int height;
     int format;
     void* data;
+
+    int refCount;
     
     void draw(float x, float y, float w, float h, uint32_t colour);
     void draw(float u1, float v1, float u2, float v2, float x, float y, float width, float height, uint32_t colour);

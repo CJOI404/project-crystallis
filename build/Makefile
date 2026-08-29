@@ -130,102 +130,6 @@ Project_Crystallis/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/build
 .PHONY : Project_Crystallis/fast
 
-src/AttackCommand.obj: src/AttackCommand.cpp.obj
-.PHONY : src/AttackCommand.obj
-
-# target to build an object file
-src/AttackCommand.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/AttackCommand.cpp.obj
-.PHONY : src/AttackCommand.cpp.obj
-
-src/AttackCommand.i: src/AttackCommand.cpp.i
-.PHONY : src/AttackCommand.i
-
-# target to preprocess a source file
-src/AttackCommand.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/AttackCommand.cpp.i
-.PHONY : src/AttackCommand.cpp.i
-
-src/AttackCommand.s: src/AttackCommand.cpp.s
-.PHONY : src/AttackCommand.s
-
-# target to generate assembly for a file
-src/AttackCommand.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/AttackCommand.cpp.s
-.PHONY : src/AttackCommand.cpp.s
-
-src/Character.obj: src/Character.cpp.obj
-.PHONY : src/Character.obj
-
-# target to build an object file
-src/Character.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Character.cpp.obj
-.PHONY : src/Character.cpp.obj
-
-src/Character.i: src/Character.cpp.i
-.PHONY : src/Character.i
-
-# target to preprocess a source file
-src/Character.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Character.cpp.i
-.PHONY : src/Character.cpp.i
-
-src/Character.s: src/Character.cpp.s
-.PHONY : src/Character.s
-
-# target to generate assembly for a file
-src/Character.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Character.cpp.s
-.PHONY : src/Character.cpp.s
-
-src/CombatInstance.obj: src/CombatInstance.cpp.obj
-.PHONY : src/CombatInstance.obj
-
-# target to build an object file
-src/CombatInstance.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.obj
-.PHONY : src/CombatInstance.cpp.obj
-
-src/CombatInstance.i: src/CombatInstance.cpp.i
-.PHONY : src/CombatInstance.i
-
-# target to preprocess a source file
-src/CombatInstance.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.i
-.PHONY : src/CombatInstance.cpp.i
-
-src/CombatInstance.s: src/CombatInstance.cpp.s
-.PHONY : src/CombatInstance.s
-
-# target to generate assembly for a file
-src/CombatInstance.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/CombatInstance.cpp.s
-.PHONY : src/CombatInstance.cpp.s
-
-src/Command.obj: src/Command.cpp.obj
-.PHONY : src/Command.obj
-
-# target to build an object file
-src/Command.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Command.cpp.obj
-.PHONY : src/Command.cpp.obj
-
-src/Command.i: src/Command.cpp.i
-.PHONY : src/Command.i
-
-# target to preprocess a source file
-src/Command.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Command.cpp.i
-.PHONY : src/Command.cpp.i
-
-src/Command.s: src/Command.cpp.s
-.PHONY : src/Command.s
-
-# target to generate assembly for a file
-src/Command.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Command.cpp.s
-.PHONY : src/Command.cpp.s
-
 src/CommandRegistry.obj: src/CommandRegistry.cpp.obj
 .PHONY : src/CommandRegistry.obj
 
@@ -250,6 +154,126 @@ src/CommandRegistry.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.s
 .PHONY : src/CommandRegistry.cpp.s
 
+src/Components/MovementComponent.obj: src/Components/MovementComponent.cpp.obj
+.PHONY : src/Components/MovementComponent.obj
+
+# target to build an object file
+src/Components/MovementComponent.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Components/MovementComponent.cpp.obj
+.PHONY : src/Components/MovementComponent.cpp.obj
+
+src/Components/MovementComponent.i: src/Components/MovementComponent.cpp.i
+.PHONY : src/Components/MovementComponent.i
+
+# target to preprocess a source file
+src/Components/MovementComponent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Components/MovementComponent.cpp.i
+.PHONY : src/Components/MovementComponent.cpp.i
+
+src/Components/MovementComponent.s: src/Components/MovementComponent.cpp.s
+.PHONY : src/Components/MovementComponent.s
+
+# target to generate assembly for a file
+src/Components/MovementComponent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Components/MovementComponent.cpp.s
+.PHONY : src/Components/MovementComponent.cpp.s
+
+src/Entities/AttackCommand.obj: src/Entities/AttackCommand.cpp.obj
+.PHONY : src/Entities/AttackCommand.obj
+
+# target to build an object file
+src/Entities/AttackCommand.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Entities/AttackCommand.cpp.obj
+.PHONY : src/Entities/AttackCommand.cpp.obj
+
+src/Entities/AttackCommand.i: src/Entities/AttackCommand.cpp.i
+.PHONY : src/Entities/AttackCommand.i
+
+# target to preprocess a source file
+src/Entities/AttackCommand.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Entities/AttackCommand.cpp.i
+.PHONY : src/Entities/AttackCommand.cpp.i
+
+src/Entities/AttackCommand.s: src/Entities/AttackCommand.cpp.s
+.PHONY : src/Entities/AttackCommand.s
+
+# target to generate assembly for a file
+src/Entities/AttackCommand.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Entities/AttackCommand.cpp.s
+.PHONY : src/Entities/AttackCommand.cpp.s
+
+src/Entities/Character.obj: src/Entities/Character.cpp.obj
+.PHONY : src/Entities/Character.obj
+
+# target to build an object file
+src/Entities/Character.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj
+.PHONY : src/Entities/Character.cpp.obj
+
+src/Entities/Character.i: src/Entities/Character.cpp.i
+.PHONY : src/Entities/Character.i
+
+# target to preprocess a source file
+src/Entities/Character.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.i
+.PHONY : src/Entities/Character.cpp.i
+
+src/Entities/Character.s: src/Entities/Character.cpp.s
+.PHONY : src/Entities/Character.s
+
+# target to generate assembly for a file
+src/Entities/Character.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.s
+.PHONY : src/Entities/Character.cpp.s
+
+src/Entities/Command.obj: src/Entities/Command.cpp.obj
+.PHONY : src/Entities/Command.obj
+
+# target to build an object file
+src/Entities/Command.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Entities/Command.cpp.obj
+.PHONY : src/Entities/Command.cpp.obj
+
+src/Entities/Command.i: src/Entities/Command.cpp.i
+.PHONY : src/Entities/Command.i
+
+# target to preprocess a source file
+src/Entities/Command.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Entities/Command.cpp.i
+.PHONY : src/Entities/Command.cpp.i
+
+src/Entities/Command.s: src/Entities/Command.cpp.s
+.PHONY : src/Entities/Command.s
+
+# target to generate assembly for a file
+src/Entities/Command.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Entities/Command.cpp.s
+.PHONY : src/Entities/Command.cpp.s
+
+src/Entities/Menu.obj: src/Entities/Menu.cpp.obj
+.PHONY : src/Entities/Menu.obj
+
+# target to build an object file
+src/Entities/Menu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Entities/Menu.cpp.obj
+.PHONY : src/Entities/Menu.cpp.obj
+
+src/Entities/Menu.i: src/Entities/Menu.cpp.i
+.PHONY : src/Entities/Menu.i
+
+# target to preprocess a source file
+src/Entities/Menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Entities/Menu.cpp.i
+.PHONY : src/Entities/Menu.cpp.i
+
+src/Entities/Menu.s: src/Entities/Menu.cpp.s
+.PHONY : src/Entities/Menu.s
+
+# target to generate assembly for a file
+src/Entities/Menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Entities/Menu.cpp.s
+.PHONY : src/Entities/Menu.cpp.s
+
 src/GlobalDefs.obj: src/GlobalDefs.cpp.obj
 .PHONY : src/GlobalDefs.obj
 
@@ -273,6 +297,30 @@ src/GlobalDefs.s: src/GlobalDefs.cpp.s
 src/GlobalDefs.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.s
 .PHONY : src/GlobalDefs.cpp.s
+
+src/Graphics/MeshManager.obj: src/Graphics/MeshManager.cpp.obj
+.PHONY : src/Graphics/MeshManager.obj
+
+# target to build an object file
+src/Graphics/MeshManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/MeshManager.cpp.obj
+.PHONY : src/Graphics/MeshManager.cpp.obj
+
+src/Graphics/MeshManager.i: src/Graphics/MeshManager.cpp.i
+.PHONY : src/Graphics/MeshManager.i
+
+# target to preprocess a source file
+src/Graphics/MeshManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/MeshManager.cpp.i
+.PHONY : src/Graphics/MeshManager.cpp.i
+
+src/Graphics/MeshManager.s: src/Graphics/MeshManager.cpp.s
+.PHONY : src/Graphics/MeshManager.s
+
+# target to generate assembly for a file
+src/Graphics/MeshManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/MeshManager.cpp.s
+.PHONY : src/Graphics/MeshManager.cpp.s
 
 src/Graphics/RenderState.obj: src/Graphics/RenderState.cpp.obj
 .PHONY : src/Graphics/RenderState.obj
@@ -442,77 +490,77 @@ src/InputHandler.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/InputHandler.cpp.s
 .PHONY : src/InputHandler.cpp.s
 
-src/MainMenu.obj: src/MainMenu.cpp.obj
-.PHONY : src/MainMenu.obj
+src/Scenes/CombatInstance.obj: src/Scenes/CombatInstance.cpp.obj
+.PHONY : src/Scenes/CombatInstance.obj
 
 # target to build an object file
-src/MainMenu.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/MainMenu.cpp.obj
-.PHONY : src/MainMenu.cpp.obj
+src/Scenes/CombatInstance.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj
+.PHONY : src/Scenes/CombatInstance.cpp.obj
 
-src/MainMenu.i: src/MainMenu.cpp.i
-.PHONY : src/MainMenu.i
+src/Scenes/CombatInstance.i: src/Scenes/CombatInstance.cpp.i
+.PHONY : src/Scenes/CombatInstance.i
 
 # target to preprocess a source file
-src/MainMenu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/MainMenu.cpp.i
-.PHONY : src/MainMenu.cpp.i
+src/Scenes/CombatInstance.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.i
+.PHONY : src/Scenes/CombatInstance.cpp.i
 
-src/MainMenu.s: src/MainMenu.cpp.s
-.PHONY : src/MainMenu.s
+src/Scenes/CombatInstance.s: src/Scenes/CombatInstance.cpp.s
+.PHONY : src/Scenes/CombatInstance.s
 
 # target to generate assembly for a file
-src/MainMenu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/MainMenu.cpp.s
-.PHONY : src/MainMenu.cpp.s
+src/Scenes/CombatInstance.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.s
+.PHONY : src/Scenes/CombatInstance.cpp.s
 
-src/Menu.obj: src/Menu.cpp.obj
-.PHONY : src/Menu.obj
+src/Scenes/MainMenu.obj: src/Scenes/MainMenu.cpp.obj
+.PHONY : src/Scenes/MainMenu.obj
 
 # target to build an object file
-src/Menu.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.obj
-.PHONY : src/Menu.cpp.obj
+src/Scenes/MainMenu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Scenes/MainMenu.cpp.obj
+.PHONY : src/Scenes/MainMenu.cpp.obj
 
-src/Menu.i: src/Menu.cpp.i
-.PHONY : src/Menu.i
+src/Scenes/MainMenu.i: src/Scenes/MainMenu.cpp.i
+.PHONY : src/Scenes/MainMenu.i
 
 # target to preprocess a source file
-src/Menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.i
-.PHONY : src/Menu.cpp.i
+src/Scenes/MainMenu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Scenes/MainMenu.cpp.i
+.PHONY : src/Scenes/MainMenu.cpp.i
 
-src/Menu.s: src/Menu.cpp.s
-.PHONY : src/Menu.s
+src/Scenes/MainMenu.s: src/Scenes/MainMenu.cpp.s
+.PHONY : src/Scenes/MainMenu.s
 
 # target to generate assembly for a file
-src/Menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Menu.cpp.s
-.PHONY : src/Menu.cpp.s
+src/Scenes/MainMenu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Scenes/MainMenu.cpp.s
+.PHONY : src/Scenes/MainMenu.cpp.s
 
-src/MovementComponent.obj: src/MovementComponent.cpp.obj
-.PHONY : src/MovementComponent.obj
+src/Scenes/SceneManager.obj: src/Scenes/SceneManager.cpp.obj
+.PHONY : src/Scenes/SceneManager.obj
 
 # target to build an object file
-src/MovementComponent.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/MovementComponent.cpp.obj
-.PHONY : src/MovementComponent.cpp.obj
+src/Scenes/SceneManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Scenes/SceneManager.cpp.obj
+.PHONY : src/Scenes/SceneManager.cpp.obj
 
-src/MovementComponent.i: src/MovementComponent.cpp.i
-.PHONY : src/MovementComponent.i
+src/Scenes/SceneManager.i: src/Scenes/SceneManager.cpp.i
+.PHONY : src/Scenes/SceneManager.i
 
 # target to preprocess a source file
-src/MovementComponent.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/MovementComponent.cpp.i
-.PHONY : src/MovementComponent.cpp.i
+src/Scenes/SceneManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Scenes/SceneManager.cpp.i
+.PHONY : src/Scenes/SceneManager.cpp.i
 
-src/MovementComponent.s: src/MovementComponent.cpp.s
-.PHONY : src/MovementComponent.s
+src/Scenes/SceneManager.s: src/Scenes/SceneManager.cpp.s
+.PHONY : src/Scenes/SceneManager.s
 
 # target to generate assembly for a file
-src/MovementComponent.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/MovementComponent.cpp.s
-.PHONY : src/MovementComponent.cpp.s
+src/Scenes/SceneManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Scenes/SceneManager.cpp.s
+.PHONY : src/Scenes/SceneManager.cpp.s
 
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
@@ -547,24 +595,30 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Project_Crystallis"
-	@echo "... src/AttackCommand.obj"
-	@echo "... src/AttackCommand.i"
-	@echo "... src/AttackCommand.s"
-	@echo "... src/Character.obj"
-	@echo "... src/Character.i"
-	@echo "... src/Character.s"
-	@echo "... src/CombatInstance.obj"
-	@echo "... src/CombatInstance.i"
-	@echo "... src/CombatInstance.s"
-	@echo "... src/Command.obj"
-	@echo "... src/Command.i"
-	@echo "... src/Command.s"
 	@echo "... src/CommandRegistry.obj"
 	@echo "... src/CommandRegistry.i"
 	@echo "... src/CommandRegistry.s"
+	@echo "... src/Components/MovementComponent.obj"
+	@echo "... src/Components/MovementComponent.i"
+	@echo "... src/Components/MovementComponent.s"
+	@echo "... src/Entities/AttackCommand.obj"
+	@echo "... src/Entities/AttackCommand.i"
+	@echo "... src/Entities/AttackCommand.s"
+	@echo "... src/Entities/Character.obj"
+	@echo "... src/Entities/Character.i"
+	@echo "... src/Entities/Character.s"
+	@echo "... src/Entities/Command.obj"
+	@echo "... src/Entities/Command.i"
+	@echo "... src/Entities/Command.s"
+	@echo "... src/Entities/Menu.obj"
+	@echo "... src/Entities/Menu.i"
+	@echo "... src/Entities/Menu.s"
 	@echo "... src/GlobalDefs.obj"
 	@echo "... src/GlobalDefs.i"
 	@echo "... src/GlobalDefs.s"
+	@echo "... src/Graphics/MeshManager.obj"
+	@echo "... src/Graphics/MeshManager.i"
+	@echo "... src/Graphics/MeshManager.s"
 	@echo "... src/Graphics/RenderState.obj"
 	@echo "... src/Graphics/RenderState.i"
 	@echo "... src/Graphics/RenderState.s"
@@ -586,15 +640,15 @@ help:
 	@echo "... src/InputHandler.obj"
 	@echo "... src/InputHandler.i"
 	@echo "... src/InputHandler.s"
-	@echo "... src/MainMenu.obj"
-	@echo "... src/MainMenu.i"
-	@echo "... src/MainMenu.s"
-	@echo "... src/Menu.obj"
-	@echo "... src/Menu.i"
-	@echo "... src/Menu.s"
-	@echo "... src/MovementComponent.obj"
-	@echo "... src/MovementComponent.i"
-	@echo "... src/MovementComponent.s"
+	@echo "... src/Scenes/CombatInstance.obj"
+	@echo "... src/Scenes/CombatInstance.i"
+	@echo "... src/Scenes/CombatInstance.s"
+	@echo "... src/Scenes/MainMenu.obj"
+	@echo "... src/Scenes/MainMenu.i"
+	@echo "... src/Scenes/MainMenu.s"
+	@echo "... src/Scenes/SceneManager.obj"
+	@echo "... src/Scenes/SceneManager.i"
+	@echo "... src/Scenes/SceneManager.s"
 	@echo "... src/main.obj"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

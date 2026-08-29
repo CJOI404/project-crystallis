@@ -1,5 +1,7 @@
-#include "MainMenu.h"
+#include "Scenes/MainMenu.h"
 #include "graphics/RenderState.h"
+#include "Scenes/CombatInstance.h"
+#include "Scenes/SceneManager.h"
 
 MainMenu::MainMenu(){
     selectedIdx = 0;
@@ -16,11 +18,12 @@ MainMenu::MainMenu(){
 void MainMenu::selectButton(){
     switch (selectedIdx){
         case 0:
-            startFlag = true;
+            SceneManager::setNextScene(new CombatInstance());
+            // startFlag = true;
     }
 }
 
-void MainMenu::update(float dt){
+void MainMenu::update(float dt) {
 
     if (InputHandler::getButtonDown(PSP_CTRL_CROSS)){
         selectButton();
@@ -60,4 +63,8 @@ void MainMenu::render(float dt){
         currY += 25;
     }
 
+}
+
+void MainMenu::unload(){
+    TextureManager::unload("Logo.png");
 }

@@ -1,6 +1,6 @@
-#include "Menu.h"
-#include "graphics/UIRender.h"
-#include "AttackCommand.h"
+#include "Entities/Menu.h"
+#include "graphics/AssetManagers/UIRender.h"
+#include "Entities/AttackCommand.h"
 #include "CommandRegistry.h"
 
 Menu::Menu(){
@@ -261,8 +261,8 @@ void Menu::drawPage(int buttonWidth, int buttonHeight, int yButtonAmt, int casca
 }
 
 void Menu::drawAtb(){
-    UI::drawRect(5, 170, activeCharacter->atbSegments * 50, 12, Colours::LIGHTGREY);
-    UI::drawRect(5, 172, activeCharacter->currAtbVal * 50, 8, Colours::LIGHTBLUE);
+    UI::drawRect(5, 172, activeCharacter->atbSegments * 50, 10, Colours::LIGHTGREY);
+    UI::drawRect(5, 174, activeCharacter->currAtbVal * 50, 6, Colours::LIGHTBLUE);
 }
 
 void Menu::drawTeamStats(){

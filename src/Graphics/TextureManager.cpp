@@ -1,4 +1,4 @@
-#include "graphics/TextureManager.h"
+#include "graphics/AssetManagers/TextureManager.h"
 #include <stb_image.h>
 #include <psputils.h>
 #include <pspsysmem.h>
@@ -46,6 +46,7 @@ namespace TextureManager {
         if (it != textures.end()){
             printf("%s already loaded, returning reference\n", texturePath);
             fflush(stdout);
+            it->second.refCount++;
             return &it->second;
         }
 
@@ -62,6 +63,7 @@ namespace TextureManager {
         texture.data = (uint32_t*) swizzledData;
         texture.width = textureWidth;
         texture.height = textureHeight;
+        texture.refCount = 1;
 
         if (!texture.data){
             printf("%s Not Found.", texturePath);
@@ -85,20 +87,26 @@ namespace TextureManager {
         return &result.first->second;
     }
 
+    
     void unload(const char* texturePath)
     {
         auto it = textures.find(texturePath);
 
-        if (it == textures.end())
-            return;
+        if (it == textures.end()) return;
 
-        if (it->second.data)
+        it->second.refCount--;
+        if (it->second.refCount <= 0 && it->second.data) {
             stbi_image_free(it->second.data);
 
-        printf("Unloaded %s", texturePath);
-        fflush(stdout);
+            textures.erase(it);
 
-        textures.erase(it);
+            printf("UNLOADED %s\n", texturePath);
+            fflush(stdout);
+        } else {
+            printf("DID NOT UNLOAD: %s, REFCOUNT: %d\n", texturePath, it->second.refCount);
+            fflush(stdout);
+        }
+
     }
 
     void clear()

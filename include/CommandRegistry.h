@@ -1,6 +1,6 @@
 #pragma once
 
-#include "AttackCommand.h"
+#include "Entities/AttackCommand.h"
 
 namespace Commands{
 

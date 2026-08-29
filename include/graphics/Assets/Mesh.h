@@ -15,4 +15,5 @@ struct __attribute__((packed, aligned(4))) Vertex3D {
 typedef struct {
     Vertex3D* vertices;
     int vertexCount;
+    int refCount;
 } Mesh;

@@ -128,9 +128,9 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /home/calvi/pspdev/psp/include/sys/string.h \
  /mnt/d/project-crystallis/include/InputHandler.h \
  /home/calvi/pspdev/psp/sdk/include/pspctrl.h \
- /mnt/d/project-crystallis/include/GameActor.h \
- /mnt/d/project-crystallis/include/Component.h \
- /mnt/d/project-crystallis/include/MovementComponent.h \
+ /mnt/d/project-crystallis/include/Entities/GameActor.h \
+ /mnt/d/project-crystallis/include/Components/Component.h \
+ /mnt/d/project-crystallis/include/Components/MovementComponent.h \
  /mnt/d/project-crystallis/include/GlobalDefs.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/string \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stringfwd.h \
@@ -180,8 +180,8 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator_args.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
- /mnt/d/project-crystallis/include/Character.h \
- /mnt/d/project-crystallis/include/BattleCommand.h \
+ /mnt/d/project-crystallis/include/Entities/Character.h \
+ /mnt/d/project-crystallis/include/Entities/BattleCommand.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/queue \
  /home/calvi/pspdev/psp/include/c++/15.1.1/deque \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_uninitialized.h \
@@ -193,15 +193,15 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/vector.tcc \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_heap.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_queue.h \
- /mnt/d/project-crystallis/include/graphics/Sprite.h \
- /mnt/d/project-crystallis/include/graphics/Texture.h \
- /mnt/d/project-crystallis/include/graphics/Mesh.h \
+ /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
+ /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
+ /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
  /home/calvi/pspdev/psp/sdk/include/pspgum.h \
  /home/calvi/pspdev/psp/include/malloc.h \
  /home/calvi/pspdev/psp/include/machine/malloc.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/ctime \
- /mnt/d/project-crystallis/include/graphics/UIRender.h \
- /mnt/d/project-crystallis/include/graphics/TextureManager.h \
+ /mnt/d/project-crystallis/include/graphics/AssetManagers/UIRender.h \
+ /mnt/d/project-crystallis/include/graphics/AssetManagers/TextureManager.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/unordered_map \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/unordered_map.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/hashtable.h \
@@ -210,18 +210,20 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/enable_special_members.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/node_handle.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/erase_if.h \
- /mnt/d/project-crystallis/include/graphics/SpriteManager.h \
+ /mnt/d/project-crystallis/include/graphics/AssetManagers/SpriteManager.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/map \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_tree.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_map.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_multimap.h \
  /mnt/d/project-crystallis/include/CommandRegistry.h \
- /mnt/d/project-crystallis/include/AttackCommand.h \
- /mnt/d/project-crystallis/include/CombatInstance.h \
- /mnt/d/project-crystallis/include/Menu.h \
- /mnt/d/project-crystallis/include/MainMenu.h \
- /mnt/d/project-crystallis/include/graphics/MeshManager.h \
+ /mnt/d/project-crystallis/include/Entities/AttackCommand.h \
+ /mnt/d/project-crystallis/include/Scenes/CombatInstance.h \
+ /mnt/d/project-crystallis/include/Entities/Menu.h \
+ /mnt/d/project-crystallis/include/Scenes/Scene.h \
+ /mnt/d/project-crystallis/include/Scenes/MainMenu.h \
+ /mnt/d/project-crystallis/include/graphics/AssetManagers/MeshManager.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstring \
+ /mnt/d/project-crystallis/include/Scenes/SceneManager.h \
  /mnt/d/project-crystallis/include/graphics/RenderState.h \
  /home/calvi/pspdev/psp/include/stb_image.h \
  /home/calvi/pspdev/psp/include/assert.h \

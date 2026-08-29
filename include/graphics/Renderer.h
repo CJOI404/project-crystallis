@@ -1,5 +1,5 @@
 #pragma once
-#include "graphics/Mesh.h"
+#include "graphics/Assets/Mesh.h"
 #include <pspgum.h>
 #include <pspgu.h>
 #include <psputils.h>

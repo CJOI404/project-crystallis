@@ -1,6 +1,6 @@
 CMakeFiles/Project_Crystallis.dir/src/Graphics/TextureManager.cpp.obj: \
  /mnt/d/project-crystallis/src/Graphics/TextureManager.cpp \
- /mnt/d/project-crystallis/include/graphics/TextureManager.h \
+ /mnt/d/project-crystallis/include/graphics/AssetManagers/TextureManager.h \
  /home/calvi/pspdev/psp/sdk/include/psptypes.h \
  /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h \
  /home/calvi/pspdev/psp/include/stdint.h \
@@ -112,7 +112,7 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/TextureManager.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/enable_special_members.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/node_handle.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/erase_if.h \
- /mnt/d/project-crystallis/include/graphics/Texture.h \
+ /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
  /home/calvi/pspdev/psp/include/stb_image.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/stdlib.h \
  /home/calvi/pspdev/psp/sdk/include/psputils.h \

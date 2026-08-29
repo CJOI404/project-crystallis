@@ -1,4 +1,4 @@
-#include "graphics/Texture.h"
+#include "graphics/Assets/Texture.h"
 #include <pspgu.h>
 #include <GlobalDefs.h>
 #include <psputils.h>

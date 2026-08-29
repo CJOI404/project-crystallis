@@ -1,13 +1,9 @@
-#pragma once
-
-#include "graphics/Mesh.h"
-#include <unordered_map>
-#include <psputils.h>
-#include <cstring>
+#include "graphics/AssetManagers/MeshManager.h"
 
 namespace MeshManager{
 
     std::unordered_map<std::string, Mesh> meshes;
+
     Mesh* loadOBJ(const char* filename) {
         FILE* file = fopen(filename, "r");
         if (!file) {
@@ -125,6 +121,7 @@ namespace MeshManager{
         Mesh* mesh = (Mesh*)malloc(sizeof(Mesh));
         mesh->vertices = out_vertices;
         mesh->vertexCount = f_count;
+        mesh->refCount++;
 
         printf("Successfully loaded %s (%d vertices)\n", filename, f_count);
 

@@ -1,7 +1,7 @@
 #pragma once
 #include <pspgu.h>
 #include <cstdint>
-#include "Texture.h"
+#include "graphics/Assets/Texture.h"
 
 enum BlendMode {
     BLEND_NONE,       // Disables blending (opaque geometry)

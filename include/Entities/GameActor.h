@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Component.h"
-#include "MovementComponent.h"
+#include "Components/Component.h"
+#include "Components/MovementComponent.h"
 
 class GameActor{
 

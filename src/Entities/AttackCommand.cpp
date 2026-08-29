@@ -1,4 +1,4 @@
-#include "AttackCommand.h"
+#include "Entities/AttackCommand.h"
 #include <cstring>
 
 AttackCommand::AttackCommand(){

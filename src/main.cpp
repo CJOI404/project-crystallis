@@ -7,22 +7,23 @@
 #include <stdio.h>
 #include <memory.h>
 #include "InputHandler.h"
-#include "GameActor.h"
-#include "Character.h"
+#include "Entities/GameActor.h"
+#include "Entities/Character.h"
 #include <ctime>
 #include <string>
-#include "graphics/UIRender.h"
-#include "graphics/SpriteManager.h"
+#include "graphics/AssetManagers/UIRender.h"
+#include "graphics/AssetManagers/SpriteManager.h"
 #include "CommandRegistry.h"
 #include "GlobalDefs.h"
-#include "CombatInstance.h"
-#include "MainMenu.h"
-#include "graphics/MeshManager.h"
+#include "Scenes/CombatInstance.h"
+#include "Scenes/MainMenu.h"
+#include "graphics/AssetManagers/MeshManager.h"
+#include "Scenes/SceneManager.h"
 #include "graphics/RenderState.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
-#include <Menu.h>
+#include <Entities/Menu.h>
 #include <iomanip>
 
 PSP_MODULE_INFO("Project Crystallis", 0, 1, 0);
@@ -93,7 +94,7 @@ void initGu(){
     sceGumLoadIdentity();
     sceGumPerspective(75.0f, 480.0f / 272.0f, 0.5f, 1000.0f); // Field of view, Aspect ratio, Near, Far
 
-    
+
 
     // Start a new frame and enable the display
     sceGuFinish();
@@ -139,22 +140,13 @@ int main() {
 
     GameState state = GameState::MAINMENU;
 
-    // SceCtrlData pad;
-
-    // sceCtrlSetSamplingCycle(0);
-    // sceCtrlSetSamplingMode(PSP_CTRL_MODE_ANALOG);
-    
-    // pspDebugScreenInit();
-
     // Make exiting with the home button possible
     setup_callbacks();
-
-    // Texture* texture = loadTexture("PSPGameFont.png");
 
     // Setup the library used for rendering
     initGu();
     
-        //Load font data
+    //Load font data
     UI::loadFont("PSPGameFont128.fnt", "PSPGameFont128.png");
 
     //Load skills
@@ -163,11 +155,7 @@ int main() {
     // InputHandler playerInput;
     InputHandler::initializeInputHandler();
 
-
-    float xMoveDir = 0;
-    int xPos = 50;
-    int yPos = 140;
-    const int GROUND_LEVEL = 200;
+    // const int GROUND_LEVEL = 200;
 
     clock_t prevTime = 0;
     clock_t currTime = 0;
@@ -181,23 +169,27 @@ int main() {
     // testInstance.setEnemies(enemies);
     // testInstance.setTeam(team);
 
-    MainMenu mainMenu;
-    CombatInstance* combatInstance = nullptr;
+    // MainMenu mainMenu;
+    // CombatInstance* combatInstance = nullptr;
 
 
-    std::vector<Character*> team;
-    std::vector<Character*> enemies;
+    // std::vector<Character*> team;
+    // std::vector<Character*> enemies;
 
-    Character playerCharacter;
-    Character character2;
-    Character character3;
+    // Character playerCharacter;
+    // Character character2;
+    // Character character3;
 
-    Character enemy;
-    Character enemy2;
+    // Character enemy;
+    // Character enemy2;
 
     float fpsTimer = 0.0f;
     int frameCount = 0;
 
+
+
+    //Set beginning scene
+    SceneManager::currentScene = new MainMenu();
 
     while(running){
 
@@ -225,123 +217,25 @@ int main() {
 
         startFrame();
 
-        if (state == MAINMENU){
-            mainMenu.update(deltaTime);
-            mainMenu.render(deltaTime);
-
-            if (mainMenu.startFlag){
-
-                Texture* spritesheet = TextureManager::load("testspritesheet.png", 256, 128);
-                Mesh* myModel = MeshManager::loadOBJ("Lightning/lightning.obj");
-                Texture* lightningTex = TextureManager::load("Lightning/Lightning_01.png", 256, 256);
-
-                SpriteManager::registerSprite("topleft", spritesheet, 0, 0, 64, 64);
-                SpriteManager::registerSprite("topright", spritesheet, 64, 0, 64, 64);
-                SpriteManager::registerSprite("bottomleft", spritesheet, 0, 64, 64, 64);
-                SpriteManager::registerSprite("bottomright", spritesheet, 64, 64, 64, 64);
-
-                //Initialize characters
-                team.clear();
-                enemies.clear();
-
-                // Character playerCharacter;
-                playerCharacter.health = 300;
-                playerCharacter.maxHealth = 2000;
-                playerCharacter.name = "LIGHTNING";
-                playerCharacter.currentRole = Role::COMMANDO;
-                playerCharacter.sprite = SpriteManager::getSprite("topleft");
-                playerCharacter.mesh = myModel;
-                playerCharacter.meshTexture = lightningTex;
-
-                // Character character2;
-                character2.health = 2200;
-                character2.maxHealth = 3000;
-                character2.xPos = 100;
-                character2.yPos = 100;
-                character2.name = "SAZH";
-                character2.currentRole = Role::RAVAGER;
-                character2.sprite = SpriteManager::getSprite("bottomright");
-                
- 
-                // Character character3;
-                character3.health = 1700;
-                character3.maxHealth = 1700;
-                character3.xPos = 150;
-                character3.yPos = 150;
-                character3.name = "VANILLE";
-                character3.currentRole = Role::SABOTEUR;
-                character3.sprite = SpriteManager::getSprite("bottomleft");
-
-                // Character enemy;
-                enemy.moveComp->color = Colours::BLUE;
-                enemy.xPos = 120;
-                enemy.yPos = 100;
-                enemy.name = "ENEMY 1";
-                enemy.health = 45000;
-                enemy.maxHealth = 45000;
-                enemy.staggerPoint = 250;
-                enemy.drawHealthBar = true;
-                enemy.sprite = SpriteManager::getSprite("topright");
-                enemy.mesh = myModel;
-                enemy.meshTexture = lightningTex;
-
-                // Character enemy2;
-                enemy2.moveComp->color = Colours::BLUE;
-                enemy2.xPos = 400;
-                enemy2.yPos = 120;
-                enemy2.name = "ENEMY 2";
-                enemy2.health = 450000;
-                enemy2.maxHealth = 450000;
-                enemy2.staggerPoint = 600;
-                enemy2.drawHealthBar = true;
-
-                team.push_back(&playerCharacter);
-                team.push_back(&character2);
-                team.push_back(&character3);
-
-                enemies.push_back(&enemy);
-                enemies.push_back(&enemy2);
-
-                for (int i = 0; i < team.size(); i++){
-                    team.at(i)->teamList = team;
-                    team.at(i)->enemyList = enemies;
-                }
-                for (int i = 0; i < enemies.size(); i++){
-                    enemies.at(i)->teamList = enemies;
-                    enemies.at(i)->enemyList = team;
-                }
-
-                //Fill ability list
-                playerCharacter.addViableBattleCommands();
-
-                //Create instance
-                combatInstance = new CombatInstance(team, enemies);
-
-                
-                state = COMBAT;
-            }
-
-        } else if (state == COMBAT){
-
-            combatInstance->update(deltaTime);
-            combatInstance->render(deltaTime);
+        //Update
+        SceneManager::update(deltaTime);
+        SceneManager::render(deltaTime);
+        
+        // currentScene->ExtractRenderData(&g_queue);
+        // If adding render queue, flush gpu here 
+        // (render above simply returns a queue with everything that needs to be rendered)
+        // render queue item have flags that allow them to be sorted and rendered in passes
 
 
-            if (InputHandler::getButtonDown(PSP_CTRL_START)){
-                mainMenu.startFlag = false;
-                delete combatInstance;
-                state = MAINMENU;
-            }
+        //Switch if nextscene changed
+        SceneManager::changeScene();
 
-        }
-
- 
 
         endFrame();
 
     }
 
-    delete combatInstance;
+    // delete combatInstance;
 
     return 0;
 }

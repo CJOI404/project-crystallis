@@ -1,6 +1,6 @@
 CMakeFiles/Project_Crystallis.dir/src/Graphics/Texture.cpp.obj: \
  /mnt/d/project-crystallis/src/Graphics/Texture.cpp \
- /mnt/d/project-crystallis/include/graphics/Texture.h \
+ /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++config.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/os_defines.h \

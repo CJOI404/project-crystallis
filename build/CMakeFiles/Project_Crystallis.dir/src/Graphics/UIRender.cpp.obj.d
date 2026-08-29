@@ -1,6 +1,6 @@
 CMakeFiles/Project_Crystallis.dir/src/Graphics/UIRender.cpp.obj: \
  /mnt/d/project-crystallis/src/Graphics/UIRender.cpp \
- /mnt/d/project-crystallis/include/graphics/UIRender.h \
+ /mnt/d/project-crystallis/include/graphics/AssetManagers/UIRender.h \
  /home/calvi/pspdev/psp/sdk/include/pspgu.h \
  /home/calvi/pspdev/psp/sdk/include/psptypes.h \
  /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h \
@@ -109,7 +109,7 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/UIRender.cpp.obj: \
  /home/calvi/pspdev/psp/include/sys/errno.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/charconv.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/basic_string.tcc \
- /mnt/d/project-crystallis/include/graphics/TextureManager.h \
+ /mnt/d/project-crystallis/include/graphics/AssetManagers/TextureManager.h \
  /mnt/d/project-crystallis/include/GlobalDefs.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
  /home/calvi/pspdev/psp/include/c++/15.1.1/unordered_map \
@@ -120,7 +120,7 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/UIRender.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/enable_special_members.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/node_handle.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/erase_if.h \
- /mnt/d/project-crystallis/include/graphics/Texture.h \
+ /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
  /home/calvi/pspdev/psp/include/string.h \
  /home/calvi/pspdev/psp/include/strings.h \
  /home/calvi/pspdev/psp/include/sys/string.h \

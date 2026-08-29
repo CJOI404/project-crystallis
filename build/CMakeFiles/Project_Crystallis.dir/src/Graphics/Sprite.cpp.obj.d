@@ -1,7 +1,7 @@
 CMakeFiles/Project_Crystallis.dir/src/Graphics/Sprite.cpp.obj: \
  /mnt/d/project-crystallis/src/Graphics/Sprite.cpp \
- /mnt/d/project-crystallis/include/graphics/Sprite.h \
- /mnt/d/project-crystallis/include/graphics/Texture.h \
+ /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
+ /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++config.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/os_defines.h \

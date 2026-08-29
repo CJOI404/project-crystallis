@@ -1,7 +1,8 @@
-#include "Character.h"
-#include "graphics/UIRender.h"
+#include "Entities/Character.h"
+#include "graphics/AssetManagers/UIRender.h"
 #include "graphics/Renderer.h"
-#include <CommandRegistry.h>
+#include "CommandRegistry.h"
+#include "graphics/GraphicsUtils.h"
 
 Character::Character(){
 
@@ -273,6 +274,7 @@ void Character::update(float dt){
 }
 
 void Character::render(float dt){
+
 
     UI::drawRect(xPos, yPos, 20, 20, moveComp->color);
     snprintf(UI::textBuffer, sizeof(UI::textBuffer), name);

@@ -5,8 +5,8 @@
 #include "GlobalDefs.h"
 #include <string>
 #include <queue>
-#include "graphics/Sprite.h"
-#include "graphics/Mesh.h"
+#include "graphics/Assets/Sprite.h"
+#include "graphics/Assets/Mesh.h"
 
 enum CharacterState{
     Attacking,

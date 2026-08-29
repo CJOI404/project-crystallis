@@ -1,8 +1,8 @@
 CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj: \
  /mnt/d/project-crystallis/src/CommandRegistry.cpp \
  /mnt/d/project-crystallis/include/CommandRegistry.h \
- /mnt/d/project-crystallis/include/AttackCommand.h \
- /mnt/d/project-crystallis/include/BattleCommand.h \
+ /mnt/d/project-crystallis/include/Entities/AttackCommand.h \
+ /mnt/d/project-crystallis/include/Entities/BattleCommand.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/string \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/requires_hosted.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++config.h \
@@ -105,10 +105,10 @@ CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj: \
  /home/calvi/pspdev/psp/include/stdint.h \
  /home/calvi/pspdev/psp/include/sys/_intsup.h \
  /home/calvi/pspdev/psp/include/sys/_stdint.h \
- /mnt/d/project-crystallis/include/Character.h \
- /mnt/d/project-crystallis/include/GameActor.h \
- /mnt/d/project-crystallis/include/Component.h \
- /mnt/d/project-crystallis/include/MovementComponent.h \
+ /mnt/d/project-crystallis/include/Entities/Character.h \
+ /mnt/d/project-crystallis/include/Entities/GameActor.h \
+ /mnt/d/project-crystallis/include/Components/Component.h \
+ /mnt/d/project-crystallis/include/Components/MovementComponent.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/math.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cmath \
  /home/calvi/pspdev/psp/include/math.h \
@@ -137,9 +137,9 @@ CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/vector.tcc \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_heap.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_queue.h \
- /mnt/d/project-crystallis/include/graphics/Sprite.h \
- /mnt/d/project-crystallis/include/graphics/Texture.h \
- /mnt/d/project-crystallis/include/graphics/Mesh.h \
+ /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
+ /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
+ /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
  /home/calvi/pspdev/psp/sdk/include/pspgu.h \
  /home/calvi/pspdev/psp/sdk/include/psptypes.h \
  /home/calvi/pspdev/psp/sdk/include/pspge.h \

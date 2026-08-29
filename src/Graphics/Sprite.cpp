@@ -1,4 +1,4 @@
-#include "graphics/Sprite.h"
+#include "graphics/Assets/Sprite.h"
 #include <cstdio>
 #include <pspgu.h>
 

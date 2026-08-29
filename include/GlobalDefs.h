@@ -126,6 +126,12 @@ enum Colours{
     MIDGREY = 0xFF45454d
 };
 
+//Scene IDS
+enum SceneID {
+    MAIN_MENU,
+    COMBAT_INSTANCE
+};
+
 //Texture stuff
 // typedef struct
 // {
