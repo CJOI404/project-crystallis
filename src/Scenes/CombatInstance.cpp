@@ -223,28 +223,10 @@ void CombatInstance::render(float dt){
     RenderState::setDepthState(DEPTH_DISABLED);
     RenderState::setBlendMode(BLEND_NONE);
     
+    
     background->draw(0, 0, 512, 512, GraphicsUtils::ColourRGBA(255, 255, 200, 1.0f));
 
 
-    //Opaque 3d render
-    // RenderState::setDepthState(DepthState::DEPTH_READ_WRITE);
-    // RenderState::setBlendMode(BLEND_NONE);
-    //     for (int i = 0; i < enemies.size(); i++){
-    //     enemies[i]->render(dt);
-    // }
-    // for (int i = 0; i < team.size(); i++){
-    //     team[i]->render(dt);
-    // }
-
-
-    //translucent 3d render
-
-    //2d UI render
-    // RenderState::setDepthState(DEPTH_DISABLED);
-    // RenderState::setBlendMode(BLEND_ALPHA);
-    // testlogo->draw(100, 100, 100, 100, GraphicsUtils::ColourRGBA(255, 255, 255, 0.5f));
-
-    // RenderState::setDepthState(DepthState::DEPTH_READ_WRITE);
     //RENDER
     for (int i = 0; i < team.size(); i++){
         ScePspFMatrix4 viewProjMatrix = GraphicsUtils::getViewProjectionMatrix();
