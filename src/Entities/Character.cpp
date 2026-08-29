@@ -3,6 +3,7 @@
 #include "graphics/Renderer.h"
 #include "CommandRegistry.h"
 #include "graphics/GraphicsUtils.h"
+#include "graphics/RenderQueue.h"
 
 Character::Character(){
 
@@ -278,32 +279,33 @@ void Character::update(float dt){
 
 void Character::render(float dt){
 
+    if (mesh){
 
-    UI::drawRect(screenPos.x, screenPos.y - 200, 20, 20, moveComp->color);
-    snprintf(UI::textBuffer, sizeof(UI::textBuffer), name);
-    UI::drawString(screenPos.x, screenPos.y - 200, 0xFF00FFFF, 0.3, 0.3, UI::textBuffer); 
+        Submit3D(&g_queue, mesh, meshTexture, &worldPos, &worldRot, GraphicsUtils::Layer::OPAQUE_3D_1);
 
-    if (drawHealthBar) drawHealth();
-
-    if (sprite == nullptr){
-        return;
     }
-    sprite->draw(screenPos.x - 50, screenPos.y - 150, 20, 20, 0xFFFFFFFF);
+    SubmitRect(&g_queue, screenPos.x, screenPos.y - 200, 20, 20, moveComp->color, GraphicsUtils::Layer::UI_3);
+    SubmitText(&g_queue, name, screenPos.x, screenPos.y - 200, 0.3, 0.3, 0xFF00FFFF, GraphicsUtils::Layer::UI_3);
+
+        // UI::drawRect(screenPos.x, screenPos.y - 200, 20, 20, moveComp->color);
+    // snprintf(UI::textBuffer, sizeof(UI::textBuffer), name);
+    // UI::drawString(screenPos.x, screenPos.y - 200, 0xFF00FFFF, 0.3, 0.3, name); 
+
+    // if (drawHealthBar) drawHealth();
+
+    // if (sprite == nullptr){
+    //     return;
+    // }
+    // sprite->draw(screenPos.x - 50, screenPos.y - 150, 20, 20, 0xFFFFFFFF);
 
 }
 
 void Character::render3D(float dt) {
-    if (mesh){
-        // ScePspFVector3 pos = {0.0f + xPos, -70.0f - yPos, -100.0f};
-        // ScePspFVector3 rot = {0.0f, rotation, 0.0f};
-        // printf("render3D name=%s mesh=%p verts=%d pos=(%.2f,%.2f,%.2f)\n",
-        //    name ? name : "unnamed",
-        //    mesh,
-        //    mesh ? mesh->vertexCount : 0,
-        //    pos.x, pos.y, pos.z);
-        // Renderer::renderMesh(mesh, &pos, &rot);
-        Renderer::renderTexturedMesh(mesh, meshTexture, &worldPos, &worldRot);
-    }
+    // if (mesh){
+
+    //     Submit3D(&g_queue, mesh, meshTexture, &worldPos, &worldRot, GraphicsUtils::Layer::OPAQUE_3D_1);
+
+    // }
 }
 
 void Character::drawHealth(){

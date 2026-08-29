@@ -8,8 +8,8 @@
 
 enum RenderType { 
     Mesh3D, 
-    Sprite2D,
     Rect2D,
+    Sprite2D,
     TextUI
 };
 

@@ -42,10 +42,6 @@ void Submit2D(RenderQueue* queue, Texture* tex, float x, float y, float w, float
         // cmd.sprite2D.sprite = sprite;
         cmd.colour = colour;
         cmd.layer = layer;
-
-        printf("DEBUG: Just wrote x=%f, read back x=%f\n", x, cmd.sprite2D.x);
-        printf("DEBUG: Type:%d\n", cmd.type);
-        fflush(stdout);
     }
 }
 
@@ -110,11 +106,7 @@ void RenderPipeline_Flush(RenderQueue* queue) {
     });
 
     for (int i = 0; i < queue->count; i++) {
-        printf("Current Command: %d\n", (int)queue->commands[i].type);
-        fflush(stdout);
         RenderCommand& cmd = queue->commands[i];
-        printf("ASSIGNED CMD\n");
-        fflush(stdout);
 
         // Handle blending states per command
         // if (cmd.blendMode == BlendMode::Opaque) {
@@ -129,33 +121,26 @@ void RenderPipeline_Flush(RenderQueue* queue) {
         // Branch cleanly based on explicit type check
         switch (cmd.type) {
             case RenderType::Mesh3D:
+                    RenderState::set(GU_CULL_FACE, true);
+                    RenderState::setDepthState(DepthState::DEPTH_READ_WRITE);
+                    RenderState::setBlendMode(BLEND_NONE);
                     Renderer::renderTexturedMesh(cmd.mesh3D.mesh, cmd.mesh3D.texture, cmd.mesh3D.position, cmd.mesh3D.rotation);
                 break;
 
             case RenderType::Sprite2D:
-                printf("Entered SWITCH\n");
-                fflush(stdout);
-                // sceGuDisable(GU_DEPTH_TEST);
-                // if (cmd.sprite2D.position->visible)
-                    // Renderer::renderSprite(cmd.sprite2D.sprite, 
-                    //     cmd.sprite2D.position, 
-                    //     cmd.sprite2D.sprite->width, 
-                    //     cmd.sprite2D.sprite->height, 
-                    //     cmd.colour);
-                    printf("TEST");
-                    fflush(stdout);
-                    printf("Called Draw 2D\ntex = %s\nx=%f, y=%f, w=%f, h=%f\n", cmd.sprite2D.texture, cmd.sprite2D.x, cmd.sprite2D.y, cmd.sprite2D.w, cmd.sprite2D.h); 
-                    fflush(stdout);
+                    RenderState::setDepthState(DepthState::DEPTH_DISABLED);
+                    RenderState::setBlendMode(BLEND_ALPHA);
                     Renderer::renderTexture(cmd.sprite2D.texture, cmd.sprite2D.x, cmd.sprite2D.y, cmd.sprite2D.w, cmd.sprite2D.h, cmd.colour);
                 break;
 
             case RenderType::Rect2D:
-                // sceGuDisable(GU_DEPTH_TEST);
+                RenderState::setDepthState(DepthState::DEPTH_DISABLED);
+                RenderState::setBlendMode(BLEND_ALPHA);
                 UI::drawRect(cmd.rect2D.x, cmd.rect2D.y, cmd.rect2D.w, cmd.rect2D.h, cmd.colour);
-                break;
 
             case RenderType::TextUI:
-                // sceGuDisable(GU_DEPTH_TEST);
+                RenderState::setDepthState(DepthState::DEPTH_DISABLED);
+                RenderState::setBlendMode(BLEND_NONE);
                 UI::drawString(cmd.x, cmd.y, cmd.colour, cmd.xScale, cmd.yScale, cmd.text);
                 break;
         }

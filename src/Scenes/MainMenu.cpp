@@ -48,7 +48,7 @@ void MainMenu::render(float dt){
     // RenderState::setDepthState(DEPTH_DISABLED);
     SubmitRect(&g_queue, 0, 0, 480, 272, 0xFFFFFFFF, GraphicsUtils::Layer::BACKGROUND_0);
     // UI::drawRect(0, 0, 480, 272, 0xFFFFFFFF);
-    Submit2D(&g_queue, logo, 50, -80, 400, 400, 0xFFFFFFFF, GraphicsUtils::Layer::OPAQUE_3D_1);
+    Submit2D(&g_queue, logo, 50, -80, 400, 400, 0xFFFFFFFF, GraphicsUtils::Layer::BACKGROUND_0);
     // logo->draw(50, -80, 400, 400, 0xFFFFFFFF);
 
 

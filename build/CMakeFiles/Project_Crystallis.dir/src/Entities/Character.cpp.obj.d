@@ -181,4 +181,8 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj: \
  /home/calvi/pspdev/psp/include/machine/_time.h \
  /mnt/d/project-crystallis/include/graphics/RenderState.h \
  /mnt/d/project-crystallis/include/CommandRegistry.h \
- /mnt/d/project-crystallis/include/Entities/AttackCommand.h
+ /mnt/d/project-crystallis/include/Entities/AttackCommand.h \
+ /mnt/d/project-crystallis/include/graphics/RenderQueue.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/variant \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/monostate.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/parse_numbers.h
