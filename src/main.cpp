@@ -116,17 +116,11 @@ void startFrame(){
     // sceGuClearDepth();
 
     RenderState::resetCache();
-
-        // View Matrix Setup
-        // sceGumMatrixMode(GU_VIEW);
-        // sceGumLoadIdentity();
-        // ScePspFVector3 pos = { 0.0f, -90.0f, -5.0f };
-        // sceGumTranslate(&pos);
 }
 
 void endFrame(){
     sceGuFinish();
-    // sceGuSync(0, 0);
+    sceGuSync(0, 0);
     sceDisplayWaitVblankStart();
     sceGuSwapBuffers();
 }
