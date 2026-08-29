@@ -15,7 +15,6 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/mnt/d/project-crystallis/src/*.cpp")
 set(OLD_GLOB
   "/mnt/d/project-crystallis/src/CommandRegistry.cpp"
-  "/mnt/d/project-crystallis/src/Components/MovementComponent.cpp"
   "/mnt/d/project-crystallis/src/Entities/AttackCommand.cpp"
   "/mnt/d/project-crystallis/src/Entities/Character.cpp"
   "/mnt/d/project-crystallis/src/Entities/Command.cpp"

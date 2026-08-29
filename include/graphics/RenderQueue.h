@@ -10,13 +10,16 @@ enum RenderType {
     Mesh3D, 
     Rect2D,
     Sprite2D,
-    TextUI
+    TextUI,
+    Vertices2D
 };
 
 struct RenderCommand {
     RenderType type;
     GraphicsUtils::Layer layer;
     uint32_t colour;
+
+    std::vector<TextureVertex>* vertices;
 
     union {
         struct {
@@ -60,5 +63,7 @@ void Submit2D(RenderQueue* queue, Texture* tex, Sprite* sprite, uint32_t colour,
 void Submit2D(RenderQueue* queue, Texture* tex, float x, float y, float w, float h, uint32_t colour, GraphicsUtils::Layer layer);
 void SubmitRect(RenderQueue* queue, short x, short y, short w, short h, uint32_t colour, GraphicsUtils::Layer layer);
 void SubmitText(RenderQueue* queue, std::string text, float x, float y, float xScale, float yScale, uint32_t colour, GraphicsUtils::Layer layer);
+
+void SubmitVertices(RenderQueue* queue, std::vector<TextureVertex>* vertices, GraphicsUtils::Layer layer);
 
 void RenderPipeline_Flush(RenderQueue* queue);

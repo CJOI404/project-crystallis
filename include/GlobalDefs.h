@@ -2,6 +2,8 @@
 #include <string>
 #include <cstdint>
 
+#define MAX_ENTITIES = 100;
+
 enum Element{
     FIRE,
     ICE,
@@ -138,6 +140,17 @@ typedef struct {
     unsigned short u, v;
     short x, y, z;
 } Vertex;
+
+typedef struct {
+    float u, v;
+    unsigned int colour;
+    float x, y, z;
+} TextureVertex;
+
+typedef struct {
+    float x, y, w, h;
+    unsigned int colour;
+} Rect;
 
 
 

@@ -107,25 +107,6 @@ CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj: \
  /home/calvi/pspdev/psp/include/sys/_stdint.h \
  /mnt/d/project-crystallis/include/Entities/Character.h \
  /mnt/d/project-crystallis/include/Entities/GameActor.h \
- /mnt/d/project-crystallis/include/Components/Component.h \
- /mnt/d/project-crystallis/include/Components/MovementComponent.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/math.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/cmath \
- /home/calvi/pspdev/psp/include/math.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/bits/specfun.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/limits \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/gamma.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/special_function_util.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/bessel_function.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/beta_function.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/ell_integral.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/exp_integral.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/hypergeometric.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/legendre_function.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/modified_bessel_func.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_hermite.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_laguerre.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/riemann_zeta.tcc \
  /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
  /home/calvi/pspdev/psp/sdk/include/pspgum.h \
  /home/calvi/pspdev/psp/sdk/include/psptypes.h \

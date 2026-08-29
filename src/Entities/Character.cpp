@@ -11,7 +11,7 @@ Character::Character(){
     characterState = Waiting;
 
     //add components here 
-    moveComp = new MovementComponent(&xPos, &yPos);
+    // moveComp = new MovementComponent(&xPos, &yPos);
 
     //initialize resistances (0.5 = half damage taken, 2.0 = double, etc)
     resistances[Element::FIRE] = Resistance::NORMAL;
@@ -45,7 +45,7 @@ Character::Character(){
 }
 
 Character::~Character(){
-    delete moveComp;
+    // delete moveComp;
     for (BattleCommand* p : commandQueue){
         delete p;
     }
@@ -220,7 +220,7 @@ void Character::update(float dt){
         }
     }
 
-    if (moveComp) moveComp->update(dt);
+    // if (moveComp) moveComp->update(dt);
 
     if (currAtbVal < 0){
         currAtbVal = 0;
@@ -284,7 +284,7 @@ void Character::render(float dt){
         Submit3D(&g_queue, mesh, meshTexture, &worldPos, &worldRot, GraphicsUtils::Layer::OPAQUE_3D_1);
 
     }
-    SubmitRect(&g_queue, screenPos.x, screenPos.y - 200, 20, 20, moveComp->color, GraphicsUtils::Layer::UI_3);
+    SubmitRect(&g_queue, screenPos.x, screenPos.y - 200, 20, 20, 0xFFFF0000, GraphicsUtils::Layer::UI_3);
     SubmitText(&g_queue, name, screenPos.x, screenPos.y - 200, 0.3, 0.3, 0xFF00FFFF, GraphicsUtils::Layer::UI_3);
 
         // UI::drawRect(screenPos.x, screenPos.y - 200, 20, 20, moveComp->color);

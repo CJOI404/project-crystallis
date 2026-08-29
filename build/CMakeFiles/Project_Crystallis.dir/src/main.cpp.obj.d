@@ -129,9 +129,11 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /mnt/d/project-crystallis/include/InputHandler.h \
  /home/calvi/pspdev/psp/sdk/include/pspctrl.h \
  /mnt/d/project-crystallis/include/Entities/GameActor.h \
- /mnt/d/project-crystallis/include/Components/Component.h \
- /mnt/d/project-crystallis/include/Components/MovementComponent.h \
- /mnt/d/project-crystallis/include/GlobalDefs.h \
+ /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
+ /home/calvi/pspdev/psp/sdk/include/pspgum.h \
+ /mnt/d/project-crystallis/include/Entities/Character.h \
+ /mnt/d/project-crystallis/include/Entities/BattleCommand.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/string \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stringfwd.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/memoryfwd.h \
@@ -179,11 +181,7 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator_args.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
- /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
- /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
- /home/calvi/pspdev/psp/sdk/include/pspgum.h \
- /mnt/d/project-crystallis/include/Entities/Character.h \
- /mnt/d/project-crystallis/include/Entities/BattleCommand.h \
+ /mnt/d/project-crystallis/include/GlobalDefs.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/queue \
  /home/calvi/pspdev/psp/include/c++/15.1.1/deque \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_uninitialized.h \

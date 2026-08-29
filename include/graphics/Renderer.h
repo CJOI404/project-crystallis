@@ -5,6 +5,8 @@
 #include <psputils.h>
 #include "graphics/RenderState.h"
 #include "graphics/GraphicsUtils.h"
+#include <vector>
+#include <cstring>
 
 namespace Renderer {
 
@@ -100,6 +102,25 @@ namespace Renderer {
 
         // Only needed if pushing matrix
         // sceGumPopMatrix();
+    }
+
+    inline void renderVertices(std::vector<TextureVertex>* vertices){
+        RenderState::set(GU_TEXTURE_2D, true);
+        // sceGuTexMode(GU_PSM_8888, 0, 0, GU_TRUE);
+        // sceGuTexFunc(GU_TFX_MODULATE, GU_TCC_RGBA);
+        // for (int i = 0; i < vertices->size(); i++){
+        //     printf("%d: x = %f, y = %f, z = %f\n", i, (*vertices)[i].x, (*vertices)[i].y, (*vertices)[i].z);
+        //     fflush(stdout);
+        // }
+
+        if (vertices->empty()) return;
+
+        // Allocate directly from the GE display list buffer
+        TextureVertex* nvertices = (TextureVertex*)sceGuGetMemory(vertices->size() * sizeof(TextureVertex));
+        
+        // Copy your batched vertex data into the GE scratchpad memory
+        std::memcpy(nvertices, vertices->data(), vertices->size() * sizeof(TextureVertex));
+        sceGuDrawArray(GU_SPRITES, GU_COLOR_8888 | GU_TEXTURE_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_2D, vertices->size(), 0, vertices->data());
     }
 
     inline void renderTexture(Texture* tex, float x, float y, float width, float height, uint32_t colour = 0xFFFFFFFF){

@@ -154,30 +154,6 @@ src/CommandRegistry.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.s
 .PHONY : src/CommandRegistry.cpp.s
 
-src/Components/MovementComponent.obj: src/Components/MovementComponent.cpp.obj
-.PHONY : src/Components/MovementComponent.obj
-
-# target to build an object file
-src/Components/MovementComponent.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Components/MovementComponent.cpp.obj
-.PHONY : src/Components/MovementComponent.cpp.obj
-
-src/Components/MovementComponent.i: src/Components/MovementComponent.cpp.i
-.PHONY : src/Components/MovementComponent.i
-
-# target to preprocess a source file
-src/Components/MovementComponent.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Components/MovementComponent.cpp.i
-.PHONY : src/Components/MovementComponent.cpp.i
-
-src/Components/MovementComponent.s: src/Components/MovementComponent.cpp.s
-.PHONY : src/Components/MovementComponent.s
-
-# target to generate assembly for a file
-src/Components/MovementComponent.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Components/MovementComponent.cpp.s
-.PHONY : src/Components/MovementComponent.cpp.s
-
 src/Entities/AttackCommand.obj: src/Entities/AttackCommand.cpp.obj
 .PHONY : src/Entities/AttackCommand.obj
 
@@ -622,9 +598,6 @@ help:
 	@echo "... src/CommandRegistry.obj"
 	@echo "... src/CommandRegistry.i"
 	@echo "... src/CommandRegistry.s"
-	@echo "... src/Components/MovementComponent.obj"
-	@echo "... src/Components/MovementComponent.i"
-	@echo "... src/Components/MovementComponent.s"
 	@echo "... src/Entities/AttackCommand.obj"
 	@echo "... src/Entities/AttackCommand.i"
 	@echo "... src/Entities/AttackCommand.s"

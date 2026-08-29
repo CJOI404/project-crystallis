@@ -126,7 +126,7 @@ void startFrame(){
 
 void endFrame(){
     sceGuFinish();
-    sceGuSync(0, 0);
+    // sceGuSync(0, 0);
     sceDisplayWaitVblankStart();
     sceGuSwapBuffers();
 }
@@ -216,30 +216,27 @@ int main() {
         // playerInput.readInput();
         InputHandler::readInput();
 
-        startFrame();
+        // startFrame();
 
         //Update
         SceneManager::update(deltaTime);
+
+        //Render
+        startFrame();
+
         SceneManager::render(deltaTime);
-        
-        // currentScene->ExtractRenderData(&g_queue);
-        // If adding render queue, flush gpu here 
-        // (render above simply returns a queue with everything that needs to be rendered)
-        // render queue item have flags that allow them to be sorted and rendered in passes
+
         RenderPipeline_Flush(&g_queue);
 
         RenderQueue_Clear(&g_queue);
 
-
         //Switch if nextscene changed
         SceneManager::changeScene();
-
 
         endFrame();
 
     }
 
-    // delete combatInstance;
 
     return 0;
 }

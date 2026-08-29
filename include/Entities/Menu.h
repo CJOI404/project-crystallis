@@ -1,6 +1,7 @@
 #pragma once
 #include "GlobalDefs.h"
 #include <string>
+#include <vector>
 #include "BattleCommand.h"
 
 

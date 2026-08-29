@@ -71,7 +71,7 @@ CombatInstance::CombatInstance(){
     character3.sprite = SpriteManager::getSprite("bottomleft");
 
     // Character enemy;
-    enemy.moveComp->color = Colours::BLUE;
+    // enemy.moveComp->color = Colours::BLUE;
     enemy.xPos = 120;
     enemy.yPos = 100;
     enemy.name = "ENEMY 1";
@@ -84,7 +84,7 @@ CombatInstance::CombatInstance(){
     enemy.meshTexture = lightningTex;
 
     // Character enemy2;
-    enemy2.moveComp->color = Colours::BLUE;
+    // enemy2.moveComp->color = Colours::BLUE;
     enemy2.xPos = 400;
     enemy2.yPos = 120;
     enemy2.name = "ENEMY 2";
@@ -143,7 +143,7 @@ void CombatInstance::update(float dt){
 
     if (state == CombatState::BATTLE){
 
-        playerCharacter.moveComp->setAnalogueMoveVals(InputHandler::analogueX, InputHandler::analogueY);
+        // playerCharacter.moveComp->setAnalogueMoveVals(InputHandler::analogueX, InputHandler::analogueY);
 
         if (InputHandler::getButtonDown(PSP_CTRL_START)){
             SceneManager::setNextScene(new MainMenu());

@@ -9,6 +9,7 @@
 #include <GlobalDefs.h>
 #include "graphics/RenderState.h"
 
+//TODO: TOTAL REFORMAT! SHOULD BE HELPER FUNCTIONS THAT SUBMIT TO QUEUE. DIRECT DRAWS GO IN RENDERER. 
 namespace UI {
     FontChar fontData[128];
     char textBuffer[64];

@@ -26,9 +26,9 @@ typedef struct
 } Texture;
 
 
-typedef struct
-{
-    float u, v;
-    unsigned int colour;
-    float x, y, z;
-} TextureVertex;
+// typedef struct
+// {
+//     float u, v;
+//     unsigned int colour;
+//     float x, y, z;
+// } TextureVertex;

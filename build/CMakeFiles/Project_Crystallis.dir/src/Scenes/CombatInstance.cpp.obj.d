@@ -57,55 +57,42 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
  /mnt/d/project-crystallis/include/Entities/Character.h \
  /mnt/d/project-crystallis/include/Entities/GameActor.h \
- /mnt/d/project-crystallis/include/Components/Component.h \
- /mnt/d/project-crystallis/include/Components/MovementComponent.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/math.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/cmath \
- /home/calvi/pspdev/psp/include/math.h \
- /home/calvi/pspdev/psp/include/sys/reent.h \
- /home/calvi/pspdev/psp/include/_ansi.h \
- /home/calvi/pspdev/psp/include/newlib.h \
- /home/calvi/pspdev/psp/include/_newlib_version.h \
- /home/calvi/pspdev/psp/include/sys/config.h \
- /home/calvi/pspdev/psp/include/machine/ieeefp.h \
- /home/calvi/pspdev/psp/include/sys/features.h \
- /home/calvi/pspdev/psp/include/sys/cdefs.h \
+ /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
+ /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h \
+ /home/calvi/pspdev/psp/include/stdint.h \
  /home/calvi/pspdev/psp/include/machine/_default_types.h \
- /home/calvi/pspdev/psp/include/sys/_types.h \
- /home/calvi/pspdev/psp/include/machine/_types.h \
- /home/calvi/pspdev/psp/include/sys/lock.h \
- /home/calvi/pspdev/psp/include/_ansi.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/bits/std_abs.h \
- /home/calvi/pspdev/psp/include/stdlib.h \
- /home/calvi/pspdev/psp/include/machine/stdlib.h \
- /home/calvi/pspdev/psp/include/alloca.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/bits/specfun.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/limits \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/gamma.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/special_function_util.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/bessel_function.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/beta_function.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/ell_integral.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/exp_integral.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/hypergeometric.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/legendre_function.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/modified_bessel_func.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_hermite.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_laguerre.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/riemann_zeta.tcc \
- /mnt/d/project-crystallis/include/GlobalDefs.h \
+ /home/calvi/pspdev/psp/include/sys/features.h \
+ /home/calvi/pspdev/psp/include/_newlib_version.h \
+ /home/calvi/pspdev/psp/include/sys/_intsup.h \
+ /home/calvi/pspdev/psp/include/sys/_stdint.h \
+ /home/calvi/pspdev/psp/sdk/include/pspgum.h \
+ /home/calvi/pspdev/psp/sdk/include/psptypes.h \
+ /home/calvi/pspdev/psp/sdk/include/pspgu.h \
+ /home/calvi/pspdev/psp/sdk/include/pspge.h \
+ /mnt/d/project-crystallis/include/Entities/BattleCommand.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/string \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stringfwd.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/char_traits.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/postypes.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cwchar \
  /home/calvi/pspdev/psp/include/wchar.h \
+ /home/calvi/pspdev/psp/include/_ansi.h \
+ /home/calvi/pspdev/psp/include/newlib.h \
+ /home/calvi/pspdev/psp/include/sys/config.h \
+ /home/calvi/pspdev/psp/include/machine/ieeefp.h \
+ /home/calvi/pspdev/psp/include/sys/reent.h \
+ /home/calvi/pspdev/psp/include/sys/cdefs.h \
+ /home/calvi/pspdev/psp/include/sys/_types.h \
+ /home/calvi/pspdev/psp/include/machine/_types.h \
+ /home/calvi/pspdev/psp/include/sys/lock.h \
  /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdarg.h \
  /home/calvi/pspdev/psp/include/sys/_locale.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/localefwd.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++locale.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/clocale \
  /home/calvi/pspdev/psp/include/locale.h \
+ /home/calvi/pspdev/psp/include/_ansi.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/iosfwd \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cctype \
  /home/calvi/pspdev/psp/include/ctype.h \
@@ -116,6 +103,10 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/string_view.tcc \
  /home/calvi/pspdev/psp/include/c++/15.1.1/ext/string_conversions.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstdlib \
+ /home/calvi/pspdev/psp/include/stdlib.h \
+ /home/calvi/pspdev/psp/include/machine/stdlib.h \
+ /home/calvi/pspdev/psp/include/alloca.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/std_abs.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstdio \
  /home/calvi/pspdev/psp/include/stdio.h \
  /home/calvi/pspdev/psp/include/sys/stdio.h \
@@ -124,17 +115,7 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: \
  /home/calvi/pspdev/psp/include/sys/errno.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/charconv.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/basic_string.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
- /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h \
- /home/calvi/pspdev/psp/include/stdint.h \
- /home/calvi/pspdev/psp/include/sys/_intsup.h \
- /home/calvi/pspdev/psp/include/sys/_stdint.h \
- /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
- /home/calvi/pspdev/psp/sdk/include/pspgum.h \
- /home/calvi/pspdev/psp/sdk/include/psptypes.h \
- /home/calvi/pspdev/psp/sdk/include/pspgu.h \
- /home/calvi/pspdev/psp/sdk/include/pspge.h \
- /mnt/d/project-crystallis/include/Entities/BattleCommand.h \
+ /mnt/d/project-crystallis/include/GlobalDefs.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/queue \
  /home/calvi/pspdev/psp/include/c++/15.1.1/deque \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_deque.h \

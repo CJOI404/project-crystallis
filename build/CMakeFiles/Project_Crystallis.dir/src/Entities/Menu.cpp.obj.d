@@ -103,16 +103,16 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Menu.cpp.obj: \
  /home/calvi/pspdev/psp/include/stdint.h \
  /home/calvi/pspdev/psp/include/sys/_intsup.h \
  /home/calvi/pspdev/psp/include/sys/_stdint.h \
- /mnt/d/project-crystallis/include/Entities/BattleCommand.h \
- /mnt/d/project-crystallis/include/graphics/AssetManagers/UIRender.h \
- /home/calvi/pspdev/psp/sdk/include/pspgu.h \
- /home/calvi/pspdev/psp/sdk/include/psptypes.h \
- /home/calvi/pspdev/psp/sdk/include/pspge.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/vector \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_uninitialized.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_vector.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_bvector.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/vector.tcc \
+ /mnt/d/project-crystallis/include/Entities/BattleCommand.h \
+ /mnt/d/project-crystallis/include/graphics/AssetManagers/UIRender.h \
+ /home/calvi/pspdev/psp/sdk/include/pspgu.h \
+ /home/calvi/pspdev/psp/sdk/include/psptypes.h \
+ /home/calvi/pspdev/psp/sdk/include/pspge.h \
  /mnt/d/project-crystallis/include/graphics/AssetManagers/TextureManager.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/unordered_map \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/unordered_map.h \
@@ -126,25 +126,6 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Menu.cpp.obj: \
  /mnt/d/project-crystallis/include/Entities/AttackCommand.h \
  /mnt/d/project-crystallis/include/Entities/Character.h \
  /mnt/d/project-crystallis/include/Entities/GameActor.h \
- /mnt/d/project-crystallis/include/Components/Component.h \
- /mnt/d/project-crystallis/include/Components/MovementComponent.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/math.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/cmath \
- /home/calvi/pspdev/psp/include/math.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/bits/specfun.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/limits \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/gamma.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/special_function_util.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/bessel_function.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/beta_function.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/ell_integral.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/exp_integral.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/hypergeometric.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/legendre_function.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/modified_bessel_func.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_hermite.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_laguerre.tcc \
- /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/riemann_zeta.tcc \
  /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
  /home/calvi/pspdev/psp/sdk/include/pspgum.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/queue \
@@ -157,4 +138,37 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Menu.cpp.obj: \
  /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
  /home/calvi/pspdev/psp/include/malloc.h \
  /home/calvi/pspdev/psp/include/machine/malloc.h \
- /mnt/d/project-crystallis/include/CommandRegistry.h
+ /mnt/d/project-crystallis/include/CommandRegistry.h \
+ /mnt/d/project-crystallis/include/graphics/RenderQueue.h \
+ /mnt/d/project-crystallis/include/graphics/Renderer.h \
+ /home/calvi/pspdev/psp/sdk/include/psputils.h \
+ /home/calvi/pspdev/psp/include/sys/time.h \
+ /home/calvi/pspdev/psp/include/sys/_timeval.h \
+ /home/calvi/pspdev/psp/include/sys/types.h \
+ /home/calvi/pspdev/psp/include/machine/endian.h \
+ /home/calvi/pspdev/psp/include/machine/_endian.h \
+ /home/calvi/pspdev/psp/include/sys/select.h \
+ /home/calvi/pspdev/psp/include/sys/_sigset.h \
+ /home/calvi/pspdev/psp/include/sys/timespec.h \
+ /home/calvi/pspdev/psp/include/sys/_timespec.h \
+ /home/calvi/pspdev/psp/include/sys/_pthreadtypes.h \
+ /home/calvi/pspdev/psp/include/bits/posix_opt.h \
+ /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/limits.h \
+ /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/syslimits.h \
+ /home/calvi/pspdev/psp/include/limits.h \
+ /home/calvi/pspdev/psp/include/sys/syslimits.h \
+ /home/calvi/pspdev/psp/include/sys/sched.h \
+ /home/calvi/pspdev/psp/include/machine/types.h \
+ /home/calvi/pspdev/psp/include/time.h \
+ /home/calvi/pspdev/psp/include/machine/time.h \
+ /home/calvi/pspdev/psp/include/signal.h \
+ /home/calvi/pspdev/psp/include/sys/signal.h \
+ /home/calvi/pspdev/psp/include/machine/_time.h \
+ /mnt/d/project-crystallis/include/graphics/RenderState.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstring \
+ /home/calvi/pspdev/psp/include/string.h \
+ /home/calvi/pspdev/psp/include/strings.h \
+ /home/calvi/pspdev/psp/include/sys/string.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/variant \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/monostate.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/parse_numbers.h
