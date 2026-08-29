@@ -153,7 +153,7 @@ void RenderPipeline_Flush(RenderQueue* queue) {
             case RenderType::Rect2D:
                 RenderState::setDepthState(DepthState::DEPTH_DISABLED);
                 RenderState::setBlendMode(BLEND_ALPHA);
-                UI::drawRect(cmd.rect2D.x, cmd.rect2D.y, cmd.rect2D.w, cmd.rect2D.h, cmd.colour);
+                Renderer::drawRect(cmd.rect2D.x, cmd.rect2D.y, cmd.rect2D.w, cmd.rect2D.h, cmd.colour);
                 break;
 
             case RenderType::Vertices2D:
@@ -165,7 +165,7 @@ void RenderPipeline_Flush(RenderQueue* queue) {
             case RenderType::TextUI:
                 RenderState::setDepthState(DepthState::DEPTH_DISABLED);
                 RenderState::setBlendMode(BLEND_NONE);
-                UI::drawString(cmd.x, cmd.y, cmd.colour, cmd.xScale, cmd.yScale, cmd.text);
+                Renderer::drawString(cmd.x, cmd.y, cmd.colour, cmd.xScale, cmd.yScale, cmd.text);
                 break;
 
         }

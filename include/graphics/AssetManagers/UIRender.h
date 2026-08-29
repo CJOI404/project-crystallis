@@ -18,6 +18,8 @@ namespace UI {
     //bitmap font doesn't go past id 128 so this should help save mem
     extern FontChar fontData[128];
 
+    extern Texture* fontTexture;
+
     //fixed size textBuffer to save memory
     extern char textBuffer[64];
 

@@ -282,8 +282,10 @@ void Menu::drawTeamStats(){
 
     for (int i = 0; i < activeCharacter->teamList.size(); i++){
         UI::drawHealthBar(currX + 80, currY + 2, 120, 6, activeCharacter->teamList.at(i)->health, activeCharacter->teamList.at(i)->maxHealth);
-        UI::drawString(currX + 80, currY - 8, 0xFFFFFFFF, 0.3, 0.3, activeCharacter->teamList.at(i)->name);
-        UI::drawString(currX + 150, currY - 8, 0xFFFFFFFF, 0.3, 0.3, roleToString(activeCharacter->teamList.at(i)->currentRole));
+        // UI::drawString(currX + 80, currY - 8, 0xFFFFFFFF, 0.3, 0.3, activeCharacter->teamList.at(i)->name);
+        SubmitText(&g_queue, activeCharacter->teamList.at(i)->name, currX + 80, currY - 8, 0.3, 0.3, 0xFFFFFFFF, GraphicsUtils::Layer::UI_3);
+        // UI::drawString(currX + 150, currY - 8, 0xFFFFFFFF, 0.3, 0.3, roleToString(activeCharacter->teamList.at(i)->currentRole));
+        SubmitText(&g_queue, roleToString(activeCharacter->teamList.at(i)->currentRole), currX + 150, currY - 8, 0.3, 0.3, 0xFFFFFFFF, GraphicsUtils::Layer::UI_3);
         currY += 15;
         currX += cascadeOffset;
     }

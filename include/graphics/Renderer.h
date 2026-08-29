@@ -7,6 +7,7 @@
 #include "graphics/GraphicsUtils.h"
 #include <vector>
 #include <cstring>
+#include "graphics/AssetManagers/UIRender.h"
 
 namespace Renderer {
 
@@ -232,4 +233,73 @@ namespace Renderer {
     //    te->draw(u0, v0, u0+this->width, v0+this->height, x, y, width, height, colour);
     }
 
+    inline void drawString(int x, int y, uint32_t color, float xScale, float yScale, std::string text) {
+
+        int currentX = x;
+
+        sceGuTexMode(GU_PSM_8888, 0, 0, GU_TRUE);
+        sceGuTexFunc(GU_TFX_MODULATE, GU_TCC_RGBA);
+        // sceGuTexImage(0, textWidth, textHeight, textWidth, fontTexture->data);
+        RenderState::bindTexture(UI::fontTexture);
+
+        //enable transparency
+        // sceGuEnable(GU_BLEND);
+        RenderState::set(GU_BLEND, true);
+        sceGuBlendFunc(GU_ADD, GU_SRC_ALPHA, GU_ONE_MINUS_SRC_ALPHA, 0, 0);
+
+        // sceGuEnable(GU_TEXTURE_2D); 
+        RenderState::set(GU_TEXTURE_2D, true);
+
+        TextureVertex* vertices = (TextureVertex*)sceGuGetMemory(text.length() * 2 * sizeof(TextureVertex));
+
+        int idx = 0;
+
+        for (int i = 0; text[i] != '\0'; i++){
+
+            int j = text[i];
+
+            // Top-Left
+            vertices[idx].u = UI::fontData[j].x; 
+            vertices[idx].v = UI::fontData[j].y;
+            vertices[idx].x = currentX + (UI::fontData[j].xoffset * xScale); 
+            vertices[idx].y = y + (UI::fontData[j].yoffset * yScale); 
+            vertices[idx].z = 0;
+            vertices[idx].colour = color;
+
+            // Bottom-Right
+            vertices[idx+1].u = UI::fontData[j].x + UI::fontData[j].width; 
+            vertices[idx+1].v = UI::fontData[j].y + UI::fontData[j].height;
+            vertices[idx+1].x = currentX + ((UI::fontData[j].width + UI::fontData[j].xoffset) * xScale); 
+            vertices[idx+1].y = y + ((UI::fontData[j].height + UI::fontData[j].yoffset) * yScale); 
+            vertices[idx+1].z = 0;
+            vertices[idx+1].colour = color;
+
+            idx += 2;
+            currentX += UI::fontData[j].xadvance * xScale;
+        }
+
+        sceGuDrawArray(GU_SPRITES, GU_COLOR_8888 | GU_TEXTURE_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_2D, text.length() * 2, 0, vertices);
+
+        // sceGuDisable(GU_TEXTURE_2D);
+        RenderState::set(GU_TEXTURE_2D, false);
+        
+    }
+
+    inline void drawRect(short x, short y, short w, short h, unsigned int colour) {
+        RenderState::set(GU_TEXTURE_2D, false);
+
+        Vertex* vertices = (Vertex*)sceGuGetMemory(2 * sizeof(Vertex));
+
+        vertices[0].x = x;
+        vertices[0].y = y;
+        vertices[0].z = 0;
+
+        vertices[1].x = x + w;
+        vertices[1].y = y + h;
+        vertices[1].z = 0;
+
+        sceGuColor(colour);
+
+        sceGuDrawArray(GU_SPRITES, GU_TEXTURE_16BIT | GU_VERTEX_16BIT | GU_TRANSFORM_2D, 2, 0, vertices);
+    }
 }

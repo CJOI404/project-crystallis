@@ -9,6 +9,7 @@
 #include <pspgum.h>
 #include "Scenes/SceneManager.h"
 #include "Scenes/MainMenu.h"
+#include "graphics/RenderQueue.h"
 
 
 CombatInstance::CombatInstance(){
@@ -195,7 +196,7 @@ void CombatInstance::update(float dt){
 
     } else if (state == CombatState::SCAN){
 
-        enemies[scanIdx]->worldPos = {0.0f, -80.0f, -90.0f};
+        // enemies[scanIdx]->worldPos = {0.0f, -80.0f, -90.0f};
         
         if (InputHandler::getButtonDown(PSP_CTRL_RTRIGGER) || InputHandler::getButtonDown(PSP_CTRL_CIRCLE)){
             state = CombatState::BATTLE;
@@ -246,34 +247,27 @@ void CombatInstance::render(float dt){
 
     if (state == CombatState::SCAN){
 
-        UI::drawRect(0, 0, 480, 272, 0xdc000000);
-
-
-        // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", scannedEnemy->name);
-        UI::drawString(20, 20, 0xFFFFFFFF, 0.6, 0.6, scannedEnemy->name);
+        SubmitRect(&g_queue, 0, 0, 480, 272, 0xdc000000, GraphicsUtils::Layer::UI_4);
+        // SubmitText(&g_queue, scannedEnemy->health, 50, 40, 0.3, 0.3, 0xFFFFFFFF, GraphicsUtils::Layer::UI_4); 
 
         snprintf(UI::textBuffer, sizeof(UI::textBuffer), "HEALTH: %d", scannedEnemy->health);
-        UI::drawString(50, 40, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
+        SubmitText(&g_queue, scannedEnemy->name, 20, 20, 0.6, 0.6, 0xFFFFFFFF, GraphicsUtils::Layer::UI_4);
 
         int tempy = 60;
         for (int i = 0; i < Debuff::DEBUFFCOUNT; i++){
-            // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", );
-            // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
             if (scannedEnemy->activeDebuffs[i]){
-                // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, "TEST DEBUFF IS ON");
+
                 snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s: %.2f", debuffToString(static_cast<Debuff>(i)), scannedEnemy->debuffDurations[i]);
-                UI::drawString(50, tempy, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);   
+                SubmitText(&g_queue, UI::textBuffer, 50, tempy, 0.3, 0.3, 0xFFFFFFFF, GraphicsUtils::Layer::UI_4); 
                 tempy += 10;                                
             }
         }
         tempy = 60;
         for (int i = 0; i < Buff::BUFFCOUNT; i++){
-            // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", );
-            // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
             if (scannedEnemy->activeBuffs[i]){
-                // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, "TEST DEBUFF IS ON");
-                snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s: %.2f", buffToString(static_cast<Buff>(i)), scannedEnemy->buffDurations[i]);
-                UI::drawString(150, tempy, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);   
+
+                snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s: %.2f", buffToString(static_cast<Buff>(i)), scannedEnemy->buffDurations[i]);  
+                SubmitText(&g_queue, UI::textBuffer, 150, tempy, 0.3, 0.3, 0xFFFFFFFF, GraphicsUtils::Layer::UI_4);
                 tempy += 10;                                
             }
         }

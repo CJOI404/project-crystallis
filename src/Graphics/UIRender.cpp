@@ -8,6 +8,7 @@
 #include <fstream>
 #include <GlobalDefs.h>
 #include "graphics/RenderState.h"
+#include "graphics/RenderQueue.h"
 
 //TODO: TOTAL REFORMAT! SHOULD BE HELPER FUNCTIONS THAT SUBMIT TO QUEUE. DIRECT DRAWS GO IN RENDERER. 
 namespace UI {
@@ -61,96 +62,17 @@ namespace UI {
         sceKernelDcacheWritebackAll();
     }
 
-    void drawString(int x, int y, uint32_t color, float xScale, float yScale, std::string text) {
-
-        int currentX = x;
-
-        sceGuTexMode(GU_PSM_8888, 0, 0, GU_TRUE);
-        sceGuTexFunc(GU_TFX_MODULATE, GU_TCC_RGBA);
-        // sceGuTexImage(0, textWidth, textHeight, textWidth, fontTexture->data);
-        RenderState::bindTexture(fontTexture);
-
-        //enable transparency
-        // sceGuEnable(GU_BLEND);
-        RenderState::set(GU_BLEND, true);
-        sceGuBlendFunc(GU_ADD, GU_SRC_ALPHA, GU_ONE_MINUS_SRC_ALPHA, 0, 0);
-
-        // sceGuEnable(GU_TEXTURE_2D); 
-        RenderState::set(GU_TEXTURE_2D, true);
-
-        TextureVertex* vertices = (TextureVertex*)sceGuGetMemory(text.length() * 2 * sizeof(TextureVertex));
-
-        int idx = 0;
-
-        for (int i = 0; text[i] != '\0'; i++){
-
-            int j = text[i];
-
-            // Top-Left
-            vertices[idx].u = fontData[j].x; 
-            vertices[idx].v = fontData[j].y;
-            vertices[idx].x = currentX + (fontData[j].xoffset * xScale); 
-            vertices[idx].y = y + (fontData[j].yoffset * yScale); 
-            vertices[idx].z = 0;
-            vertices[idx].colour = color;
-
-            // Bottom-Right
-            vertices[idx+1].u = fontData[j].x + fontData[j].width; 
-            vertices[idx+1].v = fontData[j].y + fontData[j].height;
-            vertices[idx+1].x = currentX + ((fontData[j].width + fontData[j].xoffset) * xScale); 
-            vertices[idx+1].y = y + ((fontData[j].height + fontData[j].yoffset) * yScale); 
-            vertices[idx+1].z = 0;
-            vertices[idx+1].colour = color;
-
-            idx += 2;
-            currentX += fontData[j].xadvance * xScale;
-        }
-
-        sceGuDrawArray(GU_SPRITES, GU_COLOR_8888 | GU_TEXTURE_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_2D, text.length() * 2, 0, vertices);
-
-        // sceGuDisable(GU_TEXTURE_2D);
-        RenderState::set(GU_TEXTURE_2D, false);
-        
-    }
-
-    void drawRect(short x, short y, short w, short h, unsigned int colour) {
-        RenderState::set(GU_TEXTURE_2D, false);
-
-        Vertex* vertices = (Vertex*)sceGuGetMemory(2 * sizeof(Vertex));
-
-        vertices[0].x = x;
-        vertices[0].y = y;
-        vertices[0].z = 0;
-
-        vertices[1].x = x + w;
-        vertices[1].y = y + h;
-        vertices[1].z = 0;
-
-        sceGuColor(colour);
-
-        sceGuDrawArray(GU_SPRITES, GU_TEXTURE_16BIT | GU_VERTEX_16BIT | GU_TRANSFORM_2D, 2, 0, vertices);
-    }
-
-    void drawTri(float x1, float y1, float x2, float y2, float x3, float y3, unsigned int color){
-        Vertex* vertices = (Vertex*)sceGuGetMemory(3 * sizeof(Vertex));
-
-        // Set vertex data
-        vertices[0].x = x1; vertices[0].y = y1; vertices[0].z = 0.0f;
-        vertices[1].x = x2; vertices[1].y = y2; vertices[1].z = 0.0f;
-        vertices[2].x = x3; vertices[2].y = y3; vertices[2].z = 0.0f;
-
-        sceGuColor(color);
-
-        sceGuDrawArray(GU_TRIANGLES, GU_TEXTURE_16BIT | GU_VERTEX_16BIT | GU_TRANSFORM_2D, 3, 0, vertices);
-    }
-
     void drawHealthBar(float x, float y, float w, float h, int health, int maxHealth){
-        UI::drawRect(x, y, w, h, Colours::LIGHTGREY);
-        UI::drawRect(x, y + (h - ((h*2)/3))/2, ((float) health / maxHealth) * w, ((h*2)/3), Colours::LIGHTGREEN);
+        // UI::drawRect(x, y, w, h, Colours::LIGHTGREY);
+        SubmitRect(&g_queue, x, y, w, h, Colours::LIGHTGREY, GraphicsUtils::Layer::UI_3);
+        // UI::drawRect(x, y + (h - ((h*2)/3))/2, ((float) health / maxHealth) * w, ((h*2)/3), Colours::LIGHTGREEN);
+        SubmitRect(&g_queue, x, y + (h - ((h*2)/3))/2, ((float) health / maxHealth) * w, ((h*2)/3), Colours::LIGHTGREEN, GraphicsUtils::Layer::UI_3);
     }
 
     void drawButton(float x, float y, float w, float h, std::string text, uint32_t color){
-        UI::drawRect(x, y, w, h, color);
-        UI::drawString(x + 5, y + 2, 0xFFFFFFFF, 0.35, 0.35, text);
+        SubmitRect(&g_queue, x, y, w, h, color, GraphicsUtils::Layer::UI_3);
+        // UI::drawRect(x, y, w, h, color);
+        SubmitText(&g_queue, text, x + 5, y + 2, 0.35, 0.35, 0xFFFFFFFF, GraphicsUtils::Layer::UI_3);
+        // UI::drawString(x + 5, y + 2, 0xFFFFFFFF, 0.35, 0.35, text);
     }
 }

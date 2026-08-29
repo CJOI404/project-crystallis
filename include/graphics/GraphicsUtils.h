@@ -13,7 +13,8 @@ namespace GraphicsUtils {
         BACKGROUND_0,
         OPAQUE_3D_1,
         TRANSLUCENT_3D_2,
-        UI_3
+        UI_3,
+        UI_4
     };
 
     struct ScreenPos {

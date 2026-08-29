@@ -1636,6 +1636,7 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/UIRender.cpp.obj: /mnt/d/project-
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/localefwd.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/memory_resource.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/memoryfwd.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/monostate.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/move.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/nested_exception.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/new_allocator.h \
@@ -1643,6 +1644,7 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/UIRender.cpp.obj: /mnt/d/project-
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/ostream.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/ostream.tcc \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/ostream_insert.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/parse_numbers.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/postypes.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/predefined_ops.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/ptr_traits.h \
@@ -1678,6 +1680,7 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/UIRender.cpp.obj: /mnt/d/project-
   /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cstdio \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cstdlib \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/cstring \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cwchar \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cwctype \
   /home/calvi/pspdev/psp/include/c++/15.1.1/debug/assertions.h \
@@ -1720,6 +1723,7 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/UIRender.cpp.obj: /mnt/d/project-
   /home/calvi/pspdev/psp/include/c++/15.1.1/type_traits \
   /home/calvi/pspdev/psp/include/c++/15.1.1/typeinfo \
   /home/calvi/pspdev/psp/include/c++/15.1.1/unordered_map \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/variant \
   /home/calvi/pspdev/psp/include/c++/15.1.1/vector \
   /home/calvi/pspdev/psp/include/ctype.h \
   /home/calvi/pspdev/psp/include/errno.h \
@@ -1731,10 +1735,12 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/UIRender.cpp.obj: /mnt/d/project-
   /home/calvi/pspdev/psp/include/machine/_types.h \
   /home/calvi/pspdev/psp/include/machine/endian.h \
   /home/calvi/pspdev/psp/include/machine/ieeefp.h \
+  /home/calvi/pspdev/psp/include/machine/malloc.h \
   /home/calvi/pspdev/psp/include/machine/setjmp.h \
   /home/calvi/pspdev/psp/include/machine/stdlib.h \
   /home/calvi/pspdev/psp/include/machine/time.h \
   /home/calvi/pspdev/psp/include/machine/types.h \
+  /home/calvi/pspdev/psp/include/malloc.h \
   /home/calvi/pspdev/psp/include/newlib.h \
   /home/calvi/pspdev/psp/include/pte_types.h \
   /home/calvi/pspdev/psp/include/pthread.h \
@@ -1776,13 +1782,19 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/UIRender.cpp.obj: /mnt/d/project-
   /home/calvi/pspdev/psp/include/wctype.h \
   /home/calvi/pspdev/psp/sdk/include/pspge.h \
   /home/calvi/pspdev/psp/sdk/include/pspgu.h \
+  /home/calvi/pspdev/psp/sdk/include/pspgum.h \
   /home/calvi/pspdev/psp/sdk/include/psptypes.h \
   /home/calvi/pspdev/psp/sdk/include/psputils.h \
   /mnt/d/project-crystallis/include/GlobalDefs.h \
   /mnt/d/project-crystallis/include/graphics/AssetManagers/TextureManager.h \
   /mnt/d/project-crystallis/include/graphics/AssetManagers/UIRender.h \
+  /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
+  /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
-  /mnt/d/project-crystallis/include/graphics/RenderState.h
+  /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
+  /mnt/d/project-crystallis/include/graphics/RenderQueue.h \
+  /mnt/d/project-crystallis/include/graphics/RenderState.h \
+  /mnt/d/project-crystallis/include/graphics/Renderer.h
 
 CMakeFiles/Project_Crystallis.dir/src/InputHandler.cpp.obj: /mnt/d/project-crystallis/src/InputHandler.cpp \
   /home/calvi/pspdev/psp/sdk/include/pspctrl.h \
@@ -1823,10 +1835,12 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: /mnt/d/proj
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/localefwd.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/memory_resource.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/memoryfwd.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/monostate.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/move.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/new_allocator.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/node_handle.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/ostream_insert.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/parse_numbers.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/postypes.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/predefined_ops.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/ptr_traits.h \
@@ -1892,6 +1906,7 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: /mnt/d/proj
   /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
   /home/calvi/pspdev/psp/include/c++/15.1.1/type_traits \
   /home/calvi/pspdev/psp/include/c++/15.1.1/unordered_map \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/variant \
   /home/calvi/pspdev/psp/include/c++/15.1.1/vector \
   /home/calvi/pspdev/psp/include/ctype.h \
   /home/calvi/pspdev/psp/include/errno.h \
@@ -1964,7 +1979,9 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: /mnt/d/proj
   /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
   /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
-  /mnt/d/project-crystallis/include/graphics/RenderState.h
+  /mnt/d/project-crystallis/include/graphics/RenderQueue.h \
+  /mnt/d/project-crystallis/include/graphics/RenderState.h \
+  /mnt/d/project-crystallis/include/graphics/Renderer.h
 
 CMakeFiles/Project_Crystallis.dir/src/Scenes/MainMenu.cpp.obj: /mnt/d/project-crystallis/src/Scenes/MainMenu.cpp \
   /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/limits.h \

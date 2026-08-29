@@ -194,4 +194,16 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/UIRender.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/basic_file.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++io.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/fstream.tcc \
- /mnt/d/project-crystallis/include/graphics/RenderState.h
+ /mnt/d/project-crystallis/include/graphics/RenderState.h \
+ /mnt/d/project-crystallis/include/graphics/RenderQueue.h \
+ /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
+ /home/calvi/pspdev/psp/sdk/include/pspgum.h \
+ /home/calvi/pspdev/psp/include/malloc.h \
+ /home/calvi/pspdev/psp/include/machine/malloc.h \
+ /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
+ /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
+ /mnt/d/project-crystallis/include/graphics/Renderer.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstring \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/variant \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/monostate.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/parse_numbers.h
