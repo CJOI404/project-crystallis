@@ -58,6 +58,7 @@ namespace GraphicsUtils {
         // Note: Invert Y because PSP screen coordinates start at Top-Left (0,0)
         result.x = (ndcX + 1.0f) * 0.5f * 480.0f;
         result.y = (1.0f - ndcY) * 0.5f * 272.0f;
+        // result.y = (ndcY + 1.0f) * 0.5f * 272.0f;
         result.visible = true;
 
         return result;

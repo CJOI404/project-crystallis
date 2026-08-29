@@ -202,30 +202,6 @@ src/Entities/Character.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.s
 .PHONY : src/Entities/Character.cpp.s
 
-src/Entities/Command.obj: src/Entities/Command.cpp.obj
-.PHONY : src/Entities/Command.obj
-
-# target to build an object file
-src/Entities/Command.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Entities/Command.cpp.obj
-.PHONY : src/Entities/Command.cpp.obj
-
-src/Entities/Command.i: src/Entities/Command.cpp.i
-.PHONY : src/Entities/Command.i
-
-# target to preprocess a source file
-src/Entities/Command.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Entities/Command.cpp.i
-.PHONY : src/Entities/Command.cpp.i
-
-src/Entities/Command.s: src/Entities/Command.cpp.s
-.PHONY : src/Entities/Command.s
-
-# target to generate assembly for a file
-src/Entities/Command.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Entities/Command.cpp.s
-.PHONY : src/Entities/Command.cpp.s
-
 src/Entities/Menu.obj: src/Entities/Menu.cpp.obj
 .PHONY : src/Entities/Menu.obj
 
@@ -604,9 +580,6 @@ help:
 	@echo "... src/Entities/Character.obj"
 	@echo "... src/Entities/Character.i"
 	@echo "... src/Entities/Character.s"
-	@echo "... src/Entities/Command.obj"
-	@echo "... src/Entities/Command.i"
-	@echo "... src/Entities/Command.s"
 	@echo "... src/Entities/Menu.obj"
 	@echo "... src/Entities/Menu.i"
 	@echo "... src/Entities/Menu.s"

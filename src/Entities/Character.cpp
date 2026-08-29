@@ -37,6 +37,7 @@ Character::Character(){
     mostRecentBuff = Buff::NOBUFF;
 
     worldPos = {0.0f, 0.0f, -100.0f};
+    uiPos = {worldPos.x, worldPos.y + 60.0f, worldPos.z};
 
 
 }
@@ -188,6 +189,9 @@ void Character::dequeueCommand(){
 
 void Character::update(float dt){
 
+    //Offset for 2d UI attached to character
+    uiPos = {worldPos.x, worldPos.y + 150.0f, worldPos.z};
+
     rotation += 1 * dt;
     if (rotation > 6.28318){
         rotation = 0;
@@ -295,7 +299,7 @@ void Character::updateMovement(float analogueX, float analogueY, float dt){
     }
 
     worldPos.x += xDir * dt * moveSpeed;
-    worldPos.y -= yDir * dt * moveSpeed;
+    worldPos.z += yDir * dt * moveSpeed;
 }
 
 
@@ -307,16 +311,16 @@ void Character::render(float dt){
 
     }
     // SubmitRect(&g_queue, screenPos.x, screenPos.y - 200, 20, 20, 0xFFFF0000, GraphicsUtils::Layer::UI_3);
-    SubmitText(&g_queue, name, screenPos.x - 40, screenPos.y - 150, 0.3, 0.3, 0xFF00FFFF, GraphicsUtils::Layer::UI_3);
+    SubmitText(&g_queue, name, screenPos.x - 60, screenPos.y - 10, 0.3, 0.3, 0xFF00FFFF, GraphicsUtils::Layer::UI_3);
 
     if (drawHealthBar){
-        UI::drawHealthBar(screenPos.x - 60, screenPos.y - 140, 120, 6, health, maxHealth);
+        UI::drawHealthBar(screenPos.x - 60, screenPos.y, 120, 6, health, maxHealth);
     } 
 
-    // if (sprite == nullptr){
-    //     return;
-    // }
-    // sprite->draw(screenPos.x - 50, screenPos.y - 150, 20, 20, 0xFFFFFFFF);
+    if (sprite == nullptr){
+        return;
+    }
+    sprite->draw(screenPos.x + 100 - 60, screenPos.y + 10, 20, 20, 0xFFFFFFFF);
 
 }
 

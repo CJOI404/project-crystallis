@@ -117,11 +117,11 @@ void startFrame(){
 
     RenderState::resetCache();
 
-        // View Matrix Setup (Run in your frame update)
-        sceGumMatrixMode(GU_VIEW);
-        sceGumLoadIdentity();
-        ScePspFVector3 pos = { 0.0f, 0.0f, -5.0f }; // Back up 5 units from origin
-        sceGumTranslate(&pos);
+        // View Matrix Setup
+        // sceGumMatrixMode(GU_VIEW);
+        // sceGumLoadIdentity();
+        // ScePspFVector3 pos = { 0.0f, -90.0f, -5.0f };
+        // sceGumTranslate(&pos);
 }
 
 void endFrame(){

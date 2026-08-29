@@ -44,19 +44,21 @@ CombatInstance::CombatInstance(){
     enemies.clear();
 
     // Character playerCharacter;
-    playerCharacter.setworldPos({100.0f, 100.0f, -140.0f});
+    playerCharacter.setworldPos({100.0f, 0.0f, -140.0f});
     playerCharacter.health = 300;
     playerCharacter.maxHealth = 2000;
     playerCharacter.name = "LIGHTNING";
     playerCharacter.currentRole = Role::COMMANDO;
-    playerCharacter.sprite = SpriteManager::getSprite("topleft");
+    // playerCharacter.sprite = SpriteManager::getSprite("topleft");
+    playerCharacter.drawName = true;
+    playerCharacter.drawHealthBar = true;
     playerCharacter.mesh = myModel;
     playerCharacter.meshTexture = lightningTex;
 
     // Character character2;
     character2.health = 2200;
     character2.maxHealth = 3000;
-    character2.setworldPos({100.0f, 100.0f, -200.0f});
+    character2.setworldPos({100.0f, 0.0f, -200.0f});
     character2.name = "SAZH";
     character2.currentRole = Role::RAVAGER;
     character2.sprite = SpriteManager::getSprite("bottomright");
@@ -65,26 +67,27 @@ CombatInstance::CombatInstance(){
     // Character character3;
     character3.health = 1700;
     character3.maxHealth = 1700;
-    character2.setworldPos({150.0f, 150.0f, -200.0f});
+    character2.setworldPos({150.0f, 0.0f, -200.0f});
     character3.name = "VANILLE";
     character3.currentRole = Role::SABOTEUR;
     character3.sprite = SpriteManager::getSprite("bottomleft");
 
     // Character enemy;
     // enemy.moveComp->color = Colours::BLUE;
-    enemy.setworldPos({5.0f, -50.0f, -200.0f});
+    enemy.setworldPos({5.0f, 0.0f, -250.0f});
     enemy.name = "ENEMY 1";
     enemy.health = 45000;
     enemy.maxHealth = 45000;
     enemy.staggerPoint = 250;
     enemy.drawHealthBar = true;
     enemy.sprite = SpriteManager::getSprite("topright");
+    playerCharacter.drawName = true;
     enemy.mesh = myModel;
     enemy.meshTexture = lightningTex;
 
     // Character enemy2;
     // enemy2.moveComp->color = Colours::BLUE;
-    enemy2.setworldPos({400.0f, 120.0f, -200.0f});
+    enemy2.setworldPos({400.0f, 0.0f, -200.0f});
     enemy2.name = "ENEMY 2";
     enemy2.health = 450000;
     enemy2.maxHealth = 450000;
@@ -125,6 +128,11 @@ CombatInstance::CombatInstance(){
     scanIdx = 0;
 
 
+    // camera.position = {0.0f, 100.0f, 0.0f};
+    camera.target = playerCharacter.worldPos;
+    camera.setPos({0.0f, playerCharacter.worldPos.y + 70, 0.0f});
+
+
 }
 
 
@@ -155,9 +163,17 @@ void CombatInstance::update(float dt){
         if (InputHandler::getButtonDown(PSP_CTRL_LEFT)){
             commandMenu.cursorLeft();
         }
-        if (InputHandler::getButtonDown(PSP_CTRL_RIGHT)){
-            commandMenu.cursorRight();
+        if (InputHandler::getButtonDown(PSP_CTRL_UP)){
+            commandMenu.cursorUp();
         }
+        if (InputHandler::gamePad.Buttons & PSP_CTRL_SQUARE){
+            camera.position.x -= 15;
+        }
+        if (InputHandler::gamePad.Buttons & PSP_CTRL_CIRCLE){
+            camera.position.x += 15;
+
+        }
+
         
     
         //handle menu
@@ -213,6 +229,10 @@ void CombatInstance::update(float dt){
 
     }
     
+
+    // camera.setTarget({playerCharacter.worldPos.x, playerCharacter.worldPos.y, playerCharacter.worldPos.z});
+    camera.update();
+
 }
 
 void CombatInstance::render(float dt){
@@ -228,13 +248,13 @@ void CombatInstance::render(float dt){
     //RENDER
     for (int i = 0; i < team.size(); i++){
         ScePspFMatrix4 viewProjMatrix = GraphicsUtils::getViewProjectionMatrix();
-        team[i]->screenPos = GraphicsUtils::worldToScreen(team[i]->worldPos, viewProjMatrix);
+        team[i]->screenPos = GraphicsUtils::worldToScreen(team[i]->uiPos, viewProjMatrix);
         team[i]->render(dt);
     }
 
     for (int i = 0; i < enemies.size(); i++){
         ScePspFMatrix4 viewProjMatrix = GraphicsUtils::getViewProjectionMatrix();
-        enemies[i]->screenPos = GraphicsUtils::worldToScreen(enemies[i]->worldPos, viewProjMatrix);
+        enemies[i]->screenPos = GraphicsUtils::worldToScreen(enemies[i]->uiPos, viewProjMatrix);
         enemies[i]->render(dt);
     }
 

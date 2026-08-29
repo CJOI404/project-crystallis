@@ -5,6 +5,7 @@
 #include "graphics/Assets/Texture.h"
 #include "GlobalDefs.h"
 #include "Scenes/Scene.h"
+#include "Entities/Camera.h"
 
 enum CombatState {
     BATTLE,
@@ -45,6 +46,7 @@ class CombatInstance : public Scene {
 
         Texture* testlogo;
 
+        Camera camera;
 
         Character playerCharacter;
         Character character2;

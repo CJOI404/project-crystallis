@@ -5,8 +5,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Project_Crystallis.dir/src/Entities/AttackCommand.cpp.obj.d"
   "CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj"
   "CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj.d"
-  "CMakeFiles/Project_Crystallis.dir/src/Entities/Command.cpp.obj"
-  "CMakeFiles/Project_Crystallis.dir/src/Entities/Command.cpp.obj.d"
   "CMakeFiles/Project_Crystallis.dir/src/Entities/Menu.cpp.obj"
   "CMakeFiles/Project_Crystallis.dir/src/Entities/Menu.cpp.obj.d"
   "CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj"

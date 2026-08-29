@@ -517,8 +517,6 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj: /mnt/d/project
   /mnt/d/project-crystallis/include/graphics/Pipeline/RenderState.h \
   /mnt/d/project-crystallis/include/graphics/Pipeline/Renderer.h
 
-CMakeFiles/Project_Crystallis.dir/src/Entities/Command.cpp.obj: /mnt/d/project-crystallis/src/Entities/Command.cpp
-
 CMakeFiles/Project_Crystallis.dir/src/Entities/Menu.cpp.obj: /mnt/d/project-crystallis/src/Entities/Menu.cpp \
   /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/limits.h \
   /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdarg.h \
@@ -1863,6 +1861,7 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: /mnt/d/proj
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/range_access.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/refwrap.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/requires_hosted.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/specfun.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/std_abs.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_algobase.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_bvector.h \
@@ -1891,6 +1890,7 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: /mnt/d/proj
   /home/calvi/pspdev/psp/include/c++/15.1.1/cctype \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cerrno \
   /home/calvi/pspdev/psp/include/c++/15.1.1/clocale \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/cmath \
   /home/calvi/pspdev/psp/include/c++/15.1.1/concepts \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cstddef \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
@@ -1908,6 +1908,7 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: /mnt/d/proj
   /home/calvi/pspdev/psp/include/c++/15.1.1/ext/type_traits.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/initializer_list \
   /home/calvi/pspdev/psp/include/c++/15.1.1/iosfwd \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/limits \
   /home/calvi/pspdev/psp/include/c++/15.1.1/map \
   /home/calvi/pspdev/psp/include/c++/15.1.1/new \
   /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++allocator.h \
@@ -1919,6 +1920,18 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: /mnt/d/proj
   /home/calvi/pspdev/psp/include/c++/15.1.1/queue \
   /home/calvi/pspdev/psp/include/c++/15.1.1/string \
   /home/calvi/pspdev/psp/include/c++/15.1.1/string_view \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/bessel_function.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/beta_function.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/ell_integral.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/exp_integral.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/gamma.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/hypergeometric.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/legendre_function.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/modified_bessel_func.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_hermite.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_laguerre.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/riemann_zeta.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/special_function_util.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
   /home/calvi/pspdev/psp/include/c++/15.1.1/type_traits \
   /home/calvi/pspdev/psp/include/c++/15.1.1/unordered_map \
@@ -1939,6 +1952,7 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: /mnt/d/proj
   /home/calvi/pspdev/psp/include/machine/time.h \
   /home/calvi/pspdev/psp/include/machine/types.h \
   /home/calvi/pspdev/psp/include/malloc.h \
+  /home/calvi/pspdev/psp/include/math.h \
   /home/calvi/pspdev/psp/include/newlib.h \
   /home/calvi/pspdev/psp/include/signal.h \
   /home/calvi/pspdev/psp/include/stdint.h \
@@ -1978,6 +1992,7 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: /mnt/d/proj
   /home/calvi/pspdev/psp/sdk/include/psptypes.h \
   /home/calvi/pspdev/psp/sdk/include/psputils.h \
   /mnt/d/project-crystallis/include/Entities/BattleCommand.h \
+  /mnt/d/project-crystallis/include/Entities/Camera.h \
   /mnt/d/project-crystallis/include/Entities/Character.h \
   /mnt/d/project-crystallis/include/Entities/GameActor.h \
   /mnt/d/project-crystallis/include/Entities/Menu.h \
@@ -2046,6 +2061,7 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/MainMenu.cpp.obj: /mnt/d/project-cr
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/range_access.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/refwrap.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/requires_hosted.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/specfun.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/std_abs.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_algobase.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_bvector.h \
@@ -2071,6 +2087,7 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/MainMenu.cpp.obj: /mnt/d/project-cr
   /home/calvi/pspdev/psp/include/c++/15.1.1/cctype \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cerrno \
   /home/calvi/pspdev/psp/include/c++/15.1.1/clocale \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/cmath \
   /home/calvi/pspdev/psp/include/c++/15.1.1/concepts \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cstddef \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
@@ -2088,6 +2105,7 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/MainMenu.cpp.obj: /mnt/d/project-cr
   /home/calvi/pspdev/psp/include/c++/15.1.1/ext/type_traits.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/initializer_list \
   /home/calvi/pspdev/psp/include/c++/15.1.1/iosfwd \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/limits \
   /home/calvi/pspdev/psp/include/c++/15.1.1/new \
   /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++allocator.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/c++config.h \
@@ -2098,6 +2116,18 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/MainMenu.cpp.obj: /mnt/d/project-cr
   /home/calvi/pspdev/psp/include/c++/15.1.1/queue \
   /home/calvi/pspdev/psp/include/c++/15.1.1/string \
   /home/calvi/pspdev/psp/include/c++/15.1.1/string_view \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/bessel_function.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/beta_function.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/ell_integral.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/exp_integral.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/gamma.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/hypergeometric.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/legendre_function.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/modified_bessel_func.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_hermite.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_laguerre.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/riemann_zeta.tcc \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/special_function_util.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
   /home/calvi/pspdev/psp/include/c++/15.1.1/type_traits \
   /home/calvi/pspdev/psp/include/c++/15.1.1/unordered_map \
@@ -2118,6 +2148,7 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/MainMenu.cpp.obj: /mnt/d/project-cr
   /home/calvi/pspdev/psp/include/machine/time.h \
   /home/calvi/pspdev/psp/include/machine/types.h \
   /home/calvi/pspdev/psp/include/malloc.h \
+  /home/calvi/pspdev/psp/include/math.h \
   /home/calvi/pspdev/psp/include/newlib.h \
   /home/calvi/pspdev/psp/include/signal.h \
   /home/calvi/pspdev/psp/include/stdint.h \
@@ -2157,6 +2188,7 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/MainMenu.cpp.obj: /mnt/d/project-cr
   /home/calvi/pspdev/psp/sdk/include/psptypes.h \
   /home/calvi/pspdev/psp/sdk/include/psputils.h \
   /mnt/d/project-crystallis/include/Entities/BattleCommand.h \
+  /mnt/d/project-crystallis/include/Entities/Camera.h \
   /mnt/d/project-crystallis/include/Entities/Character.h \
   /mnt/d/project-crystallis/include/Entities/GameActor.h \
   /mnt/d/project-crystallis/include/Entities/Menu.h \
@@ -2440,6 +2472,7 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
   /mnt/d/project-crystallis/include/CommandRegistry.h \
   /mnt/d/project-crystallis/include/Entities/AttackCommand.h \
   /mnt/d/project-crystallis/include/Entities/BattleCommand.h \
+  /mnt/d/project-crystallis/include/Entities/Camera.h \
   /mnt/d/project-crystallis/include/Entities/Character.h \
   /mnt/d/project-crystallis/include/Entities/GameActor.h \
   /mnt/d/project-crystallis/include/Entities/Menu.h \
@@ -2596,13 +2629,13 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/cstddef:
 
-/home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_multimap.h:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/exception:
-
 /home/calvi/pspdev/psp/include/limits.h:
 
+/home/calvi/pspdev/psp/include/c++/15.1.1/tuple:
+
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_queue.h:
+
+/mnt/d/project-crystallis/include/Entities/Camera.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_iterator_base_funcs.h:
 
@@ -2719,6 +2752,10 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/pte_types.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/pstl/glue_algorithm_defs.h:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/exception:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_multimap.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/exception.h:
 
@@ -3071,10 +3108,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /mnt/d/project-crystallis/include/graphics/Pipeline/RenderQueue.h:
 
 /mnt/d/project-crystallis/include/graphics/Pipeline/Renderer.h:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/tuple:
-
-/mnt/d/project-crystallis/src/Entities/Command.cpp:
 
 /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/syslimits.h:
 

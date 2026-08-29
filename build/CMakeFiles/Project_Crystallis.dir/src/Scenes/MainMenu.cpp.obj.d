@@ -143,6 +143,23 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/MainMenu.cpp.obj: \
  /home/calvi/pspdev/psp/include/malloc.h \
  /home/calvi/pspdev/psp/include/machine/malloc.h \
  /mnt/d/project-crystallis/include/Entities/Menu.h \
+ /mnt/d/project-crystallis/include/Entities/Camera.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cmath \
+ /home/calvi/pspdev/psp/include/math.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/specfun.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/limits \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/gamma.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/special_function_util.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/bessel_function.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/beta_function.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/ell_integral.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/exp_integral.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/hypergeometric.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/legendre_function.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/modified_bessel_func.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_hermite.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_laguerre.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/riemann_zeta.tcc \
  /mnt/d/project-crystallis/include/Scenes/SceneManager.h \
  /mnt/d/project-crystallis/include/graphics/Pipeline/RenderQueue.h \
  /mnt/d/project-crystallis/include/graphics/Pipeline/Renderer.h \

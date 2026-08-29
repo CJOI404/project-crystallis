@@ -39,7 +39,10 @@ class Character : public GameActor {
 
         const char* name;
 
+        //linked 2d ui stuff
+        ScePspFVector3 uiPos;
         bool drawHealthBar = false;
+        bool drawName = false;
 
         int health = 0;
         int maxHealth = 0;

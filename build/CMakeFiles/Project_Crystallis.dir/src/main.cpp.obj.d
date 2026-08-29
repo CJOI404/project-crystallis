@@ -219,6 +219,7 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /mnt/d/project-crystallis/include/Scenes/CombatInstance.h \
  /mnt/d/project-crystallis/include/Entities/Menu.h \
  /mnt/d/project-crystallis/include/Scenes/Scene.h \
+ /mnt/d/project-crystallis/include/Entities/Camera.h \
  /mnt/d/project-crystallis/include/Scenes/MainMenu.h \
  /mnt/d/project-crystallis/include/graphics/AssetManagers/MeshManager.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstring \

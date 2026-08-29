@@ -17,7 +17,6 @@ set(OLD_GLOB
   "/mnt/d/project-crystallis/src/CommandRegistry.cpp"
   "/mnt/d/project-crystallis/src/Entities/AttackCommand.cpp"
   "/mnt/d/project-crystallis/src/Entities/Character.cpp"
-  "/mnt/d/project-crystallis/src/Entities/Command.cpp"
   "/mnt/d/project-crystallis/src/Entities/Menu.cpp"
   "/mnt/d/project-crystallis/src/GlobalDefs.cpp"
   "/mnt/d/project-crystallis/src/Graphics/MeshManager.cpp"
