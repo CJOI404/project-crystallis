@@ -144,4 +144,6 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/MeshManager.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstring \
  /home/calvi/pspdev/psp/include/string.h \
  /home/calvi/pspdev/psp/include/strings.h \
- /home/calvi/pspdev/psp/include/sys/string.h
+ /home/calvi/pspdev/psp/include/sys/string.h \
+ /home/calvi/pspdev/psp/include/stb_image.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/stdlib.h

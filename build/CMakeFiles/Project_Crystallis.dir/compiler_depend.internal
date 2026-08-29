@@ -914,6 +914,7 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/MeshManager.cpp.obj
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/cpu_defines.h
  /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/os_defines.h
  /home/calvi/pspdev/psp/include/c++/15.1.1/pstl/pstl_config.h
+ /home/calvi/pspdev/psp/include/c++/15.1.1/stdlib.h
  /home/calvi/pspdev/psp/include/c++/15.1.1/string
  /home/calvi/pspdev/psp/include/c++/15.1.1/string_view
  /home/calvi/pspdev/psp/include/c++/15.1.1/tuple
@@ -936,6 +937,7 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/MeshManager.cpp.obj
  /home/calvi/pspdev/psp/include/malloc.h
  /home/calvi/pspdev/psp/include/newlib.h
  /home/calvi/pspdev/psp/include/signal.h
+ /home/calvi/pspdev/psp/include/stb_image.h
  /home/calvi/pspdev/psp/include/stdint.h
  /home/calvi/pspdev/psp/include/stdio.h
  /home/calvi/pspdev/psp/include/stdlib.h

@@ -10,6 +10,8 @@ namespace MeshManager{
     extern std::unordered_map<std::string, Mesh> meshes;
     Mesh* loadOBJ(const char* filename);
 
+    void unload(const char* filename);
+
     // Mesh* loadOBJ(const char* filename) {
     //     FILE* file = fopen(filename, "r");
     //     if (!file) {

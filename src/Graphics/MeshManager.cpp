@@ -1,4 +1,5 @@
 #include "graphics/AssetManagers/MeshManager.h"
+#include <stb_image.h>
 
 namespace MeshManager{
 
@@ -9,6 +10,16 @@ namespace MeshManager{
         if (!file) {
             printf("Failed to open %s\n", filename);
             return nullptr;
+        }
+
+        // Already loaded?
+        auto it = meshes.find(filename);
+
+        if (it != meshes.end()){
+            printf("%s already loaded, returning reference\n", filename);
+            fflush(stdout);
+            it->second.refCount++;
+            return &it->second;
         }
 
         // Allocate temporary buffers
@@ -118,15 +129,42 @@ namespace MeshManager{
         // Flush cache range for GPU DMA
         sceKernelDcacheWritebackInvalidateRange(out_vertices, sizeof(Vertex3D) * f_count);
 
-        Mesh* mesh = (Mesh*)malloc(sizeof(Mesh));
-        mesh->vertices = out_vertices;
-        mesh->vertexCount = f_count;
-        mesh->refCount++;
+        Mesh mesh;
+        mesh.vertices = out_vertices;
+        mesh.vertexCount = f_count;
+        mesh.refCount = 1;
+
+        auto result = meshes.emplace(filename, mesh);
 
         printf("Successfully loaded %s (%d vertices)\n", filename, f_count);
 
-        return mesh;
-}
+        return &result.first->second;
+    }
+
+    void unload(const char* filename){
+            auto it = meshes.find(filename);
+
+        if (it == meshes.end()){
+            printf("DID NOT UNLOAD. COULD NOT FIND %s\n", filename);
+            fflush(stdout);
+            return;
+        } 
+
+        it->second.refCount--;
+        if (it->second.refCount <= 0) {
+            // stbi_image_free(it->second.data);
+            delete it->second.vertices;
+            meshes.erase(it);
+
+            printf("UNLOADED %s\n", filename);
+            fflush(stdout);
+        } else {
+            printf("DID NOT UNLOAD: %s, REFCOUNT: %d\n", filename, it->second.refCount);
+            fflush(stdout);
+        }
+
+    }  
+    
 
     // Mesh* loadOBJ(const char* filename) {
     //     FILE* file = fopen(filename, "r");

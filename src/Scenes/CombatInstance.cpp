@@ -163,8 +163,8 @@ void CombatInstance::update(float dt){
         if (InputHandler::getButtonDown(PSP_CTRL_LEFT)){
             commandMenu.cursorLeft();
         }
-        if (InputHandler::getButtonDown(PSP_CTRL_UP)){
-            commandMenu.cursorUp();
+        if (InputHandler::getButtonDown(PSP_CTRL_RIGHT)){
+            commandMenu.cursorRight();
         }
         if (InputHandler::gamePad.Buttons & PSP_CTRL_SQUARE){
             camera.position.x -= 15;
@@ -240,8 +240,6 @@ void CombatInstance::render(float dt){
     //Background render
     RenderState::setDepthState(DEPTH_DISABLED);
     RenderState::setBlendMode(BLEND_NONE);
-    
-    
     background->draw(0, 0, 512, 512, GraphicsUtils::ColourRGBA(255, 255, 200, 1.0f));
 
 
@@ -305,4 +303,6 @@ void CombatInstance::unload(){
     SpriteManager::unload("topright.png");
     SpriteManager::unload("bottomleft.png");
     SpriteManager::unload("bottomright.png");
+
+    MeshManager::unload("Lightning/lightning.obj");
 }

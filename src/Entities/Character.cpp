@@ -296,6 +296,9 @@ void Character::updateMovement(float analogueX, float analogueY, float dt){
         xDir /= magnitude;
         yDir /= magnitude;  
 
+        xDir *= fabs(analogueX);
+        yDir *= fabs(analogueY);
+
     }
 
     worldPos.x += xDir * dt * moveSpeed;

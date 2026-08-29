@@ -908,6 +908,7 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/MeshManager.cpp.obj: /mnt/d/proje
   /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/cpu_defines.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/os_defines.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/pstl/pstl_config.h \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/stdlib.h \
   /home/calvi/pspdev/psp/include/c++/15.1.1/string \
   /home/calvi/pspdev/psp/include/c++/15.1.1/string_view \
   /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
@@ -930,6 +931,7 @@ CMakeFiles/Project_Crystallis.dir/src/Graphics/MeshManager.cpp.obj: /mnt/d/proje
   /home/calvi/pspdev/psp/include/malloc.h \
   /home/calvi/pspdev/psp/include/newlib.h \
   /home/calvi/pspdev/psp/include/signal.h \
+  /home/calvi/pspdev/psp/include/stb_image.h \
   /home/calvi/pspdev/psp/include/stdint.h \
   /home/calvi/pspdev/psp/include/stdio.h \
   /home/calvi/pspdev/psp/include/stdlib.h \
@@ -2629,6 +2631,10 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/cstddef:
 
+/home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_multimap.h:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/exception:
+
 /home/calvi/pspdev/psp/include/limits.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/tuple:
@@ -2753,10 +2759,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/pstl/glue_algorithm_defs.h:
 
-/home/calvi/pspdev/psp/include/c++/15.1.1/exception:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_multimap.h:
-
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/exception.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/locale_classes.tcc:
@@ -2832,6 +2834,12 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/istream.tcc:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/range_access.h:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_map.h:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/ext/atomicity.h:
+
+/home/calvi/pspdev/psp/include/machine/stdlib.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_deque.h:
 
@@ -2928,12 +2936,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/machine/types.h:
 
 /home/calvi/pspdev/psp/include/newlib.h:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/ext/atomicity.h:
-
-/home/calvi/pspdev/psp/include/machine/stdlib.h:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_map.h:
 
 /home/calvi/pspdev/psp/include/pthread.h:
 
@@ -3035,10 +3037,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/special_function_util.h:
 
-/home/calvi/pspdev/psp/include/c++/15.1.1/stdlib.h:
-
-/mnt/d/project-crystallis/include/graphics/Assets/Mesh.h:
-
 /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/ext/numeric_traits.h:
@@ -3072,10 +3070,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/unordered_map.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/cmath:
-
-/home/calvi/pspdev/psp/include/stb_image.h:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/tr1/gamma.tcc:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/beta_function.tcc:
 
@@ -3122,6 +3116,14 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/machine/malloc.h:
 
 /mnt/d/project-crystallis/src/Graphics/MeshManager.cpp:
+
+/mnt/d/project-crystallis/include/graphics/Assets/Mesh.h:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/stdlib.h:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/tr1/gamma.tcc:
+
+/home/calvi/pspdev/psp/include/stb_image.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/sstream:
 
