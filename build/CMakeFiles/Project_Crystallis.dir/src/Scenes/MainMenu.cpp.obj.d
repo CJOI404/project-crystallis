@@ -162,4 +162,32 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/MainMenu.cpp.obj: \
  /home/calvi/pspdev/psp/include/malloc.h \
  /home/calvi/pspdev/psp/include/machine/malloc.h \
  /mnt/d/project-crystallis/include/Entities/Menu.h \
- /mnt/d/project-crystallis/include/Scenes/SceneManager.h
+ /mnt/d/project-crystallis/include/Scenes/SceneManager.h \
+ /mnt/d/project-crystallis/include/graphics/RenderQueue.h \
+ /mnt/d/project-crystallis/include/graphics/Renderer.h \
+ /home/calvi/pspdev/psp/sdk/include/psputils.h \
+ /home/calvi/pspdev/psp/include/sys/time.h \
+ /home/calvi/pspdev/psp/include/sys/_timeval.h \
+ /home/calvi/pspdev/psp/include/sys/types.h \
+ /home/calvi/pspdev/psp/include/machine/endian.h \
+ /home/calvi/pspdev/psp/include/machine/_endian.h \
+ /home/calvi/pspdev/psp/include/sys/select.h \
+ /home/calvi/pspdev/psp/include/sys/_sigset.h \
+ /home/calvi/pspdev/psp/include/sys/timespec.h \
+ /home/calvi/pspdev/psp/include/sys/_timespec.h \
+ /home/calvi/pspdev/psp/include/sys/_pthreadtypes.h \
+ /home/calvi/pspdev/psp/include/bits/posix_opt.h \
+ /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/limits.h \
+ /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/syslimits.h \
+ /home/calvi/pspdev/psp/include/limits.h \
+ /home/calvi/pspdev/psp/include/sys/syslimits.h \
+ /home/calvi/pspdev/psp/include/sys/sched.h \
+ /home/calvi/pspdev/psp/include/machine/types.h \
+ /home/calvi/pspdev/psp/include/time.h \
+ /home/calvi/pspdev/psp/include/machine/time.h \
+ /home/calvi/pspdev/psp/include/signal.h \
+ /home/calvi/pspdev/psp/include/sys/signal.h \
+ /home/calvi/pspdev/psp/include/machine/_time.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/variant \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/monostate.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/parse_numbers.h

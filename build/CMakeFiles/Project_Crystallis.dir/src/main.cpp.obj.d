@@ -226,6 +226,11 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstring \
  /mnt/d/project-crystallis/include/Scenes/SceneManager.h \
  /mnt/d/project-crystallis/include/graphics/RenderState.h \
+ /mnt/d/project-crystallis/include/graphics/RenderQueue.h \
+ /mnt/d/project-crystallis/include/graphics/Renderer.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/variant \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/monostate.h \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/parse_numbers.h \
  /home/calvi/pspdev/psp/include/stb_image.h \
  /home/calvi/pspdev/psp/include/assert.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/iomanip \

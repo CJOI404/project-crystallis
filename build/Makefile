@@ -322,6 +322,30 @@ src/Graphics/MeshManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/MeshManager.cpp.s
 .PHONY : src/Graphics/MeshManager.cpp.s
 
+src/Graphics/RenderQueue.obj: src/Graphics/RenderQueue.cpp.obj
+.PHONY : src/Graphics/RenderQueue.obj
+
+# target to build an object file
+src/Graphics/RenderQueue.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderQueue.cpp.obj
+.PHONY : src/Graphics/RenderQueue.cpp.obj
+
+src/Graphics/RenderQueue.i: src/Graphics/RenderQueue.cpp.i
+.PHONY : src/Graphics/RenderQueue.i
+
+# target to preprocess a source file
+src/Graphics/RenderQueue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderQueue.cpp.i
+.PHONY : src/Graphics/RenderQueue.cpp.i
+
+src/Graphics/RenderQueue.s: src/Graphics/RenderQueue.cpp.s
+.PHONY : src/Graphics/RenderQueue.s
+
+# target to generate assembly for a file
+src/Graphics/RenderQueue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderQueue.cpp.s
+.PHONY : src/Graphics/RenderQueue.cpp.s
+
 src/Graphics/RenderState.obj: src/Graphics/RenderState.cpp.obj
 .PHONY : src/Graphics/RenderState.obj
 
@@ -619,6 +643,9 @@ help:
 	@echo "... src/Graphics/MeshManager.obj"
 	@echo "... src/Graphics/MeshManager.i"
 	@echo "... src/Graphics/MeshManager.s"
+	@echo "... src/Graphics/RenderQueue.obj"
+	@echo "... src/Graphics/RenderQueue.i"
+	@echo "... src/Graphics/RenderQueue.s"
 	@echo "... src/Graphics/RenderState.obj"
 	@echo "... src/Graphics/RenderState.i"
 	@echo "... src/Graphics/RenderState.s"

@@ -60,7 +60,7 @@ namespace UI {
         sceKernelDcacheWritebackAll();
     }
 
-    void drawString(int x, int y, uint32_t color, float xScale, float yScale, const std::string& text) {
+    void drawString(int x, int y, uint32_t color, float xScale, float yScale, std::string text) {
 
         int currentX = x;
 

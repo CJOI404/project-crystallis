@@ -22,6 +22,7 @@ set(OLD_GLOB
   "/mnt/d/project-crystallis/src/Entities/Menu.cpp"
   "/mnt/d/project-crystallis/src/GlobalDefs.cpp"
   "/mnt/d/project-crystallis/src/Graphics/MeshManager.cpp"
+  "/mnt/d/project-crystallis/src/Graphics/RenderQueue.cpp"
   "/mnt/d/project-crystallis/src/Graphics/RenderState.cpp"
   "/mnt/d/project-crystallis/src/Graphics/Sprite.cpp"
   "/mnt/d/project-crystallis/src/Graphics/SpriteManager.cpp"

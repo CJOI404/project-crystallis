@@ -5,6 +5,17 @@
 
 namespace GraphicsUtils {
 
+
+    /**
+     * Define your layers for render passes here
+     */
+    enum Layer {
+        BACKGROUND_0,
+        OPAQUE_3D_1,
+        TRANSLUCENT_3D_2,
+        UI_3
+    };
+
     struct ScreenPos {
         float x;
         float y;
@@ -20,7 +31,9 @@ namespace GraphicsUtils {
     }
 
 
-    
+    /**
+     * Converts world position to screen position
+     */
     inline ScreenPos worldToScreen(const ScePspFVector3& worldPos, const ScePspFMatrix4& viewProjMatrix) {
         ScreenPos result;
 

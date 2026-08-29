@@ -20,6 +20,7 @@
 #include "graphics/AssetManagers/MeshManager.h"
 #include "Scenes/SceneManager.h"
 #include "graphics/RenderState.h"
+#include "graphics/RenderQueue.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
@@ -225,6 +226,9 @@ int main() {
         // If adding render queue, flush gpu here 
         // (render above simply returns a queue with everything that needs to be rendered)
         // render queue item have flags that allow them to be sorted and rendered in passes
+        RenderPipeline_Flush(&g_queue);
+
+        RenderQueue_Clear(&g_queue);
 
 
         //Switch if nextscene changed

@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj.d"
   "CMakeFiles/Project_Crystallis.dir/src/Graphics/MeshManager.cpp.obj"
   "CMakeFiles/Project_Crystallis.dir/src/Graphics/MeshManager.cpp.obj.d"
+  "CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderQueue.cpp.obj"
+  "CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderQueue.cpp.obj.d"
   "CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderState.cpp.obj"
   "CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderState.cpp.obj.d"
   "CMakeFiles/Project_Crystallis.dir/src/Graphics/Sprite.cpp.obj"
