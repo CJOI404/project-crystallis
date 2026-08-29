@@ -195,6 +195,8 @@ void Character::update(float dt){
         rotation = 0;
     }
 
+    worldRot = {0.0f, rotation, 0.0f};
+
 
     updateEffects(dt);
 
@@ -270,36 +272,37 @@ void Character::update(float dt){
         }
     }
 
+    worldPos = {xPos, -yPos, -100.0f};
 
 }
 
 void Character::render(float dt){
 
 
-    UI::drawRect(xPos, yPos, 20, 20, moveComp->color);
+    UI::drawRect(screenPos.x, screenPos.y - 200, 20, 20, moveComp->color);
     snprintf(UI::textBuffer, sizeof(UI::textBuffer), name);
-    UI::drawString(xPos, yPos, 0xFF00FFFF, 0.3, 0.3, UI::textBuffer); 
+    UI::drawString(screenPos.x, screenPos.y - 200, 0xFF00FFFF, 0.3, 0.3, UI::textBuffer); 
 
     if (drawHealthBar) drawHealth();
 
     if (sprite == nullptr){
         return;
     }
-    sprite->draw(xPos, yPos, 20, 20, 0xFFFFFFFF);
+    sprite->draw(screenPos.x - 50, screenPos.y - 150, 20, 20, 0xFFFFFFFF);
 
 }
 
 void Character::render3D(float dt) {
     if (mesh){
-        ScePspFVector3 pos = {0.0f + xPos, -70.0f - yPos, -100.0f};
-        ScePspFVector3 rot = {0.0f, rotation, 0.0f};
+        // ScePspFVector3 pos = {0.0f + xPos, -70.0f - yPos, -100.0f};
+        // ScePspFVector3 rot = {0.0f, rotation, 0.0f};
         // printf("render3D name=%s mesh=%p verts=%d pos=(%.2f,%.2f,%.2f)\n",
         //    name ? name : "unnamed",
         //    mesh,
         //    mesh ? mesh->vertexCount : 0,
         //    pos.x, pos.y, pos.z);
         // Renderer::renderMesh(mesh, &pos, &rot);
-        Renderer::renderTexturedMesh(mesh, meshTexture, &pos, &rot);
+        Renderer::renderTexturedMesh(mesh, meshTexture, &worldPos, &worldRot);
     }
 }
 

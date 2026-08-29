@@ -16,7 +16,6 @@ class CombatInstance : public Scene {
 
     public:
 
-        SceneID sceneID = SceneID::COMBAT_INSTANCE;
 
         std::vector<Character*> team;
         std::vector<Character*> enemies;

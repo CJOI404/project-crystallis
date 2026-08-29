@@ -213,7 +213,8 @@ CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj: /mnt/d/project-cr
   /mnt/d/project-crystallis/include/GlobalDefs.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
-  /mnt/d/project-crystallis/include/graphics/Assets/Texture.h
+  /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
+  /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h
 
 CMakeFiles/Project_Crystallis.dir/src/Components/MovementComponent.cpp.obj: /mnt/d/project-crystallis/src/Components/MovementComponent.cpp \
   /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdarg.h \
@@ -485,7 +486,8 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/AttackCommand.cpp.obj: /mnt/d/pro
   /mnt/d/project-crystallis/include/GlobalDefs.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
-  /mnt/d/project-crystallis/include/graphics/Assets/Texture.h
+  /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
+  /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h
 
 CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj: /mnt/d/project-crystallis/src/Entities/Character.cpp \
   /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/limits.h \
@@ -828,7 +830,8 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Menu.cpp.obj: /mnt/d/project-crys
   /mnt/d/project-crystallis/include/graphics/AssetManagers/UIRender.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
-  /mnt/d/project-crystallis/include/graphics/Assets/Texture.h
+  /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
+  /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h
 
 CMakeFiles/Project_Crystallis.dir/src/GlobalDefs.cpp.obj: /mnt/d/project-crystallis/src/GlobalDefs.cpp \
   /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdarg.h \
@@ -2129,6 +2132,7 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/MainMenu.cpp.obj: /mnt/d/project-cr
   /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
+  /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
   /mnt/d/project-crystallis/include/graphics/RenderState.h
 
 CMakeFiles/Project_Crystallis.dir/src/Scenes/SceneManager.cpp.obj: /mnt/d/project-crystallis/src/Scenes/SceneManager.cpp \
@@ -2410,6 +2414,7 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
   /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
+  /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
   /mnt/d/project-crystallis/include/graphics/RenderState.h
 
 
@@ -2975,6 +2980,12 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h:
 
+/home/calvi/pspdev/psp/include/c++/15.1.1/ext/numeric_traits.h:
+
+/home/calvi/pspdev/psp/include/malloc.h:
+
+/mnt/d/project-crystallis/include/graphics/GraphicsUtils.h:
+
 /mnt/d/project-crystallis/src/Entities/Character.cpp:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/bits/char_traits.h:
@@ -3002,12 +3013,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /mnt/d/project-crystallis/include/graphics/AssetManagers/TextureManager.h:
 
 /home/calvi/pspdev/psp/include/machine/_time.h:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/ext/numeric_traits.h:
-
-/home/calvi/pspdev/psp/include/malloc.h:
-
-/mnt/d/project-crystallis/include/graphics/GraphicsUtils.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/tuple:
 

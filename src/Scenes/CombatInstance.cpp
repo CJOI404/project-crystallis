@@ -6,6 +6,7 @@
 #include "InputHandler.h"
 #include "graphics/AssetManagers/MeshManager.h"
 #include "graphics/AssetManagers/SpriteManager.h"
+#include <pspgum.h>
 
 
 CombatInstance::CombatInstance(){
@@ -207,50 +208,6 @@ void CombatInstance::update(float dt){
 
         scannedEnemy = enemies[scanIdx];
 
-        // draw tint
-        // UI::drawRect(0, 0, 480, 272, 0xdc000000);
-
-        //HACKY TERRIBLE SCAN SCREEN FOR TESTING
-        // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", );
-        // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
-
-        // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%S", scannedEnemy->name);
-        // UI::drawString(20, 20, 0xFFFFFFFF, 0.6, 0.6, UI::textBuffer);
-
-        // // UI::drawHealthBar(140, 20, 120, 12, scannedEnemy->health, scannedEnemy->maxHealth);
-
-        // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "HEALTH: %d", scannedEnemy->health);
-        // UI::drawString(50, 40, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
-
-        // int tempy = 60;
-        // for (int i = 0; i < Debuff::DEBUFFCOUNT; i++){
-        //     // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", );
-        //     // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
-        //     if (scannedEnemy->activeDebuffs[i]){
-        //         // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, "TEST DEBUFF IS ON");
-        //         snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s: %.2f", debuffToString(static_cast<Debuff>(i)), scannedEnemy->debuffDurations[i]);
-        //         UI::drawString(50, tempy, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);   
-        //         tempy += 10;                                
-        //     }
-        // }
-        // tempy = 60;
-        // for (int i = 0; i < Buff::BUFFCOUNT; i++){
-        //     // snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s", );
-        //     // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);
-        //     if (scannedEnemy->activeBuffs[i]){
-        //         // UI::drawString(10, 5, 0xFFFFFFFF, 0.3, 0.3, "TEST DEBUFF IS ON");
-        //         snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s: %.2f", buffToString(static_cast<Buff>(i)), scannedEnemy->buffDurations[i]);
-        //         UI::drawString(150, tempy, 0xFFFFFFFF, 0.3, 0.3, UI::textBuffer);   
-        //         tempy += 10;                                
-        //     }
-        // }
-
-        // UI::drawString(10, 5, 0xFFFFFFFF, 0.8, 0.8, "DEBUFFS: " + std::to_string(playerCharacter.health) + "");
-        // UI::drawString(10, 25, 0xFFFFFFFF, 0.4, 0.4, "RESISTANCES:");
-        // UI::drawString(10, 45, 0xFFFFFFFF, 0.3, 0.3, "FIRE: " + std::to_string(playerCharacter.resistances[Element::FIRE]));
-
-
-
     }
     
 }
@@ -284,6 +241,8 @@ void CombatInstance::render(float dt){
     // RenderState::setDepthState(DepthState::DEPTH_READ_WRITE);
     //RENDER
     for (int i = 0; i < team.size(); i++){
+        ScePspFMatrix4 viewProjMatrix = GraphicsUtils::getViewProjectionMatrix();
+        team[i]->screenPos = GraphicsUtils::worldToScreen(team[i]->worldPos, viewProjMatrix);
         team[i]->render(dt);
     }
 

@@ -123,6 +123,11 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj: \
  /home/calvi/pspdev/psp/include/stdint.h \
  /home/calvi/pspdev/psp/include/sys/_intsup.h \
  /home/calvi/pspdev/psp/include/sys/_stdint.h \
+ /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
+ /home/calvi/pspdev/psp/sdk/include/pspgum.h \
+ /home/calvi/pspdev/psp/sdk/include/psptypes.h \
+ /home/calvi/pspdev/psp/sdk/include/pspgu.h \
+ /home/calvi/pspdev/psp/sdk/include/pspge.h \
  /mnt/d/project-crystallis/include/Entities/BattleCommand.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/queue \
  /home/calvi/pspdev/psp/include/c++/15.1.1/deque \
@@ -138,10 +143,6 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj: \
  /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
  /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
  /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
- /home/calvi/pspdev/psp/sdk/include/pspgu.h \
- /home/calvi/pspdev/psp/sdk/include/psptypes.h \
- /home/calvi/pspdev/psp/sdk/include/pspge.h \
- /home/calvi/pspdev/psp/sdk/include/pspgum.h \
  /home/calvi/pspdev/psp/include/malloc.h \
  /home/calvi/pspdev/psp/include/machine/malloc.h \
  /mnt/d/project-crystallis/include/graphics/AssetManagers/UIRender.h \
@@ -180,5 +181,4 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj: \
  /home/calvi/pspdev/psp/include/machine/_time.h \
  /mnt/d/project-crystallis/include/graphics/RenderState.h \
  /mnt/d/project-crystallis/include/CommandRegistry.h \
- /mnt/d/project-crystallis/include/Entities/AttackCommand.h \
- /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h
+ /mnt/d/project-crystallis/include/Entities/AttackCommand.h

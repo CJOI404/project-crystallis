@@ -113,6 +113,7 @@ namespace UI {
     }
 
     void drawRect(short x, short y, short w, short h, unsigned int colour) {
+        RenderState::set(GU_TEXTURE_2D, false);
 
         Vertex* vertices = (Vertex*)sceGuGetMemory(2 * sizeof(Vertex));
 

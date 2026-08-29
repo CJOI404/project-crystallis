@@ -145,6 +145,8 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Menu.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_hermite.tcc \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_laguerre.tcc \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/riemann_zeta.tcc \
+ /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
+ /home/calvi/pspdev/psp/sdk/include/pspgum.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/queue \
  /home/calvi/pspdev/psp/include/c++/15.1.1/deque \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_deque.h \
@@ -153,7 +155,6 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Menu.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stl_queue.h \
  /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
  /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
- /home/calvi/pspdev/psp/sdk/include/pspgum.h \
  /home/calvi/pspdev/psp/include/malloc.h \
  /home/calvi/pspdev/psp/include/machine/malloc.h \
  /mnt/d/project-crystallis/include/CommandRegistry.h

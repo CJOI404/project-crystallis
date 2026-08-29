@@ -180,6 +180,8 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator_args.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
+ /mnt/d/project-crystallis/include/graphics/GraphicsUtils.h \
+ /home/calvi/pspdev/psp/sdk/include/pspgum.h \
  /mnt/d/project-crystallis/include/Entities/Character.h \
  /mnt/d/project-crystallis/include/Entities/BattleCommand.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/queue \
@@ -196,7 +198,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
  /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
  /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
- /home/calvi/pspdev/psp/sdk/include/pspgum.h \
  /home/calvi/pspdev/psp/include/malloc.h \
  /home/calvi/pspdev/psp/include/machine/malloc.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/ctime \

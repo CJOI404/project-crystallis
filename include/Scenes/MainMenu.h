@@ -9,7 +9,6 @@ class MainMenu : public Scene {
 
 
     public:
-        SceneID sceneID = SceneID::MAIN_MENU;
 
         MainMenu();
 
