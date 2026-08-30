@@ -30,7 +30,7 @@ If you have PSPLink set up, you can plug the PSP into your computer and run the 
 4. Open another cmd and run "pspsh"
 5. Run "./Project_Crystallis.prx" in the pspsh window
 
-## EBOOT.PBP Method: Can run on PPSSPP or PSP (**Simplest way to play the game, NOT good for developing**)
+### EBOOT.PBP Method: Can run on PPSSPP or PSP (**Simplest way to play the game, NOT good for developing**)
 For PPSSPP: When adding a game to the emulator, navigate to the repo build folder and select the EBOOT.PBP.
 For PSP: Create a new folder in the PSP/GAME directory. Add the EBOOT.PBP file and ALL THE ASSETS from the build directory to your new folder.
 
