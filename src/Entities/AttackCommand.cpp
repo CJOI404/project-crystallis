@@ -25,7 +25,6 @@ AttackCommand::AttackCommand(CommandData& cmdData){
     this->fog = cmdData.fog;
     this->rise = cmdData.rise;
 
-    //attack commands
     this->element = cmdData.element;
 
     this->debuff = cmdData.debuff;

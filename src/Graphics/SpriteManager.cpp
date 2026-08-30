@@ -56,13 +56,5 @@ namespace SpriteManager {
             fflush(stdout);
         }
 
-        // it->second.refCount--;
-        // if (it->second.refCount <= 0) {
-        //     if (it->second.refCount <= 0){
-        //         sprites.erase(it);
-        //     }
-        //     printf("UNLOADED %s", id);
-        //     fflush(stdout);
-        // }
     }
 }

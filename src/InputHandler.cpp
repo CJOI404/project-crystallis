@@ -1,14 +1,5 @@
 #include "InputHandler.h"
 
-// InputHandler::InputHandler(){
-
-//     sceCtrlSetSamplingCycle(0);
-//     sceCtrlSetSamplingMode(PSP_CTRL_MODE_ANALOG);
-
-//     analogueX = 0;
-//     analogueY = 0;
-    
-// }
 namespace InputHandler {
     SceCtrlData gamePad{};
     SceCtrlData oldGamePad{};

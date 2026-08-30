@@ -95,11 +95,6 @@ void Character::addBattleCommand(BattleCommand* command, int index){
 }
 
 void Character::addViableBattleCommands(){
-    // int abilitiesIndex = 0;
-    // //clear abilities array
-    // for (int i = 0; i < abilities.size(); i++){
-    //     abilities[i] = nullptr;
-    // }
     abilities.clear();
     for (int i = 0; i < Commands::commandList.size(); i++){
         if (Commands::commandList.at(i)->role == currentRole){
@@ -211,6 +206,7 @@ void Character::update(float dt){
         if (chainDuration > 45) chainDuration = 45;
         peakChainDuration = chainDuration;
     }
+    
     //calculate chain fall, reset stagger/chain bonus is duration is over after stagger
     chainDuration -= dt;
     if (chainDuration < 0){
@@ -220,8 +216,6 @@ void Character::update(float dt){
             staggered = false;
         }
     }
-
-    // if (moveComp) moveComp->update(dt);
 
     if (currAtbVal < 0){
         currAtbVal = 0;
@@ -236,7 +230,6 @@ void Character::update(float dt){
         }        
     } 
     if (characterState == AttackReady){
-        // if (currAtbVal >= commandQueue.size()){
         if (currAtbVal >= atbQueueAmt){
             characterState = Attacking;
             currAtbCooldownVal = 0;
@@ -247,13 +240,7 @@ void Character::update(float dt){
         //wait until usetime cooldown is reached to execute attack.
         currCommandCooldownVal += dt;
         if (currCommandCooldownVal >= commandQueue.back()->useTime){
-            // Change from vector implementation at some point; this is more suited for a queue or an array.
-            // erase is not performant
-            // if (currentRole == SYNERGIST || currentRole == MEDIC){
-            //     commandQueue.at(0)->execute(this, teamList.at(targetIndex));
-            // } else {
-            //     commandQueue.at(0)->execute(this, enemyList.at(targetIndex));
-            // }
+
             commandQueue.at(0)->execute(this, target);
             commandQueue.erase(commandQueue.begin());
 
@@ -262,7 +249,6 @@ void Character::update(float dt){
 
         //end attack once command queue is depleted
         if (commandQueue.empty()){
-            // targetIndex = -1;
             characterState = AttackCooldown;
         }
 
@@ -282,16 +268,14 @@ void Character::updateMovement(float analogueX, float analogueY, float dt){
     float xDir = 0;
     float yDir = 0;
 
-    //Ignore Deadzone
+    //deadzone settings
     if (analogueX <= 0.1 && analogueX >= -0.1) xDir = 0;
     else xDir = analogueX;
     if (analogueY <= 0.1 && analogueY >= -0.1) yDir = 0;
     else yDir = analogueY;
 
-    //Get Magnitude
     float magnitude = sqrt(xDir * xDir + yDir * yDir);
 
-    //Normalize
     if (magnitude > 0.0f){
         xDir /= magnitude;
         yDir /= magnitude;  
@@ -323,8 +307,7 @@ void Character::render(float dt){
     if (sprite == nullptr){
         return;
     }
-    sprite->draw(screenPos.x + 100 - 60, screenPos.y + 10, 20, 20, 0xFFFFFFFF);
+
+    Submit2D(&g_queue, sprite, screenPos.x + 100 - 60, screenPos.y + 10, 20, 20, 0xFFFFFFFF, GraphicsUtils::Layer::UI_3);
 
 }
-
-

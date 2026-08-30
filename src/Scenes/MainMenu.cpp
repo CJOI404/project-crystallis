@@ -1,5 +1,4 @@
 #include "Scenes/MainMenu.h"
-#include "graphics/Pipeline/RenderState.h"
 #include "Scenes/CombatInstance.h"
 #include "Scenes/SceneManager.h"
 #include "graphics/Pipeline/RenderQueue.h"
@@ -44,10 +43,8 @@ void MainMenu::update(float dt) {
 
 void MainMenu::render(float dt){
 
-    //DRAW 2d
-    // RenderState::setDepthState(DEPTH_DISABLED);
     SubmitRect(&g_queue, 0, 0, 480, 272, 0xFFFFFFFF, GraphicsUtils::Layer::BACKGROUND_0);
-    Submit2D(&g_queue, logo, 50, -80, 400, 400, 0xFFFFFFFF, GraphicsUtils::Layer::BACKGROUND_0);
+    Submit2D(&g_queue, logo, 50, -80, 400, 400, 0xFFFFFFFF, GraphicsUtils::Layer::UI_3);
 
 
     Colours colour = Colours::LIGHTGREY;

@@ -13,7 +13,6 @@ namespace Commands{
         std::ifstream inFS;
         std::string line;
 
-        // std::stringstream ss(line);
         std::string item;
 
         inFS.open(skillSheetPath);

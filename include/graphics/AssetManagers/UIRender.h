@@ -14,8 +14,7 @@ namespace UI {
         int xadvance, page, chnl;
     };
 
-    // extern FontChar fontData[256];
-    //bitmap font doesn't go past id 128 so this should help save mem
+    //bitmap font doesn't go past id 128
     extern FontChar fontData[128];
 
     extern Texture* fontTexture;

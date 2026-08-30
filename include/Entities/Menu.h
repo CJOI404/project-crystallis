@@ -49,8 +49,6 @@ class Menu {
 
         //this is for the entire render call
         void drawMenu();
-        //this is for individual pages
-        void drawPage(int buttonWidth, int buttonHeight, int yButtonAmt, int cascade);
 
         void drawAtb();
         void drawTeamStats();

@@ -1,7 +1,6 @@
 #include "Scenes/CombatInstance.h"
 #include "Entities/Menu.h"
 #include "graphics/AssetManagers/UIRender.h"
-#include "graphics/Pipeline/RenderState.h"
 #include "graphics/GraphicsUtils.h"
 #include "InputHandler.h"
 #include "graphics/AssetManagers/MeshManager.h"
@@ -26,19 +25,6 @@ CombatInstance::CombatInstance(){
     SpriteManager::registerSprite("bottomleft", spritesheet, 0, 64, 64, 64);
     SpriteManager::registerSprite("bottomright", spritesheet, 64, 64, 64, 64);
 
-
-    //Make teams
-    // std::vector<Character*> team;
-    // std::vector<Character*> enemies;
-
-    // Character playerCharacter;
-    // Character character2;
-    // Character character3;
-
-    // Character enemy;
-    // Character enemy2;
-
-
     //Initialize characters
     team.clear();
     enemies.clear();
@@ -49,7 +35,6 @@ CombatInstance::CombatInstance(){
     playerCharacter.maxHealth = 2000;
     playerCharacter.name = "LIGHTNING";
     playerCharacter.currentRole = Role::COMMANDO;
-    // playerCharacter.sprite = SpriteManager::getSprite("topleft");
     playerCharacter.drawName = true;
     playerCharacter.drawHealthBar = true;
     playerCharacter.mesh = myModel;
@@ -73,7 +58,6 @@ CombatInstance::CombatInstance(){
     character3.sprite = SpriteManager::getSprite("bottomleft");
 
     // Character enemy;
-    // enemy.moveComp->color = Colours::BLUE;
     enemy.setworldPos({5.0f, 0.0f, -250.0f});
     enemy.name = "ENEMY 1";
     enemy.health = 45000;
@@ -86,7 +70,6 @@ CombatInstance::CombatInstance(){
     enemy.meshTexture = lightningTex;
 
     // Character enemy2;
-    // enemy2.moveComp->color = Colours::BLUE;
     enemy2.setworldPos({400.0f, 0.0f, -200.0f});
     enemy2.name = "ENEMY 2";
     enemy2.health = 450000;
@@ -109,10 +92,6 @@ CombatInstance::CombatInstance(){
         enemies.at(i)->teamList = enemies;
         enemies.at(i)->enemyList = team;
     }
-
-    // setTeam(team);
-    // setEnemies(enemies);
-
 
     //Fill ability list
     playerCharacter.addViableBattleCommands();
@@ -237,13 +216,8 @@ void CombatInstance::update(float dt){
 
 void CombatInstance::render(float dt){
 
-    //Background render
-    RenderState::setDepthState(DEPTH_DISABLED);
-    RenderState::setBlendMode(BLEND_NONE);
-    background->draw(0, 0, 512, 512, GraphicsUtils::ColourRGBA(255, 255, 200, 1.0f));
+    Submit2D(&g_queue, background, 0, 0, 512, 512, GraphicsUtils::ColourRGBA(255, 255, 200, 1.0f), GraphicsUtils::Layer::BACKGROUND_0);
 
-
-    //RENDER
     for (int i = 0; i < team.size(); i++){
         ScePspFMatrix4 viewProjMatrix = GraphicsUtils::getViewProjectionMatrix();
         team[i]->screenPos = GraphicsUtils::worldToScreen(team[i]->uiPos, viewProjMatrix);
@@ -256,14 +230,11 @@ void CombatInstance::render(float dt){
         enemies[i]->render(dt);
     }
 
-    // RenderState::setDepthState(DepthState::DEPTH_DISABLED);
-
     commandMenu.drawMenu();
 
     if (state == CombatState::SCAN){
 
         SubmitRect(&g_queue, 0, 0, 480, 272, 0xdc000000, GraphicsUtils::Layer::UI_4);
-        // SubmitText(&g_queue, scannedEnemy->health, 50, 40, 0.3, 0.3, 0xFFFFFFFF, GraphicsUtils::Layer::UI_4); 
 
         snprintf(UI::textBuffer, sizeof(UI::textBuffer), "HEALTH: %d", scannedEnemy->health);
         SubmitText(&g_queue, UI::textBuffer, 50, 40, 0.3, 0.3, 0xFFFFFFFF, GraphicsUtils::Layer::UI_4);

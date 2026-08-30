@@ -17,6 +17,7 @@ class BattleCommand{
 
         //targeting type, 0 = single enemy
         int8_t target = 0;
+        
         float variation = 0;
         float duration = 0;
         int8_t cut = 0;

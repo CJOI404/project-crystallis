@@ -322,30 +322,6 @@ src/Graphics/RenderState.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/RenderState.cpp.s
 .PHONY : src/Graphics/RenderState.cpp.s
 
-src/Graphics/Sprite.obj: src/Graphics/Sprite.cpp.obj
-.PHONY : src/Graphics/Sprite.obj
-
-# target to build an object file
-src/Graphics/Sprite.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/Sprite.cpp.obj
-.PHONY : src/Graphics/Sprite.cpp.obj
-
-src/Graphics/Sprite.i: src/Graphics/Sprite.cpp.i
-.PHONY : src/Graphics/Sprite.i
-
-# target to preprocess a source file
-src/Graphics/Sprite.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/Sprite.cpp.i
-.PHONY : src/Graphics/Sprite.cpp.i
-
-src/Graphics/Sprite.s: src/Graphics/Sprite.cpp.s
-.PHONY : src/Graphics/Sprite.s
-
-# target to generate assembly for a file
-src/Graphics/Sprite.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/Sprite.cpp.s
-.PHONY : src/Graphics/Sprite.cpp.s
-
 src/Graphics/SpriteManager.obj: src/Graphics/SpriteManager.cpp.obj
 .PHONY : src/Graphics/SpriteManager.obj
 
@@ -369,30 +345,6 @@ src/Graphics/SpriteManager.s: src/Graphics/SpriteManager.cpp.s
 src/Graphics/SpriteManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/SpriteManager.cpp.s
 .PHONY : src/Graphics/SpriteManager.cpp.s
-
-src/Graphics/Texture.obj: src/Graphics/Texture.cpp.obj
-.PHONY : src/Graphics/Texture.obj
-
-# target to build an object file
-src/Graphics/Texture.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/Texture.cpp.obj
-.PHONY : src/Graphics/Texture.cpp.obj
-
-src/Graphics/Texture.i: src/Graphics/Texture.cpp.i
-.PHONY : src/Graphics/Texture.i
-
-# target to preprocess a source file
-src/Graphics/Texture.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/Texture.cpp.i
-.PHONY : src/Graphics/Texture.cpp.i
-
-src/Graphics/Texture.s: src/Graphics/Texture.cpp.s
-.PHONY : src/Graphics/Texture.s
-
-# target to generate assembly for a file
-src/Graphics/Texture.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Graphics/Texture.cpp.s
-.PHONY : src/Graphics/Texture.cpp.s
 
 src/Graphics/TextureManager.obj: src/Graphics/TextureManager.cpp.obj
 .PHONY : src/Graphics/TextureManager.obj
@@ -595,15 +547,9 @@ help:
 	@echo "... src/Graphics/RenderState.obj"
 	@echo "... src/Graphics/RenderState.i"
 	@echo "... src/Graphics/RenderState.s"
-	@echo "... src/Graphics/Sprite.obj"
-	@echo "... src/Graphics/Sprite.i"
-	@echo "... src/Graphics/Sprite.s"
 	@echo "... src/Graphics/SpriteManager.obj"
 	@echo "... src/Graphics/SpriteManager.i"
 	@echo "... src/Graphics/SpriteManager.s"
-	@echo "... src/Graphics/Texture.obj"
-	@echo "... src/Graphics/Texture.i"
-	@echo "... src/Graphics/Texture.s"
 	@echo "... src/Graphics/TextureManager.obj"
 	@echo "... src/Graphics/TextureManager.i"
 	@echo "... src/Graphics/TextureManager.s"

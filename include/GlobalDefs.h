@@ -128,14 +128,6 @@ enum Colours{
     MIDGREY = 0xFF45454d
 };
 
-
-//Texture stuff
-// typedef struct
-// {
-//     int width, height;
-//     uint32_t* data;
-// } Texture;
-
 typedef struct {
     unsigned short u, v;
     short x, y, z;

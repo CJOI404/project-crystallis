@@ -5,10 +5,6 @@
 
 RenderQueue g_queue;
 
-// void RenderQueue_Clear(RenderQueue* queue) {
-//     queue->count = 0;
-// }
-
 void RenderQueue_Clear(RenderQueue* queue) {
     queue->count = 0;
 }
@@ -29,28 +25,30 @@ void Submit3D(RenderQueue* queue, Mesh* mesh, Texture* tex, ScePspFVector3* pos,
 void Submit2D(RenderQueue* queue, Texture* tex, float x, float y, float w, float h, uint32_t colour, GraphicsUtils::Layer layer){
     if (queue->count < MAX_RENDER_COMMANDS) {
         RenderCommand& cmd = queue->commands[queue->count++];
-        cmd.type = RenderType::Sprite2D;
+        cmd.type = RenderType::Texture2D;
 
-        cmd.sprite2D.texture = tex;
-        cmd.sprite2D.x = x;
-        cmd.sprite2D.y = y;
-        cmd.sprite2D.w = w;
-        cmd.sprite2D.h = h;
-        // cmd.sprite2D.sprite = sprite;
+        cmd.texture2D.texture = tex;
+        cmd.texture2D.x = x;
+        cmd.texture2D.y = y;
+        cmd.texture2D.w = w;
+        cmd.texture2D.h = h;
         cmd.colour = colour;
         cmd.layer = layer;
     }
 }
 
 
-void Submit2D(RenderQueue* queue, Texture* tex, GraphicsUtils::ScreenPos* position, Sprite* sprite, uint32_t colour, GraphicsUtils::Layer layer) {
+void Submit2D(RenderQueue* queue, Sprite* sprite, float x, float y, float w, float h, uint32_t colour, GraphicsUtils::Layer layer) {
     if (queue->count < MAX_RENDER_COMMANDS) {
         RenderCommand& cmd = queue->commands[queue->count++];
         cmd.type = RenderType::Sprite2D;
 
-        cmd.sprite2D.texture = tex;
-        cmd.sprite2D.position = position;
         cmd.sprite2D.sprite = sprite;
+        cmd.sprite2D.texture = sprite->texture;
+        cmd.sprite2D.x = x;
+        cmd.sprite2D.y = y;
+        cmd.sprite2D.w = w;
+        cmd.sprite2D.h = h;
         cmd.colour = colour;
         cmd.layer = layer;
     }
@@ -78,17 +76,12 @@ void SubmitRect(RenderQueue* queue, short x, short y, short w, short h, uint32_t
         RenderCommand& cmd = queue->commands[queue->count++];
         cmd.type = RenderType::Rect2D;
 
-        // cmd.rect2D.position = position;
         cmd.rect2D.x = x;
         cmd.rect2D.y = y;
         cmd.rect2D.w = w;
         cmd.rect2D.h = h;
         cmd.colour = colour;
         cmd.layer = layer; 
-
-        // printf("DEBUG: Just wrote x=%d, read back x=%d\n", x, cmd.rect2D.x);
-        // printf("DEBUG: Type:%d\n", cmd.type);
-        // fflush(stdout);
     }
 }
 
@@ -117,6 +110,7 @@ void RenderPipeline_Flush(RenderQueue* queue) {
         int currentLayer = cmd.layer;
 
         // TODO: write better renderer functions so these commands can be batched in 1 draw call
+
         // Scan ahead to find the full contiguous run of this exact type + layer combination
         // int startIdx = i;
         // int count = 0;
@@ -144,10 +138,16 @@ void RenderPipeline_Flush(RenderQueue* queue) {
                     Renderer::renderTexturedMesh(cmd.mesh3D.mesh, cmd.mesh3D.texture, cmd.mesh3D.position, cmd.mesh3D.rotation);
                 break;
 
-            case RenderType::Sprite2D:
+            case RenderType::Texture2D:
                     RenderState::setDepthState(DepthState::DEPTH_DISABLED);
                     RenderState::setBlendMode(BLEND_ALPHA);
                     Renderer::renderTexture(cmd.sprite2D.texture, cmd.sprite2D.x, cmd.sprite2D.y, cmd.sprite2D.w, cmd.sprite2D.h, cmd.colour);
+                break;                    
+
+            case RenderType::Sprite2D:
+                    RenderState::setDepthState(DepthState::DEPTH_DISABLED);
+                    RenderState::setBlendMode(BLEND_ALPHA);
+                    Renderer::renderSprite(cmd.sprite2D.sprite, cmd.sprite2D.x, cmd.sprite2D.y, cmd.sprite2D.w, cmd.sprite2D.h, cmd.colour);
                 break;
 
             case RenderType::Rect2D:

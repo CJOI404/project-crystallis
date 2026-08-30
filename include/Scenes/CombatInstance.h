@@ -21,8 +21,6 @@ class CombatInstance : public Scene {
         std::vector<Character*> team;
         std::vector<Character*> enemies;
 
-        // Character* playerCharacter;
-
         Character* scannedEnemy = nullptr;
 
         CombatState state;

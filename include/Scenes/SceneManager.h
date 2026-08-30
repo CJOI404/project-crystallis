@@ -10,5 +10,4 @@ namespace SceneManager {
     void render(float dt);
     void changeScene();
 
-
 }

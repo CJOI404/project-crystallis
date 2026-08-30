@@ -7,7 +7,7 @@ class AttackCommand : public BattleCommand {
 
     public:
 
-        //Attack 
+        //Attack
         Element element = Element::NOELEMENT;
 
         //Status
@@ -18,9 +18,6 @@ class AttackCommand : public BattleCommand {
 
         AttackCommand();
         AttackCommand(CommandData& cmdData);
-        // AttackCommand(std::string name, float atkDmgScale, float ravDmgScale, float chainValue, int atbCost);
-        // AttackCommand(std::string name, float atkDmgScale, float ravDmgScale, float chainValue, int atbCost, float useTime);
-        // AttackCommand(std::string name, float atkDmgScale, float ravDmgScale, float chainValue, int atbCost, float duration, float useTime);
 
         void execute(Character* sender, Character* receiver) override;
 

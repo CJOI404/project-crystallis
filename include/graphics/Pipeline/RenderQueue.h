@@ -6,10 +6,15 @@
 #include "graphics/Pipeline/Renderer.h"
 #include <variant>
 
+/**
+ * Define render types
+ * Order here determines sub-layer sorting
+ */
 enum RenderType { 
     Mesh3D, 
-    Rect2D,
+    Texture2D,
     Sprite2D,
+    Rect2D,
     TextUI,
     Vertices2D
 };
@@ -32,8 +37,12 @@ struct RenderCommand {
         struct {
             float x, y, w, h;
             Texture* texture;
+        } texture2D;
+
+        struct {
+            float x, y, w, h;
+            Texture* texture;
             Sprite* sprite;
-            GraphicsUtils::ScreenPos* position;
         } sprite2D;
 
         struct {
@@ -57,9 +66,8 @@ extern RenderQueue g_queue;
 
 void RenderQueue_Clear(RenderQueue* queue);
 
-// Specific, strongly-typed submission functions (No mixing data up!)
 void Submit3D(RenderQueue* queue, Mesh* mesh, Texture* tex, ScePspFVector3* pos, ScePspFVector3* rot, GraphicsUtils::Layer layer);
-void Submit2D(RenderQueue* queue, Texture* tex, Sprite* sprite, uint32_t colour, GraphicsUtils::Layer layer);
+void Submit2D(RenderQueue* queue, Sprite* sprite, float x, float y, float w, float h, uint32_t colour, GraphicsUtils::Layer layer);
 void Submit2D(RenderQueue* queue, Texture* tex, float x, float y, float w, float h, uint32_t colour, GraphicsUtils::Layer layer);
 void SubmitRect(RenderQueue* queue, short x, short y, short w, short h, uint32_t colour, GraphicsUtils::Layer layer);
 void SubmitText(RenderQueue* queue, std::string text, float x, float y, float xScale, float yScale, uint32_t colour, GraphicsUtils::Layer layer);

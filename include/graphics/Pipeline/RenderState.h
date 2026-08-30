@@ -37,7 +37,6 @@ namespace RenderState {
     void bindTexture(Texture* texture);
     void set(int state, bool enable);
     
-    // Call at the very beginning of each frame loop
     void resetCache();
 }
 

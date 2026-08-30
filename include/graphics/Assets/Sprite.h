@@ -9,6 +9,4 @@ typedef struct {
 
     int refCount;
 
-    void draw(float x, float y, float width, float height, uint32_t colour);
-
 } Sprite;

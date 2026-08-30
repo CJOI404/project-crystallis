@@ -42,9 +42,6 @@ Menu::Menu(){
     paradigms[4] = p5;
     paradigms[5] = p6;
 
-    // vertices.push_back({0, 0, staggerBar.colour, staggerBar.x, staggerBar.y, 0});
-    // vertices.push_back({0, 0, staggerBar.colour, staggerBar.x + staggerBar.w, staggerBar.y + staggerBar.y, 0});
-
 }
 
 void Menu::setActiveCharacter(Character* character){
@@ -87,9 +84,6 @@ void Menu::setParadigm(){
     }
 }
 
-// void Menu::setOptionMax(){
-
-// }
 void Menu::changeMenuState(MenuState mState){
     menuState = mState;
     switch(mState){
@@ -260,10 +254,6 @@ void Menu::scanButton(){
     }
 }
 
-void Menu::drawPage(int buttonWidth, int buttonHeight, int yButtonAmt, int cascade){
-
-}
-
 void Menu::drawAtb(){
 
     SubmitRect(&g_queue, 5, 172, activeCharacter->atbSegments * 50, 10, Colours::LIGHTGREY, GraphicsUtils::Layer::UI_3);
@@ -271,7 +261,6 @@ void Menu::drawAtb(){
     SubmitRect(&g_queue, 5, 174, activeCharacter->currAtbVal * 50, 6, Colours::LIGHTBLUE, GraphicsUtils::Layer::UI_3);
 }
 
-//TODO: This is still on old render system (need to refactor UIRender so that it is the one handling render submissions)
 void Menu::drawTeamStats(){
 
     int currX = x + 250;
@@ -289,7 +278,6 @@ void Menu::drawTeamStats(){
 }
 
 void Menu::drawStagger(){
-    // vertices.clear();
 
     if (activeCharacter->target == nullptr){
         return;

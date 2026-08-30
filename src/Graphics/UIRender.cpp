@@ -7,10 +7,8 @@
 #include <vector>
 #include <fstream>
 #include <GlobalDefs.h>
-#include "graphics/Pipeline/RenderState.h"
 #include "graphics/Pipeline/RenderQueue.h"
 
-//TODO: TOTAL REFORMAT! SHOULD BE HELPER FUNCTIONS THAT SUBMIT TO QUEUE. DIRECT DRAWS GO IN RENDERER. 
 namespace UI {
     FontChar fontData[128];
     char textBuffer[64];

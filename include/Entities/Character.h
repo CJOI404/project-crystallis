@@ -82,7 +82,6 @@ class Character : public GameActor {
         int targetIndex = -1;
         Character* target = nullptr;
 
-        // std::vector<BattleCommand*> allCharacterCommands;
         std::vector<BattleCommand*> abilities;
 
 
@@ -95,11 +94,10 @@ class Character : public GameActor {
         Buff mostRecentBuff;
 
         //stores active buffs/debuffs
-        //supposedly PSP requires 4 byte alignment for float operations, making attribute alligned necessary
         bool activeBuffs[Buff::BUFFCOUNT]{};
         bool activeDebuffs[Debuff::DEBUFFCOUNT]{};
-        alignas(4) float buffDurations[Buff::BUFFCOUNT]{};
-        alignas(4) float debuffDurations[Debuff::DEBUFFCOUNT]{};
+        float buffDurations[Buff::BUFFCOUNT]{};
+        float debuffDurations[Debuff::DEBUFFCOUNT]{};
 
         void startAttack();
 

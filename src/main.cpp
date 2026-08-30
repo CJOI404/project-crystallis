@@ -78,7 +78,7 @@ void initGu(){
     sceGuDispBuffer(SCREEN_WIDTH,SCREEN_HEIGHT,fbp1, BUFFER_WIDTH);
 
     sceGuDepthBuffer(zbp, BUFFER_WIDTH); // Set depth buffer to a length of 0
-    sceGuEnable(GU_DEPTH_TEST); //enable depth testing
+    sceGuEnable(GU_DEPTH_TEST);
     sceGuDepthFunc(GU_LEQUAL);
     sceGuDepthRange(65535, 0);
     // sceGuDisable(GU_DEPTH_TEST); // Disable depth testing
@@ -90,9 +90,11 @@ void initGu(){
     sceGuScissor(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
 
-    // NEW WE WEREWR Projection Matrix Setup (Run once or on resize)
+    //Projection Matrix Setup (Run once or on resize)
     sceGumMatrixMode(GU_PROJECTION);
     sceGumLoadIdentity();
+
+    //TODO: Tweak near/far to fix z-fighting. Lowering the model size will also help
     sceGumPerspective(75.0f, 480.0f / 272.0f, 0.5f, 1000.0f); // Field of view, Aspect ratio, Near, Far
 
 
@@ -125,15 +127,7 @@ void endFrame(){
     sceGuSwapBuffers();
 }
 
-
-enum GameState {
-    MAINMENU,
-    COMBAT
-};
-
 int main() {
-
-    GameState state = GameState::MAINMENU;
 
     // Make exiting with the home button possible
     setup_callbacks();
@@ -185,10 +179,7 @@ int main() {
         }
 
         //GET INPUTS
-        // playerInput.readInput();
         InputHandler::readInput();
-
-        // startFrame();
 
         //Update
         SceneManager::update(deltaTime);

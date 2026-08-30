@@ -4,8 +4,6 @@
 
 namespace InputHandler{
                    
-
-    // public:
         extern SceCtrlData gamePad;
         extern SceCtrlData oldGamePad;
 
@@ -17,7 +15,5 @@ namespace InputHandler{
 
         void readInput();
         bool getButtonDown(PspCtrlButtons button);
-
-
 
 };

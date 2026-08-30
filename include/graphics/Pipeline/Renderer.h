@@ -14,7 +14,7 @@ namespace Renderer {
     inline void renderMesh(Mesh* mesh, ScePspFVector3* pos, ScePspFVector3* rot) {
         if (!mesh || !mesh->vertices || mesh->vertexCount == 0) return;
 
-        // 1. Set render state
+        //Set render state
         // sceGuDisable(GU_CULL_FACE);
         // sceGuDisable(GU_TEXTURE_2D);
         // sceGuDisable(GU_LIGHTING);
@@ -22,27 +22,20 @@ namespace Renderer {
         RenderState::set(GU_TEXTURE_2D, false);
         RenderState::set(GU_LIGHTING, false);
 
-        // 2. Set solid render color (Green)
         sceGuColor(0xFFFFFFFF);
 
-        // 3. Apply Model Matrix Transforms (Translate & Rotate)
+        //Transform
         sceGumMatrixMode(GU_MODEL);
         sceGumPushMatrix();
         sceGumLoadIdentity();
 
-        // Apply parameters passed into renderMesh
         sceGumTranslate(pos);
         sceGumRotateX(rot->x);
         sceGumRotateY(rot->y);
         sceGumRotateZ(rot->z);
 
-        // Push transformations to PSP hardware registers
         sceGumUpdateMatrix();
 
-        // 4. Invalidate D-cache for vertex DMA transfer (correct size!)
-        sceKernelDcacheWritebackInvalidateRange(mesh->vertices, sizeof(Vertex3D) * mesh->vertexCount);
-
-        // 5. Draw using 32-bit float layout matching your Vertex3D struct
         sceGumDrawArray(
             GU_TRIANGLES,
             GU_TEXTURE_32BITF | GU_NORMAL_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_3D,
@@ -51,7 +44,6 @@ namespace Renderer {
             mesh->vertices
         );
 
-        // 6. Clean up matrix stack
         sceGumPopMatrix();
     }
 
@@ -59,14 +51,12 @@ namespace Renderer {
         if (!mesh || !mesh->vertices || mesh->vertexCount == 0) return;
 
         //Enable 2D Texturing in the GU State
-        // sceGuEnable(GU_TEXTURE_2D);
         RenderState::set(GU_TEXTURE_2D, true);
 
         //Bind texture details
         sceGuTexMode(GU_PSM_8888, 0, 0, GU_TRUE); 
         sceGuTexFunc(GU_TFX_MODULATE, GU_TCC_RGBA);
         sceGuColor(0xFFFFFFFF);
-        // sceGuTexImage(0, texture->width, texture->height, texture->width, texture->data);
         RenderState::bindTexture(texture);
 
         //Apply Model Matrix Transforms (Translate & Rotate)
@@ -89,10 +79,8 @@ namespace Renderer {
         sceGumRotateY(rot->y);
         sceGumRotateZ(rot->z);
 
-        //Push transformations to PSP hardware registers
         sceGumUpdateMatrix();
 
-        //Draw using 32-bit float layout
         sceGumDrawArray(
             GU_TRIANGLES,
             GU_TEXTURE_32BITF | GU_NORMAL_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_3D,
@@ -107,19 +95,13 @@ namespace Renderer {
 
     inline void renderVertices(std::vector<TextureVertex>* vertices){
         RenderState::set(GU_TEXTURE_2D, true);
-        // sceGuTexMode(GU_PSM_8888, 0, 0, GU_TRUE);
-        // sceGuTexFunc(GU_TFX_MODULATE, GU_TCC_RGBA);
-        // for (int i = 0; i < vertices->size(); i++){
-        //     printf("%d: x = %f, y = %f, z = %f\n", i, (*vertices)[i].x, (*vertices)[i].y, (*vertices)[i].z);
-        //     fflush(stdout);
-        // }
 
         if (vertices->empty()) return;
 
-        // Allocate directly from the GE display list buffer
+        //Allocate directly from the GE display list buffer
         TextureVertex* nvertices = (TextureVertex*)sceGuGetMemory(vertices->size() * sizeof(TextureVertex));
         
-        // Copy your batched vertex data into the GE scratchpad memory
+        //Copy batched vertex data into the GE scratchpad memory
         std::memcpy(nvertices, vertices->data(), vertices->size() * sizeof(TextureVertex));
         sceGuDrawArray(GU_SPRITES, GU_COLOR_8888 | GU_TEXTURE_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_2D, vertices->size(), 0, vertices->data());
     }
@@ -131,21 +113,14 @@ namespace Renderer {
             return;
         }
 
-        // sceGuTexMode(GU_PSM_8888, 0, 0, GU_FALSE);
         //GU_TRUE enables swizzled texture reads; WAY faster but textures need to be swizzled on load
         sceGuTexMode(GU_PSM_8888, 0, 0, GU_TRUE);
         sceGuTexFunc(GU_TFX_MODULATE, GU_TCC_RGBA);
         
-        // sceGuTexImage(0, this->width, this->height, this->width, this->data);
         RenderState::bindTexture(tex);
 
-        //enable transparency
-        // sceGuEnable(GU_BLEND);
         RenderState::set(GU_BLEND, true);
-        // sceGuDisable(GU_DEPTH_TEST);
         sceGuBlendFunc(GU_ADD, GU_SRC_ALPHA, GU_ONE_MINUS_SRC_ALPHA, 0, 0);
-
-        // sceGuEnable(GU_TEXTURE_2D); 
         RenderState::set(GU_TEXTURE_2D, true);
 
         TextureVertex* vertices = (TextureVertex*)sceGuGetMemory(2 * sizeof(TextureVertex));
@@ -165,12 +140,9 @@ namespace Renderer {
         vertices[1].y = y + height; 
         vertices[1].z = 0;
         vertices[1].colour = colour;
-
         
         sceGuDrawArray(GU_SPRITES, GU_COLOR_8888 | GU_TEXTURE_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_2D, 2, 0, vertices);
         
-
-        // sceGuDisable(GU_TEXTURE_2D);
         RenderState::set(GU_TEXTURE_2D, false);
     }
 
@@ -181,20 +153,15 @@ namespace Renderer {
         return;
         }
 
-        // sceGuTexMode(GU_PSM_8888, 0, 0, GU_FALSE);
         //GU_TRUE enables swizzled texture reads; WAY faster but textures need to be swizzled on load
         sceGuTexMode(GU_PSM_8888, 0, 0, GU_TRUE);
         sceGuTexFunc(GU_TFX_MODULATE, GU_TCC_RGBA);
         
-        // sceGuTexImage(0, this->width, this->height, this->width, this->data);
         RenderState::bindTexture(tex);
 
-        //enable transparency
-        // sceGuEnable(GU_BLEND);
+
         RenderState::set(GU_BLEND, true);
         sceGuBlendFunc(GU_ADD, GU_SRC_ALPHA, GU_ONE_MINUS_SRC_ALPHA, 0, 0);
-
-        // sceGuEnable(GU_TEXTURE_2D); 
         RenderState::set(GU_TEXTURE_2D, true);
 
         TextureVertex* vertices = (TextureVertex*)sceGuGetMemory(2 * sizeof(TextureVertex));
@@ -217,11 +184,10 @@ namespace Renderer {
         
         sceGuDrawArray(GU_SPRITES, GU_COLOR_8888 | GU_TEXTURE_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_2D, 2, 0, vertices);
         
-        // sceGuDisable(GU_TEXTURE_2D);
         RenderState::set(GU_TEXTURE_2D, false);
     }
 
-    inline void renderSprite(Sprite* sprite, GraphicsUtils::ScreenPos* position, float width, float height, uint32_t colour = 0xFFFFFFFF){
+    inline void renderSprite(Sprite* sprite, float x, float y, float width, float height, uint32_t colour = 0xFFFFFFFF){
     
         if (sprite == nullptr || sprite->texture == nullptr){
             printf("Cannot draw %s. No sprite/texture data found", sprite);
@@ -229,8 +195,7 @@ namespace Renderer {
             return;
         }
 
-        renderTexture(sprite->texture, sprite->u0, sprite->v0, sprite->u0+width, sprite->v0+height, position->x, position->y, width, height, colour);
-    //    te->draw(u0, v0, u0+this->width, v0+this->height, x, y, width, height, colour);
+        renderTexture(sprite->texture, sprite->u0, sprite->v0, sprite->u1, sprite->v1, x, y, width, height, colour);
     }
 
     inline void drawString(int x, int y, uint32_t color, float xScale, float yScale, std::string text) {
@@ -239,15 +204,12 @@ namespace Renderer {
 
         sceGuTexMode(GU_PSM_8888, 0, 0, GU_TRUE);
         sceGuTexFunc(GU_TFX_MODULATE, GU_TCC_RGBA);
-        // sceGuTexImage(0, textWidth, textHeight, textWidth, fontTexture->data);
+
         RenderState::bindTexture(UI::fontTexture);
 
-        //enable transparency
-        // sceGuEnable(GU_BLEND);
         RenderState::set(GU_BLEND, true);
         sceGuBlendFunc(GU_ADD, GU_SRC_ALPHA, GU_ONE_MINUS_SRC_ALPHA, 0, 0);
 
-        // sceGuEnable(GU_TEXTURE_2D); 
         RenderState::set(GU_TEXTURE_2D, true);
 
         TextureVertex* vertices = (TextureVertex*)sceGuGetMemory(text.length() * 2 * sizeof(TextureVertex));
@@ -280,7 +242,6 @@ namespace Renderer {
 
         sceGuDrawArray(GU_SPRITES, GU_COLOR_8888 | GU_TEXTURE_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_2D, text.length() * 2, 0, vertices);
 
-        // sceGuDisable(GU_TEXTURE_2D);
         RenderState::set(GU_TEXTURE_2D, false);
         
     }
