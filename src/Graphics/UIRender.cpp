@@ -63,7 +63,7 @@ namespace UI {
         SubmitRect(&g_queue, x, y + (h - ((h*2)/3))/2, ((float) health / maxHealth) * w, ((h*2)/3), Colours::LIGHTGREEN, GraphicsUtils::Layer::UI_3);
     }
 
-    void drawButton(float x, float y, float w, float h, std::string text, uint32_t color){
+    void drawButton(float x, float y, float w, float h, const char* text, uint32_t color){
         SubmitRect(&g_queue, x, y, w, h, color, GraphicsUtils::Layer::UI_3);
         SubmitText(&g_queue, text, x + 5, y + 2, 0.35, 0.35, 0xFFFFFFFF, GraphicsUtils::Layer::UI_3);
     }

@@ -128,7 +128,6 @@ namespace MeshManager{
         free(temp_vt);
         free(temp_vn);
 
-        //flush cache range for GPU DMA
         sceKernelDcacheWritebackInvalidateRange(out_vertices, sizeof(Vertex3D) * f_count);
 
         Mesh mesh;

@@ -3,6 +3,9 @@
 #include <cstdint>
 #include "graphics/Assets/Texture.h"
 
+#define VERTEX_STATE_2D (GU_COLOR_8888 | GU_TEXTURE_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_2D)
+#define VERTEX_STATE_3D (GU_TRIANGLES, | GU_TEXTURE_32BITF | GU_NORMAL_32BITF | GU_VERTEX_32BITF | GU_TRANSFORM_3D)
+
 enum BlendMode {
     BLEND_NONE,       // Disables blending (opaque geometry)
     BLEND_ALPHA,      // Standard transparency (SrcAlpha, 1 - SrcAlpha)
@@ -30,6 +33,7 @@ enum TextureMode {
 };
 
 namespace RenderState {
+
     void init();
     void setBlendMode(BlendMode mode);
     void setDepthState(DepthState state);

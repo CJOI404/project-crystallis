@@ -130,6 +130,30 @@ Project_Crystallis/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/build
 .PHONY : Project_Crystallis/fast
 
+src/Audio/AudioManager.obj: src/Audio/AudioManager.cpp.obj
+.PHONY : src/Audio/AudioManager.obj
+
+# target to build an object file
+src/Audio/AudioManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Audio/AudioManager.cpp.obj
+.PHONY : src/Audio/AudioManager.cpp.obj
+
+src/Audio/AudioManager.i: src/Audio/AudioManager.cpp.i
+.PHONY : src/Audio/AudioManager.i
+
+# target to preprocess a source file
+src/Audio/AudioManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Audio/AudioManager.cpp.i
+.PHONY : src/Audio/AudioManager.cpp.i
+
+src/Audio/AudioManager.s: src/Audio/AudioManager.cpp.s
+.PHONY : src/Audio/AudioManager.s
+
+# target to generate assembly for a file
+src/Audio/AudioManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Audio/AudioManager.cpp.s
+.PHONY : src/Audio/AudioManager.cpp.s
+
 src/CommandRegistry.obj: src/CommandRegistry.cpp.obj
 .PHONY : src/CommandRegistry.obj
 
@@ -523,6 +547,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Project_Crystallis"
+	@echo "... src/Audio/AudioManager.obj"
+	@echo "... src/Audio/AudioManager.i"
+	@echo "... src/Audio/AudioManager.s"
 	@echo "... src/CommandRegistry.obj"
 	@echo "... src/CommandRegistry.i"
 	@echo "... src/CommandRegistry.s"

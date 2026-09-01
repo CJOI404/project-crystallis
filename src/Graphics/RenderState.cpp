@@ -24,7 +24,6 @@ namespace RenderState {
     }
 
     void setBlendMode(BlendMode mode) {
-        //skip redundant GPU state updates!
         if (currentBlendMode == mode) return;
 
         currentBlendMode = mode;

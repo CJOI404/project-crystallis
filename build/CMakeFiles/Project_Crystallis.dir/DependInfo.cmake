@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/mnt/d/project-crystallis/src/Audio/AudioManager.cpp" "CMakeFiles/Project_Crystallis.dir/src/Audio/AudioManager.cpp.obj" "gcc" "CMakeFiles/Project_Crystallis.dir/src/Audio/AudioManager.cpp.obj.d"
   "/mnt/d/project-crystallis/src/CommandRegistry.cpp" "CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj" "gcc" "CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj.d"
   "/mnt/d/project-crystallis/src/Entities/AttackCommand.cpp" "CMakeFiles/Project_Crystallis.dir/src/Entities/AttackCommand.cpp.obj" "gcc" "CMakeFiles/Project_Crystallis.dir/src/Entities/AttackCommand.cpp.obj.d"
   "/mnt/d/project-crystallis/src/Entities/Character.cpp" "CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj" "gcc" "CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj.d"

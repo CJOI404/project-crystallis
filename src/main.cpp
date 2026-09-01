@@ -21,6 +21,9 @@
 #include "Scenes/SceneManager.h"
 #include "graphics/Pipeline/RenderState.h"
 #include "graphics/Pipeline/RenderQueue.h"
+#include <pspaudio.h>
+#include <pspaudiolib.h>
+#include "audio/AudioManager.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
@@ -40,6 +43,7 @@ char list[0x20000] __attribute__((aligned(64)));
 int running;
 
 int exit_callback(int arg1, int arg2, void *common) {
+    pspAudioEnd();
     running = 0;
     return 0;
 }
@@ -123,9 +127,11 @@ void startFrame(){
 void endFrame(){
     sceGuFinish();
     sceGuSync(0, 0);
-    sceDisplayWaitVblankStart();
+    // This is basically v sync
+    // sceDisplayWaitVblankStart();
     sceGuSwapBuffers();
 }
+
 
 int main() {
 
@@ -134,6 +140,8 @@ int main() {
 
     // Setup the library used for rendering
     initGu();
+
+    AudioManager::init();
     
     //Load font data
     UI::loadFont("PSPGameFont128.fnt", "PSPGameFont128.png");
@@ -184,7 +192,9 @@ int main() {
         //Update
         SceneManager::update(deltaTime);
 
+
         //Render
+        float startTime = clock();
         startFrame();
 
         SceneManager::render(deltaTime);
@@ -197,6 +207,9 @@ int main() {
         SceneManager::changeScene();
 
         endFrame();
+        float updateTime = (clock() - startTime) / CLOCKS_PER_SEC;
+        printf("TOTAL RENDER TIME:%.5f\n", (updateTime * 1000));
+        fflush(stdout);
 
     }
 

@@ -20,6 +20,11 @@ CombatInstance::CombatInstance(){
     Mesh* myModel = MeshManager::loadOBJ("Lightning/lightning.obj");
     Texture* lightningTex = TextureManager::load("Lightning/Lightning_01.png", 256, 256);
 
+    Mesh* model2 = MeshManager::loadOBJ("Lightning/lightning copy.obj");
+    Mesh* model3 = MeshManager::loadOBJ("Lightning/lightning copy 2.obj");
+    Mesh* model4 = MeshManager::loadOBJ("Lightning/lightning copy 3.obj");
+    // Mesh* model5 = MeshManager::loadOBJ("Lightning/lightning copy 4.obj");
+
     SpriteManager::registerSprite("topleft", spritesheet, 0, 0, 64, 64);
     SpriteManager::registerSprite("topright", spritesheet, 64, 0, 64, 64);
     SpriteManager::registerSprite("bottomleft", spritesheet, 0, 64, 64, 64);
@@ -47,15 +52,20 @@ CombatInstance::CombatInstance(){
     character2.name = "SAZH";
     character2.currentRole = Role::RAVAGER;
     character2.sprite = SpriteManager::getSprite("bottomright");
+    character2.mesh = model3;
+    character2.meshTexture = lightningTex;
     
 
     // Character character3;
     character3.health = 1700;
     character3.maxHealth = 1700;
-    character2.setworldPos({150.0f, 0.0f, -200.0f});
+    character3.setworldPos({120.0f, 0.0f, -200.0f});
     character3.name = "VANILLE";
     character3.currentRole = Role::SABOTEUR;
     character3.sprite = SpriteManager::getSprite("bottomleft");
+    character3.meshTexture = lightningTex;
+    character3.mesh = model4;
+    
 
     // Character enemy;
     enemy.setworldPos({5.0f, 0.0f, -250.0f});
@@ -66,16 +76,18 @@ CombatInstance::CombatInstance(){
     enemy.drawHealthBar = true;
     enemy.sprite = SpriteManager::getSprite("topright");
     playerCharacter.drawName = true;
-    enemy.mesh = myModel;
+    enemy.mesh = model2;
     enemy.meshTexture = lightningTex;
 
     // Character enemy2;
-    enemy2.setworldPos({400.0f, 0.0f, -200.0f});
+    enemy2.setworldPos({-50.0f, 0.0f, -200.0f});
     enemy2.name = "ENEMY 2";
     enemy2.health = 450000;
     enemy2.maxHealth = 450000;
     enemy2.staggerPoint = 600;
     enemy2.drawHealthBar = true;
+    // enemy2.mesh = model5;
+    // enemy2.meshTexture = lightningTex;
 
     team.push_back(&playerCharacter);
     team.push_back(&character2);

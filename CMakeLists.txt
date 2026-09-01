@@ -7,8 +7,14 @@ set(CMAKE_BUILD_TYPE Debug)
 
 # -g: Include debug symbols
 # -O0: Do not optimize (stops code from being "shuffled")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -O0")
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0")
+# set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -O0")
+
+
+# gprof report stuff
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pg")
+# set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pg")
+# set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pg")
 
 # CRITICAL: Prevent the toolchain from stripping the ELF
 set(STRIP_SELF FALSE)
@@ -28,6 +34,8 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     pspdisplay
     pspdebug
     pspctrl
+    pspaudio
+    pspaudiolib
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE 

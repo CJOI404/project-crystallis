@@ -4,8 +4,16 @@
 #include "graphics/AssetManagers/UIRender.h"
 
 RenderQueue g_queue;
+TextureVertex* vertBuffer2D;
+Vertex3D* vertBuffer3D;
 
 void RenderQueue_Clear(RenderQueue* queue) {
+    for (int i = 0; i < queue->count; i++){
+        if (queue->commands[i].type == RenderType::TextUI && queue->commands[i].text2D.text){
+            free((void *) queue->commands[i].text2D.text);
+            queue->commands[i].text2D.text = nullptr;
+        }
+    }
     queue->count = 0;
 }
 
@@ -54,16 +62,16 @@ void Submit2D(RenderQueue* queue, Sprite* sprite, float x, float y, float w, flo
     }
 }
 
-void SubmitText(RenderQueue* queue, std::string text, float x, float y, float xScale, float yScale, uint32_t colour, GraphicsUtils::Layer layer) {
+void SubmitText(RenderQueue* queue, const char* text, float x, float y, float xScale, float yScale, uint32_t colour, GraphicsUtils::Layer layer) {
     if (queue->count < MAX_RENDER_COMMANDS) {
         RenderCommand& cmd = queue->commands[queue->count++];
         cmd.type = RenderType::TextUI;
 
-        cmd.text = text;
-        cmd.x = x;
-        cmd.y = y;
-        cmd.xScale = xScale;
-        cmd.yScale = yScale;
+        cmd.text2D.text = strdup(text);
+        cmd.text2D.x = x;
+        cmd.text2D.y = y;
+        cmd.text2D.xScale = xScale;
+        cmd.text2D.yScale = yScale;
         cmd.colour = colour;
         cmd.layer = layer;
 
@@ -85,15 +93,9 @@ void SubmitRect(RenderQueue* queue, short x, short y, short w, short h, uint32_t
     }
 }
 
-void SubmitVertices(RenderQueue* queue, std::vector<TextureVertex>* vertices, GraphicsUtils::Layer layer){
-    if (queue->count < MAX_RENDER_COMMANDS) {
-        RenderCommand& cmd = queue->commands[queue->count++];
-        cmd.type = RenderType::Vertices2D;
-        cmd.vertices = vertices;
-    }
-}
-
 void RenderPipeline_Flush(RenderQueue* queue) {
+
+    float startTime = clock();
 
     //sort by layer, then by render type
     std::stable_sort(queue->commands, queue->commands + queue->count, [](const RenderCommand& a, const RenderCommand& b) {
@@ -119,15 +121,20 @@ void RenderPipeline_Flush(RenderQueue* queue) {
         //     i++;
         // }
 
-        // Handle blending states per command
-        // if (cmd.blendMode == BlendMode::Opaque) {
-        //     sceGuDisable(GU_BLEND);
-        //     sceGuEnable(GU_DEPTH_TEST);
-        // } else {
-        //     sceGuEnable(GU_BLEND);
-        //     sceGuEnable(GU_DEPTH_TEST);
-        //     sceGuBlendFunc(GU_ADD, GU_SRC_ALPHA, GU_ONE_MINUS_SRC_ALPHA, 0, 0);
-        // }
+        /*
+        How do I batch?
+        save full render state (depth, blend, cull, texture binding, etc)
+        while current state is the same as last state:
+            append vertex data to list
+        
+        if current state is different from last state
+            call render function with vertex array
+
+        
+        
+        
+        */
+
 
         // Branch cleanly based on explicit type check
         switch (cmd.type) {
@@ -156,19 +163,17 @@ void RenderPipeline_Flush(RenderQueue* queue) {
                 Renderer::drawRect(cmd.rect2D.x, cmd.rect2D.y, cmd.rect2D.w, cmd.rect2D.h, cmd.colour);
                 break;
 
-            case RenderType::Vertices2D:
-                RenderState::setDepthState(DepthState::DEPTH_DISABLED);
-                RenderState::setBlendMode(BLEND_ALPHA);
-                Renderer::renderVertices(cmd.vertices);
-                break;
-
             case RenderType::TextUI:
                 RenderState::setDepthState(DepthState::DEPTH_DISABLED);
                 RenderState::setBlendMode(BLEND_NONE);
-                Renderer::drawString(cmd.x, cmd.y, cmd.colour, cmd.xScale, cmd.yScale, cmd.text);
+                Renderer::drawString(cmd.text2D.x, cmd.text2D.y, cmd.colour, cmd.text2D.xScale, cmd.text2D.yScale, cmd.text2D.text);
                 break;
 
         }
     }
+
+    float renderTime = (clock() - startTime) / CLOCKS_PER_SEC;
+    // printf("RENDER QUEUE FLUSH TIME:%.5f\n", (renderTime * 1000));
+    // fflush(stdout);
 
 }

@@ -24,8 +24,6 @@ struct RenderCommand {
     GraphicsUtils::Layer layer;
     uint32_t colour;
 
-    std::vector<TextureVertex>* vertices;
-
     union {
         struct {
             Mesh* mesh;
@@ -49,20 +47,29 @@ struct RenderCommand {
             short x, y, w, h;
             // float width, height;
         } rect2D;
+
+        struct {
+            float x, y, xScale, yScale;
+            const char* text;
+        } text2D;
     };
 
-    float x, y, xScale, yScale;
-    std::string text;
 };
 
 #define MAX_RENDER_COMMANDS 512
 
 struct RenderQueue {
     RenderCommand commands[MAX_RENDER_COMMANDS];
+    RenderType lastType;
     int count = 0;
 };
 
 extern RenderQueue g_queue;
+
+extern TextureVertex* vertBuffer2D;
+extern Vertex3D* vertBuffer3D;
+
+extern 
 
 void RenderQueue_Clear(RenderQueue* queue);
 
@@ -70,8 +77,8 @@ void Submit3D(RenderQueue* queue, Mesh* mesh, Texture* tex, ScePspFVector3* pos,
 void Submit2D(RenderQueue* queue, Sprite* sprite, float x, float y, float w, float h, uint32_t colour, GraphicsUtils::Layer layer);
 void Submit2D(RenderQueue* queue, Texture* tex, float x, float y, float w, float h, uint32_t colour, GraphicsUtils::Layer layer);
 void SubmitRect(RenderQueue* queue, short x, short y, short w, short h, uint32_t colour, GraphicsUtils::Layer layer);
-void SubmitText(RenderQueue* queue, std::string text, float x, float y, float xScale, float yScale, uint32_t colour, GraphicsUtils::Layer layer);
+void SubmitText(RenderQueue* queue, const char* text, float x, float y, float xScale, float yScale, uint32_t colour, GraphicsUtils::Layer layer);
 
-void SubmitVertices(RenderQueue* queue, std::vector<TextureVertex>* vertices, GraphicsUtils::Layer layer);
+// void SubmitVertices(RenderQueue* queue, std::vector<TextureVertex>* vertices, GraphicsUtils::Layer layer);
 
 void RenderPipeline_Flush(RenderQueue* queue);

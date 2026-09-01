@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Project_Crystallis.dir/src/Audio/AudioManager.cpp.obj"
+  "CMakeFiles/Project_Crystallis.dir/src/Audio/AudioManager.cpp.obj.d"
   "CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj"
   "CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj.d"
   "CMakeFiles/Project_Crystallis.dir/src/Entities/AttackCommand.cpp.obj"

@@ -230,6 +230,9 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/variant \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/monostate.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/parse_numbers.h \
+ /home/calvi/pspdev/psp/sdk/include/pspaudio.h \
+ /home/calvi/pspdev/psp/sdk/include/pspaudiolib.h \
+ /mnt/d/project-crystallis/include/audio/AudioManager.h \
  /home/calvi/pspdev/psp/include/stb_image.h \
  /home/calvi/pspdev/psp/include/assert.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/iomanip \
