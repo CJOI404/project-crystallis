@@ -187,12 +187,12 @@ void Character::update(float dt){
     //Offset for 2d UI attached to character
     uiPos = {worldPos.x, worldPos.y + 150.0f, worldPos.z};
 
-    rotation += 1 * dt;
-    if (rotation > 6.28318){
-        rotation = 0;
-    }
+    // rotation += 1 * dt;
+    // if (rotation > 6.28318){
+    //     rotation = 0;
+    // }
 
-    worldRot = {0.0f, rotation, 0.0f};
+    // worldRot = {0.0f, rotation, 0.0f};
 
 
     updateEffects(dt);

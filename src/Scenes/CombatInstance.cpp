@@ -19,11 +19,7 @@ CombatInstance::CombatInstance(){
     Texture* spritesheet = TextureManager::load("testspritesheet.png", 256, 128);
     Mesh* myModel = MeshManager::loadOBJ("Lightning/lightning.obj");
     Texture* lightningTex = TextureManager::load("Lightning/Lightning_01.png", 256, 256);
-
-    Mesh* model2 = MeshManager::loadOBJ("Lightning/lightning copy.obj");
-    Mesh* model3 = MeshManager::loadOBJ("Lightning/lightning copy 2.obj");
-    Mesh* model4 = MeshManager::loadOBJ("Lightning/lightning copy 3.obj");
-    // Mesh* model5 = MeshManager::loadOBJ("Lightning/lightning copy 4.obj");
+    Mesh* placeholder = MeshManager::loadOBJ("placeholder.obj");
 
     SpriteManager::registerSprite("topleft", spritesheet, 0, 0, 64, 64);
     SpriteManager::registerSprite("topright", spritesheet, 64, 0, 64, 64);
@@ -35,7 +31,7 @@ CombatInstance::CombatInstance(){
     enemies.clear();
 
     // Character playerCharacter;
-    playerCharacter.setworldPos({100.0f, 0.0f, -140.0f});
+    playerCharacter.setworldPos({-100.0f, 0.0f, -140.0f});
     playerCharacter.health = 300;
     playerCharacter.maxHealth = 2000;
     playerCharacter.name = "LIGHTNING";
@@ -44,31 +40,30 @@ CombatInstance::CombatInstance(){
     playerCharacter.drawHealthBar = true;
     playerCharacter.mesh = myModel;
     playerCharacter.meshTexture = lightningTex;
+    team.push_back(&playerCharacter);
 
     // Character character2;
     character2.health = 2200;
     character2.maxHealth = 3000;
-    character2.setworldPos({100.0f, 0.0f, -200.0f});
+    character2.setworldPos({-100.0f, 0.0f, -200.0f});
     character2.name = "SAZH";
     character2.currentRole = Role::RAVAGER;
     character2.sprite = SpriteManager::getSprite("bottomright");
-    character2.mesh = model3;
-    character2.meshTexture = lightningTex;
+    team.push_back(&character2);
     
 
-    // Character character3;
-    character3.health = 1700;
-    character3.maxHealth = 1700;
-    character3.setworldPos({120.0f, 0.0f, -200.0f});
-    character3.name = "VANILLE";
-    character3.currentRole = Role::SABOTEUR;
-    character3.sprite = SpriteManager::getSprite("bottomleft");
-    character3.meshTexture = lightningTex;
-    character3.mesh = model4;
+    // // Character character3;
+    // character3.health = 1700;
+    // character3.maxHealth = 1700;
+    // character3.setworldPos({-120.0f, 0.0f, -200.0f});
+    // character3.name = "VANILLE";
+    // character3.currentRole = Role::SABOTEUR;
+    // character3.sprite = SpriteManager::getSprite("bottomleft");
+    // team.push_back(&character3);
     
 
     // Character enemy;
-    enemy.setworldPos({5.0f, 0.0f, -250.0f});
+    enemy.setworldPos({50.0f, 0.0f, -350.0f});
     enemy.name = "ENEMY 1";
     enemy.health = 45000;
     enemy.maxHealth = 45000;
@@ -76,34 +71,18 @@ CombatInstance::CombatInstance(){
     enemy.drawHealthBar = true;
     enemy.sprite = SpriteManager::getSprite("topright");
     playerCharacter.drawName = true;
-    enemy.mesh = model2;
-    enemy.meshTexture = lightningTex;
+    enemy.mesh = placeholder;
+    enemies.push_back(&enemy);
 
     // Character enemy2;
-    enemy2.setworldPos({-50.0f, 0.0f, -200.0f});
+    enemy2.setworldPos({150.0f, 0.0f, -275.0f});
     enemy2.name = "ENEMY 2";
     enemy2.health = 450000;
     enemy2.maxHealth = 450000;
     enemy2.staggerPoint = 600;
     enemy2.drawHealthBar = true;
-    // enemy2.mesh = model5;
-    // enemy2.meshTexture = lightningTex;
-
-    team.push_back(&playerCharacter);
-    team.push_back(&character2);
-    team.push_back(&character3);
-
-    enemies.push_back(&enemy);
+    enemy2.mesh = placeholder;
     enemies.push_back(&enemy2);
-
-    for (int i = 0; i < team.size(); i++){
-        team.at(i)->teamList = team;
-        team.at(i)->enemyList = enemies;
-    }
-    for (int i = 0; i < enemies.size(); i++){
-        enemies.at(i)->teamList = enemies;
-        enemies.at(i)->enemyList = team;
-    }
 
     //Fill ability list
     playerCharacter.addViableBattleCommands();
@@ -118,12 +97,24 @@ CombatInstance::CombatInstance(){
     scannedEnemy = this->enemies[0];
     scanIdx = 0;
 
+    initTeamLists();
 
     // camera.position = {0.0f, 100.0f, 0.0f};
     camera.target = playerCharacter.worldPos;
-    camera.setPos({0.0f, playerCharacter.worldPos.y + 70, 0.0f});
+    camera.setPos({0.0f, playerCharacter.worldPos.y + 70, 100.0f});
 
 
+}
+
+void CombatInstance::initTeamLists(){
+    for (int i = 0; i < team.size(); i++){
+        team.at(i)->teamList = team;
+        team.at(i)->enemyList = enemies;
+    }
+    for (int i = 0; i < enemies.size(); i++){
+        enemies.at(i)->teamList = enemies;
+        enemies.at(i)->enemyList = team;
+    }
 }
 
 

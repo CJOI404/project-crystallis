@@ -142,7 +142,8 @@ void RenderPipeline_Flush(RenderQueue* queue) {
                     RenderState::set(GU_CULL_FACE, true);
                     RenderState::setDepthState(DepthState::DEPTH_READ_WRITE);
                     RenderState::setBlendMode(BLEND_NONE);
-                    Renderer::renderTexturedMesh(cmd.mesh3D.mesh, cmd.mesh3D.texture, cmd.mesh3D.position, cmd.mesh3D.rotation);
+                    if (cmd.mesh3D.texture != nullptr) Renderer::renderTexturedMesh(cmd.mesh3D.mesh, cmd.mesh3D.texture, cmd.mesh3D.position, cmd.mesh3D.rotation);
+                    else Renderer::renderMesh(cmd.mesh3D.mesh, cmd.mesh3D.position, cmd.mesh3D.rotation);
                 break;
 
             case RenderType::Texture2D:

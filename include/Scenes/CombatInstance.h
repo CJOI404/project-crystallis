@@ -35,6 +35,7 @@ class CombatInstance : public Scene {
 
         void setTeam(std::vector<Character*> team);
         void setEnemies(std::vector<Character*> enemies);
+        void initTeamLists();
 
         void update(float dt) override;
         void render(float dt) override;

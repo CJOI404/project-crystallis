@@ -78,9 +78,10 @@ enum Resistance{
 
 struct Paradigm{
     const char* name;
-    Role r1;
-    Role r2;
-    Role r3;
+    Role roles[3];
+    // Role r1;
+    // Role r2;
+    // Role r3;
 };
 
 const char* roleToString(Role r);

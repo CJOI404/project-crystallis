@@ -75,11 +75,13 @@ void Menu::cursorRight(){
 }
 
 void Menu::setParadigm(){
-    activeCharacter->currentRole = paradigms[selectedParadigm]->r1;
-    activeCharacter->teamList.at(1)->currentRole = paradigms[selectedParadigm]->r2;
-    activeCharacter->teamList.at(2)->currentRole = paradigms[selectedParadigm]->r3;
+    
+    // activeCharacter->currentRole = paradigms[selectedParadigm]->r1;
+    // activeCharacter->teamList.at(1)->currentRole = paradigms[selectedParadigm]->r2;
+    // activeCharacter->teamList.at(2)->currentRole = paradigms[selectedParadigm]->r3;
 
     for (int i = 0; i < activeCharacter->teamList.size(); i++){
+        activeCharacter->teamList.at(i)->currentRole = paradigms[selectedParadigm]->roles[i];
         activeCharacter->teamList.at(i)->addViableBattleCommands();
     }
 }
@@ -421,7 +423,7 @@ void Menu::drawMenu(){
 
                 SubmitRect(&g_queue, currX, currY, buttonWidth * 1.5, buttonHeight * 0.9, colour, GraphicsUtils::Layer::UI_3);
                 
-                snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s \t %s %s %s", paradigms[i]->name, roleToString(paradigms[i]->r1), roleToString(paradigms[i]->r2), roleToString(paradigms[i]->r3));
+                snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s \t %s %s %s", paradigms[i]->name, roleToString(paradigms[i]->roles[0]), roleToString(paradigms[i]->roles[1]), roleToString(paradigms[i]->roles[2]));
                 SubmitText(&g_queue, UI::textBuffer, currX + 5, currY, 0.35, 0.35, 0xFFFFFFFF, GraphicsUtils::Layer::UI_3);
 
                 currY += (buttonHeight * 0.9) + padding;

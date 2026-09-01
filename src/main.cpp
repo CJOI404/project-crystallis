@@ -99,7 +99,7 @@ void initGu(){
     sceGumLoadIdentity();
 
     //TODO: Tweak near/far to fix z-fighting. Lowering the model size will also help
-    sceGumPerspective(75.0f, 480.0f / 272.0f, 0.5f, 1000.0f); // Field of view, Aspect ratio, Near, Far
+    sceGumPerspective(45.0f, 480.0f / 272.0f, 0.5f, 1000.0f); // Field of view, Aspect ratio, Near, Far
 
 
 
