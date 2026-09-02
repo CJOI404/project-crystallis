@@ -310,6 +310,7 @@ CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj: /mnt/d/project-cr
   /mnt/d/project-crystallis/include/Entities/Character.h \
   /mnt/d/project-crystallis/include/Entities/GameActor.h \
   /mnt/d/project-crystallis/include/GlobalDefs.h \
+  /mnt/d/project-crystallis/include/ItemRegistry.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
@@ -442,6 +443,7 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/AttackCommand.cpp.obj: /mnt/d/pro
   /mnt/d/project-crystallis/include/Entities/Character.h \
   /mnt/d/project-crystallis/include/Entities/GameActor.h \
   /mnt/d/project-crystallis/include/GlobalDefs.h \
+  /mnt/d/project-crystallis/include/ItemRegistry.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Texture.h \
@@ -625,6 +627,7 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj: /mnt/d/project
   /mnt/d/project-crystallis/include/Entities/Character.h \
   /mnt/d/project-crystallis/include/Entities/GameActor.h \
   /mnt/d/project-crystallis/include/GlobalDefs.h \
+  /mnt/d/project-crystallis/include/ItemRegistry.h \
   /mnt/d/project-crystallis/include/graphics/AssetManagers/TextureManager.h \
   /mnt/d/project-crystallis/include/graphics/AssetManagers/UIRender.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
@@ -798,6 +801,7 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Menu.cpp.obj: /mnt/d/project-crys
   /mnt/d/project-crystallis/include/Entities/GameActor.h \
   /mnt/d/project-crystallis/include/Entities/Menu.h \
   /mnt/d/project-crystallis/include/GlobalDefs.h \
+  /mnt/d/project-crystallis/include/ItemRegistry.h \
   /mnt/d/project-crystallis/include/graphics/AssetManagers/TextureManager.h \
   /mnt/d/project-crystallis/include/graphics/AssetManagers/UIRender.h \
   /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
@@ -990,6 +994,7 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Scan.cpp.obj: /mnt/d/project-crys
   /mnt/d/project-crystallis/include/GlobalDefs.h \
   /mnt/d/project-crystallis/include/Graphics/Pipeline/RenderQueue.h \
   /mnt/d/project-crystallis/include/InputHandler.h \
+  /mnt/d/project-crystallis/include/ItemRegistry.h \
   /mnt/d/project-crystallis/include/Scenes/CombatInstance.h \
   /mnt/d/project-crystallis/include/Scenes/Scene.h \
   /mnt/d/project-crystallis/include/graphics/AssetManagers/TextureManager.h \
@@ -2520,6 +2525,7 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/MainMenu.cpp.obj: /mnt/d/project-cr
   /mnt/d/project-crystallis/include/Entities/Scan.h \
   /mnt/d/project-crystallis/include/GlobalDefs.h \
   /mnt/d/project-crystallis/include/InputHandler.h \
+  /mnt/d/project-crystallis/include/ItemRegistry.h \
   /mnt/d/project-crystallis/include/Scenes/CombatInstance.h \
   /mnt/d/project-crystallis/include/Scenes/MainMenu.h \
   /mnt/d/project-crystallis/include/Scenes/Scene.h \
@@ -2870,8 +2876,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 
 /mnt/d/project-crystallis/include/Scenes/MainMenu.h:
 
-/mnt/d/project-crystallis/include/ItemRegistry.h:
-
 /mnt/d/project-crystallis/src/ItemRegistry.cpp:
 
 /home/calvi/pspdev/psp/sdk/include/pspsdk.h:
@@ -2905,6 +2909,8 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/c++/15.1.1/random:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/pstl/execution_defs.h:
+
+/home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/opt_random.h:
 
 /mnt/d/project-crystallis/include/Audio/AudioManager.h:
 
@@ -2967,8 +2973,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /home/calvi/pspdev/psp/include/c++/15.1.1/ext/aligned_buffer.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/system_error:
-
-/home/calvi/pspdev/psp/include/c++/15.1.1/psp/bits/opt_random.h:
 
 /home/calvi/pspdev/psp/include/ctype.h:
 
@@ -3403,6 +3407,8 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: /mnt/d/project-crystallis/sr
 /mnt/d/project-crystallis/include/GlobalDefs.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/special_function_util.h:
+
+/mnt/d/project-crystallis/include/ItemRegistry.h:
 
 /home/calvi/pspdev/psp/include/c++/15.1.1/stdlib.h:
 

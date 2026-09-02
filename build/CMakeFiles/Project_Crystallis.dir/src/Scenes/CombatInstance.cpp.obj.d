@@ -127,6 +127,7 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: \
  /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
  /home/calvi/pspdev/psp/include/malloc.h \
  /home/calvi/pspdev/psp/include/machine/malloc.h \
+ /mnt/d/project-crystallis/include/ItemRegistry.h \
  /mnt/d/project-crystallis/include/Entities/Menu.h \
  /mnt/d/project-crystallis/include/Scenes/Scene.h \
  /mnt/d/project-crystallis/include/Entities/Camera.h \
@@ -199,5 +200,4 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: \
  /mnt/d/project-crystallis/include/graphics/Pipeline/RenderState.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/variant \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/monostate.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/bits/parse_numbers.h \
- /mnt/d/project-crystallis/include/ItemRegistry.h
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/parse_numbers.h

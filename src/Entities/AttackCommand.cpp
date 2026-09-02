@@ -390,6 +390,12 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver, float at
     float atkDmg = atkDmgBase;
     float ravDmg = ravDmgBase;
 
+    //add weapon stats
+    if (sender->equippedWeapon){
+        atkDmg += sender->equippedWeapon->atk;
+        ravDmg += sender->equippedWeapon->rav;
+    }
+
     //1. check the following passive abilities, multiply base dmg to get D1
     /*
         Adrenaline                  *1.2 (+20%)

@@ -198,6 +198,7 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
  /home/calvi/pspdev/psp/include/malloc.h \
  /home/calvi/pspdev/psp/include/machine/malloc.h \
+ /mnt/d/project-crystallis/include/ItemRegistry.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/ctime \
  /mnt/d/project-crystallis/include/graphics/AssetManagers/UIRender.h \
  /mnt/d/project-crystallis/include/graphics/AssetManagers/TextureManager.h \
@@ -234,7 +235,6 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /home/calvi/pspdev/psp/sdk/include/pspaudio.h \
  /home/calvi/pspdev/psp/sdk/include/pspaudiolib.h \
  /mnt/d/project-crystallis/include/Audio/AudioManager.h \
- /mnt/d/project-crystallis/include/ItemRegistry.h \
  /home/calvi/pspdev/psp/include/stb_image.h \
  /home/calvi/pspdev/psp/include/assert.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/iomanip \

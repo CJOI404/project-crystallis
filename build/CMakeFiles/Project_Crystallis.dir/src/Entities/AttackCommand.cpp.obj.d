@@ -127,6 +127,7 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/AttackCommand.cpp.obj: \
  /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
  /home/calvi/pspdev/psp/include/malloc.h \
  /home/calvi/pspdev/psp/include/machine/malloc.h \
+ /mnt/d/project-crystallis/include/ItemRegistry.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstring \
  /home/calvi/pspdev/psp/include/string.h \
  /home/calvi/pspdev/psp/include/strings.h \

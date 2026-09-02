@@ -126,6 +126,7 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj: \
  /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
  /home/calvi/pspdev/psp/include/malloc.h \
  /home/calvi/pspdev/psp/include/machine/malloc.h \
+ /mnt/d/project-crystallis/include/ItemRegistry.h \
  /mnt/d/project-crystallis/include/graphics/AssetManagers/UIRender.h \
  /mnt/d/project-crystallis/include/graphics/AssetManagers/TextureManager.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/unordered_map \

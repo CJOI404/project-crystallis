@@ -127,6 +127,7 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Scan.cpp.obj: \
  /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h \
  /home/calvi/pspdev/psp/include/malloc.h \
  /home/calvi/pspdev/psp/include/machine/malloc.h \
+ /mnt/d/project-crystallis/include/ItemRegistry.h \
  /mnt/d/project-crystallis/include/InputHandler.h \
  /home/calvi/pspdev/psp/sdk/include/pspctrl.h \
  /mnt/d/project-crystallis/include/Scenes/CombatInstance.h \

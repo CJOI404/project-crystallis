@@ -312,6 +312,7 @@ CMakeFiles/Project_Crystallis.dir/src/CommandRegistry.cpp.obj
  /mnt/d/project-crystallis/include/Entities/Character.h
  /mnt/d/project-crystallis/include/Entities/GameActor.h
  /mnt/d/project-crystallis/include/GlobalDefs.h
+ /mnt/d/project-crystallis/include/ItemRegistry.h
  /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h
  /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h
  /mnt/d/project-crystallis/include/graphics/Assets/Texture.h
@@ -445,6 +446,7 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/AttackCommand.cpp.obj
  /mnt/d/project-crystallis/include/Entities/Character.h
  /mnt/d/project-crystallis/include/Entities/GameActor.h
  /mnt/d/project-crystallis/include/GlobalDefs.h
+ /mnt/d/project-crystallis/include/ItemRegistry.h
  /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h
  /mnt/d/project-crystallis/include/graphics/Assets/Sprite.h
  /mnt/d/project-crystallis/include/graphics/Assets/Texture.h
@@ -629,6 +631,7 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Character.cpp.obj
  /mnt/d/project-crystallis/include/Entities/Character.h
  /mnt/d/project-crystallis/include/Entities/GameActor.h
  /mnt/d/project-crystallis/include/GlobalDefs.h
+ /mnt/d/project-crystallis/include/ItemRegistry.h
  /mnt/d/project-crystallis/include/graphics/AssetManagers/TextureManager.h
  /mnt/d/project-crystallis/include/graphics/AssetManagers/UIRender.h
  /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h
@@ -803,6 +806,7 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Menu.cpp.obj
  /mnt/d/project-crystallis/include/Entities/GameActor.h
  /mnt/d/project-crystallis/include/Entities/Menu.h
  /mnt/d/project-crystallis/include/GlobalDefs.h
+ /mnt/d/project-crystallis/include/ItemRegistry.h
  /mnt/d/project-crystallis/include/graphics/AssetManagers/TextureManager.h
  /mnt/d/project-crystallis/include/graphics/AssetManagers/UIRender.h
  /mnt/d/project-crystallis/include/graphics/Assets/Mesh.h
@@ -996,6 +1000,7 @@ CMakeFiles/Project_Crystallis.dir/src/Entities/Scan.cpp.obj
  /mnt/d/project-crystallis/include/GlobalDefs.h
  /mnt/d/project-crystallis/include/Graphics/Pipeline/RenderQueue.h
  /mnt/d/project-crystallis/include/InputHandler.h
+ /mnt/d/project-crystallis/include/ItemRegistry.h
  /mnt/d/project-crystallis/include/Scenes/CombatInstance.h
  /mnt/d/project-crystallis/include/Scenes/Scene.h
  /mnt/d/project-crystallis/include/graphics/AssetManagers/TextureManager.h
@@ -2537,6 +2542,7 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/MainMenu.cpp.obj
  /mnt/d/project-crystallis/include/Entities/Scan.h
  /mnt/d/project-crystallis/include/GlobalDefs.h
  /mnt/d/project-crystallis/include/InputHandler.h
+ /mnt/d/project-crystallis/include/ItemRegistry.h
  /mnt/d/project-crystallis/include/Scenes/CombatInstance.h
  /mnt/d/project-crystallis/include/Scenes/MainMenu.h
  /mnt/d/project-crystallis/include/Scenes/Scene.h

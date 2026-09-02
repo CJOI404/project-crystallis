@@ -48,6 +48,8 @@ CombatInstance::CombatInstance(){
     playerCharacter.meshTexture = lightningTex;
     team.push_back(&playerCharacter);
 
+    playerCharacter.equippedWeapon = &Items::weaponList[0];
+
     // Character character2;
     character2.health = 2200;
     character2.maxHealth = 3000;
@@ -117,6 +119,7 @@ void CombatInstance::initTeamLists(){
     commandMenu.teamList = team;
     commandMenu.enemyList = enemies;
     scanScreen.enemyList = enemies;
+    scanScreen.teamList = team;
 }
 
 

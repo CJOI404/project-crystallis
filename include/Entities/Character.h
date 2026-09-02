@@ -7,11 +7,13 @@
 #include <queue>
 #include "graphics/Assets/Sprite.h"
 #include "graphics/Assets/Mesh.h"
+#include "ItemRegistry.h"
 
 enum CharacterState{
-    Attacking,
     Waiting,
     AttackReady,
+    RunningToEnemy,
+    Attacking,
     AttackCooldown
 };
 
@@ -24,6 +26,7 @@ class Character : public GameActor {
         Texture* meshTexture = nullptr;
 
         float rotation = 0.0f;
+
 
 
         BattleCommand* currCommand = nullptr;
@@ -58,6 +61,8 @@ class Character : public GameActor {
 
         bool staggered = false;
 
+
+
         int atkDamage = 400;
         int ravDamage  = 300;
 
@@ -81,6 +86,8 @@ class Character : public GameActor {
         Character* target = nullptr;
 
         std::vector<BattleCommand*> abilities;
+        std::vector<Items::Weapon*> availableWeapons;
+        Items::Weapon* equippedWeapon;
 
 
         //resistances to elements/attack types

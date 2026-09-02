@@ -5,6 +5,8 @@
 class Scan {
     public:
         std::vector<Character*> enemyList;
+        std::vector<Character*> teamList;
+        Character* scannedCharacter = nullptr;
 
         int scanIdx = 0;
 
