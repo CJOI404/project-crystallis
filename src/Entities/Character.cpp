@@ -52,13 +52,16 @@ Character::~Character(){
 //Equipment / Skills =================================================================
 
 bool Character::equipWeapon(Items::Weapon* weapon){
-    if (strcasecmp(weapon->character, this->name) != 0){
-        printf("This weapon cannot be equipped by this character\n");
-        return false;
-    } 
+    // if (strcasecmp(weapon->character, this->name) != 0){
+    //     printf("This weapon cannot be equipped by this character\n");
+    //     return false;
+    // } 
     for (int i = 0; i < availableWeapons.size(); i++){
         if (availableWeapons[i] == weapon) {
             this->equippedWeapon = weapon;
+            if (weapon->ability != PassiveAbility::NOABILITY) passiveAbilities[weapon->ability] = true;
+            printf("Equipped with ability enum id %d\n", weapon->ability);
+            fflush(stdout);
             return true;
         }
     }

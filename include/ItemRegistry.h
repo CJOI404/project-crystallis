@@ -19,7 +19,7 @@ namespace Items {
         char name[32];
         char character[16];
         char abilityName[32];
-        WeaponAbility ability;
+        PassiveAbility ability;
         int atk;
         int rav;
         int price;

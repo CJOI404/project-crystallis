@@ -4,7 +4,7 @@
 
 #define MAX_ENTITIES = 100;
 
-enum WeaponAbility{
+enum PassiveAbility{
     ATBCharge,
     ATBCharge2,
     ImprovedRaise,
@@ -48,7 +48,9 @@ enum WeaponAbility{
     ImprovedDebilitation,
     ImprovedDebilitation2,
     ImprovedCounter,
-    ImprovedCounter2
+    ImprovedCounter2,
+    NOABILITY,
+    PASSIVEABILITYCOUNT
 };
 
 enum Element{

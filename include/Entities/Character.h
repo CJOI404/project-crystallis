@@ -105,6 +105,8 @@ class Character : public GameActor {
         float buffDurations[Buff::BUFFCOUNT]{};
         float debuffDurations[Debuff::DEBUFFCOUNT]{};
 
+        bool passiveAbilities[PassiveAbility::PASSIVEABILITYCOUNT]{};
+
         void startAttack();
 
         void setResistance(Element element, Resistance val);

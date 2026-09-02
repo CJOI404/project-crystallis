@@ -390,12 +390,15 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver, float at
     float atkDmg = atkDmgBase;
     float ravDmg = ravDmgBase;
 
+    printf("ATTACKING: ATK CALCS: %f\n", atkDmg);
+
     //add weapon stats
     if (sender->getWeapon()){
         atkDmg += sender->getWeapon()->atk;
         ravDmg += sender->getWeapon()->rav;
     }
 
+    printf("ADD WEAPON STAT: %f\n", atkDmg);
     //1. check the following passive abilities, multiply base dmg to get D1
     /*
         Adrenaline                  (+20%) -----
@@ -407,23 +410,32 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver, float at
         Low HP: Power Surge         (+50%) ------
     */
 
+    printf("Attacked\n");
     float weaponAbilitiesMod = 1; //change to sum of weapon abilities when that is implemented
     if (sender->criticalHealth){
-        if (sender->getWeapon()->ability == WeaponAbility::CritPowerSurge) weaponAbilitiesMod += 0.2;
-        if (sender->getWeapon()->ability == WeaponAbility::CritPowerSurge2) weaponAbilitiesMod += 0.4;
+        printf("Crit Health\n");
+        if (sender->passiveAbilities[PassiveAbility::CritPowerSurge]){
+            printf("Applied crit\n");
+            weaponAbilitiesMod += 0.2;
+            printf("Applied crit power surge (+0.2x)\n");
+            fflush(stdout);
+        } 
+        if (sender->passiveAbilities[PassiveAbility::CritPowerSurge2]) weaponAbilitiesMod += 0.4;
     } 
 
     //TODO: when death state is implemented, increment allyKOCount for this to work
     if (sender->allyKOCount == 1){
-        if (sender->getWeapon()->ability == WeaponAbility::AllyKOPowerSurge) weaponAbilitiesMod += 1.1;
-        else if (sender->getWeapon()->ability == WeaponAbility::AllyKOPowerSurge2) weaponAbilitiesMod += 1.3;
+        if (sender->passiveAbilities[PassiveAbility::AllyKOPowerSurge]) weaponAbilitiesMod += 1.1;
+        else if (sender->passiveAbilities[PassiveAbility::AllyKOPowerSurge2]) weaponAbilitiesMod += 1.3;
     } else if (sender->allyKOCount >= 2){
-        if (sender->getWeapon()->ability == WeaponAbility::AllyKOPowerSurge) weaponAbilitiesMod += 2.2;
-        else if (sender->getWeapon()->ability == WeaponAbility::AllyKOPowerSurge2) weaponAbilitiesMod += 2.6;
+        if (sender->passiveAbilities[PassiveAbility::AllyKOPowerSurge]) weaponAbilitiesMod += 2.2;
+        else if (sender->passiveAbilities[PassiveAbility::AllyKOPowerSurge2]) weaponAbilitiesMod += 2.6;
     }
 
     atkDmg *= weaponAbilitiesMod;
     ravDmg *= weaponAbilitiesMod;
+
+    printf("ADD WEAPON ABILITIES: %f\n", atkDmg);
     
     //2.Sum applicable status effects and multiply d1 to get d2
     //ONLY ONE VERSION OF EACH EFFECT CAN BE USED
@@ -450,6 +462,8 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver, float at
     atkDmg *= statusEffectsModAtk;
     ravDmg *= statusEffectsModRav;
 
+    printf("ADD STATUS EFFECTS: %f\n", atkDmg);
+
     //3. Get lower limit for random damage factor
     float atkDmgL = (1 - variation) * atkDmg;
     float ravDmgL = (1 - variation) * atkDmg;
@@ -457,6 +471,8 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver, float at
     //4. Apply chain to d2 get d3
     atkDmg *= (receiver->stagger/100);
     ravDmg *= (receiver->stagger/100);
+
+    printf("ADD CHAIN: %f\n", atkDmg);
 
     //5.Calculate bonuses 
     // (will skip for now. DONT FORGET TO ALL COMMANDO BONUS HERE WHEN DOING ROLE BONUSES)
@@ -480,6 +496,8 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver, float at
     atkDmg *= comRoleBonus;
     ravDmg *= comRoleBonus;
 
+    printf("ADD COM ROLE: %f\n", atkDmg);
+
     //6. Calculate element bonus
     //This checks if the Enhance Element buff aligns with the attack element
 
@@ -490,6 +508,7 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver, float at
             atkDmg *= 1.3;
             ravDmg *= 1.3;
         }
+    printf("ADD ELEMENT BUFFS: %f\n", atkDmg);
 
 
     //7. Check passive skill deathblow conditions
@@ -515,6 +534,8 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver, float at
         ravDmg *= receiver->getResistance(currElement);
     } 
 
+    printf("ADD ELEMENT RESISTANCE: %f\n", atkDmg);
+
     //"Deprotect and deshell are subtracted directly from physical and magical resistance"
     if (receiver->activeDebuffs[Debuff::DEPROTECT]){
         atkDmg *= (receiver->getResistance(Element::PHYSICAL) * 1.89);
@@ -527,7 +548,9 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver, float at
         ravDmg *= receiver->getResistance(Element::MAGICAL);
     }
 
-    ravDmg *= receiver->getResistance(Element::MAGICAL);
+    // ravDmg *= receiver->getResistance(Element::MAGICAL);
+
+    printf("DEPROTECT: %f\n", atkDmg);
 
     //9. Calculate enemy status effects (except deprotect and deshell)
     /*
@@ -569,6 +592,8 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver, float at
     atkDmg *= enemyStatusModAtk;
     ravDmg *= enemyStatusModRav;
 
+    printf("ENEMY STATUS EFFECTS: %f\n", atkDmg);
+
     //10. calculate bonus defense (sentinel abilities/bonus)
     /*
             _____________________________________________
@@ -588,6 +613,8 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver, float at
     atkDmg *= senRoleBonus;
     ravDmg *= senRoleBonus;
 
+    printf("SEN ROLE BONUS: %f\n", atkDmg);
+
     //TODO: This wont work until currCommand and command timings are functioning as intended.
     //May be smarter to have a "steelguard" and "mediguard" buff on a timer.
     if (receiver->currCommand->name == "STEELGUARD") {/*find out how steelguard defense is calculated*/}
@@ -604,6 +631,8 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver, float at
     if (atkDmg > 99999) atkDmg = 99999;
     if (ravDmg > 99999) ravDmg = 99999;
 
+    printf("99999 DMG LIMIT: %f\n", atkDmg);
+
     //13. Account for daze staus effect
     //"If the Daze status effect is present on the target, D12 equals D11 x 2."
 
@@ -611,6 +640,8 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver, float at
         atkDmg *= 2;
         ravDmg *= 2;
     }
+
+    printf("ADD DAZE: %f\n", atkDmg);
 
     //14. “Damage Rarely Becomes 0” passive weapon ability
     /************************************************************
@@ -628,6 +659,9 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver, float at
 
     //Will do later because im getting lazy. Having non-randomness is good for testing rn anyway
     
+    printf("FINAL ATK DAMAGE: %f\n", atkDmg);
+    fflush(stdout);
+
     //apply damage FINALLY
     return (int)(atkDmg + ravDmg);
 }

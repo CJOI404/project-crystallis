@@ -48,9 +48,9 @@ CombatInstance::CombatInstance(){
     playerCharacter.meshTexture = lightningTex;
     team.push_back(&playerCharacter);
 
-    playerCharacter.unlockWeapon(&Items::weaponList[3]);
+    playerCharacter.unlockWeapon(&Items::weaponList[54]);
     playerCharacter.equipWeapon(&Items::weaponList[1]) == true ? printf("equipped 2\n") : printf ("failed to equip 2\n");
-    playerCharacter.equipWeapon(&Items::weaponList[3]) == true ? printf("equipped 3\n") : printf ("failed to equip 3\n");
+    playerCharacter.equipWeapon(&Items::weaponList[54]) == true ? printf("equipped 3\n") : printf ("failed to equip 3\n");
 
     // Character character2;
     character2.health = 2200;
