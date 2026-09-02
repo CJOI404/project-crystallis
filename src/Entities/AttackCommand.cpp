@@ -391,23 +391,36 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver, float at
     float ravDmg = ravDmgBase;
 
     //add weapon stats
-    if (sender->equippedWeapon){
-        atkDmg += sender->equippedWeapon->atk;
-        ravDmg += sender->equippedWeapon->rav;
+    if (sender->getWeapon()){
+        atkDmg += sender->getWeapon()->atk;
+        ravDmg += sender->getWeapon()->rav;
     }
 
     //1. check the following passive abilities, multiply base dmg to get D1
     /*
-        Adrenaline                  *1.2 (+20%)
-        Critical: Power Surge       *1.2 (+20%)
-        Critical: Power Surge II    *1.4 (+40%)
-        Ally KO: Power Surge        *1.1 - *2.2 (+110% - 220%)
-        Ally KO: Power Surge II     *1.3 - *2.6 (+130% - 260%)
-        High HP: Power Surge        *1.2 (+20%)
-        Low HP: Power Surge         *1.5 (+50%)
+        Adrenaline                  (+20%) -----
+        Critical: Power Surge       (+20%)          XX DONE XX
+        Critical: Power Surge II    (+40%)          XX DONE XX     
+        Ally KO: Power Surge        (+110% - 220%)  XX DONE XX  
+        Ally KO: Power Surge II     (+130% - 260%)  XX DONE XX  
+        High HP: Power Surge        (+20%) ------
+        Low HP: Power Surge         (+50%) ------
     */
 
     float weaponAbilitiesMod = 1; //change to sum of weapon abilities when that is implemented
+    if (sender->criticalHealth){
+        if (sender->getWeapon()->ability == WeaponAbility::CritPowerSurge) weaponAbilitiesMod += 0.2;
+        if (sender->getWeapon()->ability == WeaponAbility::CritPowerSurge2) weaponAbilitiesMod += 0.4;
+    } 
+
+    //TODO: when death state is implemented, increment allyKOCount for this to work
+    if (sender->allyKOCount == 1){
+        if (sender->getWeapon()->ability == WeaponAbility::AllyKOPowerSurge) weaponAbilitiesMod += 1.1;
+        else if (sender->getWeapon()->ability == WeaponAbility::AllyKOPowerSurge2) weaponAbilitiesMod += 1.3;
+    } else if (sender->allyKOCount >= 2){
+        if (sender->getWeapon()->ability == WeaponAbility::AllyKOPowerSurge) weaponAbilitiesMod += 2.2;
+        else if (sender->getWeapon()->ability == WeaponAbility::AllyKOPowerSurge2) weaponAbilitiesMod += 2.6;
+    }
 
     atkDmg *= weaponAbilitiesMod;
     ravDmg *= weaponAbilitiesMod;
@@ -415,12 +428,12 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver, float at
     //2.Sum applicable status effects and multiply d1 to get d2
     //ONLY ONE VERSION OF EACH EFFECT CAN BE USED
     /*
-        Bravery (atk only)          *1.4
-        Bravera (atk only)          *1.8
-        Debrave (atk only)          *0.1
-        Faith (rav only)            *1.4
-        Faithra (rav only)          *1.8
-        Defaith (rav only)          *0.1
+        Bravery (atk only)          *1.4    XX DONE XX  
+        Bravera (atk only)          *1.8    XX DONE XX  
+        Debrave (atk only)          *0.1    XX DONE XX  
+        Faith (rav only)            *1.4    XX DONE XX  
+        Faithra (rav only)          *1.8    XX DONE XX  
+        Defaith (rav only)          *0.1    XX DONE XX  
     
     */
     float statusEffectsModAtk = 1; 

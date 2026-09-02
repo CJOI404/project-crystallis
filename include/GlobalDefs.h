@@ -4,6 +4,53 @@
 
 #define MAX_ENTITIES = 100;
 
+enum WeaponAbility{
+    ATBCharge,
+    ATBCharge2,
+    ImprovedRaise,
+    ImprovedRaise2,
+    Leadenstrike,
+    Ironstrike,
+    StaggerLock,
+    QuickStagger,
+    AugmentMaintenance,
+    AugmentMaintenance2,
+    SilkTiger,
+    ChainBonusBoost,
+    ChainBonusBoost2,
+    StaggerMaintenance,
+    StaggerMaintenance2,
+    ImprovedGuard,
+    ImprovedGuard2,
+    CritPowerSurge,             //IMPLEMENTED! in dmg calculation
+    CritPowerSurge2,            //IMPLEMENTED! in dmg calculation
+    AllyKOPowerSurge,
+    AllyKOPowerSurge2,
+    Enfeeblement,
+    Hindrance,
+    PaperTiger,
+    ImprovedWard,
+    ImprovedWard2,
+    Shield,
+    Shield2,
+    SiphonBoost,
+    SiphonBoost2,
+    DefenseMaintenance,
+    DefenseMaintenance2,
+    StifledMagic,
+    FetteredMagic,
+    ImprovedCure,
+    ImprovedCure2,
+    ImprovedDebuffing,
+    ImprovedDebuffing2,
+    TPCharge,
+    TPCharge2,
+    ImprovedDebilitation,
+    ImprovedDebilitation2,
+    ImprovedCounter,
+    ImprovedCounter2
+};
+
 enum Element{
     FIRE,
     ICE,

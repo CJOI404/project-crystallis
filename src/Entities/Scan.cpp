@@ -38,12 +38,12 @@ void Scan::render(float dt){
 
     //Just a test to see player equipment stuff before I implement the enemy/team scan toggle
     
-    if (scanTeam && scannedCharacter->equippedWeapon != nullptr){
-        SubmitText(&g_queue, scannedCharacter->equippedWeapon->name, 280, 20, 0.6, 0.6, 0xFFFFFFFF, GraphicsUtils::Layer::UI_4);
-        SubmitText(&g_queue, scannedCharacter->equippedWeapon->ability, 280, 40, 0.3, 0.3, 0xFFFFFFFF, GraphicsUtils::Layer::UI_4);
-        snprintf(UI::textBuffer, sizeof(UI::textBuffer), "PHYSICAL: %d", scannedCharacter->equippedWeapon->atk);
+    if (scanTeam && scannedCharacter->getWeapon() != nullptr){
+        SubmitText(&g_queue, scannedCharacter->getWeapon()->name, 280, 20, 0.6, 0.6, 0xFFFFFFFF, GraphicsUtils::Layer::UI_4);
+        SubmitText(&g_queue, scannedCharacter->getWeapon()->abilityName, 280, 40, 0.3, 0.3, 0xFFFFFFFF, GraphicsUtils::Layer::UI_4);
+        snprintf(UI::textBuffer, sizeof(UI::textBuffer), "PHYSICAL: %d", scannedCharacter->getWeapon()->atk);
         SubmitText(&g_queue, UI::textBuffer, 280, 50, 0.3, 0.3, 0xFFFFFFFF, GraphicsUtils::Layer::UI_4);
-        snprintf(UI::textBuffer, sizeof(UI::textBuffer), "MAGIC: %d", scannedCharacter->equippedWeapon->rav);
+        snprintf(UI::textBuffer, sizeof(UI::textBuffer), "MAGIC: %d", scannedCharacter->getWeapon()->rav);
         SubmitText(&g_queue, UI::textBuffer, 280, 60, 0.3, 0.3, 0xFFFFFFFF, GraphicsUtils::Layer::UI_4);
 
     }

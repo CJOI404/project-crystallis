@@ -2047,6 +2047,7 @@ CMakeFiles/Project_Crystallis.dir/src/ItemRegistry.cpp.obj: /mnt/d/project-cryst
   /home/calvi/pspdev/psp/include/c++/15.1.1/clocale \
   /home/calvi/pspdev/psp/include/c++/15.1.1/concepts \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cstddef \
+  /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cstdio \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cstdlib \
   /home/calvi/pspdev/psp/include/c++/15.1.1/cstring \
@@ -2140,6 +2141,7 @@ CMakeFiles/Project_Crystallis.dir/src/ItemRegistry.cpp.obj: /mnt/d/project-cryst
   /home/calvi/pspdev/psp/include/time.h \
   /home/calvi/pspdev/psp/include/wchar.h \
   /home/calvi/pspdev/psp/include/wctype.h \
+  /mnt/d/project-crystallis/include/GlobalDefs.h \
   /mnt/d/project-crystallis/include/ItemRegistry.h
 
 CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: /mnt/d/project-crystallis/src/Scenes/CombatInstance.cpp \

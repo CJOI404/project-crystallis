@@ -55,6 +55,7 @@ CMakeFiles/Project_Crystallis.dir/src/ItemRegistry.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/uses_allocator_args.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tuple \
+ /mnt/d/project-crystallis/include/GlobalDefs.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/string \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/stringfwd.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/char_traits.h \
@@ -102,6 +103,11 @@ CMakeFiles/Project_Crystallis.dir/src/ItemRegistry.cpp.obj: \
  /home/calvi/pspdev/psp/include/sys/errno.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/charconv.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/basic_string.tcc \
+ /home/calvi/pspdev/psp/include/c++/15.1.1/cstdint \
+ /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h \
+ /home/calvi/pspdev/psp/include/stdint.h \
+ /home/calvi/pspdev/psp/include/sys/_intsup.h \
+ /home/calvi/pspdev/psp/include/sys/_stdint.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/fstream \
  /home/calvi/pspdev/psp/include/c++/15.1.1/istream \
  /home/calvi/pspdev/psp/include/c++/15.1.1/ios \
@@ -117,7 +123,6 @@ CMakeFiles/Project_Crystallis.dir/src/ItemRegistry.cpp.obj: \
  /home/calvi/pspdev/psp/include/pthread.h \
  /home/calvi/pspdev/psp/include/pte_types.h \
  /home/calvi/pspdev/psp/include/sys/types.h \
- /home/calvi/pspdev/psp/include/sys/_stdint.h \
  /home/calvi/pspdev/psp/include/machine/endian.h \
  /home/calvi/pspdev/psp/include/machine/_endian.h \
  /home/calvi/pspdev/psp/include/sys/select.h \
@@ -137,9 +142,6 @@ CMakeFiles/Project_Crystallis.dir/src/ItemRegistry.cpp.obj: \
  /home/calvi/pspdev/psp/include/sched.h \
  /home/calvi/pspdev/psp/include/signal.h \
  /home/calvi/pspdev/psp/include/sys/signal.h \
- /home/calvi/pspdev/lib/gcc/psp/15.1.1/include/stdint.h \
- /home/calvi/pspdev/psp/include/stdint.h \
- /home/calvi/pspdev/psp/include/sys/_intsup.h \
  /home/calvi/pspdev/psp/include/bits/posix_opt.h \
  /home/calvi/pspdev/psp/include/sys/_pthreadtypes.h \
  /home/calvi/pspdev/psp/include/time.h \

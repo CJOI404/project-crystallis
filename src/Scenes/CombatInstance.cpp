@@ -29,7 +29,7 @@ CombatInstance::CombatInstance(){
 
 
     for (int i = 0; i < Items::weaponList.size(); i++){
-        printf("%d: %s, %s, %s, %d, %d\n", i, Items::weaponList[i].name, Items::weaponList[i].character, Items::weaponList[i].ability, Items::weaponList[i].atk, Items::weaponList[i].rav);
+        printf("%d: %s, %s, %s, %d, %d\n", i, Items::weaponList[i].name, Items::weaponList[i].character, Items::weaponList[i].abilityName, Items::weaponList[i].atk, Items::weaponList[i].rav);
     }
 
     //Initialize characters
@@ -48,7 +48,9 @@ CombatInstance::CombatInstance(){
     playerCharacter.meshTexture = lightningTex;
     team.push_back(&playerCharacter);
 
-    playerCharacter.equippedWeapon = &Items::weaponList[0];
+    playerCharacter.unlockWeapon(&Items::weaponList[3]);
+    playerCharacter.equipWeapon(&Items::weaponList[1]) == true ? printf("equipped 2\n") : printf ("failed to equip 2\n");
+    playerCharacter.equipWeapon(&Items::weaponList[3]) == true ? printf("equipped 3\n") : printf ("failed to equip 3\n");
 
     // Character character2;
     character2.health = 2200;

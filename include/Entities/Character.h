@@ -19,7 +19,6 @@ enum CharacterState{
 
 class Character : public GameActor {
 
-
     public:
         Sprite* sprite = nullptr;
         Mesh* mesh = nullptr;
@@ -53,14 +52,14 @@ class Character : public GameActor {
         int chainResistance = 50;
 
         float chainDuration = 1;
-        //use this for stagger bar rendering
         float peakChainDuration = 1;
 
         //cut/keep decrease or increase
         int cutDiff = 0;
 
         bool staggered = false;
-
+        bool criticalHealth = false;
+        int allyKOCount = 0;
 
 
         int atkDamage = 400;
@@ -86,10 +85,12 @@ class Character : public GameActor {
         Character* target = nullptr;
 
         std::vector<BattleCommand*> abilities;
+
+    private:
         std::vector<Items::Weapon*> availableWeapons;
         Items::Weapon* equippedWeapon;
 
-
+    public:
         //resistances to elements/attack types
         Resistance resistances[Element::ELEMENTCOUNT]{};
         //immunity to debuffs (debuff chances)
@@ -114,6 +115,10 @@ class Character : public GameActor {
 
         void setTarget(Character* target);
         Character* getTarget();
+
+        bool equipWeapon(Items::Weapon* weapon);
+        Items::Weapon* getWeapon();
+        void unlockWeapon(Items::Weapon* weapon);
 
         void queueCommand(BattleCommand* command);
         void dequeueCommand();

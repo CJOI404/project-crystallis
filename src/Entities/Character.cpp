@@ -49,6 +49,53 @@ Character::~Character(){
     }
 }
 
+//Equipment / Skills =================================================================
+
+bool Character::equipWeapon(Items::Weapon* weapon){
+    if (strcasecmp(weapon->character, this->name) != 0){
+        printf("This weapon cannot be equipped by this character\n");
+        return false;
+    } 
+    for (int i = 0; i < availableWeapons.size(); i++){
+        if (availableWeapons[i] == weapon) {
+            this->equippedWeapon = weapon;
+            return true;
+        }
+    }
+    return false;
+}
+
+Items::Weapon* Character::getWeapon(){
+    return equippedWeapon;
+}
+
+void Character::unlockWeapon(Items::Weapon* weapon){
+    for (int i = 0; i < availableWeapons.size(); i++){
+        if (availableWeapons[i] == weapon) return;
+    }
+    availableWeapons.push_back(weapon);
+}
+
+void Character::addBattleCommand(BattleCommand* command, int index){
+    abilities[index] = command;
+}
+
+void Character::addViableBattleCommands(){
+    abilities.clear();
+    for (int i = 0; i < Commands::commandList.size(); i++){
+        if (Commands::commandList.at(i)->role == currentRole){
+            abilities.push_back(Commands::commandList.at(i));
+        }
+    }
+    
+}
+
+
+
+
+//Character state (effects, resistances, etc) ========================================
+
+
 void Character::setResistance(Element element, Resistance val){
     resistances[element] = val;
 }
@@ -76,32 +123,6 @@ void Character::setImmunity(Debuff debuff, float val){
 
 float Character::getImmunity(Debuff debuff){
     return immunities[debuff];
-}
-
-void Character::startAttack(){
-    characterState = AttackReady;
-}
-
-void Character::setTarget(Character* target){
-    if (!activeDebuffs[Debuff::PROVOKE]) this->target = target;
-}
-
-Character* Character::getTarget(){
-    return target;
-}
-
-void Character::addBattleCommand(BattleCommand* command, int index){
-    abilities[index] = command;
-}
-
-void Character::addViableBattleCommands(){
-    abilities.clear();
-    for (int i = 0; i < Commands::commandList.size(); i++){
-        if (Commands::commandList.at(i)->role == currentRole){
-            abilities.push_back(Commands::commandList.at(i));
-        }
-    }
-    
 }
 
 void Character::revertDebuff(int effectIdx){
@@ -165,6 +186,22 @@ void Character::updateEffects(float dt){
     }
 }
 
+void Character::setTarget(Character* target){
+    if (!activeDebuffs[Debuff::PROVOKE]) this->target = target;
+}
+
+Character* Character::getTarget(){
+    return target;
+}
+
+
+
+// Attacking / Battle Flow =================================================
+
+void Character::startAttack(){
+    characterState = AttackReady;
+}
+
 void Character::queueCommand(BattleCommand* command){
     //Check if command can be queued 
     if (command->cost + atbQueueAmt <= atbSegments){
@@ -182,7 +219,17 @@ void Character::dequeueCommand(){
     commandQueue.pop_back();
 }
 
+
+
+//Update / Render stuff ====================================================
+
 void Character::update(float dt){
+
+
+    //Critical health check
+    if (health <= maxHealth * 0.25) criticalHealth = true;
+    else criticalHealth = false;
+
 
     //Offset for 2d UI attached to character
     uiPos = {worldPos.x, worldPos.y + 150.0f, worldPos.z};

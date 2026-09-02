@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include "GlobalDefs.h"
 
 namespace Items {
 
@@ -17,7 +18,8 @@ namespace Items {
     struct Weapon {
         char name[32];
         char character[16];
-        char ability[32];
+        char abilityName[32];
+        WeaponAbility ability;
         int atk;
         int rav;
         int price;
