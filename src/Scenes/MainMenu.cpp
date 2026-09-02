@@ -12,7 +12,7 @@ MainMenu::MainMenu(){
     options[1] = "OPTIONS";
 
     //Load Textures
-    logo = TextureManager::load("Logo.png", 512, 512);
+    logo = TextureManager::load("assets/Logo.png", 512, 512);
 
 }
 
@@ -64,5 +64,5 @@ void MainMenu::render(float dt){
 }
 
 void MainMenu::unload(){
-    TextureManager::unload("Logo.png");
+    TextureManager::unload("assets/Logo.png");
 }

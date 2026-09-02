@@ -9,22 +9,28 @@
 #include "Scenes/SceneManager.h"
 #include "Scenes/MainMenu.h"
 #include "graphics/Pipeline/RenderQueue.h"
+#include "ItemRegistry.h"
 
 
 CombatInstance::CombatInstance(){
 
-    background = TextureManager::load("background.png", 512, 512);
-    testlogo = TextureManager::load("logo256.png", 256, 256);
+    background = TextureManager::load("assets/background.png", 512, 512);
+    testlogo = TextureManager::load("assets/logo256.png", 256, 256);
 
-    Texture* spritesheet = TextureManager::load("testspritesheet.png", 256, 128);
-    Mesh* myModel = MeshManager::loadOBJ("Lightning/lightning.obj");
-    Texture* lightningTex = TextureManager::load("Lightning/Lightning_01.png", 256, 256);
-    Mesh* placeholder = MeshManager::loadOBJ("placeholder.obj");
+    Texture* spritesheet = TextureManager::load("assets/testspritesheet.png", 256, 128);
+    Mesh* myModel = MeshManager::loadOBJ("assets/Lightning/lightning.obj");
+    Texture* lightningTex = TextureManager::load("assets/Lightning/Lightning_01.png", 256, 256);
+    Mesh* placeholder = MeshManager::loadOBJ("assets/placeholder.obj");
 
     SpriteManager::registerSprite("topleft", spritesheet, 0, 0, 64, 64);
     SpriteManager::registerSprite("topright", spritesheet, 64, 0, 64, 64);
     SpriteManager::registerSprite("bottomleft", spritesheet, 0, 64, 64, 64);
     SpriteManager::registerSprite("bottomright", spritesheet, 64, 64, 64, 64);
+
+
+    for (int i = 0; i < Items::weaponList.size(); i++){
+        printf("%d: %s, %s, %s, %d, %d\n", i, Items::weaponList[i].name, Items::weaponList[i].character, Items::weaponList[i].ability, Items::weaponList[i].atk, Items::weaponList[i].rav);
+    }
 
     //Initialize characters
     team.clear();
@@ -48,7 +54,7 @@ CombatInstance::CombatInstance(){
     character2.setworldPos({-100.0f, 0.0f, -200.0f});
     character2.name = "SAZH";
     character2.currentRole = Role::RAVAGER;
-    character2.sprite = SpriteManager::getSprite("bottomright");
+    // character2.sprite = SpriteManager::getSprite("bottomright");
     team.push_back(&character2);
     
 
@@ -69,7 +75,7 @@ CombatInstance::CombatInstance(){
     enemy.maxHealth = 45000;
     enemy.staggerPoint = 250;
     enemy.drawHealthBar = true;
-    enemy.sprite = SpriteManager::getSprite("topright");
+    // enemy.sprite = SpriteManager::getSprite("topright");
     playerCharacter.drawName = true;
     enemy.mesh = placeholder;
     enemies.push_back(&enemy);
@@ -87,15 +93,16 @@ CombatInstance::CombatInstance(){
     //Fill ability list
     playerCharacter.addViableBattleCommands();
 
-
     complete = false;
     state = CombatState::BATTLE;
 
     commandMenu.setActiveCharacter(&playerCharacter);
     commandMenu.setParadigm();
 
-    scannedEnemy = this->enemies[0];
+    // scannedEnemy = this->enemies[0];
     scanIdx = 0;
+    scanScreen.enemyList = enemies;
+    // scanScreen.scannedEnemy = &enemy;
 
     initTeamLists();
 
@@ -107,14 +114,9 @@ CombatInstance::CombatInstance(){
 }
 
 void CombatInstance::initTeamLists(){
-    for (int i = 0; i < team.size(); i++){
-        team.at(i)->teamList = team;
-        team.at(i)->enemyList = enemies;
-    }
-    for (int i = 0; i < enemies.size(); i++){
-        enemies.at(i)->teamList = enemies;
-        enemies.at(i)->enemyList = team;
-    }
+    commandMenu.teamList = team;
+    commandMenu.enemyList = enemies;
+    scanScreen.enemyList = enemies;
 }
 
 
@@ -148,15 +150,12 @@ void CombatInstance::update(float dt){
         if (InputHandler::getButtonDown(PSP_CTRL_RIGHT)){
             commandMenu.cursorRight();
         }
-        if (InputHandler::gamePad.Buttons & PSP_CTRL_SQUARE){
-            camera.position.x -= 15;
-        }
-        if (InputHandler::gamePad.Buttons & PSP_CTRL_CIRCLE){
-            camera.position.x += 15;
-
-        }
-
-        
+        // if (InputHandler::gamePad.Buttons & PSP_CTRL_SQUARE){
+        //     camera.position.x -= 15;
+        // }
+        // if (InputHandler::gamePad.Buttons & PSP_CTRL_TRIANGLE){
+        //     camera.position.x += 15;
+        // }
     
         //handle menu
         if (InputHandler::getButtonDown(PSP_CTRL_CROSS)){
@@ -169,7 +168,6 @@ void CombatInstance::update(float dt){
             commandMenu.paradigmSwitchButton();
         }
 
-
         if (InputHandler::getButtonDown(PSP_CTRL_RTRIGGER)){
             for (int i = 0; i < enemies.size(); i++){
                 if (enemies[i] == playerCharacter.target){
@@ -178,8 +176,6 @@ void CombatInstance::update(float dt){
             }
             state = CombatState::SCAN;
         }
-        
-
 
         //UPDATE ACTORS
         for (int i = 0; i < team.size(); i++){
@@ -191,28 +187,14 @@ void CombatInstance::update(float dt){
 
     } else if (state == CombatState::SCAN){
 
-        // enemies[scanIdx]->worldPos = {0.0f, -80.0f, -90.0f};
-        
         if (InputHandler::getButtonDown(PSP_CTRL_RTRIGGER) || InputHandler::getButtonDown(PSP_CTRL_CIRCLE)){
             state = CombatState::BATTLE;
         }
 
-        if (InputHandler::getButtonDown(PSP_CTRL_LEFT)) scanIdx--;
-        if (InputHandler::getButtonDown(PSP_CTRL_RIGHT)) scanIdx++;
-
-        if (scanIdx >= (int)enemies.size()) scanIdx = 0;
-        if (scanIdx < 0) scanIdx = (int)enemies.size() - 1;
-
-        scannedEnemy = enemies[scanIdx];
-
-
-
-        // scannedEnemy->worldPos = {0.0f, 0.0f, -5.0f};
+        scanScreen.update(dt);
 
     }
     
-
-    // camera.setTarget({playerCharacter.worldPos.x, playerCharacter.worldPos.y, playerCharacter.worldPos.z});
     camera.update();
 
 }
@@ -233,50 +215,25 @@ void CombatInstance::render(float dt){
         enemies[i]->render(dt);
     }
 
-    commandMenu.drawMenu();
-
-    if (state == CombatState::SCAN){
-
-        SubmitRect(&g_queue, 0, 0, 480, 272, 0xdc000000, GraphicsUtils::Layer::UI_4);
-
-        snprintf(UI::textBuffer, sizeof(UI::textBuffer), "HEALTH: %d", scannedEnemy->health);
-        SubmitText(&g_queue, UI::textBuffer, 50, 40, 0.3, 0.3, 0xFFFFFFFF, GraphicsUtils::Layer::UI_4);
-        SubmitText(&g_queue, scannedEnemy->name, 20, 20, 0.6, 0.6, 0xFFFFFFFF, GraphicsUtils::Layer::UI_4);
-
-        int tempy = 60;
-        for (int i = 0; i < Debuff::DEBUFFCOUNT; i++){
-            if (scannedEnemy->activeDebuffs[i]){
-
-                snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s: %.2f", debuffToString(static_cast<Debuff>(i)), scannedEnemy->debuffDurations[i]);
-                SubmitText(&g_queue, UI::textBuffer, 50, tempy, 0.3, 0.3, 0xFFFFFFFF, GraphicsUtils::Layer::UI_4); 
-                tempy += 10;                                
-            }
-        }
-        tempy = 60;
-        for (int i = 0; i < Buff::BUFFCOUNT; i++){
-            if (scannedEnemy->activeBuffs[i]){
-
-                snprintf(UI::textBuffer, sizeof(UI::textBuffer), "%s: %.2f", buffToString(static_cast<Buff>(i)), scannedEnemy->buffDurations[i]);  
-                SubmitText(&g_queue, UI::textBuffer, 150, tempy, 0.3, 0.3, 0xFFFFFFFF, GraphicsUtils::Layer::UI_4);
-                tempy += 10;                                
-            }
-        }
+    if (state == CombatState::BATTLE){
+        commandMenu.drawMenu();
+    } else if (state == CombatState::SCAN){
+        scanScreen.render(dt);
     }
     
 }
 
 
 void CombatInstance::unload(){
-    TextureManager::unload("Lightning/Lightning_01.png");
+    TextureManager::unload("assets/Lightning/Lightning_01.png");
+    TextureManager::unload("assets/logo256.png");
+    TextureManager::unload("assets/background.png");
 
-    TextureManager::unload("logo256.png");
-    TextureManager::unload("background.png");
+    TextureManager::unload("assets/testspritesheet.png");
+    SpriteManager::unload("topleft");
+    SpriteManager::unload("topright");
+    SpriteManager::unload("bottomleft");
+    SpriteManager::unload("bottomright");
 
-    TextureManager::unload("testspritesheet.png");
-    SpriteManager::unload("topleft.png");
-    SpriteManager::unload("topright.png");
-    SpriteManager::unload("bottomleft.png");
-    SpriteManager::unload("bottomright.png");
-
-    MeshManager::unload("Lightning/lightning.obj");
+    MeshManager::unload("assets/Lightning/lightning.obj");
 }

@@ -4,7 +4,7 @@ namespace SpriteManager {
 
     std::unordered_map<std::string, Sprite> sprites;
 
-    Sprite* getSprite(const std::string& id) {
+    Sprite* getSprite(const char* id) {
         auto it = sprites.find(id);
         if (it != sprites.end()) {
             return &it->second;
@@ -12,16 +12,15 @@ namespace SpriteManager {
         return nullptr;
     }
 
+    void registerSprite(const char* id, Texture* tex, float x, float y, float w, float h) {
 
-    void registerSprite(const std::string& id, Texture* tex, float x, float y, float w, float h) {
+        Sprite* it = getSprite(id);
 
-        // Sprite* it = getSprite(id);
-
-        // if (it){
-        //     printf("%s already loaded, returning reference\n", id);
-        //     fflush(stdout);
-        //     it->refCount++;
-        // } 
+        if (it){
+            printf("%s already loaded, returning reference\n", id);
+            fflush(stdout);
+            it->refCount++;
+        } 
         Sprite data;
         data.texture = tex;
         data.u0 = x;
@@ -31,13 +30,13 @@ namespace SpriteManager {
         data.width = w;
         data.height = h;
 
-        sprites[id] = data;
+        data.refCount = 0;
 
+        sprites[id] = data;
 
     }
 
-    //TODO: Sprite loading/unloading is absolutely jacked. It doesn't matter too much rn since its not a texture just uv data really but also needs to be fixed
-    void unload(const std::string& id){
+    void unload(const char* id){
         auto it = sprites.find(id);
         
         if (it == sprites.end()){

@@ -220,6 +220,7 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /mnt/d/project-crystallis/include/Entities/Menu.h \
  /mnt/d/project-crystallis/include/Scenes/Scene.h \
  /mnt/d/project-crystallis/include/Entities/Camera.h \
+ /mnt/d/project-crystallis/include/Entities/Scan.h \
  /mnt/d/project-crystallis/include/Scenes/MainMenu.h \
  /mnt/d/project-crystallis/include/graphics/AssetManagers/MeshManager.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/cstring \
@@ -232,7 +233,8 @@ CMakeFiles/Project_Crystallis.dir/src/main.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/parse_numbers.h \
  /home/calvi/pspdev/psp/sdk/include/pspaudio.h \
  /home/calvi/pspdev/psp/sdk/include/pspaudiolib.h \
- /mnt/d/project-crystallis/include/audio/AudioManager.h \
+ /mnt/d/project-crystallis/include/Audio/AudioManager.h \
+ /mnt/d/project-crystallis/include/ItemRegistry.h \
  /home/calvi/pspdev/psp/include/stb_image.h \
  /home/calvi/pspdev/psp/include/assert.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/iomanip \

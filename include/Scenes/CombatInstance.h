@@ -6,6 +6,7 @@
 #include "GlobalDefs.h"
 #include "Scenes/Scene.h"
 #include "Entities/Camera.h"
+#include "Entities/Scan.h"
 
 enum CombatState {
     BATTLE,
@@ -29,6 +30,7 @@ class CombatInstance : public Scene {
         int scanIdx;
 
         Menu commandMenu;
+        Scan scanScreen;
 
         CombatInstance();
 

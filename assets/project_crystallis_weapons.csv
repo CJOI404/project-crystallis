@@ -1,0 +1,145 @@
+Name,Character,Ability,Strength,Magic,Synthesizes,Price,Value,Rank,Upgrade Cost,Levels,Master EXP,Upgraded To,Catalyst,Chapter
+Blazefire Saber,Lightning,-,15⁠–⁠115,15⁠–⁠115,Physical Wall,2000 gil,1000 gil,3,300+57/lv,25,"24,600",Flamberge Lv.10,Perovskite,1
+Flamberge,Lightning,-,68⁠–⁠323,68⁠–⁠323,Physical Wall,-,6196 gil,5,1500+215/lv,60,"470,550",Omega Weapon Lv.47,Trapezohedron,7
+Omega Weapon,Lightning,-,302⁠–⁠620,302⁠–⁠620,-,-,84100 gil,11,3300+297/lv,99,"1,767,447",-,-,11
+Axis Blade,Lightning,Attack: ATB Charge,8⁠–⁠48,8⁠–⁠48,ATB Rate,15000 gil,7500 gil,5,1200+225/lv,20,"66,750",Enkindler Lv.13,Adamantite,7
+Enkindler,Lightning,Attack: ATB Charge II,49⁠–⁠133,49⁠–⁠133,ATB Rate,-,27468 gil,9,3600+261/lv,40,"347,580",Omega Weapon Lv.39,Trapezohedron,11
+Omega Weapon,Lightning,Attack: ATB Charge II,132⁠–⁠315,132⁠–⁠315,-,-,93025 gil,11,3300+297/lv,99,"1,767,447",-,-,11
+Edged Carbine,Lightning,-,8⁠–⁠83,20⁠–⁠170,Magic Wall,4600 gil,2300 gil,3,420+75/lv,25,"33,000",Razor Carbine Lv.13,Perovskite,5
+Razor Carbine,Lightning,-,46⁠–⁠190,112⁠–⁠448,Magic Wall,-,12128 gil,5,1500+215/lv,60,"470,550",Omega Weapon Lv.47,Trapezohedron,7
+Omega Weapon,Lightning,-,104⁠–⁠210,352⁠–⁠723,-,-,100700 gil,11,3300+297/lv,99,"1,767,447",-,-,11
+Lifesaber,Lightning,Improved Raise,8⁠–⁠88,8⁠–⁠88,Low HP: Power Surge,20000 gil,10000 gil,5,1500+215/lv,20,"70,850",Peacemaker Lv.16,Scarletite,9
+Peacemaker,Lightning,Improved Raise II,100⁠–⁠225,100⁠–⁠225,Low HP: Power Surge,-,33875 gil,8,3000+240/lv,40,"307,200",Omega Weapon Lv.37,Trapezohedron,9
+Omega Weapon,Lightning,Improved Raise II,205⁠–⁠520,205⁠–⁠520,-,-,101300 gil,11,3300+297/lv,99,"1,767,447",-,-,11
+Gladius,Lightning,-,25⁠–⁠175,13⁠–⁠88,Physical Wall,7100 gil,3550 gil,4,800+116/lv,25,"54,800",Helter-skelter Lv.19,Uraninite,2
+Helter-skelter,Lightning,-,154⁠–⁠448,64⁠–⁠190,Physical Wall,-,20518 gil,6,1500+168/lv,60,"387,360",Omega Weapon Lv.42,Trapezohedron,7
+Omega Weapon,Lightning,-,317⁠–⁠723,94⁠–⁠210,-,-,108990 gil,11,3300+297/lv,99,"1,767,447",-,-,11
+Organyx,Lightning,Leadenstrike,37⁠–⁠187,37⁠–⁠187,Vampiric Strike,280000 gil,14000 gil,2,300+42/lv,25,"20,100",Apocalypse Lv.14,Cobaltite,11
+Apocalypse,Lightning,Ironstrike,128⁠–⁠410,128⁠–⁠410,Vampiric Strike,-,38428 gil,4,800+116/lv,60,"253,320",Omega Weapon Lv.33,Trapezohedron,11
+Omega Weapon,Lightning,Ironstrike,281⁠–⁠750,281⁠–⁠750,-,-,113300 gil,11,3300+297/lv,99,"1,767,447",-,-,11
+Hauteclaire,Lightning,Stagger Lock,13⁠–⁠138,13⁠–⁠138,Random: Instant Chain,20000 gil,10000 gil,4,800+116/lv,25,"54,800",Durandal Lv.19,Uraninite,11
+Durandal,Lightning,Stagger Lock,126⁠–⁠378,126⁠–⁠378,Random: Instant Chain,-,32318 gil,6,1500+168/lv,60,"387,360",Omega Weapon Lv.42,Trapezohedron,11
+Omega Weapon,Lightning,Stagger Lock,305⁠–⁠711,305⁠–⁠711,-,-,109050 gil,11,3300+297/lv,99,"1,767,447",-,-,11
+Lionheart,Lightning,Quick Stagger,8⁠–⁠68,8⁠–⁠68,Random: Instant Chain,28000 gil,14000 gil,6,1500+174/lv,20,"63,060",Ultima Weapon Lv.15,Scarletite,12
+Ultima Weapon,Lightning,Quick Stagger,83⁠–⁠213,83⁠–⁠213,Random: Instant Chain,-,43750 gil,8,2600+232/lv,40,"284,960",Omega Weapon Lv.35,Trapezohedron,12
+Omega Weapon,Lightning,Quick Stagger,183⁠–⁠508,183⁠–⁠508,-,-,116400 gil,11,3300+297/lv,99,"1,767,447",-,-,12
+Vega 42s,Sazh,-,12⁠–⁠137,14⁠–⁠139,Magic Wall,2000 gil,1000 gil,3,300+57/lv,25,"24,600",Altairs Lv.10,Perovskite,1
+Altairs,Sazh,-,74⁠–⁠380,84⁠–⁠390,Magic Wall,-,6196 gil,5,1500+215/lv,60,"470,550",Total Eclipses Lv.45,Trapezohedron,7
+Total Eclipses,Sazh,-,372⁠–⁠812,382⁠–⁠822,-,-,81000 gil,11,2640+363/lv,99,"2,022,273",-,-,11
+Spica Defenders,Sazh,Augment Maintenance,6⁠–⁠46,15⁠–⁠95,Buff Duration,14500 gil,7250 gil,5,1200+225/lv,20,"66,750",Sirius Sidearms Lv.16,Scarletite,8
+Sirius Sidearms,Sazh,Augment Maintenance II,65⁠–⁠140,95⁠–⁠220,Buff Duration,-,26725 gil,8,2600+232/lv,40,"284,960",Total Eclipses Lv.34,Trapezohedron,9
+Total Eclipses,Sazh,Augment Maintenance II,251⁠–⁠713,317⁠–⁠911,-,-,84137 gil,11,2640+363/lv,99,"2,022,273",-,-,11
+Deneb Duellers,Sazh,-,8⁠–⁠108,24⁠–⁠249,Magic Wall,3900 gil,1950 gil,3,420+75/lv,25,"33,000",Canopus AMPs Lv.13,Perovskite,3
+Canopus AMPs,Sazh,-,86⁠–⁠374,156⁠–⁠636,Magic Wall,-,10728 gil,5,1500+215/lv,60,"470,550",Total Eclipses Lv.45,Trapezohedron,7
+Total Eclipses,Sazh,-,278⁠–⁠608,520⁠–⁠1125,-,-,93160 gil,11,2640+363/lv,99,"2,022,273",-,-,11
+Rigels,Sazh,Stagger Lock,10⁠–⁠160,15⁠–⁠165,Random: Instant Chain,19000 gil,9500 gil,4,800+116/lv,25,"54,800",Polaris Specials Lv.19,Uraninite,10
+Polaris Specials,Sazh,Stagger Lock,160⁠–⁠496,168⁠–⁠504,Random: Instant Chain,-,31018 gil,6,1500+168/lv,60,"387,360",Total Eclipses Lv.40,Trapezohedron,10
+Total Eclipses,Sazh,Stagger Lock,406⁠–⁠1006,414⁠–⁠1014,-,-,103675 gil,11,2640+363/lv,99,"2,022,273",-,-,11
+Aldebarans,Sazh,Leadenstrike,-,40⁠–⁠265,Vampiric Strike,263000 gil,13150 gil,2,300+42/lv,25,"20,100",Sadalmeliks Lv.14,Cobaltite,11
+Sadalmeliks,Sazh,Ironstrike,-,190⁠–⁠660,Vampiric Strike,-,36218 gil,4,800+116/lv,60,"253,320",Total Eclipses Lv.32,Trapezohedron,11
+Total Eclipses,Sazh,Ironstrike,-,402⁠–⁠1150,-,-,107882 gil,11,2640+363/lv,99,"2,022,273",-,-,11
+Pleiades Hi-Powers,Sazh,Paper Tiger,40⁠–⁠340,-,Damage Wall,22000 gil,11000 gil,3,420+75/lv,25,"33,000",Hyades Magnums Lv.13,Perovskite,11
+Hyades Magnums,Sazh,Silk Tiger,276⁠–⁠1140,-,Damage Wall,-,31528 gil,5,1500+215/lv,60,"470,550",Total Eclipses Lv.45,Trapezohedron,11
+Total Eclipses,Sazh,Silk Tiger,545⁠–⁠1150,-,-,-,118250 gil,11,2640+363/lv,99,"2,022,273",-,-,11
+Antares Deluxes,Sazh,Chain Bonus Boost,12⁠–⁠92,18⁠–⁠98,ATB Rate,22000 gil,11000 gil,4,800+116/lv,20,"38,040",Fomalhaut Elites Lv.15,Uraninite,12
+Fomalhaut Elites,Sazh,Chain Bonus Boost II,86⁠–⁠216,92⁠–⁠222,ATB Rate,-,32730 gil,6,1500+168/lv,40,"191,040",Total Eclipses Lv.27,Trapezohedron,12
+Total Eclipses,Sazh,Chain Bonus Boost II,172⁠–⁠610,178⁠–⁠616,-,-,90350 gil,11,2640+363/lv,99,"2,022,273",-,-,12
+Procyons,Sazh,Stagger Maintenance,14⁠–⁠94,9⁠–⁠49,Random: Instant Chain,30000 gil,15000 gil,6,1500+174/lv,20,"63,060",Betelgeuse Customs Lv.15,Dark Matter,6
+Betelgeuse Customs,Sazh,Stagger Maintenance II,104⁠–⁠260,60⁠–⁠138,Random: Instant Chain,-,50480 gil,10,2600+260/lv,40,"306,800",Total Eclipses Lv.35,Trapezohedron,11
+Total Eclipses,Sazh,Stagger Maintenance II,230⁠–⁠620,154⁠–⁠414,-,-,120950 gil,11,2640+363/lv,99,"2,022,273",-,-,11
+Wild Bear,Snow,-,15⁠–⁠140,15⁠–⁠140,Physical Wall,1800 gil,900 gil,3,300+57/lv,25,"24,600",Feral Pride Lv.10,Perovskite,1
+Feral Pride,Snow,-,77⁠–⁠383,77⁠–⁠383,Physical Wall,-,5796 gil,5,1500+215/lv,60,"470,550",Save the Queen Lv.48,Trapezohedron,7
+Save the Queen,Snow,-,353⁠–⁠717,353⁠–⁠717,-,-,84370 gil,11,3333+286/lv,99,"1,717,353",-,-,11
+Paladin,Snow,Improved Guard,8⁠–⁠88,8⁠–⁠88,High HP: Power Surge,20000 gil,10000 gil,5,1200+225/lv,20,"66,750",Winged Saint Lv.16,Scarletite,7
+Winged Saint,Snow,Improved Guard II,88⁠–⁠213,88⁠–⁠213,High HP: Power Surge,-,33875 gil,8,2600+232/lv,40,"284,960",Save the Queen Lv.35,Trapezohedron,9
+Save the Queen,Snow,Improved Guard II,185⁠–⁠510,185⁠–⁠510,-,-,98200 gil,11,3333+286/lv,99,"1,717,353",-,-,11
+Rebel Heart,Snow,Critical: Power Surge,5⁠–⁠65,10⁠–⁠70,Low HP: Power Surge,11000 gil,5500 gil,4,800+116/lv,20,"38,040",Warrior's Emblem Lv.15,Uraninite,12
+Warrior's Emblem,Snow,Critical: Power Surge II,92⁠–⁠248,101⁠–⁠257,Low HP: Power Surge,-,18430 gil,6,1500+168/lv,40,"191,040",Save the Queen Lv.28,Trapezohedron,12
+Save the Queen,Snow,Critical: Power Surge II,170⁠–⁠602,179⁠–⁠611,-,-,66875 gil,11,3333+286/lv,99,"1,717,353",-,-,12
+Power Circle,Snow,-,23⁠–⁠198,13⁠–⁠38,Physical Wall,4500 gil,2250 gil,6,1500+174/lv,25,"89,700",Battle Standard Lv.20,Scarletite,1
+Battle Standard,Snow,-,185⁠–⁠513,43⁠–⁠125,Physical Wall,-,20875 gil,8,2600+232/lv,60,"566,640",Save the Queen Lv.53,Trapezohedron,9
+Save the Queen,Snow,-,502⁠–⁠925,108⁠–⁠202,-,-,109400 gil,11,3333+286/lv,99,"1,717,353",-,-,11
+Feymark,Snow,Enfeeblement,-,30⁠–⁠130,Magic Damper,25000 gil,12500 gil,4,800+116/lv,20,"38,040",Soul Blazer Lv.15,Uraninite,10
+Soul Blazer,Snow,Hindrance,-,144⁠–⁠300,Magic Damper,-,36630 gil,6,1500+168/lv,40,"191,040",Save the Queen Lv.28,Trapezohedron,10
+Save the Queen,Snow,Hindrance,-,330⁠–⁠1050,-,-,98725 gil,11,3333+286/lv,99,"1,717,353",-,-,11
+Sacrificial Circle,Snow,Paper Tiger,41⁠–⁠266,41⁠–⁠266,Damage Wall,210000 gil,10500 gil,6,1500+174/lv,25,"89,700",Indomitus Lv.20,Scarletite,11
+Indomitus,Snow,Silk Tiger,196⁠–⁠565,196⁠–⁠565,Damage Wall,-,39175 gil,8,2600+232/lv,60,"566,640",Save the Queen Lv.53,Trapezohedron,11
+Save the Queen,Snow,Silk Tiger,550⁠–⁠1020,550⁠–⁠1020,-,-,128375 gil,11,3333+286/lv,99,"1,717,353",-,-,11
+Unsetting Sun,Snow,Stagger Lock,18⁠–⁠168,3⁠–⁠53,Random: Instant Chain,21000 gil,10500 gil,3,420+75/lv,25,"33,000",Midnight Sun Lv.13,Perovskite,11
+Midnight Sun,Snow,Stagger Lock,119⁠–⁠503,30⁠–⁠126,Random: Instant Chain,-,30228 gil,5,1500+215/lv,60,"470,550",Save the Queen Lv.48,Trapezohedron,11
+Save the Queen,Snow,Stagger Lock,399⁠–⁠815,101⁠–⁠205,-,-,120625 gil,11,3333+286/lv,99,"1,717,353",-,-,11
+Umbra,Snow,Improved Ward,13⁠–⁠73,20⁠–⁠120,Magic Wall,32600 gil,16300 gil,5,1200+225/lv,20,"66,750",Solaris Lv.13,Adamantite,9
+Solaris,Snow,Improved Ward II,63⁠–⁠175,97⁠–⁠265,Magic Wall,-,50348 gil,9,3600+261/lv,40,"347,580",Save the Queen Lv.40,Trapezohedron,11
+Save the Queen,Snow,Improved Ward II,170⁠–⁠410,260⁠–⁠620,-,-,134615 gil,11,3333+286/lv,99,"1,717,353",-,-,11
+Airwing,Hope,Critical: Shield,18⁠–⁠98,12⁠–⁠72,Low HP: Power Surge,10000 gil,5000 gil,4,400+76/lv,20,"22,440",Skycutter Lv.10,Uraninite,1
+Skycutter,Hope,Critical: Shield II,76⁠–⁠231,81⁠–⁠205,Low HP: Power Surge,-,15655 gil,6,1500+168/lv,40,"191,040",Nue Lv.28,Trapezohedron,7
+Nue,Hope,Critical: Shield II,166⁠–⁠526,153⁠–⁠441,-,-,70010 gil,11,3850+242/lv,99,"1,555,092",-,-,11
+Hawkeye,Hope,-,2⁠–⁠27,18⁠–⁠193,Magic Wall,4400 gil,2200 gil,3,420+75/lv,25,"33,000",Eagletalon Lv.13,Perovskite,5
+Eagletalon,Hope,-,28⁠–⁠124,122⁠–⁠506,Magic Wall,-,11728 gil,5,1500+215/lv,60,"470,550",Nue Lv.49,Trapezohedron,7
+Nue,Hope,-,100⁠–⁠202,458⁠–⁠917,-,-,97150 gil,11,3850+242/lv,99,"1,555,092",-,-,11
+Otshirvani,Hope,Siphon Boost,6⁠–⁠66,14⁠–⁠114,ATB Rate,28200 gil,14100 gil,5,1200+225/lv,20,"66,750",Urubutsin Lv.16,Scarletite,12
+Urubutsin,Hope,Siphon Boost II,78⁠–⁠178,110⁠–⁠260,ATB Rate,-,44535 gil,8,2600+232/lv,40,"284,960",Nue Lv.36,Trapezohedron,12
+Nue,Hope,Siphon Boost II,193⁠–⁠513,265⁠–⁠713,-,-,118405 gil,11,3850+242/lv,99,"1,555,092",-,-,12
+Ninurta,Hope,-,12⁠–⁠137,12⁠–⁠137,Physical Wall,2800 gil,1400 gil,3,420+75/lv,25,"33,000",Jatayu Lv.13,Perovskite,4
+Jatayu,Hope,-,90⁠–⁠378,90⁠–⁠378,Physical Wall,-,8528 gil,5,1500+215/lv,60,"470,550",Nue Lv.49,Trapezohedron,7
+Nue,Hope,-,306⁠–⁠612,306⁠–⁠612,-,-,92320 gil,11,3850+242/lv,99,"1,555,092",-,-,11
+Vidofnir,Hope,Defense Maintenance,6⁠–⁠46,14⁠–⁠134,Buff Duration,16900 gil,8450 gil,5,1200+225/lv,20,"66,750",Hresvelgr Lv.16,Scarletite,7
+Hresvelgr,Hope,Defense Maintenance II,53⁠–⁠128,125⁠–⁠300,Buff Duration,-,29845 gil,8,2600+232/lv,40,"284,960",Nue Lv.36,Trapezohedron,9
+Nue,Hope,Defense Maintenance II,113⁠–⁠305,265⁠–⁠713,-,-,92697 gil,11,3850+242/lv,99,"1,555,092",-,-,11
+Simurgh,Hope,Stifled Magic,28⁠–⁠168,-,Ethereal Mantle,21200 gil,10600 gil,4,800+116/lv,20,"38,040",Tezcatlipoca Lv.15,Uraninite,11
+Tezcatlipoca,Hope,Fettered Magic,161⁠–⁠395,-,Ethereal Mantle,-,31690 gil,6,1500+168/lv,40,"191,040",Nue Lv.28,Trapezohedron,11
+Nue,Hope,Fettered Magic,278⁠–⁠926,-,-,-,90080 gil,11,3850+242/lv,99,"1,555,092",-,-,11
+Malphas,Hope,Paper Tiger,30⁠–⁠205,30⁠–⁠205,Damage Wall,198000 gil,9900 gil,3,420+75/lv,25,"33,000",Naberius Lv.13,Perovskite,11
+Naberius,Hope,Silk Tiger,136⁠–⁠520,136⁠–⁠520,Damage Wall,-,28668 gil,5,1500+215/lv,60,"470,550",Nue Lv.49,Trapezohedron,11
+Nue,Hope,Silk Tiger,472⁠–⁠931,424⁠–⁠832,-,-,119445 gil,11,3850+242/lv,99,"1,555,092",-,-,11
+Alicanto,Hope,Stagger Lock,10⁠–⁠110,10⁠–⁠110,Random: Instant Chain,18000 gil,9000 gil,4,800+116/lv,25,"54,800",Caladrius Lv.19,Uraninite,10
+Caladrius,Hope,Stagger Lock,122⁠–⁠374,122⁠–⁠374,Random: Instant Chain,-,29718 gil,6,1500+168/lv,60,"387,360",Nue Lv.44,Trapezohedron,10
+Nue,Hope,Stagger Lock,272⁠–⁠608,272⁠–⁠608,-,-,107600 gil,11,3850+242/lv,99,"1,555,092",-,-,11
+Binding Rod,Vanille,-,18⁠–⁠168,12⁠–⁠37,Physical Wall,2500 gil,1250 gil,3,300+57/lv,25,"24,600",Hunter's Rod Lv.10,Perovskite,1
+Hunter's Rod,Vanille,-,85⁠–⁠442,36⁠–⁠138,Physical Wall,-,7196 gil,5,1500+215/lv,60,"470,550",Nirvana Lv.45,Trapezohedron,7
+Nirvana,Vanille,-,330⁠–⁠715,106⁠–⁠216,-,-,84200 gil,11,3740+308/lv,99,"1,864,368",-,-,11
+Tigerclaw,Vanille,Leadenstrike,23⁠–⁠198,23⁠–⁠198,Vampiric Strike,300000 gil,15000 gil,2,300+42/lv,25,"20,100",Wyrmfang Lv.14,Cobaltite,11
+Wyrmfang,Vanille,Ironstrike,140⁠–⁠516,140⁠–⁠516,Vampiric Strike,-,41028 gil,4,800+116/lv,60,"253,320",Nirvana Lv.31,Trapezohedron,11
+Nirvana,Vanille,Ironstrike,276⁠–⁠828,276⁠–⁠828,-,-,114750 gil,11,3740+308/lv,99,"1,864,368",-,-,11
+Healer's Staff,Vanille,Improved Cure,8⁠–⁠48,8⁠–⁠48,High HP: Power Surge,19800 gil,9900 gil,5,2000+125/lv,20,"63,750",Physician's Staff Lv.16,Adamantite,8
+Physician's Staff,Vanille,Improved Cure II,80⁠–⁠180,80⁠–⁠180,High HP: Power Surge,-,35700 gil,9,2115+252/lv,40,"281,160",Nirvana Lv.33,Trapezohedron,11
+Nirvana,Vanille,Improved Cure II,156⁠–⁠424,156⁠–⁠424,-,-,94645 gil,11,3740+308/lv,99,"1,864,368",-,-,11
+Pearlwing Staff,Vanille,-,2⁠–⁠27,15⁠–⁠140,Magic Wall,2300 gil,1150 gil,3,420+75/lv,25,"33,000",Brightwing Staff Lv.13,Perovskite,3
+Brightwing Staff,Vanille,-,27⁠–⁠123,93⁠–⁠381,Magic Wall,-,7528 gil,5,1500+215/lv,60,"470,550",Nirvana Lv.45,Trapezohedron,7
+Nirvana,Vanille,-,91⁠–⁠201,417⁠–⁠912,-,-,82920 gil,11,3740+308/lv,99,"1,864,368",-,-,11
+Rod of Thorns,Vanille,-,6⁠–⁠131,6⁠–⁠131,Magic Wall,3000 gil,1500 gil,3,420+75/lv,25,"33,000",Orochi Rod Lv.13,Perovskite,11
+Orochi Rod,Vanille,-,100⁠–⁠436,100⁠–⁠436,Magic Wall,-,8928 gil,5,1500+215/lv,60,"470,550",Nirvana Lv.45,Trapezohedron,11
+Nirvana,Vanille,-,324⁠–⁠709,324⁠–⁠709,-,-,87400 gil,11,3740+308/lv,99,"1,864,368",-,-,11
+Mistilteinn,Vanille,Ally KO: Power Surge,5⁠–⁠65,11⁠–⁠131,Low HP: Power Surge,11000 gil,5500 gil,5,1200+225/lv,20,"66,750",Erinye's Cane Lv.16,Scarletite,12
+Erinye's Cane,Vanille,Ally KO: Power Surge II,67⁠–⁠167,135⁠–⁠335,Low HP: Power Surge,-,22175 gil,8,2600+232/lv,40,"284,960",Nirvana Lv.33,Trapezohedron,12
+Nirvana,Vanille,Ally KO: Power Surge II,135⁠–⁠403,271⁠–⁠807,-,-,74625 gil,11,3740+308/lv,99,"1,864,368",-,-,12
+Belladonna Wand,Vanille,Improved Debuffing,5⁠–⁠65,11⁠–⁠131,Buff Duration,31200 gil,15600 gil,4,800+116/lv,20,"38,040",Malboro Wand Lv.15,Uraninite,6
+Malboro Wand,Vanille,Improved Debuffing II,63⁠–⁠167,127⁠–⁠335,Buff Duration,-,44690 gil,6,1500+168/lv,40,"191,040",Nirvana Lv.26,Trapezohedron,7
+Nirvana,Vanille,Improved Debuffing II,107⁠–⁠403,215⁠–⁠807,-,-,109730 gil,11,3740+308/lv,99,"1,864,368",-,-,11
+Heavenly Axis,Vanille,Stagger Lock,5⁠–⁠80,11⁠–⁠161,Random: Instant Chain,24000 gil,12000 gil,4,800+116/lv,25,"54,800",Abraxas Lv.19,Uraninite,11
+Abraxas,Vanille,Stagger Lock,79⁠–⁠247,159⁠–⁠495,Random: Instant Chain,-,37518 gil,6,1500+168/lv,60,"387,360",Nirvana Lv.40,Trapezohedron,11
+Nirvana,Vanille,Stagger Lock,163⁠–⁠403,327⁠–⁠807,-,-,115050 gil,11,3740+308/lv,99,"1,864,368",-,-,11
+Bladed Lance,Fang,-,55⁠–⁠130,35⁠–⁠85,Physical Wall,4500 gil,2250 gil,3,300+57/lv,25,"24,600",Glaive Lv.10,Perovskite,7
+Glaive,Fang,-,96⁠–⁠300,35⁠–⁠137,Physical Wall,-,11196 gil,5,1500+215/lv,60,"470,550",Kain's Lance Lv.46,Trapezohedron,7
+Kain's Lance,Fang,-,375⁠–⁠753,152⁠–⁠314,-,-,98550 gil,11,4400+275/lv,99,"1,769,625",-,-,11
+Dragoon Lance,Fang,Stifled Magic,39⁠–⁠179,-,Ethereal Mantle,230000 gil,11500 gil,4,800+116/lv,20,"38,040",Dragonhorn Lv.14,Uraninite,11
+Dragonhorn,Fang,Fettered Magic,169⁠–⁠385,-,Ethereal Mantle,-,33735 gil,6,2076+138/lv,40,"190,680",Kain's Lance Lv.25,Trapezohedron,11
+Kain's Lance,Fang,Fettered Magic,287⁠–⁠962,-,-,-,89525 gil,11,4400+275/lv,99,"1,769,625",-,-,11
+Partisan,Fang,-,6⁠–⁠31,39⁠–⁠189,Magic Wall,6600 gil,3300 gil,3,420+75/lv,25,"33,000",Rhomphaia Lv.14,Perovskite,11
+Rhomphaia,Fang,-,36⁠–⁠130,138⁠–⁠467,Magic Wall,-,16372 gil,5,1730+115/lv,60,"307,350",Kain's Lance Lv.35,Trapezohedron,11
+Kain's Lance,Fang,-,112⁠–⁠307,319⁠–⁠839,-,-,94940 gil,11,4400+275/lv,99,"1,769,625",-,-,11
+Shamanic Spear,Fang,Enfeeblement,-,47⁠–⁠187,Magic Damper,23000 gil,11500 gil,4,800+116/lv,20,"38,040",Heretic's Halberd Lv.15,Uraninite,11
+Heretic's Halberd,Fang,Hindrance,-,162⁠–⁠370,Magic Damper,-,34030 gil,6,1500+168/lv,40,"191,040",Kain's Lance Lv.25,Trapezohedron,11
+Kain's Lance,Fang,Hindrance,-,266⁠–⁠941,-,-,89525 gil,11,4400+275/lv,99,"1,769,625",-,-,11
+Punisher,Fang,Stagger: TP Charge,20⁠–⁠100,31⁠–⁠151,Magic Wall,31000 gil,15500 gil,5,1500+215/lv,20,"70,850",Banescissor Spear Lv.17,Scarletite,12
+Banescissor Spear,Fang,Stagger: TP Charge II,102⁠–⁠222,150⁠–⁠318,Magic Wall,-,48700 gil,8,2600+232/lv,40,"284,960",Kain's Lance Lv.33,Trapezohedron,12
+Kain's Lance,Fang,Stagger: TP Charge II,182⁠–⁠517,262⁠–⁠731,-,-,120125 gil,11,4400+275/lv,99,"1,769,625",-,-,12
+Pandoran Spear,Fang,Improved Debilitation,20⁠–⁠100,31⁠–⁠151,Buff Duration,16200 gil,8100 gil,5,1500+215/lv,20,"70,850",Calamity Spear Lv.16,Scarletite,9
+Calamity Spear,Fang,Improved Debilitation II,97⁠–⁠222,143⁠–⁠318,Buff Duration,-,28935 gil,8,3000+240/lv,40,"307,200",Kain's Lance Lv.35,Trapezohedron,9
+Kain's Lance,Fang,Improved Debilitation II,226⁠–⁠616,310⁠–⁠830,-,-,89555 gil,11,4400+275/lv,99,"1,769,625",-,-,11
+Taming Pole,Fang,Stagger Lock,23⁠–⁠148,23⁠–⁠148,Random: Instant Chain,27000 gil,13500 gil,4,800+116/lv,25,"54,800",Venus Gospel Lv.19,Uraninite,11
+Venus Gospel,Fang,Stagger Lock,138⁠–⁠390,138⁠–⁠390,Random: Instant Chain,-,41418 gil,6,1500+168/lv,60,"387,360",Kain's Lance Lv.40,Trapezohedron,11
+Kain's Lance,Fang,Stagger Lock,381⁠–⁠921,381⁠–⁠921,-,-,121875 gil,11,4400+275/lv,99,"1,769,625",-,-,11
+Gae Bolg,Fang,Improved Counter,23⁠–⁠103,12⁠–⁠92,Buff Duration,13100 gil,6550 gil,5,1500+215/lv,20,"70,850",Gungnir Lv.17,Scarletite,7
+Gungnir,Fang,Improved Counter II,110⁠–⁠230,100⁠–⁠220,Buff Duration,-,25430 gil,8,2600+232/lv,40,"284,960",Kain's Lance Lv.33,Trapezohedron,9
+Kain's Lance,Fang,Improved Counter II,240⁠–⁠642,240⁠–⁠642,-,-,79402 gil,11,4400+275/lv,99,"1,769,625",-,-,11

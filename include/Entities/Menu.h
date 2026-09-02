@@ -38,7 +38,8 @@ class Menu {
 
         Character* activeCharacter;
 
-
+        std::vector<Character*> enemyList;
+        std::vector<Character*> teamList;
 
         Menu();
     
@@ -53,13 +54,12 @@ class Menu {
         void drawAtb();
         void drawTeamStats();
         void drawStagger();
-        void drawScan();
+
 
         void selectButton();
         void backButton();
         void earlyExecuteButton();
         void paradigmSwitchButton();
-        void scanButton();
         void changeMenuState(MenuState mState);
         void setParadigm();
 

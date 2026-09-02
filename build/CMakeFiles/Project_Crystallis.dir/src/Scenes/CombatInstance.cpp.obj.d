@@ -146,6 +146,7 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_hermite.tcc \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/poly_laguerre.tcc \
  /home/calvi/pspdev/psp/include/c++/15.1.1/tr1/riemann_zeta.tcc \
+ /mnt/d/project-crystallis/include/Entities/Scan.h \
  /mnt/d/project-crystallis/include/graphics/AssetManagers/UIRender.h \
  /mnt/d/project-crystallis/include/graphics/AssetManagers/TextureManager.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/unordered_map \
@@ -198,4 +199,5 @@ CMakeFiles/Project_Crystallis.dir/src/Scenes/CombatInstance.cpp.obj: \
  /mnt/d/project-crystallis/include/graphics/Pipeline/RenderState.h \
  /home/calvi/pspdev/psp/include/c++/15.1.1/variant \
  /home/calvi/pspdev/psp/include/c++/15.1.1/bits/monostate.h \
- /home/calvi/pspdev/psp/include/c++/15.1.1/bits/parse_numbers.h
+ /home/calvi/pspdev/psp/include/c++/15.1.1/bits/parse_numbers.h \
+ /mnt/d/project-crystallis/include/ItemRegistry.h

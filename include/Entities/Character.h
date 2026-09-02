@@ -30,8 +30,6 @@ class Character : public GameActor {
         BattleCommand* prevCommand = nullptr;
 
         std::vector<BattleCommand*> commandQueue;
-        std::vector<Character*> enemyList;
-        std::vector<Character*> teamList;
 
         CharacterState characterState;
 

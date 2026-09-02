@@ -8,9 +8,9 @@ namespace SpriteManager {
     
     extern std::unordered_map<std::string, Sprite> sprites;
 
-    Sprite* getSprite(const std::string& id);
+    Sprite* getSprite(const char* id);
 
-    void registerSprite(const std::string& id, Texture* tex, float x, float y, float w, float h);
+    void registerSprite(const char* id, Texture* tex, float x, float y, float w, float h);
 
-    void unload(const std::string& id);
+    void unload(const char* id);
 };

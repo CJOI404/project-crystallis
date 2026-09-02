@@ -472,9 +472,6 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver, float at
             ravDmg *= 1.3;
         }
 
-                        // if (sender->activeBuffs[element]){
-
-                        // }
 
     //7. Check passive skill deathblow conditions
     /*

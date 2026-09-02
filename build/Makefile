@@ -250,6 +250,30 @@ src/Entities/Menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Entities/Menu.cpp.s
 .PHONY : src/Entities/Menu.cpp.s
 
+src/Entities/Scan.obj: src/Entities/Scan.cpp.obj
+.PHONY : src/Entities/Scan.obj
+
+# target to build an object file
+src/Entities/Scan.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Entities/Scan.cpp.obj
+.PHONY : src/Entities/Scan.cpp.obj
+
+src/Entities/Scan.i: src/Entities/Scan.cpp.i
+.PHONY : src/Entities/Scan.i
+
+# target to preprocess a source file
+src/Entities/Scan.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Entities/Scan.cpp.i
+.PHONY : src/Entities/Scan.cpp.i
+
+src/Entities/Scan.s: src/Entities/Scan.cpp.s
+.PHONY : src/Entities/Scan.s
+
+# target to generate assembly for a file
+src/Entities/Scan.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/Entities/Scan.cpp.s
+.PHONY : src/Entities/Scan.cpp.s
+
 src/GlobalDefs.obj: src/GlobalDefs.cpp.obj
 .PHONY : src/GlobalDefs.obj
 
@@ -442,6 +466,30 @@ src/InputHandler.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/InputHandler.cpp.s
 .PHONY : src/InputHandler.cpp.s
 
+src/ItemRegistry.obj: src/ItemRegistry.cpp.obj
+.PHONY : src/ItemRegistry.obj
+
+# target to build an object file
+src/ItemRegistry.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/ItemRegistry.cpp.obj
+.PHONY : src/ItemRegistry.cpp.obj
+
+src/ItemRegistry.i: src/ItemRegistry.cpp.i
+.PHONY : src/ItemRegistry.i
+
+# target to preprocess a source file
+src/ItemRegistry.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/ItemRegistry.cpp.i
+.PHONY : src/ItemRegistry.cpp.i
+
+src/ItemRegistry.s: src/ItemRegistry.cpp.s
+.PHONY : src/ItemRegistry.s
+
+# target to generate assembly for a file
+src/ItemRegistry.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project_Crystallis.dir/build.make CMakeFiles/Project_Crystallis.dir/src/ItemRegistry.cpp.s
+.PHONY : src/ItemRegistry.cpp.s
+
 src/Scenes/CombatInstance.obj: src/Scenes/CombatInstance.cpp.obj
 .PHONY : src/Scenes/CombatInstance.obj
 
@@ -562,6 +610,9 @@ help:
 	@echo "... src/Entities/Menu.obj"
 	@echo "... src/Entities/Menu.i"
 	@echo "... src/Entities/Menu.s"
+	@echo "... src/Entities/Scan.obj"
+	@echo "... src/Entities/Scan.i"
+	@echo "... src/Entities/Scan.s"
 	@echo "... src/GlobalDefs.obj"
 	@echo "... src/GlobalDefs.i"
 	@echo "... src/GlobalDefs.s"
@@ -586,6 +637,9 @@ help:
 	@echo "... src/InputHandler.obj"
 	@echo "... src/InputHandler.i"
 	@echo "... src/InputHandler.s"
+	@echo "... src/ItemRegistry.obj"
+	@echo "... src/ItemRegistry.i"
+	@echo "... src/ItemRegistry.s"
 	@echo "... src/Scenes/CombatInstance.obj"
 	@echo "... src/Scenes/CombatInstance.i"
 	@echo "... src/Scenes/CombatInstance.s"

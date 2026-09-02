@@ -23,7 +23,8 @@
 #include "graphics/Pipeline/RenderQueue.h"
 #include <pspaudio.h>
 #include <pspaudiolib.h>
-#include "audio/AudioManager.h"
+#include "Audio/AudioManager.h"
+#include "ItemRegistry.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
@@ -128,7 +129,7 @@ void endFrame(){
     sceGuFinish();
     sceGuSync(0, 0);
     // This is basically v sync
-    // sceDisplayWaitVblankStart();
+    sceDisplayWaitVblankStart();
     sceGuSwapBuffers();
 }
 
@@ -144,10 +145,11 @@ int main() {
     AudioManager::init();
     
     //Load font data
-    UI::loadFont("PSPGameFont128.fnt", "PSPGameFont128.png");
+    UI::loadFont("assets/fonts/PSPGameFont128.fnt", "assets/fonts/PSPGameFont128.png");
 
     //Load skills
-    Commands::loadSkills("project_crystallis_skill_sheet.csv");
+    Commands::loadSkills("assets/data/project_crystallis_skill_sheet.csv");
+    Items::loadWeapons("assets/data/project_crystallis_weapons.csv");
 
     // InputHandler playerInput;
     InputHandler::initializeInputHandler();
@@ -194,7 +196,7 @@ int main() {
 
 
         //Render
-        float startTime = clock();
+        // float startTime = clock();
         startFrame();
 
         SceneManager::render(deltaTime);
@@ -207,9 +209,9 @@ int main() {
         SceneManager::changeScene();
 
         endFrame();
-        float updateTime = (clock() - startTime) / CLOCKS_PER_SEC;
-        printf("TOTAL RENDER TIME:%.5f\n", (updateTime * 1000));
-        fflush(stdout);
+        // float updateTime = (clock() - startTime) / CLOCKS_PER_SEC;
+        // printf("TOTAL RENDER TIME:%.5f\n", (updateTime * 1000));
+        // fflush(stdout);
 
     }
 
