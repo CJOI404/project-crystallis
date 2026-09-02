@@ -394,8 +394,8 @@ int AttackCommand::calculateDmg(Character* sender, Character* receiver, float at
 
     //add weapon stats
     if (sender->getWeapon()){
-        atkDmg += sender->getWeapon()->atk;
-        ravDmg += sender->getWeapon()->rav;
+        if (atkDmg > 0) atkDmg += sender->getWeapon()->atk;
+        if (ravDmg > 0) ravDmg += sender->getWeapon()->rav;
     }
 
     printf("ADD WEAPON STAT: %f\n", atkDmg);
