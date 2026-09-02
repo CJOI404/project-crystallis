@@ -8,6 +8,8 @@ class Scan {
         std::vector<Character*> teamList;
         Character* scannedCharacter = nullptr;
 
+        bool scanTeam = false;
+
         int scanIdx = 0;
 
         bool active = false;

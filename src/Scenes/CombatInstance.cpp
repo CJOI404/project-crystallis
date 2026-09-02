@@ -120,6 +120,7 @@ void CombatInstance::initTeamLists(){
     commandMenu.enemyList = enemies;
     scanScreen.enemyList = enemies;
     scanScreen.teamList = team;
+    scanScreen.scannedCharacter = enemies[0];
 }
 
 
